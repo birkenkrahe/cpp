@@ -5,60 +5,19 @@
 #+OPTIONS: toc:nil num:nil ^:nil
 #+property: header-args:C :main yes :includes <stdio.h> :results output :noweb yes
 #+property: header-args:R :results output :noweb yes :session *R* :exports both
-* Week 1: Course overview & infrastructure
-#+attr_html: :width 400px
-[[../img/cover.jpg]]
-
-1) [ ] Entry *survey* - [[https://docs.google.com/forms/d/1yz2EtuSin3r54zMG1d_JCnnVAGb0XI8cP-Yvr7FmZbo/edit#responses][review of your responses]]
-2) [ ] Course *overview* - assignments, grading, topics, platforms
-3) [ ] The C programming *toolchain*: course infrastructure
-4) [ ] *Practice:* the C programming toolchain
-* Week 2: Introduction to C++
-* Week 3: C++ Fundamentals
-* Week 4: C++ operators
-* Week 5: Flow control
-* Week 6: Arrays
-* Week 7: Vectors
-* Week 8: Strings
-* Week 9: Functions
-* Week 10: Pointers
-* Week 11: OOP
-* Week 12: Templates
-* Week 13: Lambda expressions
-* Week 14: Date and time handling
-* Week 15: Multithreading and concurrency
-* Week 16: C++20 Modules
-** What next? (Further studies/career advice)
-#+attr_latex: :width 400px
-#+caption: Women spectators at Sydney stadium, 1940
-[[../img/next.jpg]]
-
-- What should you read?
-- What should you study?
-- What should you do with the rest of your life?
-
-*** Books
-#+attr_latex: :width 300px
-#+caption: C++ for dummies (2023) and The Rook's Guide to C++ (2013)
-[[../img/dummies.jpg]] [[../img/rook.jpg]]
-
-*** Courses
-#+attr_latex: :width 400px
-#+caption: NYC women transcribing popular fiction into Braille
-[[../img/course.jpg]]
-
-- [[https://w3schools.com][w3schools.com]]: HTML/CSS, JavaScript, Python, SQL, Java, C++
-- [[https://www.freecodecamp.org/learn/][freeCodeCamp.org]]: Many [[https://www.youtube.com/c/freecodecamp/videos][YouTube courses]] with certifications
-- [[https://datacamp.com][DataCamp.com]]: Python, R, SQL, bash - get access from me
-
-*** Careers
-#+attr_latex: :width 400px
-#+caption: Computer or data science career?
-[[../img/data-science-careers.jpg]] [[../img/career1.jpg]]
-
-- Get as many internships as possible
-- Many shorter ones are more useful than one long one
-- Lyon IT services is a great place to start, too
-- Join me for my [[https://github.com/birkenkrahe/org/blob/master/internship.md][internship supervision course]] (CSC/DSC 301/401)
-- Keep your skills current no matter at what level
-
+* Week 1: Overview of Computers and Programming
+* Week 2: Basic Elements of C++
+* Week 3: Input/Output & Basic Control Structures
+* Week 4: Control Structures I (Selection)
+* Week 5: Control Structures I (Repetition)
+* Week 6: User-defined Functions
+* Week 7: User-Defined Simple Data Types & Namespaces
+* Week 8: Arrays and Strings
+* Week 9: Arrays and Strings (continued)
+* Week 10: Records (Structs)
+* Week 11: Classes and Data Abstraction
+* Week 12: Classes and Data Abstraction (continued)
+* Week 13: Comprehensive Review and Advanced Topics
+* Week 14: Special Topics in C++
+* Week 15: Advanced Programming Concepts
+* Week 16: Final Review and Exam Preparation
