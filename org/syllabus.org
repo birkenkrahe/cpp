@@ -4,15 +4,15 @@
 #+startup: overview indent
 * General Course Information
 
-- Meeting Times: Monday/Wednesday/Friday, 11:00-11:50 AM
+- Meeting Times: Monday/Wednesday/Friday, 9:00-9:50 AM
 - Meeting place: Lyon Building Room 104 (computer lab)
 - Professor: Marcus Birkenkrahe
 - Office: Derby Science Building 210
 - Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
-- Office hours: MWF 10-10:50 am, TTH 4.15-4.45 pm & by appointment
-- Textbook: Michael and Ruth Haephrati. Learning C++ (Manning,
-  2024). Online: [[https://www.manning.com/books/learning-c-plus-plus][manning.com/books/learning-c-plus-plus]] ($35.99)
-
+- Office hours: MonWedFri 10-10:50 am & 3-3.50 pm, Tue-Thu 4.15-4.45
+  pm & by appointment
+- Textbook: Malik DS (2018). C++ Programming (chapters 1-11). Cengage.
+  
 * Standard and course policies
 
 *Standard Lyon College Policies* are incorporated into this syllabus
@@ -49,95 +49,91 @@ will be able to:
 - Research and present a project as a team
 - Know how to effectively present assignment results
 - Be ready for "Data stuctures with C++" (CSC 240)
-- Be ready for "Algorithms" (CSC 265)
+- Get ready for "Algorithms" (CSC 265)
 - Improve their data literacy skills
 
-* Course requirements
+* Course requirements / prerequisites
 
 - MTH 110 College algebra or permission from the instructor
 - No prior programming or computing knowledge required
 - Experience with computers is useful but not critical
-- Curiosity is essential
+- Curiosity is essential, and willingness to try new things!
 
 * Grading system
 
 You should be able to see your current grade at any time using the
 Canvas gradebook for the course.
 
-| REQUIREMENT                    | UNITS | PPU | TOTAL | % of TOTAL |
-|--------------------------------+-------+-----+-------+------------|
-| Final exam                     |     1 | 100 |   100 |        20. |
-| Programming assignments        |    15 |  10 |   150 |        30. |
-| Class practice (participation) |    10 |  10 |   100 |        20. |
-| Multiple-choice tests          |    15 |  10 |   150 |        30. |
-| Project sprint reviews         |     0 |   0 |     0 |          0 |
-|--------------------------------+-------+-----+-------+------------|
-| TOTAL                          |       |     |   500 |       100. |
-|--------------------------------+-------+-----+-------+------------|
-#+TBLFM: @2$4=$2*$3::@2$5=(@2$4/@7$4)*100::@3$4=$2*$3::@3$5=(@3$4/@7$4)*100::@4$4=$2*$3::@4$5=(@4$4/@7$4)*100::@5$4=@5$2*@5$3::@5$5=(@5$4/@7$4)*100::@6$4=$2*$3::@6$5=(@6$4/@7$4)*100::@7$4=vsum(@2..@5)::@7$5=vsum(@2..@5)
+| WHEN    | DESCRIPTION             | IMPACT |
+|---------+-------------------------+--------|
+| Weekly  | Programming assignments |    25% |
+| Weekly  | Multiple choice tests   |    25% |
+| Weekly  | Participation (class)   |    25% |
+| TBD     | Final exam (optional)   |    25% |
+
+Notes:
+- To pass: 60% of all available points.
+- Participation in class: most of the class will be code-alongs. You
+  have to submit your Emacs Org-mode notebook at the end of the week.
+- Tests: weekly online quizzes, which are previewed and reviewed in
+  class.
+- Final exam: selection of the most challenging weekly quiz questions.
+- You only have to write the final exam if you want to improve your
+  grade at the end of the course. If the final exam result is below
+  your final grade average up to this point, it will be ignored.
 
 * Grading table
 
-This table is used to convert completion rates into letter grades. For
+This table is used to convert completion rates into letter grades. for
 the midterm results, letter grades still carry signs, while for the
-term results, only straight letters are given (by rounding up).
-|--------+---------------+---------------------------|
-|      *%* | *Midterm Grade* | *Final Grade*             |
-|--------+---------------+---------------------------|
-| 100-98 | A+            |                           |
-|  97-96 | A             | A (passed - very good)    |
-|  95-90 | A-            |                           |
-|--------+---------------+---------------------------|
-|  89-86 | B+            |                           |
-|  85-80 | B             | B (passed - good)         |
-|  79-76 | B-            |                           |
-|--------+---------------+---------------------------|
-|  75-70 | C+            |                           |
-|  69-66 | C             | C (passed - satisfactory) |
-|  65-60 | C-            |                           |
-|--------+---------------+---------------------------|
-|  59-56 | D+            |                           |
-|  55-50 | D             | D (passed)                |
-|--------+---------------+---------------------------|
-|   49-0 | F             | F (failed)                |
-|--------+---------------+---------------------------|
+term results, only straight letters are given (by rounding up). This
+table is also used in Canvas to compute your grades. Transitions
+between letter grades are rounded (e.g. 89.5% to 90%).
+
+|------------------+------------------|
+| Percentage       | LETTER GRADE*    |
+|------------------+------------------|
+| 100% to 89.5%    | A (very good)    |
+|------------------+------------------|
+| < 89.5% to 79.5% | B (good)         |
+|------------------+------------------|
+| < 79.5% to 69.5% | C (satisfactory) |
+|------------------+------------------|
+| < 69.5% to 59.5% | D (passed)       |
+|------------------+------------------|
+| < 59.5% to 0%    | F (FAILED)       |
+|------------------+------------------|
 
 * Schedule and session content
 
-For *important dates*, see the 2022-2023 Academic Calendar at:
-[[https://catalog.lyon.edu/202223-academic-calendar][catalog.lyon.edu/202223-academic-calendar]]
+For *important dates*, see the 2023-2024 Academic Calendar at:
+[[https://catalog.lyon.edu/202324-academic-calendar][catalog.lyon.edu/202324-academic-calendar]]
 
-| WEEK | ASSIGNMENT     | TEXTBOOK CHAPTER                  | TEST |
-|------+----------------+-----------------------------------+------|
-|    1 | Emacs Tutorial |                                   |      |
-|------+----------------+-----------------------------------+------|
-|    2 | Program 1      | 1 C++ is brilliant                |    1 |
-|------+----------------+-----------------------------------+------|
-|    3 | Program 2      | 2 C++ Fundamentals                |    2 |
-|------+----------------+-----------------------------------+------|
-|    4 | Program 3      | 3 Smooth operator                 |    3 |
-|------+----------------+-----------------------------------+------|
-|    5 | Program 4      | 4 Let it flow                     |    4 |
-|------+----------------+-----------------------------------+------|
-|    6 | Program 5      | 5 Hip hip array                   |    5 |
-|------+----------------+-----------------------------------+------|
-|    7 | Program 6      | 6 Vectors                         |    6 |
-|------+----------------+-----------------------------------+------|
-|    8 | Program 7      | 7 String manipulation             |    7 |
-|------+----------------+-----------------------------------+------|
-|    9 | Program 8      | 8 Functions                       |    8 |
-|------+----------------+-----------------------------------+------|
-|   10 | Program 9      | 9 Pointers                        |    9 |
-|------+----------------+-----------------------------------+------|
-|   11 | Program 10     | 11 Object orientation             |   10 |
-|------+----------------+-----------------------------------+------|
-|   12 | Program 11     | 12 Templates                      |   11 |
-|------+----------------+-----------------------------------+------|
-|   13 | Program 12     | 13 Lambda expressions             |   12 |
-|------+----------------+-----------------------------------+------|
-|   14 | Program 13     | 14 Date and time handling         |   13 |
-|------+----------------+-----------------------------------+------|
-|   15 | Program 14     | 15 Multithreading and concurrency |   14 |
-|------+----------------+-----------------------------------+------|
-|   16 | Program 15     | 16 Modules                        |   15 |
-|------+----------------+-----------------------------------+------|
+| Week | Topic                                       | Activities                                                                                                | Assignment                  | Test                          |
+|------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------+-----------------------------+-------------------------------|
+|    1 | Overview of Computers & Programming         | Discuss history of computers, hardware & software basics, language of computer, programming methodologies | 1: Computer Basics          | 1: History & Basics           |
+|    2 | Basic Elements of C++                       | Explore C++ program structure, data types, expressions, and input/output statements                       | 2: Basic C++ Program        | 2: C++ Fundamentals           |
+|    3 | Input/Output & Basic Control Structures     | Learn about I/O streams, formatting output, selection structures in C++                                   | 3: I/O Manipulation         | 3: I/O & Selection Structures |
+|    4 | Control Structures I (Selection)            | Deep dive into if, if...else structures, logical operators, and switch structures                         | 4: Control Structures       | 4: Selection & Logical Ops    |
+|    5 | Control Structures II (Repetition)          | Study while, for, and do...while loops, break and continue statements                                     | 5: Loop Structures          | 5: Repetition Structures      |
+|    6 | User-Defined Functions                      | Learn about predefined and user-defined functions, value-returning functions, and void functions          | 6: Implement Functions      | 6: Functions                  |
+|    7 | User-Defined Simple Data Types & Namespaces | Explore enumeration types, namespaces, and string type in C++                                             | 7: Data Types & Namespaces  | 7: Data Types & Namespaces    |
+|    8 | Arrays and Strings                          | Study arrays, accessing array components, processing one-dimensional arrays, and C-Strings                | 8: Arrays & Strings         | 8: Arrays                     |
+|    9 | Arrays and Strings (Continued)              | Delve into two- and multi-dimensional arrays, arrays of strings, and the string type                      | 9: Multidimensional Arrays  | 9: Advanced Arrays            |
+|   10 | Records (Structs)                           | Learn about structs, accessing struct members, arrays in structs, and structs within structs              | 10: Structs Usage           | 10: Structs                   |
+|   11 | Classes and Data Abstraction                | Introduction to classes, accessing class members, member functions, and constructors                      | 11: Basic Classes           | 11: Classes Basics            |
+|   12 | Classes and Data Abstraction (Continued)    | Study destructors, data abstraction, inline functions, and static members of a class                      | 12: Advanced Class Concepts | 12: Advanced Class Concepts   |
+|   13 | Comprehensive Review and Advanced Topics    | Comprehensive review of previous chapters and introduction to advanced topics                             | 13: Comprehensive Review    | 13: Mid-Course Review         |
+|   14 | Special Topics in C++                       | Cover special topics and advanced features in C++                                                         | 14: Special Topics Study    | 14: Special Topics            |
+|   15 | Advanced Programming Concepts               | Delve deeper into advanced programming concepts and techniques in C++                                     | 15: Advanced Programming    | 15: Advanced Concepts         |
+|   16 | Final Review and Exam Preparation           | Final review of course material, exam preparation, and practice tests                                     | 16: Exam Preparation        | 16: Final Exam                |
+
+
+*Workload:* approx. 4 hours per week.
+1. Class time = 16 * 3 * 50/60 = 40 hours
+2. Tests (home) = 15 * .5 = 7.5 hours
+3. Programming assignments: 15 * 1 = 15 hrs (min)
+
+No class on: Monday 19 Feb (Mental-Health Monday) - 18,20,22 March
+(Spring break) - Friday 29 March (Easter break)
+
