@@ -1,6 +1,6 @@
 #+TITLE: Emacs Beginner's Tutorial v1
 #+AUTHOR: Marcus Birkenkrahe
-#+SUBTITLE: Lyon College, Batesville, AR - Spring 2023
+#+SUBTITLE: Lyon College, Batesville, AR - Spring 2024
 #+STARTUP:overview indent inlineimages
 #+attr_latex: :width 400px
 #+caption: xkcd: Real Programmers (https://xkcd.com/378/)
