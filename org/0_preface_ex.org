@@ -1,0 +1,61 @@
+#+title: Practical C++ (2002)
+#+startup: overview hideblocks indent
+* Concatenate two strings
+
+Note: The purpose of the exercise is not to present the (trivial) code
+but to document your process of solving it as seen [[0_preface.org][in the lecture]].
+
+Until you download and install both a C++ compiler and Emacs on your
+own PC, you'll have to use the prepared PCs in Lyon 104 or in
+Derby 209.
+
+** Problem
+
+You are given two separate strings that you want to display as one
+string.
+
+** Task
+
+Add two strings, for example "hello" and "world" and print the result
+to the screen/console. Use all "program life cycle" steps.
+
+** Solution
+
+You can use the following template for an Org-mode table. The table is
+"rightened" with the C-q keyboard command.
+
+For step 5, even if you did not have to do any debugging, list the
+potential sources of errors for this statement.
+
+For step 6, identify ways in which running this code could go wrong
+and what else one might do with it, i.e. how one could use this code
+fragment or method ("concatenating strings").
+
+|   | Step              | Action |
+|---+-------------------+--------|
+| 1 | Define problem    |        |
+|---+-------------------+--------|
+| 2 | Analyze problem   |        |
+|---+-------------------+--------|
+| 3 | Develop algorithm |        |
+|---+-------------------+--------|
+| 4 | Code + comment    |        |
+|---+-------------------+--------|
+| 5 | Test + debug      |        |
+|---+-------------------+--------|
+| 6 | Maintain + extend |        |
+
+You can use the following template in connection with Emacs for the
+code. To run the code, use C-c C-c. A C++ compiler must be installed:
+#+begin_src C++ :main yes :includes <iostream> :results output :exports both :noweb yes :comments both
+  std::cout << "hello" << " " << "world";
+#+end_src
+
+#+RESULTS:
+: hello world
+
+Note:
+- A string is a set of characters enclosed in quotation marks "".
+- =std::cout= sends data to the console.
+- The operator =<<= inserts its right hand side data into the stream on its right.
+- The symbol =;= terminates C++ statements.
