@@ -12,21 +12,11 @@
 -   Reference links in the files lead to a 404 error. You always find
     the references at the end of a file.
 -   For a TOC, open the bullet point list menu
-
-
-## Agenda for every session
-
-
-## Syllabus for a course overview
-
-
-## Practice with interactive notebooks
-
-
-## Assignments and solutions
-
-
-## Installation information
+-   Agenda for every session
+-   Syllabus for a course overview
+-   Practice with interactive notebooks
+-   Assignments and solutions
+-   Installation information
 
 
 # How to use GitHub
