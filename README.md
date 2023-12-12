@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![img](./img/cover.png)
 
 
@@ -43,3 +44,9 @@
 First offered @Lyon: Spring 2022 (Undergrad). To be offered: Summer
 school 2022, Spring 2024, 2026, 2028.
 
+=======
+# cpp
+Introduction to programming in C++ (CSC 100), Lyon College, spring 2024.
+
+[[./img/cover.png]]
+>>>>>>> 0d96687f0812dcae392cdb092e0e35671e27fd6d
