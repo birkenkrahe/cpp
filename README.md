@@ -1,6 +1,9 @@
 ![img](./img/cover.png)
 
 
+# Introduction to Programming in C++
+
+
 # What's in this repo?
 
 -   Repository for CSC 100 - Introduction to Programming in C++
