@@ -13,6 +13,8 @@
   pm & by appointment
 - Textbook: Malik DS, C++ Programming: Program Design including Data
   Structures (8e), [[https://www.cengage.com/c/c-programming-8e-malik/9781337117562/][Cengage 2018]] ([[https://www.amazon.com/Programming-Program-Design-Including-Structures/dp/1337117560][Amazon]]: New from $83.87 - Dec 2023).
+  This is also the textbook for [[https://catalog.lyon.edu/computer-science/csc-240][CSC 240 Data Structures with C++]] (Fall
+  2024).
 - See also other books used for this course:
   1) Oualline S, Practical C++ (2e), [[https://www.oreilly.com/library/view/practical-c-programming/0596004192/][O'Reilly 2002]],
   2) Stroustrup B, Programming - Principles and Practice Using C++,
@@ -115,8 +117,9 @@ between letter grades are rounded (e.g. 89.5% to 90%).
 For *important dates*, see the 2023-2024 Academic Calendar at:
 [[https://catalog.lyon.edu/202324-academic-calendar][catalog.lyon.edu/202324-academic-calendar]].
 
-No class on: Monday 19 Feb (Mental-Health Monday) - 18,20,22 March
-(Spring break) - Friday 29 March (Easter break)
+No class on: Monday 19 Feb (Mental-Health Monday) - Monday 18,
+Wednesday 20, Friday 22 March (Spring break) - Friday 29 March (Easter
+break).
 
 | Week | Topic                                       | Activities                                                                                                |
 |------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------|
