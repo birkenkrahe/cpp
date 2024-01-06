@@ -1,0 +1,178 @@
+#+TITLE:Practicing one-dimensional arrays
+#+AUTHOR: yourName [pledged]
+#+STARTUP: overview hideblocks indent
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
+* README
+
+- Practice workbook for one-dimensional arrays in C
+
+* TODO Identify yourself
+
+- replace the placeholder ~[yourName]~ in the header of this file by
+  your name and save the file (~C-x C-s~).
+
+* TODO Declare and initialize array
+** Problem
+
+1) Write two programs that declare an integer array ~foo~ and a
+   floating-point array ~bar~. There are *four* ways that you know
+   already:
+   - declare and initialize as ~{...}~ list
+   - initialize individual elements
+   - initialize using a loop (with ~scanf~)
+
+2) Initialize ~foo~ with the values ~1,2,3,4,5~. Print the first and the
+   last value of ~foo~. Use the *four* different ways of initializing ~foo~
+   (don't create a new named code block for each way but create arrays
+   ~foo1~, ~foo2~ and ~foo3~ instead).
+
+3) Initialize ~bar~ with the values ~1.1,2.2,3.3,4.4,5.5~. Print the first and
+   the last value of ~bar~. Use the *four* different ways of initializing ~bar~
+   (don't create a new named code block for each way but create arrays
+   ~bar1~, ~bar2~ and ~bar3~ instead).
+
+4) When you're done with ~foo~, copy the code block and use ~M-x
+   replace-string~ to replace ~foo~ by ~bar~ in the code block only (select
+   the region first with ~C-SPC~).
+
+5) Sample output:
+
+   #+begin_example foo
+   : foo1[0] = 1,       foo2[0] = 1,    foo3[0] = 1,
+   : foo1[1] = 2,       foo2[1] = 2,    foo3[1] = 2,
+   : foo1[2] = 3,       foo2[2] = 3,    foo3[2] = 3,
+   : foo1[3] = 4,       foo2[3] = 4,    foo3[3] = 4,
+   : foo1[4] = 5,       foo2[4] = 5,    foo3[4] = 5,
+   #+end_example
+
+   #+begin_example bar
+   : bar1[0] = 1.1,     bar2[0] = 1.1,  bar3[0] = 1.1,
+   : bar1[1] = 2.2,     bar2[1] = 2.2,  bar3[1] = 2.2,
+   : bar1[2] = 3.3,     bar2[2] = 3.3,  bar3[2] = 3.3,
+   : bar1[3] = 4.4,     bar2[3] = 4.4,  bar3[3] = 4.4,
+   : bar1[4] = 5.5,     bar2[4] = 5.5,  bar3[4] = 5.5,
+   #+end_example
+
+** Solution   
+
+For integer array ~foo~ and for floating-point array ~bar~:
+ 1) declare and initialize as ~{...}~ list
+ 2) initialize individual elements
+ 3) initialize using a loop (with ~scanf~)
+
+ #+begin_src C
+
+ #+end_src
+ 
+* TODO Reversing numbers
+** Problem
+
+- Enter five numbers and print them in reverse order.
+- Store the numbers as one array.
+- Use the tips below to complete the code.
+  
+** Solution
+*** Input file - check file location 
+
+#+name: input
+#+begin_src bash :results silent
+  echo '34 82 49 102 7' > numbers
+  cat ./src/numbers
+#+end_src
+
+*** Code
+
+Fill in a few empty statements below:
+
+- At the top, define a macro ~N~ with the value ~5~
+
+- Declare an integer array ~a~ of length ~N~
+
+- Complete the ~scanf~ function inside the ~for~ loop to input values and
+  to print values that were entered
+
+- Complete the second loop to print numbers in reverse
+
+- The output should look like this:
+  #+begin_example
+  : Enter 5 numbers: 34 82 49 102 7 
+  : In reverse order: 7 102 49 82 34
+  #+end_example
+
+  #+name: pgm:reverse
+  #+begin_src C :cmdline < numbers
+    ???   // define macro on this line (upper bound)
+
+    ???   // declare array a[N] on this line
+
+    int i; // counting variable ( can also define inside for loop)
+
+    printf("Enter %d numbers: ", N);
+
+    for ( ... ) {
+      ...   // input array values
+      ...   // print each array value
+     }
+
+    printf("In reverse order:");
+    for ( ... ) { 
+      printf(" %d", a[i]);
+     }
+    printf("\n");
+  #+end_src
+
+* TODO Print a 2-dimensional array
+
+  - Declare a 4 x 3 matrix and print it in 2 dimensions. Complete the
+    sample code below to get the output shown.
+
+  - Initialize the matrix ~m[][]~ with the elements 1 through 12.
+
+  - Define two nested ~for~ loops looping over rows and columns
+
+  - Output:
+    #+begin_example
+    #+RESULTS:
+    :  1  2  3
+    :  4  5  6
+    :  7  8  9
+    : 10 11 12
+    #+end_example
+
+  - Code: 
+
+    #+name: matrix    
+    #+begin_src C
+      ... // declare and initialize matrix
+
+      for (...) {  // loop over rows
+        for(...) {  // loop over columns
+          ... // print matrix elements
+        }
+        printf("\n");
+       }
+    #+end_src
+
+* TODO Use ~sizeof~ in a ~for~ loop
+
+- The code block below defines an array ~a~ of length ~5~. Complete the
+  ~for~ loop using the ~sizeof~ operator to get the output shown. The loop
+  re-initializes the array ~a~.
+
+- Run the code, then change the length of the array and re-run the
+  code.
+
+- Code:
+
+  #+name: sizeof
+  #+begin_src C
+    int a[5] = {0}; // initialize array 
+
+    for (int i = 0; i < sizeof(a)/sizeof(a[0]); i++) {
+      a[i] = 1; // re-initialize array
+      printf("a[%d] = %d\n", i, a[i]);
+     }
+  #+end_src
+
+ 
+

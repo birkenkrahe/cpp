@@ -1,0 +1,413 @@
+#+TITLE: Introduction to C
+#+AUTHOR:Marcus Birkenkrahe
+#+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2023
+#+STARTUP:overview hideblocks indent inlineimages
+#+OPTIONS: toc:1
+#+OPTIONS:hideblocks
+* What will you learn?
+
+- What is C?
+- What is its origin?
+- What is its importance?
+- What's the difference to C++?
+- Why are we not just learning C++?
+- What are C's strengths and weaknesses?
+- Why are you learning C from me?
+- What's next in the course?
+
+Source:
+- Textbook King (2008) ch.1[fn:1]
+- See also [[https://docs.google.com/presentation/d/16jVt1LYw_an7na_Ex0bz8l2uySJtydBK/edit?usp=sharing&ouid=102963037093118135110&rtpof=true&sd=true][slides (GDrive)]]
+
+* What is C?
+
+- C is a programming language created in the early 1970s.
+- It grew out of the development of the UNIX operating system
+- In turn, UNIX grew out of a space travel game (Brock, 2019).
+
+#+caption: Thompson & Ritchie & DEC PDP-11, 1970. (Brock, 2019)
+#+attr_latex: :width 400px
+[[../img/1_unix.png]]
+
+* How popular is C?
+
+- C consistently ranks among the top 3 programming languages.
+- TIOBE Language of the year 2008, 2017, 2019
+
+#+caption: TIOBE Index for C, 2002-2023 (Source: TIOBE)
+#+attr_latex: :width 400px
+[[../img/1_tiobe.png]]
+
+- Popularity contest: cp. [[https://www.tiobe.com/tiobe-index/][TIOBE Index]][fn:2]
+
+#+caption: TIOBE Index ranking 1-10 (tiobe.com)
+#+attr_latex: :width 400px
+_[[../img/1_tiobe1.png]]+
+
+- Of the top 10 languages, 7 are direct descendants of C - only Visual
+  Basic, SQL and Assembly language are not C-type languages
+
+#+caption: IEEE index (Source: Cass, 2019)
+#+attr_latex: :width 400px
+[[../img/1_ieee.png]]
+
+* How important is C?
+
+#+caption: Real world applications of C (Source: DataFlair)
+#+attr_latex: :width 400px
+[[../img/1_usage.jpg]]
+
+Some well-known programs written in C:
+- The Linux kernel (and therefore, Android)
+- UNIX operating system (core of MacOS)
+- Windows 1.0 to Windows XP
+- Doom (early video game)
+- Wolfenstein 3D
+- Git version control system
+- C compilers (Clang, GCC/MinGW)
+- Any software that crosses platforms easily (portable)
+
+See also: "[[https://youtu.be/smGalmxPVYc][Why C programming is awesome]]" (Hawkes, 2016).
+
+* What is a programming language?
+
+#+begin_quote
+"A programming language is a /formal language/ comprising of a set of
+/strings/ that produce various kinds of /machine code/
+output. Programming languages are one kind of computer language, and
+are used in computer programming to implement algorithms." (Source:
+[[https://en.wikipedia.org/wiki/Programming_language][Wikipedia]])
+#+end_quote
+
+- *Formal* language?
+- Set of *strings*?
+- *Machine* code?
+- *Algorithm*?
+
+Fortunately, computer (and data) science isn't really a science at all!
+
+(it's more of a craft like mining, knitting, or pottering.)
+
+#+caption: Scientific fields arranged by "purity" (xkcd)
+#+attr_latex: :width 400px
+[[../img/1_purity.png]]
+
+* Where does C come from?
+
+#+caption: "K&R" (Kernighan/Ritchie, 1978)
+#+attr_latex: :width 200px
+[[../img/1_kr.png]]
+
+- By-product of the UNIX operating system 1969 [fn:3]
+- Developed on DEC PDP-7 (computer with 8K words of main memory)
+- Written originally in assembly language
+- UNIX rewritten in C by 1973 for [[https://en.wikipedia.org/wiki/PDP-11][DEC PDP-11]]
+- Standardization of C, 1973-2018
+
+#+begin_quote
+*Challenge:* what does "8K words of main memory" mean? [fn:4]
+#+end_quote  
+
+See also: [[https://youtu.be/G1-wse8nsxY][C Programming Language | Brian Kernighan & Lex Fridman]]
+- Text processing problems were inherited from Unix
+- Examples should be realistic, useful and representative
+- If you're the first in anything, everybody else has to follow
+
+* Standardization
+
+#+caption: How standards proliferate (Source: xkcd)
+#+attr_latex: :width 400px
+[[../img/1_standards.png]]
+
+Details: see [[https://blog.ansi.org/2018/11/c-language-standard-iso-iec-9899-2018-c18/#gref][ANSI]] (American National Standards Institute)
+
+Python 3 was not "backwards compatible" with Python 2.7
+* How computers work
+
+Well, at least this is one way of looking at it.
+
+#+caption: Computer architecture (simplified)
+#+attr_latex: :width 400px
+[[../img/1_computer.png]]
+
+The "hard disk" can also be a Solid State Drive (SSD) or some other
+form of Non-Volatile Memory (NVM) - i.e. it doesn't disappear when
+the power goes out.
+
+* How programs are processed
+**  Simplified process
+
+1) *WRITE* source code in an editor (NVM = harddisk)
+2) *COMPILE* source code to machine code (RAM = memory)
+3) *RUN* program (CPU = Central Processing Unit)
+4) *DISPLAY* results (RAM = Memory)
+5) *SAVE* result (NVM = harddisk)
+
+** Complete process
+
+Specifically for C and our compiler GCC, this process looks
+technically like this:
+
+#+caption: GCC compilation process (Source: Hock-Chuan, 2018).
+#+attr_latex: :width 400px
+[[../img/1_gcc.png]]
+
+* Looks matter
+
+She's a beauty.
+
+#+caption: PDP-11/70
+#+attr_latex: :width 400px
+[[../img/1_pdp11.jpg]]
+
+| Challenge: was C the first programming language? [fn:5] |
+
+* The Latin of programming languages
+
+The following languages are C-based:
+ - C++ (OOP extension of C, games)
+ - Java (OOP, VM-portable, and no pointers)
+ - C# (Microsoft, games)
+ - Perl (scripting, text mining)
+
+#+begin_quote
+"C is to programming languages what Latin is to Western natural
+languages." (Anonymous)
+#+end_quote
+
+ - C is lightning fast and terribly tiny
+
+   #+begin_quote
+   "C is fast because it's the speed of light, and relativity?"[fn:6]
+   ([[https://stackoverflow.com/questions/418914/why-is-c-so-fast-and-why-arent-other-languages-as-fast-or-faster][Stackoverflow]])
+   #+end_quote
+
+* Benchmarking
+     
+   #+caption: Image source: Kostya benchmark, GitHub, Nov 2021
+   [[../img/1_fast.png]]
+
+    #+caption: Image source: Kostya benchmark, GitHub, Nov 2021
+    [[../img/1_slow.png]]
+
+ * Excerpts for parsing and printing a /Mandelbrot/ set
+ * /Benchmarks/ depend on algorithm implementation
+ * C always wins the size battle (/memory allocation/)
+ * Some very /specialized/ languages are even faster
+
+* Strengths and weaknesses of C
+
+| STRENGTH              | WEAKNESS                     |
+|-----------------------+------------------------------|
+| Efficiency            | Permissiveness (Error-prone) |
+| Portability           | Terseness and Understanding  |
+| Power                 | Large program maintenance    |
+| Flexibility           |                              |
+| Standard library      |                              |
+| Integration with UNIX |                              |
+
+- Efficiency: do a lot with little effort (small programs)
+- Portability: it works everywhere, on anything
+- "Power": you can do brain surgery with a pencil
+- Flexbility: you can do the same thing in many different ways
+- "Standard library": pre-defined functions/tasks; "stdio.h", a
+  standard library for "I/O" (Input/output)
+- Integration with UNIX (because UNIX is the motherlobe)
+
+* What is the difference between C and C++?
+
+C++ is a superset of C.
+
+#+caption: C/C++ logos
+#+attr_latex: :width 400px
+[[../img/1_ccpp.png]]
+
+| WHAT | C                      | C++                |
+|------+------------------------+--------------------|
+| TIME | Thompson/Ritchie 1970s | Stroustrup 1980s   |
+| TYPE | Imperative procedural  | Object-oriented    |
+| GOOD | System programming     | Games and graphics |
+| USED | Internet of Things     | Flight Software    |
+
+Source: Lemonaki, 2021.
+
+* Why are we not just learning C++?
+
+ - Object-orientation is a difficult paradigm (C++)
+ - System programming is pure power (C)
+ - C is simpler, smaller, and faster
+
+ #+caption: Computer Landscape. (Modified from: Steinhart, 2019)
+ #+attr_latex: :width 400px
+ [[../img/1_power2.png]]
+
+ - Bjarne Stroustrup (2011): "[[https://youtu.be/KlPC3O1DVcg][C is obsolete]]"[fn:7]
+ - Linus Torvalds (2007): "[[http://harmful.cat-v.org/software/c++/linus][C++ is a horrible language]]"[fn:8].
+
+  Also, there's this:
+
+  #+begin_quote
+  "Languages are tools. Memorizing them no more makes you a computer
+  scientist than studying hammers makes you a carpenter." -[[https://qr.ae/pGzZ9z][Neilsen]]
+  #+end_quote
+
+  - It's easy to pick up additional languages
+  - Data structures and algorithms are key to understanding
+  - First language could be anything[fn:9]
+
+* Why am I teaching C/C++?
+
+It's personal.
+
+#+caption: The C++ Virtual Library, 1993-1995 (DESY)
+#+attr_latex: :width 400px
+[[../img/1_desy.png]]
+
+#+begin_quote
+I used C++ during my PhD studies at DESY, Germany, to write a
+library of multigrid functions (numerical method for lattice gauge
+theory simulations in theoretical particle physics).[fn:10]
+#+end_quote
+
+* What will happen to C/C++ in the next 20 years?
+
+Whatever happens, good new for learning C.
+
+#+caption: One expert's opinion (Source: Quora)
+#+attr_latex: :width 400px
+[[../img/1_future.png]]
+
+I increasingly see propaganda for [[https://www.incredibuild.com/blog/rust-vs-c-and-is-it-good-for-enterprise][replacing C++ by Rust]] (Kirsh, 2021),
+another relatively new language with OOP support and better security
+properties.
+
+* Summary
+
+ 1) The C programming language was created 50 years ago
+ 2) C is small, simple, very fast, and close to the computer
+ 3) Linux (and Android) are largely written in C
+ 4) The object-oriented programming (OOP) language C++ contains C
+ 5) System programming is a powerful skill set
+
+* Glossary
+
+| CONCEPT/TOPIC           | DEFINITION                                          |
+|-------------------------+-----------------------------------------------------|
+| DEC PDP-11              | 1970s mainframe computer                            |
+| UNIX                    | Operating system (ca. 1969)                         |
+| ANSI                    | American National Standard Institute                |
+| String                  | A data type representing text                       |
+| Assembler               | Machine code (hard to write/read)                   |
+| Algorithm               | Fixed process or set of rules                       |
+| Linux                   | Operating system (ca. 1991)                         |
+| C                       | Imperative, procedural programming language         |
+| compiler                | Software to translate source into machine code      |
+| C++                     | Object-oriented (OO) superset of C                  |
+| Clang                   | C/C++ compiler                                      |
+| gcc                     | GNU compiler bundle (incl. C/C++)                   |
+| Java,C#                 | OO programming language                             |
+| Perl                    | Scripting language                                  |
+| Git                     | Software version control system                     |
+| GitHub                  | Developer's platform (owned by Microsoft)           |
+| Library                 | Bundle of useful functions and routines             |
+| Portability             | Ability of software to run on different hardwares   |
+| Efficiency              | Software speed of execution and memory requirements |
+| Permissiveness          | Degree to which a language tolerates ambiguities    |
+| Object-orientation      | Ability to define abstractions                      |
+| System programming      | Programming close to the machine                    |
+| Application programming | Programming close to the user                       |
+
+* What's next?
+
+- Getting started: Infrastructure (Lab)
+- MinGW (compiler) + Emacs (editor) + GitHub (collaboration)
+- First program: "hello world" (Lecture + Lab)
+
+  [[../img/1_river.gif]]
+
+* References
+
+- Big Think (Jun 13, 2011). Bjarne Stroustrup: Why the Programming
+  Language C Is Obsolete | Big Think
+  [video]. [[https://youtu.be/KlPC3O1DVcg][URL:youtu.be/KlPC3O1DVcg]].
+- Brock (October 17, 2019). The Earliest Unix Code: An Anniversary
+  Source Code Release [Blog]. URL: [[https://computerhistory.org/blog/the-earliest-unix-code-an-anniversary-source-code-release/][computerhistory.org]].
+- Cass (6 Sept 2019). The Top Programming Languages 2019 > Python
+  remains the big kahuna, but specialist languages hold their
+  own. IEEE Spectrum. [[https://spectrum.ieee.org/the-top-programming-languages-2019][URL: spectrum.ieee.org]].
+- Chatley R., Donaldson A., Mycroft A. (2019) The Next 7000
+  Programming Languages. In: Steffen B., Woeginger G. (eds) Computing
+  and Software Science. Lecture Notes in Computer Science,
+  vol 10000. Springer,
+  Cham. https://doi.org/10.1007/978-3-319-91908-9_15
+- Data Flair (n.d.). Applications of C Programming That Will Make You
+  Fall In Love With C [Tutorial]. URL: d[[https://data-flair.training/blogs/applications-of-c/][ata-flair.training.]]
+- DESY (Oct 25, 1995). The C++ Virtual Library. URL: [[https://www.desy.de/user/projects/C++.html][desy.de]]
+- Gustedt (2019). Modern C. Manning.
+- Hock-Chuan (2018). GCC and Make: Compiling, Linking and Building
+  C/C++ Applications [website]. [[https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html][URL: ntu.edu.sg]].
+- Kernighan/Ritchie (1978). The C Programming Language. Prentice
+  Hall. [[https://en.wikipedia.org/wiki/The_C_Programming_Language][Online: wikipedia.org]].
+- King (2008). C Programming - A Modern Approach. Norton. [[http://knking.com/books/c2/index.html][Online:knking.com]].
+- Kirsh (September 13, 2021). Rust vs C++ and Is It Good for
+  Enterprise? [blog]. [[https://www.incredibuild.com/blog/rust-vs-c-and-is-it-good-for-enterprise][URL: www.incredibuild.com]].
+- Lemonaki, Dionysia (November 4, 2021). C vs. C++ - What's The
+  Difference [blog]. URL: [[https://www.freecodecamp.org/news/c-vs-cpp-whats-the-difference/][freecodecamp.org.]]
+- Neilsen (Aug 14, 2020). Quora. URL: [[https://qr.ae/pGzZ9z][qr.ae/pGzZ9z]].
+- Steinhart (2019). The Secret Life of Programs. NoStarch
+  Press. [[https://nostarch.com/foundationsofcomp][URL:nostarch.com.]]
+- TIOBE (Jan 2022). TIOBE Index for January 2022
+  [website]. [[https://www.tiobe.com/tiobe-index/][URL:tiobe.com]].
+- Torvalds (6 Sep 2007). Linus Torvalds on C++
+  [blog]. [[http://harmful.cat-v.org/software/c++/linus][URL:harmful.cat-v.org]].
+- xkcd(n.d.) Purity [cartoon]. [[https://xkcd.com/435/][URL: xkcd.com/]].
+
+* Footnotes
+
+[fn:1]All sources are referenced at the end of the script, followed by
+the footnotes, which do unfortunately not render as links [[https://github.com/birkenkrahe/cc100/tree/main/history_of_c][on
+GitHub]]. The book by King (2008) does not cover a few recent updates to
+the ANSI standard for C, like C11, and the current standard C17. The
+next major C standard revision (C23) is expected for 2023. Gustedt
+(2019) is a good (but quite difficult) book on "modern C".
+
+[fn:2]Since 2000, C has consistently ranked among the top two
+languages in the TIOBE index (based on searches).
+
+[fn:3]The motivation to create Unix, according to [[https://en.wikipedia.org/wiki/Space_Travel_(video_game)][Wikipedia]], was to
+port Thompson's space travel video game to the PDP-7 mainframe
+computer. So in a way we owe modern computing to gaming.
+
+[fn:4]How many bits can be stored in memory of 8K words depends on the
+bit length of a word (or byte). One byte holds 8 = 2^3 bits (binary
+digits, or memory locations capable of storing 2 states). 8K byte
+correspond to 8 * 2^10 = 8 * 1,024 = 8,192 bits. By comparison, the
+main memory of my laptop is 16GB = 16 * 2^30 = 3.2E+31 bits. It
+follows from these memory restrictions that UNIX (and C) had to be
+designed to be very small, or space effective.
+
+[fn:5]Answer: no. By 1966, there were already ca. 700 programming
+languages (Chatley et al, 2019), today there are almost 9,000. C
+descends from ALGOL60, other important languages are Lisp (functional
+language), SIMULA (first OOP language), and PROLOG (logic language).
+
+[fn:6]This is a joke based on someone mixing up c (speed of light
+constant) and C (the programming language).
+
+[fn:7]However, he is biased, since he is the creator of C++. The title
+of the video is misleading: Stroustrup believes that every C program
+should rather be a proper C++ program. However, he also concedes that
+C++ is still too complex for many ("We have to clean it up").
+
+[fn:8]Torvalds (who wrote the Linux kernel in C) argues here in favor
+of writing his hugely successful version control program ~git~ in C
+instead of C++. He highlights some of the strengths of C: efficient,
+system-level, portable code.
+
+[fn:9]My first real programming language was FORTRAN (specialized on
+scientific computing), then C++. Recently, I picked up R (for data
+science). In between I've sampled (not mastered) many others,
+including: Python, Lisp, PROLOG, C, PHP, SQL, SQLite etc.
+
+[fn:10]I changed my name from 'Speh' to 'Birkenkrahe' when I got
+married.

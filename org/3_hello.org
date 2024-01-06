@@ -1,0 +1,333 @@
+ #+TITLE:C Basics - Hello world program
+#+AUTHOR:Marcus Birkenkrahe
+#+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2023
+#+DATE: Time-stamp: <2023-01-27 17:24:49 Birkenkrahe>
+#+STARTUP: overview hideblocks indent inlineimages
+#+attr_latex: :width 400px
+[[../img/helloworld.png]]
+* README
+
+- This script summarizes and adds to the treatment by King (2008),
+  chapter 2, C Fundamentals - see also [[https://docs.google.com/presentation/d/14qvh00aVb_R09_hrQY0EDEK_JLAkgZ0S/edit?usp=sharing&ouid=102963037093118135110&rtpof=true&sd=true][slides (GDrive)]].
+
+- There is an Org-mode file available for practice. Download
+  ~3_hello_practice.org~ as a raw file from GitHub
+  ([[https://tinyurl.com/y32yd3ax][tinyurl.com/y32yd3ax]])
+
+- Open a command line terminal and change (~cd~) to the Downloads
+  directory
+
+- Open the file in Emacs with ~emacs -nw --file 3_hello_practice.org~
+
+- When you leave class without having completed the file, save a
+  copy to GDrive as a backup and/or to work on it from home
+
+- When you've completed the file, upload it to Canvas where you'll
+  find a "Class practice" assignment named ~3_hello_practice.org~.
+
+* Program structure
+#+attr_latex: :width 300px
+#+caption: main function structure (Collingbourne, 2017)
+[[../img/3_structure.png]]
+
+- All C program statements must be included in a ~main~ function
+
+- The ~main~ function has a body delimited by ~{...}~
+
+- There can be /pre-processor/ /directives/ - ~#include~ or ~#define~.
+
+- ~main()~ is similar to ~f(x)~ in mathematics - () means "no argument"
+
+- ~printf()~ prints its argument: ~"hello world"~ which is a 'string'
+
+- ~\n~ means "go to the next line" - 'escape character'
+
+- ~;~ ends every command - the computer waits for the next one!
+
+- The computer (aka compiler) ignores "white space"
+* "What a Tangled Web We Weave..."
+
+#+begin_quote
+"Oh, what a tangled web we weave, when first we practice to deceive!"
+(Sir Walter Scott, 1808)
+#+end_quote
+
+In this section, we're once again running code blocks from within
+Org-mode - with a few new /literate programming/ features:
+
+- To distinguish (and reference) code blocks, we will name them
+  (~#+NAME:~). The name can can then be referenced anywhere
+
+- To turn the code block into a source code C file (~.c~), we will
+  add a ~:tangle FILENAME~ statement to the header
+
+- To create the tangled (source code) file from a block, use the keys
+  ~C-c C-v t~ (~org-babel-tangle~) [fn:1]
+
+- To create the tangled (source code) from a file (all blocks), use
+  the keys ~C-c C-v f~ (~org-babel-tangle-file~)
+
+- Since source code files should have comments, we add the header
+  argument ~:comments both~: now, the most recent org block is used as a
+  comment
+
+- The workflow of "tangling" and "weaving"[fn:2] looks like this:
+  #+attr_latex: :width 300px
+  #+caption: A file is woven into a document or tangled into a source file
+  [[../img/3_cweb.png]]
+
+  [[https://orgmode.org/manual/Extracting-Source-Code.html][Learn more about extracting source code from Org files.]]
+
+* Hello World Version 1 (medium)
+#+NAME: hello1
+#+begin_src C :exports both :tangle ../src/hello1.c
+  #include <stdio.h>
+  int main(void)
+  {
+    printf("Hello world\n");
+    return 0;
+  }
+#+end_src
+
+What happens in this code block:
+- A /header/ file (~stdio.h~) is included for input/output
+- A /function/ (~main~) without arguments (~void~) is defined
+- The function returns /integer/ data (~int~)
+- A /string/ (~"..."~) is printed out
+- A /new-line/ is added at the end (~\n~)
+- If successful, the program /returns/ the value ~0~
+
+* Hello World Version 2 (short)
+
+The program could also have been written much simpler:
+
+- In this code block, the function ~main~ is missing the ~void~ argument,
+  and the ~int~ (indicating the type of variable returned - an integer).
+  #+NAME: hello2
+  #+begin_src C :exports both :tangle hello.c :main no
+    #include <stdio.h>
+    main()
+    {
+      printf("Hello world\n");
+    }
+  #+end_src
+
+- It is the job of the /compiler/, ~gcc~, which acts behind the scenes as
+  it were, to resolve issues like "missing ~int~" or "missing ~return~"
+
+- If you /tangle/ the code block and compile the source file ~hello2.c~ in
+  a shell, you get a warning:
+  #+begin_example sh
+    $ gcc hello2.c
+      hello2.c:2:1: warning: return type defaults to 'int' [-Wimplicit-int]
+      main()
+      ^~~~
+  #+end_example
+  
+* Hello World Version 3 (long)
+
+The program could also have been written more complicated:
+- ~int argc~ is an integer, or single number - the number of arguments
+  that were passed to ~main~
+- ~char **argv~ (or ~char *argv[]~) is a /pointer/ that refers to an /array/
+  of characters - a more complicated data structure
+
+#+NAME: hello3
+#+begin_src C :exports both :tangle ../src/hello3.c :comments both
+  #include <stdio.h>
+
+  int main(int argc, char **argv)
+  {
+    printf("hello world\n");
+    return 0;
+  }
+#+end_src
+
+* Compiler workflow
+
+The machine cannot process a C source file like ~hello.c~ without
+help. It must:
+#+name: tab:compile1
+|------------+-------------------------------------------------------------|
+| /Preprocess/ | The preprocessor acts on lines beginning with ~#~             |
+|------------+-------------------------------------------------------------|
+| /Compile/    | The compiler translates instructions into object code       |
+|------------+-------------------------------------------------------------|
+| /Link/       | The linker combines object code and functions like ~printf()~ |
+|------------+-------------------------------------------------------------|
+| /Run/        | The final ~*.exe~ program is a binary (machine) program       |
+|------------+-------------------------------------------------------------|
+| /Debug/      | The debugger controls rule violations along the way         |
+|------------+-------------------------------------------------------------|
+
+I compiled the ~hello.c~ program on a Linux box - the executable is
+called ~hello.out~. The other binary is ~hello.exe~ compiled on
+Windows. Compare the two executables - what do you notice?
+
+[[../img/3_files.png]]
+
+*Question: are these executables portable?*[fn:3]
+
+* Shell execution
+
+- You can also save the code in a C source code file ~hello.c~
+
+- Instead of Emacs, you could use ~notepad~ on Windows or ~nano~ on Linux
+
+- You can compile the source files on the command line terminal or in
+  the Emacs shell. Here is the workflow:
+
+#+name: tab:compile2
+| COMMAND              | ACTION                                     |
+|----------------------+--------------------------------------------|
+| ~C-x C-f hello.c~      | Create C file ~hello.c~                      |
+|                      | Copy block or write code anew in ~hello.c~   |
+| ~C-x C-s~              | Save ~hello.c~                               |
+| ~M-x eshell~           | start a Linux shell in an Emacs buffer     |
+| ~gcc hello.c -o hello~ | compile program and create executable      |
+| ~ls -l hello*~         | list files - you should see ~hello~, ~hello.c~ |
+| ~./hello~              | execute program                            |
+
+- The /eshell/ is an Emacs Lisp simulation of a Linux shell (~bash~)
+
+- On Windows, ~PowerShell~ works as well as the CMD shell:
+  #+attr_latex: :width 300px
+  [[../img/3_powershell.png]]
+
+* Syntax highlighting in Emacs
+
+- Notice the slight syntax highlighting difference to an online REPL
+  ~repl.it~ [fn:4]:
+  #+attr_latex: :width 200px
+  [[../img/3_replit.png]]
+  #+attr_latex: :width 200px
+  [[../img/3_org.png]]
+
+- There is no highlighting standard - you should experiment with
+  different themes[fn:5].
+
+- Display line numbers with ~display-line-numbers-mode~, and highlight
+  lines with ~hl-line-mode~ [fn:6] - you can toggle these, and you can
+  go through the minibuffer history with ~M-x M-p~ and ~M-n~:
+
+  #+attr_latex: :width 200px
+  [[../img/3_pun.png]]
+
+* Comments
+
+Forgetting to terminate a /comment/ may cause the compiler to ignore
+part of your program - but both syntax highlighting and auto-indent
+in the editor will tip you off:
+
+#+begin_src C :exports both :main yes :includes stdio.h :results output
+
+  printf("My "); /* forgot to close this comment ...
+                    printf("cat ");
+                    printf("has ");  /* so it ends here */
+  printf("fleas");
+
+#+end_src
+
+#+RESULTS:
+: My fleas
+
+Let's fix this:
+
+#+begin_src C :exports both :main yes :includes stdio.h
+
+  printf("My "); /* forgot to close this comment */
+  printf("cat ");
+  printf("has no ");  /* so it ends here */
+  printf("fleas");
+
+#+end_src
+
+#+RESULTS:
+: My cat has no fleas
+
+* Let's practice!
+
+Save the [[https://raw.githubusercontent.com/birkenkrahe/cc/piHome/org/2_hello_practice.org][practice file]] as ~1_hello_practice.org~ and complete it:
+
+1) understand and change syntax highlighting
+2) understanding and using comments in C
+
+   #+attr_latex: :width 200px
+   [[../img/3_practice1.gif]]
+
+* Summary
+
+- C programs must be compiled and linked
+- Programs consist of directives, functions, and statements
+- C directives begin with a hash mark (~#~)
+- C statements end with a semicolon (~;~)
+- C functions begin and end with parentheses ~{~ and ~}~
+- C programs should be readable
+- Input and output has to be formatted correctly
+
+* Code summary
+
+| CODE                        | EXPLANATION                         |
+|-----------------------------+-------------------------------------|
+| ~#include~                    | directive to include other programs |
+| ~stdio.h~                     | standard input/output header file   |
+| ~main(int argc, char **argv)~ | main function with two arguments    |
+| ~return~                      | statement (successful completion)   |
+| ~void~                        | empty argument - no value           |
+| ~printf~                      | printing function                   |
+| ~\n~                          | escape character (new-line)         |
+| ~/* ... */~  ~//...~            | comments                            |
+| ~main(void)~                  | main function without argument      |
+
+* Glossary
+
+| CONCEPT      | EXPLANATION                                |
+|--------------+--------------------------------------------|
+| Compiler     | translates source code to object code      |
+| Linker       | translates object code to machine code     |
+| Syntax       | language rules                             |
+| Debugger     | checks syntax                              |
+| Directive    | starts with ~#~, one line only, no delimiter |
+| Preprocessor | processes directives                       |
+| Statement    | command to be executed, e.g. ~return~        |
+| Delimiter    | ends a statement (in C: semicolon - ~;~)     |
+| Function     | a rule to compute something with arguments |
+
+* References
+
+- Collingbourne (2019). The Little Book of C (Rev. 1.2). Dark Neon.
+
+- King (2008). C Programming - A Modern Approach. Norton. [[http://knking.com/books/c2/index.html][Online:
+  knking.com]].
+
+* Footnotes
+
+[fn:1] To tangle only the currently selected block, use
+~org-babel-tangle~ with a prefix argument: ~C-u C-c C-v t~ or ~C-u M-x
+org-bable-tangle~.
+
+[fn:2] In our case, instead of weaving TeX files (~.tex~) to print, we
+weave Markdown files (~.md~), or WORD (~*.odt~) files, or we dispense with
+the weaving altogether because Org-mode files (equivalent of the ~*.w~
+or "web" files) look fine on GitHub.  GitHub.
+
+[fn:3] Executables are the result of compilation for a specific
+computer architecture and OS. The ~.exe~ program was compiled for
+Windows, the ~.out~ program was compiled for Linux. They will only run
+on these OS.
+
+[fn:4][[https://replit.com][replit.com]] is an online Read-Eval-Print-Loop (REPL) that looks
+like a Linux installation (in fact, it is a so-called Docker
+container, an emulated, customized Linux installation). When
+registering (for free) you can use many different programming
+languages - here is a [[https://replit.com/@birkenkrahe/DiscreteDearObjectdatabase#main.c][link to my container]].
+
+[fn:5] You can find different [[https://emacsthemes.com/][themes for GNU Emacs]] here, and install
+them using ~M-x package-list-packages~. To see the differences, enter
+~M-x custom-themes~ and pick another theme now. You can save it
+automatically for future sessions.
+
+[fn:6]If you always want to have line numbers and highlight the line
+under the cursor, put these lines in your ~.emacs~ file:
+ #+attr_latex: :width 100px
+ [[../img/3_lisp.png]]

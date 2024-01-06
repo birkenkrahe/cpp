@@ -1,0 +1,75 @@
+#+TITLE: Convert Meters to Light-Years
+#+AUTHOR: Marcus Birkenkrahe (pledged)
+#+SUBTITLE:Bonus programming assignment 1 - Intro to Programming in C, Spring 2023
+#+STARTUP:overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both
+* Preamble[fn:1]
+
+The numerical value of many physical quantities depends on the unit
+one chooses to measure them. My height is 1.8 m or 180 cm, or 1.90e-16
+light-years.
+
+The use of light-years as a unit of distance is weird but common in
+physics: since 1983, the speed of light is defined to be exactly c =
+299,792,458 m/s, and this serves as a definition of the meter given
+the unit of time.
+
+* Problem
+
+Write a C program that computes three heights in light-years:
+
+| HEIGHT [m] | WHO                |
+|------------+--------------------|
+|        1.8 | Marcus Birkenkrahe |
+|       1.98 | Michael Jordan     |
+|       1.67 | Napoleon Bonaparte |
+
+Not considering leap years, a year is 31,536,000 seconds long.
+
+* Submission
+
+- Add the following meta data as a new line at the top of your
+  Org-mode file: ~#+STARTUP:overview hideblocks indent~
+
+
+- The Org-mode file should also contain the output for the three test
+  cases after the code block:
+  #+begin_example
+  : Marcus Birkenkrahe's height: 1.80 m = ... light-years
+  : Michael Jordan's height:     1.98 m = ... light-years
+  : Napoleon Bonaparte's height: 1.67 m = ... light-years
+  #+end_example
+
+- Submit your solution as an Emacs Org-mode file including the usual
+  header information (title, author, pledged) [[https://lyon.instructure.com/courses/1014/assignments/8275/][in Canvas.]]
+
+* Solution
+
+    - Constants: ~SPEED_OF_LIGHT = 299792458.f~, ~YEAR_IN_SECONDS = 31536000.f~
+    - Variables: h1 = 1.8f, h2 = 1.98f, h3 = 1.67f
+
+    #+name: lightyears
+    #+begin_src C :results output
+      const float  SPEED_OF_LIGHT = 299792458.f;
+      const float  YEAR_IN_SECONDS = 31536000.f;
+      float h1 = 1.8f, h2 = 1.98f, h3 = 1.67f;
+
+      printf("Marcus Birkenkrahe's height:%.2f m = %.2e light-years\n",
+             h1, h1/SPEED_OF_LIGHT / YEAR_IN_SECONDS);
+      printf("Michael Jordan's height:\t%.2f m = %.2e light-years\n",
+             h2, h2/SPEED_OF_LIGHT / YEAR_IN_SECONDS);
+      printf("Napoleon Bonaparte's height:%.2f m = %.2e light-years\n",
+             h3, h3/SPEED_OF_LIGHT / YEAR_IN_SECONDS);
+    #+end_src
+
+    #+RESULTS: lightyears
+    : Marcus Birkenkrahe's height:1.80 m = 1.90e-16 light-years
+    : Michael Jordan's height:  1.98 m = 2.09e-16 light-years
+    : Napoleon Bonaparte's height:1.67 m = 1.77e-16 light-years
+
+* Footnotes
+
+[fn:1]The idea for this program came from a new book that I'm reading
+now, [[https://www.math.columbia.edu/~woit/wordpress/?p=12819]["Quantum Field Theory? A first introduction for mathematicians"
+(Talagrand, 2022)]].

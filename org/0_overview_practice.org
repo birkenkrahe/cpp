@@ -1,0 +1,66 @@
+#+title: Course Overview Practice Assignments
+#+author: Marcus Birkenkrahe
+#+subtitle: Introduction to Programming - Spring 2023 - Lyon College
+#+startup: overview hideblocks indent
+#+options: toc:nil num:nil ^:nil
+* Class Practice: first C program (due Jan 20)
+#+attr_latex: :width 400px
+#+caption: Books aren't the only way to be "literate" in programming!
+[[../img/0_books.png]]
+
+(You can find a [[https://github.com/birkenkrahe/cc/blob/piHome/pdf/first_org_print.pdf][PDF of this exercise]] on GitHub)
+
+Let's set Emacs up, write and run a first "literate" C program!
+
+1) Open the command line terminal with ~CMD~ in the search field
+
+2) At the prompt, type ~gcc --version~
+
+3) Open https://github.com/birkenkrahe/org/ in a browser
+
+4) Navigate to the repository ~emacs~ in GitHub
+
+5) Click on the file name ~.emacs~ to open it
+
+6) Open the ~Raw~ version of this file (there's a button)
+
+7) Right click to ~Save as~ and save file as ~emacs.txt~ in ~/Downloads~
+
+8) Open a terminal by entering ~CMD~ in the Windows search bar
+
+9) Pin the terminal to your taskbar
+
+10) At the prompt, enter ~DIR emacs.txt~ - you should see the file
+
+11) At the prompt, enter ~emacs --version~
+
+12) Rename ~emacs.txt~ to ~.emacs~: ~RENAME emacs.txt .emacs~
+
+13) Start (non-graphical/terminal) Emacs: ~emacs -nw~
+
+14) Inside Emacs, click ~<F10>~ and ~ENTER~ to open a new file
+
+15) At the prompt at the bottom of the screen, enter ~first.org~
+
+16) Enter the following text (replace ~yourname~ with your own name):
+    #+attr_latex: :width 400px
+    [[../img/0_first.png]]
+
+17) Run the program by putting the cursor anywhere on the code block
+    and typing ~CTRL-c CTRL-c~ (or ~C-c C-c~)
+
+18) Tangle the code with ~C-c C-v t~ (or ~M-x org-babel-tangle~)
+    #+attr_latex: :width 400px
+    #+caption: What happens when you tangle or weave a literate program
+    [[../img/0_litprog1.png]]
+
+19) Open a shell (terminal program) with ~ALT-x eshell~
+
+20) At the prompt, enter ~ls -l first*~ - you should see ~first.C~
+
+21) Enter ~gcc first.C -o hello~
+
+22) Enter ~hello~ to run the program.
+
+23) Upload ~first.org~ as your first in-class assignment [[https://lyon.instructure.com/courses/1014/assignments/6463][to Canvas!]]
+
