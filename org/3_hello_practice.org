@@ -1,0 +1,104 @@
+#+TITLE: C Fundamentals practice - hello world
+#+AUTHOR: [yourName] (pledged)
+#+STARTUP: overview hideblocks indent 
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both :comments both
+* READ README
+
+  - This file is a practice file for C fundamentals.
+
+  - You will learn how to:
+    1) understand and change syntax highlighting
+    2) understand and use comments in C
+
+  - Time: approx. 15-30 min.
+
+  - When you're done with a section move the cursor on the section
+    heading and type ~S-<right>~ (or SHIFT+<right-arrow>).
+
+   - When you leave class without having completed the file, save a
+    copy to GDrive as a backup and/or to work on it from home
+
+  - When you've completed the file, upload it to Canvasx
+    
+* TODO Identify yourself
+
+  1) replace ~[yourName]~ in the header of this file by your name
+  2) add ~(pledged)~ next to your name (as in "I obey the honor code")
+  3) Change the "TODO" in the headline to "DONE" (~S-<right>~)
+  4) save the file (~C-x C-s~). 
+
+* TODO Syntax highlighting
+
+  1) Create a code block named ~pgm:hello~ with a program that prints
+     "Hello, world!" on the screen: Use the ~<s~ template to create the
+     code block.
+
+     /Tip: the program itself consists of only one mandatory line!/
+
+  2) Run the program in Emacs to make sure that it works (~C-c C-c~).
+
+  3) Open the themes chooser with ~M-x custom-themes~. In the buffer,
+     uncheck the current theme and check another. Then return here
+     (~C-x b~) to see the effect on your hello world program.
+ 
+  4) If you like a theme especially well, you save it for future
+     sessions if you like by clicking on ~Save Theme Settings~. You get
+     the message ~Custom theme saved for future sessions~ in the
+     minibuffer.
+
+  ----- Put code block here -----
+
+* TODO Fix the program
+
+  The program [[pgm:comment1]] below should print out the sentence "~I love
+  my dog 'Milly'~". But it doesn't. Instead it prints:
+
+  #+begin_example
+   I dog 'Milly'
+  #+end_example
+
+  Something went wrong with the comments. Fix the program and run it
+  again.
+
+  #+name: pgm:comment1 
+  #+begin_src C
+    printf("I "); /****     
+			 printf("love "); 
+			 printf("my ");   ****/     
+    printf("dog"); 
+    printf(" 'Milly'"); //* I really do! */
+  #+end_src
+
+* TODO Comment program
+
+   Write short comments in the program [[pgm:comment2]] to explain what each
+   part of the program does (guess if you don't know for sure) -
+   comment at least whenever you see ~WRITE COMMENT HERE~.
+
+   The program contains so-called /inline/ comments ~//~ and /multi-line/
+   comments: ~/* ... */.~
+
+   #+name: pgm:comment2
+   #+begin_src C
+     #include <stdio.h> // WRITE COMMENT HERE
+
+     int main (void) // WRITE COMMENT HERE
+     {
+       /* 
+	 WRITE COMMENT HERE */
+       int i = 1;
+
+       // WRITE COMMENT HERE
+       printf("%d\n", i);
+
+       return 0;
+     }
+   #+end_src
+  
+* TODO Upload completed file to Canvas
+
+1) Open the [[https://lyon.instructure.com/courses/1014/assignments/6994][Class practice assignment]] on Canvas
+
+2) Upload this Org-mode file
+
+3) Submit assignment

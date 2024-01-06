@@ -1,0 +1,128 @@
+#+title: C practice - while loops
+#+AUTHOR: [YOURNAME]
+#+HONOR:
+#+STARTUP: overview hideblocks indent
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
+* README
+
+- Practice workbook for ~while~ loops in C.
+
+* TODO Identify yourself
+
+- replace the placeholder ~[yourName]~ in the header of this file by
+  your name
+
+- Add ~pledged~ in the ~#+HONOR:~ line
+
+- Save the file (~C-x C-s~).
+
+* Simple example
+
+Insert a print trace statement in the ~while~ loop to print the values
+of ~i~ and ~n~, then run the program for different values of ~n~.
+
+#+name: trace
+#+begin_src C
+  int i = 1, n = ???;
+  while ( i < n ) {
+    i = i * 2;
+    ...
+      }
+#+end_src
+
+* Countdown example
+
+- The program below counts down from ~i=10~ and prints both the counter
+  variable and the end value ~n=10~.
+
+- Fix the condition and add a compound operator ~i--~ for counting down
+
+- Change the operator to ~--i~ and check if there's a difference
+
+  #+begin_src C :tangle counting.c
+    int i = 10;
+    while ( ... ) {
+      printf("T minus %d and counting\n", i);
+      ...
+        }
+    printf("i = %d\n", i);
+  #+end_src
+
+- Create a more concise version of the code by pulling the counting
+  statement into the ~printf~ statement. Change the compound operator.
+
+  #+begin_src C :tangle concise.c
+    int i = 10;
+    while ( ... ) {
+      printf("T minus %d and counting\n", ...);
+     }
+    printf("i = %d\n", i);
+  #+end_src
+
+* Infinite loops
+
+- Let's produce an infinite loop!
+
+#+name: inf
+#+begin_src C :tangle inf.c
+  while (1)
+    puts("Still running...\n");
+#+end_src
+
+- Tangle BUT DO NOT RUN the code in [[inf]] (~C-u C-c C-v t~)
+- compile and run it on the command line:
+  #+begin_example sh
+    gcc inf.c -Wall -o inf
+  #+end_example
+- Stop the crazy process by killing the ~*eshell*~ buffer (~C-x k~)
+
+* Printing table of square
+
+1) Declare integer variables ~i~ and ~n~
+2) Scan ~n~ from an input file ~square_input~
+3) Initialize ~i~ to ~1~
+4) Write a ~while~ statement that
+   - prints ~i~ and ~i * i~ on 10 spaces each
+   - increments ~i~ by one
+5) Run the program.
+#+begin_src C :tangle square.c
+  /* declarations of integer variables i and n*/
+  ...
+
+  /* get input n (end of loop) */
+  puts("Enter number of rows: ");
+  scanf("%d", &n); printf("%d\n", n);
+
+  /* initialize i and loop from i to n */
+  ...
+  while ( ... ) {
+    printf(..., i, i * i);
+    ...
+   }
+#+end_src
+
+* Summing numbers
+
+- The program [[sum]] below is only missing the ~while~ statement.
+
+  1) Use ~n !=0~ as the controlling expression
+  2) Inside the loop,
+     - sum um with ~sum += n~
+     - scan the next number ~n~
+  3) Run the code block with an input file that contains integers
+     ending in 0, e.g.  ~5 10 15 0~. When the last element of the list
+     is reached, the loop ends.
+  4) Tangle the file, compile and run it on the CMD line
+
+  #+name: sum
+  #+begin_src C :cmdline < sum_input :tangle sum.c
+    int n, sum = 0;
+
+    printf("Enter integers (0 to terminate).\n");
+    scanf("%d", &n);
+    _______________ // sum up
+    _______________ // scan n (next number)
+    }
+
+    printf("The sum is %d\n", sum);
+  #+end_src

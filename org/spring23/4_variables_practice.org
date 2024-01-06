@@ -1,0 +1,173 @@
+#+TITLE: C FUNDAMENTALS PRACTICE - VARIABLES
+#+AUTHOR: [yourName] (pledged)
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both :comments both
+* READ README
+
+  - This file is a practice file for C fundamentals.
+
+  - When you're done with a section move the cursor on the section
+    heading and type ~S-<right>~ (or SHIFT+<right-arrow>).
+
+  - When you leave class without having completed the file, save a
+    copy to GDrive as a backup and/or to work on it from home
+
+  - When you've completed the file, upload it to Canvas
+    
+* TODO Identify yourself
+
+  - replace ~[yourName]~ in the header of this file by your name
+  - add ~(pledged)~ next to your name (as in "I obey the honor code")
+  - Change the "TODO" in the headline to "DONE" (~S-<right>~)
+  - save the file (~C-x C-s~). 
+
+* TODO Variable types and declarations
+
+  1) Create a named C code block named [[pgm:declarations]] below.
+
+  2) Declare two /floating-point/ variables ~fahrenheit~ and ~celsius~.
+
+  3) Use two separate statements.
+
+  4) Put ~:results silent~ in the code block header[fn:1].
+
+  5) Run the code block (~C-c C-c~).
+
+  ----- PUT CODE BLOCK BELOW THIS LINE -----
+
+* TODO Fix the program
+
+  1) A couple of things are wrong in the code block [[pgm:declare1]].
+
+  2) You can check that yourself by running it (~C-c C-c~) and reading
+     the compiler messages that open in another buffer. Type ~C-x 1~ to
+     delete the message buffer.
+
+  3) Find and fix the errors, and run the code block to make sure.
+
+  #+name: pgm:declare1
+  #+begin_src C :results silent
+    freezing_point = 32.0f
+      float freezing_point;
+   #+end_src
+
+* TODO Variable assignments
+
+  1) Create a code block [[pgm:assignments]] below.
+
+  2) Declare *and* initialize two /floating-point/ variables, ~freezing~ and
+     ~factor~, with the values ~32~ and ~5/9~, respectively.
+
+  3) Declare and initialize these variables in *one* statement only.
+
+  ----- PUT CODE BLOCK BELOW THIS LINE -----
+
+* TODO Variable computations
+
+  1) The code from [[pgm:declarations]] and from [[pgm:assignments]] has
+     been copied into the code block [[pgm:conversion]] below[fn:2].
+
+  2) Complete [[pgm:conversion]] with two statements:
+     - assign the temperature 80 to ~fahrenheit~
+     - compute ~celsius~ using [[pgm:formula]]
+
+  3) Run the program to make sure that the answer is correct for 80
+     degrees Fahrenheit (equivalent to 26.7 degrees Celsius).
+
+  #+name: pgm:formula
+  #+begin_src C
+    celsius = (fahrenheit - freezing) * factor
+  #+end_src
+       
+  #+name: pgm:conversion
+  #+begin_src C :noweb yes
+    <<pgm:declarations>>  // declares fahrenheit and celsius
+    <<pgm:assignments>> // assigns values to freezing and factor
+    ...
+    ...
+    printf("Fahrenheit: %g\nCelsius equivalent: %.1f\n", 
+	   fahrenheit, celsius);
+  #+end_src
+
+* TODO Fix the program
+
+  1) The program [[pgm:assign_err]] declares and initializes the variable
+     ~i~ with the value ~0~. After assigning ~1~ to ~i~, it should print out ~1~
+     but it prints ~0~ instead.
+     
+  2) Fix the error and then run the block with ~C-c C-c~ to check.
+
+  #+name: pgm:assign_err
+  #+begin_src C
+    int i = 0;
+    i == 1;
+    printf("%d\n", i);
+  #+end_src
+
+  #+RESULTS: assign
+  : 0
+
+* TODO Formatting printout
+
+  1) Define and initialize three variables in a code block named
+     [[pgm:format]]:
+     - an integer variable ~foo~ with value 100
+     - a floating-point variable ~bar~ with value 100
+     - a character variable ~baz~ with value A
+
+  2) Print the three variables so that the output looks like shown below.
+
+  3) Use 
+     - ~puts~ for the headline "Three variables",
+     - ~printf~ to print ~foo~ and ~bar~, and
+     - ~putchar~ to print ~baz~.
+
+     /Tip:/ The final program [[pgm:format]] has 7 lines.
+
+     Output:
+     #+begin_example 
+     Three variables:
+     foo = 100
+     bar = 100.01
+     baz = A
+     #+end_example
+
+  ----- PUT CODE BLOCK BELOW THIS LINE -----
+  
+* TODO Fix the program
+
+  The program [[pgm:format_error]] should print out
+
+  #+begin_example
+    Speed of light (m/s): c = 299792458
+    Euler number: e = 2.7183
+  #+end_example
+
+  But instead it prints out this:
+
+  #+begin_example
+    Speed of light (m/s): c = 14.985029
+    Euler number: e = 0
+  #+end_example
+  
+  Fix the program to get the right output!
+
+  #+name: pgm:format_error
+  #+begin_src C
+    int c = 299792458;
+    float e = 2.718282f;
+
+    printf("Speed of light (m/s): c = %f\n", c);
+    printf("Euler number: e = %d\n", e);
+  #+end_src
+  
+* Footnotes
+
+[fn:1]With ~:results silent~ in the header, the Org-mode code block will
+be executed, but the results will not be printed in the buffer, only
+in the minibuffer. If there is no printout, the minibuffer shows ~""~
+(empty).
+
+[fn:2]The header argument ~:noweb~ enables referencing to other
+code. Setting it to ~yes~ means that references are expanded when
+evaluating, tangling, or exporting. You can check that by tangling the
+source code and looking at the result ([[https://orgmode.org/manual/Noweb-Reference-Syntax.html][more info]]).

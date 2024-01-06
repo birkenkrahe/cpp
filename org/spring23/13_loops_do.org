@@ -1,0 +1,89 @@
+#+title: C practice - do loops
+#+AUTHOR: [YOURNAME]
+#+HONOR: 
+#+STARTUP: overview hideblocks indent
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
+* README
+- Practice workbook for ~do...while~ loops in C.
+* TODO Identify yourself
+
+- replace the placeholder ~[yourName]~ in the header of this file by
+  your name
+
+- Add ~pledged~ in the ~#+HONOR:~ line
+
+- Save the file (~C-x C-s~).  
+  
+* TODO Counting down
+
+1) Rewrite the counting program with a ~do~ instead of a ~while~ loop. The
+   output should look like this:
+
+   #+begin_example
+  T minus 10 and counting
+  T minus 9 and counting
+  T minus 8 and counting
+  T minus 7 and counting
+  T minus 6 and counting
+  T minus 5 and counting
+  T minus 4 and counting
+  T minus 3 and counting
+  T minus 2 and counting
+  T minus 1 and counting
+   #+end_example
+
+2) Initialize the loopvariable ~i~ to 10, and use the /postfix compound
+   decrement/ operator ~i--~.
+
+3) Begin by writing the pseudocode for the ~do...while~ loop.
+
+   ----- PSEUDOCODE -----
+   #+name: pseudo:count
+   #+begin_example C
+
+   #+end_example
+
+   ----- PUT THE CODE HERE -----
+
+   #+begin_src C
+
+   #+end_src
+
+* TODO Limits and ~top~
+
+1) What if ~i >= 2147483647~?
+
+2) Run the loop for ~i = 2147483647~, for ~i = 2147483648~ and for ~i =
+   2147483649~.
+
+3) Instead of printing each number, define a counter ~int count=0~ and
+   count up while ~i~ counts down, then print ~count~ *after* the loop to see
+   how many times the loop was run.
+
+* TODO Summing numbers
+
+1) Rewrite the summing numbers program with a ~do~ instead of a ~while~
+   loop. Try to get your output to look exactly like this:
+
+   #+name: outSum
+   #+begin_example
+     : Enter integers (0 to terminate): 18 23 71 5 1 0
+     : The sum is 118
+   #+end_example
+
+2) How does the pseudocode look like?
+
+   ----- PSEUDOCODE -----
+   #+name: pseudo:sum_solution C
+   #+begin_example C
+
+   #+end_example
+
+   ----- PUT THE CODE HERE -----
+
+   #+begin_src C :cmdline < input
+          
+   #+end_src
+
+
+

@@ -1,0 +1,247 @@
+#+TITLE:C FUNDAMENTALS - CONSTANTS - CODE ALONG WITH LECTURE
+#+AUTHOR: Marcus Birkenkrahe (pledged)
+#+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2023
+#+DATE: Time-stamp: <2023-02-18 14:05:42 Birkenkrahe>
+#+STARTUP: overview hideblocks indent
+#+OPTIONS: toc:1 ^:nil
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output
+* README
+
+This file contains code blocks and small exercises to code along
+during a lecture. Upload it to Canvas once you've completed it. If you
+missed a class session, you can work through this file on your own and
+submit it within a week for full points.
+
+* DONE Identify yourself
+
+  - replace ~[yourName]~ in the header of this file by your name
+  - add ~(pledged)~ next to your name (as in "I obey the honor code")
+  - Change the "TODO" in the headline to "DONE" (~S-<right>~)
+  - save the file (~C-x C-s~). 
+* DONE Macro definition with ~#define~
+
+- This declarative constant definition for the pre-processor blindly
+  substitutes the defined value everywhere in the program.
+  #+begin_src C :main yes :includes <stdio.h>
+    #define PI 3.14159
+
+    printf("PI is %f\n",PI);
+  #+end_src
+
+  #+RESULTS:
+  : PI is 3.141590
+
+- Can you see what mistake I made in the next code block? Fix it and
+  run the block.
+  #+begin_example C
+    #define PI = 3.141593   // no assignment operator!
+    printf("PI is %f\n", PI);
+  #+end_example
+
+- Can you see what went wrong in the next code block? If you don't
+  see it at once, check the compiler error output! Fix it and run the block!
+  #+begin_example C
+    #define PI 3.141593;  // no C command! no ; at end
+    printf("PI is %f\n", PI);
+  #+end_example
+
+- The next program demonstrates how a constant declared with ~#define~
+  can be redefined later with a second ~#define~ declaration.
+  #+begin_src C :exports both :results output :tangle ex.c
+    #define WERT 1.0
+    printf("Constant is %.2f\n", WERT);
+
+    #define WERT 2.0
+    printf("Constant is %.2f\n", WERT);
+  #+end_src
+
+  #+RESULTS:
+  : Constant is 1.00
+  : Constant is 2.00
+
+* Library definitions with ~#include~
+
+- include ~math.h~ inside the code block and add the argument ~M_PI~ in
+  the ~printf~ statements:
+  #+begin_src C
+    #include <stdio.h>
+    ...
+    int main(void) {
+      printf("PI is %f\n",...);
+      printf("PI is %.16f\n",...);
+      return 0;
+    }
+  #+end_src
+
+- Include the math header file ~math.h~ as a code block header argument:
+  #+begin_src C :includes <stdio.h>
+    printf("PI is %f\n",M_PI);
+    printf("PI is %.16f\n",M_PI);
+  #+end_src
+
+- Where is ~math.h~ in Windows? Where in MacOS? Find the file, open and
+  look at it in Emacs (the file is read-only).
+
+- Using the information you find in ~math.h~ on your computer, define
+  the Euler number ~e~ in a ~#define~ statement and print ~e~ with 16-digit
+  precision.
+  #+begin_src C
+    #include <math.h>
+    #define ...
+    printf(..., e);
+  #+end_src
+
+* Type definition with ~const~
+
+- Add the code for ~TAXRATE_CONST~ as a ~const~ type: 
+  #+begin_src C
+    ...
+    double revenue = 200.0f;
+    double tax;
+
+    tax = revenue * ...;
+
+    printf("Tax on revenue %.2f is %.2f", revenue, tax);
+  #+end_src
+
+- What happens if you try to redefine the constant ~TAXRATE_CONST~ after
+  the type declaration? Modify the previous code block accordingly and
+  run it.
+  #+begin_src C :results silent
+    const double TAXRATE_CONST = 0.175f;
+    double revenue = 200.0f;
+    double tax;
+
+    ...
+    tax = revenue * TAXRATE_CONST;
+
+    printf("Tax on revenue %.2f is %.2f", revenue, tax);
+  #+end_src
+
+* Reading input
+
+- Create a file ~input~ with ~C-x C-f~ and put the number ~5~ into it.
+
+- Feed the content of ~input~ to C using ~scanf~ and store it in ~i~:
+  #+begin_src C :tangle iscan.c :cmdline < ../data/input
+
+  #+end_src
+
+- *Tangle* the code above as ~scanf.c~ (add ~:tangle scan.c~ in the code
+  block header), and run the file on the command line:
+  #+begin_example sh
+  gcc scan.c -o iscan
+  iscan < input
+  #+end_example
+
+* Naming conventions
+
+- Use upper case letters for CONSTANTS
+  #+begin_src C :results silent
+
+  #+end_src
+
+- Use lower case letters for variables
+  #+begin_src C :results silent
+
+  #+end_src
+
+- Use lower case letters for function names
+  #+begin_example C
+
+  #+end_example
+
+- If names consist of more than one word, separate with ~_~ or
+  insert capital letters:
+  #+begin_example C
+
+  #+end_example
+
+* Naming rules
+
+- Reserved words in C:
+  #+name: tab:keywords
+  | auto       | enum    | restrict | unsigned | break  | extern   |
+  | return     | void    | case     | float    | short  | volatile |
+  | char       | for     | signed   | while    | const  | goto     |
+  | sizeof     | _Bool   | continue | if       | static | _Complex |
+  | _Imaginary | default | union    | struct   | do     | int      |
+  | switch     | double  | long     | typedef  | else   | register |
+
+- Name some illegal identifiers and see what the compiler says!
+  #+begin_src C :results silent
+
+  #+end_src
+
+* Program Layout
+
+- You can think of a program statement as a series of tokens[fn:6]:
+  #+begin_example
+   printf ( "Height: %d\n"   ,   height )  ;
+     1      2        3         2     5    6  7
+  #+end_example
+  #+name: tab:tokens
+  |   | TOKEN          | MEANING                              |
+  |---+----------------+--------------------------------------|
+  | 1 | identifier     | protected C keyword  (function)      |
+  | 2 | punctuation    | function call begins                 |
+  | 3 | string literal | text + formatting + escape character |
+  | 4 | punctuation    | separator                            |
+  | 5 | identifier     | integer variable                     |
+  | 6 | punctuation    | function call ends                   |
+  | 7 | punctuation    | statement closure                    |
+
+- As an example, here is a version of ~dweight.c~ that works just as
+  well, on one line, with almost all whitespace deleted. Only in one
+  place, the space is needed. Can you see where?
+  #+begin_src C
+    int height,length,width,volume,weight;height=8;length=12;width=10;volume=height*length*width;weight=(volume+165)/166;printf("Dimensions: %dx%dx%d\n",length,width,height);printf("Volume (cubic inches): %d\n",volume);printf("Dimensional weight (pounds): %d\n",weight);
+  #+end_src
+
+- Another exception are the preprocessor directives (beginning with
+  ~#~): they need to be on a line of their own:
+  #+begin_src C :results silent
+
+  #+end_src
+
+- You can divide statements over any number of lines as long as you
+  don't divide keywords or tokens. This works:
+  #+begin_src C
+    int
+    height
+    = 5
+      ;
+    printf
+    (
+     "height %d\n" ,
+     height)
+    ;
+  #+end_src
+- But this does not:
+  #+begin_example C
+    int
+    hei ght
+    = 5
+      ;
+    print f
+    (
+     "height
+     %d\n" ,
+     height)
+      ;
+  #+end_example
+  1) The variable ~height~ is not declared
+  2) The ~printf~ function is not recognized
+  3) The string literal is not complete
+
+- Practice: improve the layout of this program then run it:
+  #+begin_src C :tangle src/layout.c :results output
+    int var1=1;int var2;var2=
+                          var1
+                          ,*100;
+    printf (      "Variable1=%d,variable2=%d\n",
+                  var1,
+
+                  var2
+                  );
+  #+end_src

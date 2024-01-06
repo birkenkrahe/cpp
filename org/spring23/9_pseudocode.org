@@ -1,0 +1,110 @@
+#+TITLE: PSEUDOCODE
+#+AUTHOR:Marcus Birkenkrahe
+#+SUBTITLE:CSC100 Introduction to programming in C/C++ (Spring 2023)
+#+STARTUP: overview hideblocks indent inlineimages
+#+OPTIONS: toc:1 ^:nil
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :noweb yes :tangle yes
+* README
+
+- In this section of the course, we go beyond simple statements and
+  turn to program flow and evaluation of logical conditions
+
+- This section follows chapter 3 in Davenport/Vine (2015) and
+  chapters 4 and 5 in King (2008)
+
+- Practice workbooks, input files and PDF solution files in GitHub
+
+* Overview
+
+- *Pseudocode* is a method to write down/analyze an /algorithm/ or a
+  /heuristic/ without having to bother with /syntax/ (like ~&i~ vs. ~i~)
+
+- The prefix pseudo- comes from Ancient Greek [[https://en.wiktionary.org/wiki/%CF%88%CE%B5%CF%85%CE%B4%CE%AE%CF%82][ψευδής]], meaning
+  "lying", "false" or "untrue", as in "pseudoscience" or "pseudonym"
+
+- Pseudocode does not need to compile or run so it is closer to a
+  heuristic than to an exact algorithm.
+
+- Code however needs to be exact and is always algorithmic.
+
+- The answer is: always start with pseudocode before coding, and when
+  you're stuck (not because of syntax ignorance) go back to pseudocode
+
+* Algorithms vs. heuristic
+
+A flow diagram example that also illustrates when one might want to
+use an exact algorithm vs. a heuristic.
+#+attr_latex: :width 400px
+#+caption: Source: Harder, Feb 2023 (towardsdatascience.com)
+[[../img/9_heuristics_algorithm.png]]
+
+* Example
+
+- Example: player problem statement in [[problem1]] below:
+  #+name: problem1
+  #+begin_quote
+  "Drink a health potion when a character's health is 100 or
+  less. If health reaches 100 or more, resume battle."
+  #+end_quote
+- Given the problem [[problem1]], this is the pseudocode [[pseudocode1 ]][fn:1]:
+  #+name: pseudocode1
+  #+begin_example C
+  if health is less than 100
+    Drink health potion
+  else
+    Resume battle
+  end if
+  #+end_example
+- The code in [[pseudocode1]] would not compile as a C program (you can
+  test yourself: which mistakes would the compiler find?[fn:2])
+
+- The conceptual "trick" with generating pseudocode from a prose
+  description is to identify the *logical condition* so that you can
+  perform a comparison (= apply a *conditional operator*)
+
+- The pseudocode [[pseudocode1]] leads to the condition ~health < 100~:
+  #+name: pseudocode11
+  #+begin_example C
+  if health < 100
+    Drink health potion
+  else
+    Resume battle
+  end if
+  #+end_example
+- Notice that you could also use another operator: ~>=~ This operator
+  would have had the same effect but it is not what you were supposed
+  to code. How would the pseudocode change with ~health >= 100~?
+  #+name: pseudocode12
+  #+begin_example C
+  if health >= 100
+    Resume battle
+  else
+    Drink health potion
+  end if
+  #+end_example
+- *Rule:* when making models (via *abstraction*), always stay as close to
+  the *problem* description as possible - in terms of *language*, *logic*,
+  *tone*, etc  If you're unsure, *ask* (your client/professor/colleague).
+
+- In the pseudocode example above, what relates to 1) language, 2)
+  logic, and 3) tone? And 4) are there other specifications?[fn:3]
+
+* Let's practice!
+
+Get the practice file from GitHub: ~9_pseudocode_practice.org~ as
+~bit.ly/pseudo_practice~
+
+* Footnotes
+
+[fn:1]In Org mode, you can use the language as an example header
+argument to enable syntax highlighting. For pseudocode, this will of
+course not work perfectly, since most syntax elements are not in C.
+
+[fn:2]Undeclared variable ~health~, missing closure semi-colons after
+the statements, functions ~Drink~ and ~Resume~ not known, and more.
+
+[fn:3] 1) Language: words used like ~health~, ~drink~ or ~resume~. 2) Logic:
+[[https://ifttt.com/][IFTTT]] (If This Then That). 3) Tone: game language 'drink health
+potion' as function ~drink_health_potion~. 4) The indentation and the
+use of ~if else end if~ instead of, e.g. "WHEN health < 100 THEN drink
+health potion OTHERWISE resume battle".

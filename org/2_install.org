@@ -1,0 +1,551 @@
+#+TITLE:Installation
+#+AUTHOR:Marcus Birkenkrahe
+#+SUBTITLE:CSC100 Introduction to programming in C/C++
+#+STARTUP:overview indent hideblocks inlineimages
+* What are you going to learn?
+
+- Why we don't just get coding
+- Setting up infrastructure
+- Install a C compiler
+- Install the Emacs editor and IDE
+- Customize the IDE
+- Understand and learn to use GitHub
+- Summary of concepts/code
+- What's next
+
+* Why we don't just get coding
+
+There are two BIG reasons - one is philosophical, the other is
+technical.
+#+caption: Automation by xkcd.
+#+attr_latex: :width 300px
+[[../img/2_automation.png]]
+
+* Philosophy
+
+#+begin_quote
+"Understanding underlying technologies helps you develop a sense of
+what can go wrong. Knowing just high-level tools makes it easy to
+ask the wrong questions. It's worth learning to use a hammer before
+graduating to a nail gun. Learning underlying systems and tools
+gives you the power to build new tools, which is important because
+there will always be a need for tool builders, even if tool users
+are more common. Learning about computers so that the behavior of
+programs isn't a mystery enables you to craft better code."
+(Steinhart, 2019)
+#+end_quote
+
+- Understanding technologies makes them safer
+- Knowing low-level tools helps asking the right questions
+- Learning low-level tools helps you build new tools
+- Learning about computers enables you to craft better code
+
+* Technology
+
+The other reason has to do with C itself:
+
+| TASK                                        | PROGRAM  | EXAMPLE   |
+|---------------------------------------------+----------+-----------|
+| C source code is written and edited         | editor   | [[https://www.gnu.org/software/emacs/][GNU Emacs]] |
+| C source code is compiled, linked, debugged | compiler | [[https://gcc.gnu.org/][GNU CC]]    |
+| C object code is run                        | shell    | [[https://www.gnu.org/software/bash/][GNU bash]]  |
+
+#+attr_latex: :width 400px
+#+caption: C programming workflow (BPMN model)
+[[../img/2_workflow.png]]
+
+There are different routes to get C running on your computer,
+depending on your operating system (Linux, MacOS or Windows)[fn:1].
+
+The problem with most IDEs is that they're clunky. They take some
+time getting used to, have many functions that you'll never need,
+and any time spent on learning the IDE is wasted unless you keep
+working with it. IDEs do not teach you transferable skills.
+
+* Infrastructure Setup
+
+The sections below cover most of the infrastructure used in my
+courses. They are also available as [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-to-install-gcc--a-c-compiler-under-windows-and-macos][FAQs on GitHub]].
+
+If you look at this at GitHub, look at ~*.org~ files for syntax
+highlighting. The Markdown (~*.md~) files do not have it (instead they
+have inline links, which the Org-files don't have).
+
+| PLATFORM | SOFTWARE | PURPOSE  |
+|----------+----------+----------|
+| GitHub   | Git      | Hosting  |
+| MinGW    | GCC      | Compiler |
+| GNU      | Emacs    | Editor   |
+
+* GitHub - What is it?
+
+- Largest software development platform ([[https://github.blog/2023-01-25-100-million-developers-and-counting/][2023: 100 mio developers]])
+- Built around the version control system Git by Linus Torvalds
+- Bought by Microsoft in 2018
+- AI support (e.g. [[https://copilot.github.com/][GitHub Copilot]])
+
+  Watch: "[[https://youtu.be/w3jLJU7DT5E][What is GitHub?]]" (GitHub, 2016)
+
+  #+attr_latex: :width 300px
+  #+caption: Gif: "So long binder of requirements" Source: GitHub
+  [[../img/2_github.gif]]
+
+* GitHub - Why are we using it?
+
+/Image: Org-mode file in GitHub/
+#+attr_latex: :width 300px
+#+caption: Screenshot of an Org-file rendered in GitHub
+[[../img/2_org.png]]
+
+- It's free
+- To host course materials
+- Upload assignments (esp. Org-files)
+- Discussion
+- Wiki for collaboration
+- Complements the learning management system[fn:2]
+
+* GitHub - What will you have to do?
+
+- Optional: [[https://github.com][Sign up with GitHub]] - use Lyon Email
+
+- Pick an available username *using your own first and last name*,
+  e.g. ~MarcusBirkenkrahe~, or ~DonaldTrump~
+
+- Optional: [[https://docs.github.com/en/get-started/quickstart/hello-world][Complete the "Hello World" exercise]] ([[https://github.com/birkenkrahe/org/blob/master/FAQ.md#completing-the-github-hello-world-exercise][FAQ]])
+
+  #+begin_quote
+  If you do have a GitHub account already, do the exercise anyway
+  using your existing account (it takes 10 min)!
+  #+end_quote
+
+* GitHub - What else can you do?
+
+- You can [[https://docs.github.com/en/get-started/quickstart/fork-a-repo][fork]] the [[https://docs.github.com/en/get-started/quickstart/fork-a-repo][cc]] repository
+- You can [[https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/viewing-your-subscriptions][watch]] the [[https://docs.github.com/en/get-started/quickstart/fork-a-repo][cc]] repository - and set [[https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications][Notifications]] to
+  ~Participating and @mentions~ so that you see my comments (see
+  image below).
+  #+attr_latex: :width 300px
+  #+caption: GitHub notifications setting
+  [[../img/2_watch.png]]
+  /Image: Notifications settings when watching a repository/
+
+  - You can [[https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-repository][submit issues]] from the repository (e.g. if you notice
+    mistakes or if you want extra information, or to share a link)
+  - You can participate in [[https://github.com/birkenkrahe/cc100/discussions][discussions]] (sometimes I will make you)
+  - You can add to the [[https://github.com/birkenkrahe/cc100/wiki][wiki]] (e.g. comments and links to interesting
+    resources)
+  - You can install the [[https://github.com/mobile][mobile app]] on your smartphone[fn:3]
+  - You can use it as a platform for [[https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects][projects]] or [[https://github.com/features/codespaces][coding]]
+  - You can download the [[https://desktop.github.com/][desktop client]] to manage repos on your PC
+    (see image below).
+    #+caption: GitHub desktop client commit
+    #+attr_latex: :width 300px
+    [[../img/2_gh.png]]
+
+* Install GNU CC
+
+- Compiler & linker are usually bundled
+- [[https://gcc.gnu.org/][GCC]] ("GNU cc") is a popular C/C++ compiler
+- [[https://www.mingw-w64.org/][MinGW]] ("Minimalist GNU for Windows") is a port of ~GNU gcc~ to
+  Windows
+  #+Caption: Shameless plug for the Free Software Foundation - [[https://www.fsf.org/][fsf.org]]
+  #+attr_latex: :width 300px
+  [[../img/2_fsf.png]]
+
+* Install GCC on Windows
+
+1)  Download the ~64bit~ installer from ~strawberryperl.com~:
+   ~strawberry-perl-5.32.1.1-64bit.msi.~
+
+2) Run the installer - accept all presets. This program will
+   automatically update the ~PATH~ to ~gcc~.
+
+3) Open a command line terminal and check that installation is
+   complete with ~gcc --version~
+   
+* Install Clang on MacOS
+
+Apple no longer allows GNU tools - instead, you can install the free
+[[https://clang.llvm.org/][Clang]] compiler as part of the [[https://developer.apple.com/documentation/xcode][Xcode]] development suite.
+
+- Check if you already have a C compiler: open a terminal (search
+  for ~terminal~ app) and enter ~cc -v~.
+- If no compiler is found, download it by entering ~xcode-select
+  --install~
+- Test it by typing ~cc -v~.
+  #+attr_latex: :width 300px
+  #+caption: Checking Clang compiler exists on a Mac
+  [[../img/2_cc.png]]
+
+* Install GCC on Linux
+
+Under Linux, the installation of a binary (executable) for that
+distribution and computer architecture, is done with a simple command
+from the command line, usually using the package manager, e.g. ~apt~ for
+Ubuntu 20.04: ~sudo apt install build-essential~. This will install ~gcc~,
+~g++~, and the powerful [[https://www.gnu.org/software/make/][GNU ~make~ program]].
+
+* Emacs for C programming
+
+With the Emacs editor + Org-mode, you can almost program
+interactively (live code) with C - akin to Python or R. Org-mode
+inside Emacs works like a REPL (Read-Evaluate-Print-Loop).
+
+A resource to look at, and use (for free, at first) that uses the
+REPL concept, is [[https://repl.it][repl.it]]. See image below for the "hello world"
+program in C.
+#+attr_latex: :width 350px
+#+caption: Replit.com C template
+[[../img/2_replit.png]]
+
+* What is Emacs ?
+
+| PROPERTY                     | WHAT THIS MEANS                                      |
+|------------------------------+------------------------------------------------------|
+| Extensible editor            | You can adapt it to your needs[fn:4]                 |
+| Written in C with Emacs Lisp | It's fast and smart (via Lisp[fn:5])                 |
+| Ancient software             | Written 1976, released in 1985[fn:6]                 |
+| Ca. 1.5M lines of code       | By comparison: Windows ca. 50M; Linux kernel ca. 30M |
+
+#+attr_latex: :width 400px
+#+caption: Emacs 27.1 showing Org, Magit and Dired
+[[../img/2_panels.png]]
+
+Challenge: which Emacs properties can you deduce from this image
+alone?[fn:7]
+
+* How do you use Emacs?
+
+See [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#which-editor-and-ide-do-you-use][FAQ]]. I use Emacs for most of my computing needs:
+
+- Writing (teaching, research)
+- Planning (Calendar, ToDo)
+- Organizing (Files)
+
+See also the article "[[https://opensource.com/article/20/3/getting-started-emacs][Getting started with Emacs"]] (Kenlon, 2020), and
+the video "[[https://youtu.be/48JlgiBpw_I][The Absolute Beginner's Guide to Emacs]]" (System
+Crafters, 2020) with [[https://github.com/birkenkrahe/org/blob/master/emacs/emacs_beginner.org][my notes]].
+#+attr_latex: :width 300px
+#+caption: DESY APE research group (1994). Can you find me?
+[[../img/2_desy.jpg]]
+
+Other uses:
+- As [[https://youtu.be/Wcjmx_U5alY][window manager]] (only under Linux)
+- As [[http://www.mycpu.org/read-email-in-emacs/][email client]]
+- Remote access (with [[https://www.gnu.org/software/tramp/][GNU Tramp]])
+
+* How will we use Emacs?
+#+attr_latex: :width 300px
+#+caption: Neal Stephenson
+[[../img/2_neal.jpg]]
+
+We'll use it as:
+
+- EDITOR to write source code,
+- NOTEBOOK to write literate programs, and
+- SHELL to build and run code.
+
+#+begin_quote
+"Emacs outshines all other editing software in approximately the same
+way that the noonday sun does the stars. It is not just bigger and
+brighter; it simply makes everything else vanish." – Neal Stephenson,
+In the Beginning was the Command Line (1998)[fn:8]
+#+end_quote
+
+We will not use Emacs as a substitute for religion even though
+there is a [[https://www.emacswiki.org/emacs/ChurchOfEmacs]["Church of Emacs"]] (EmacsWiki)! Huh?! What?!
+#+attr_latex: :width 300px
+#+caption: The real Church: Notre Dame de Paris. Source: Wikipedia.
+[[../img/2_notredame.png]]
+
+* Does it really have to be Emacs?
+#+attr_html: :width 200px
+[[../img/2_carryon.jpg]]
+
+You'll handle it. Keep calm and carry on coding.
+
+If you look around, you'll see a lot of discussion on different source
+code editors and IDEs. Currently [[https://code.visualstudio.com/][Microsoft's Visual Studio (VS) Code]]
+seems to be the most popular contender. However, as one developer
+said:
+
+#+begin_quote
+"One thing that cannot be replaced by any extension in VS code, VIM or
+any other editor: Emacs' Org mode. Org mode is for sure one of the
+most amazing pieces of software I have ever seen or worked with. It
+does things that no other text-based word processor can do, even if
+you are writing complex scientific reports. VS code has an extension
+which brings less than 5% of Org mode functionality, tops and that is
+mostly the code highlighting." ([[https://hadi.timachi.com/2019/12/07/Why_I_switched_from_VScode_to_Emacs][Timachi, 2019]])
+#+end_quote
+
+* What about Emacs' famously "steep learning curve" ?
+
+#+begin_quote
+"Emacs can be a challenge if you are used to using mouse
+pointer. One should be willing to leave the mouse and stick with
+the keyboard." ([[https://hadi.timachi.com/2019/12/07/Why_I_switched_from_VScode_to_Emacs][Timachi, 2019]])
+#+end_quote
+
+Using the keyboard for everything is much faster (than mouse-only,
+or mouse + keyboard) but takes getting used to. During the writing
+of this paragraph, I used the following keystrokes (with the
+command behind the keys, which your fingers will learn):
+
+| KEY     | COMMAND                 |
+|---------+-------------------------|
+| <q RET  | ~org-self-insert-command~ |
+| C-M-\   | ~indent-region~           |
+| M-q     | ~org-fill-paragraph~      |
+| C-a     | ~org-beginning of line~   |
+| C-e     | ~org-end-of-line~         |
+| C-x C-s | ~save-buffer~             |
+
+Computer science, and IT, are largely about mastering, and creating
+new tools. Therefore, almost any effort is justified that goes into
+improving your *meta skills*[fn:9] in this area.
+
+* Install GNU Emacs
+#+attr_latex: :width 200px
+#+caption: GNU Emacs creator, Richard M Stallman (MIT)
+[[../img/2_rms.jpg]]
+
+* Emacs download and Installation for Windows
+
+- Download GNU Emacs + ESS as a modified version for [[https://vigou3.gitlab.io/emacs-modified-windows/][Windows]].
+- Run the installer - accept all presets.
+- Once you're done, you can open Emacs from the desktop with a
+  shortcut. If you also want to open it in the command line terminal
+  as ~emacs -nw~, you need to update the ~PATH~ variable for Windows:
+  1) Find the ~bin~ directory for Emacs in the File explorer - if you
+     followed the standard instructions, it is in ~c:\Program
+     Files\Emacs\emacs-28.2\bin~ - copy this address as text
+  2) search for ~PATH~ in the Windows search bar
+  3) in ~System Properties~, select ~Environment Variables~
+  4) in ~Environment Variables~, select the lower screen, ~System
+     variables~, then select the line with ~PATH~ on it, and select
+     ~Edit...~
+  5) In ~Edit environment variable~, select ~New~
+  6) Paste the address as text on a new line
+  7) Select ~OK~ three times until all screen dialogues are gone.
+  8) Open a Windows command line terminal
+  9) Enter ~emacs -nw~ on the terminal
+  10) If successful, leave Emacs with ~C-x C-c~
+
+- Check out my [[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][new tutorial]] at GitHub (with videos)
+
+* Emacs download and Installation for MacOS
+
+- Download [[https://emacsformacosx.com/][Emacs for MacOS from here]] (currently version 28.2)
+- Run the installer - accept all presets.
+- Drag the Emacs icon into your Applications icon
+- Ignore the warning
+- In a terminal, type ~emacs --version~ to see if it worked, and start
+  emacs with ~emacs~.
+  
+* Customize GNU Emacs
+
+- GNU Emacs is much more than a text editor and an IDE. It's more like
+  an operating system inside your operating system. Among the many
+  things that Emacs is capable of, we only need one for this class:
+  the ability to create and run interactive notebooks.
+
+- This will give you the power of [[https://jupyter.org/][Jupyter notebooks]] or [[https://colab.research.google.com/][Colaboratory]] on
+  your computer, without language limitations, and you can share
+  notebooks with anyone, who has Emacs (or Markdown, for reading
+  only).
+
+- The central package for many day to day tasks is ~Org-mode~. Here is a
+  set of [[https://orgmode.org/worg/org-tutorials/][Org-mode tutorials]] (with videos) covering many interesting
+  applications. Org-mode is especially popular among scientists, and
+  among these, physicists (my original tribe), who developed it.
+
+- And here is an excellent video tutorial by someone who is also
+  getting started with Emacs for the first time like you: [[https://youtu.be/48JlgiBpw_I][The Absolute
+  Beginner's Guide to Emacs]] (System Crafters, 2021) - 1hr11min long -
+  time well invested ([[https://github.com/birkenkrahe/org/blob/master/emacs/emacs_beginner.org][I made some notes]]).
+
+* Create Emacs configuration file (~.emacs~)
+
+- To create interactive computing notebooks in Emacs, we use the
+  [[https://orgmode.org/][Org-mode]] and [[https://orgmode.org/worg/org-contrib/babel/intro.html][Babel]] packages. Both are already installed in your
+  version of Emacs, but you have to tell Babel, which languages you
+  want to work with.
+
+- Customization like this is done with a configuration file ~.emacs~,
+  which is placed in your home directory (~$HOME~). Where this folder
+  is actually located on your computer depends on your operating
+  system[fn:10].
+
+- Download the configuration file [[https://raw.githubusercontent.com/birkenkrahe/org/master/emacs/.emacs][from GitHub]] and copy and paste it
+  into a ~.emacs~ file or save it as ~emacs.txt~ and rename it to ~.emacs~.
+
+- Once you've created the ~.emacs~ file, you can start Emacs and code
+  away "literarily". The customizations below are optional. But even
+  just by using Emacs as your editor for assignments, you'll become
+  quite an expert, [[https://hackernoon.com/8-reasons-why-emacs-is-the-best-text-editor-for-programming-0w4o37ld][almost a "hacker"]] (Wulff, 2021).
+
+* Create sample notebook for C
+
+- To create a notebook using Org-mode, create an ~.org~ file. Then type
+  ~C-c C-,~ and select your chunk from the list. You can also abbreviate
+  this by entering ~<s~ on any line.
+- You can [[https://orgmode.org/manual/Working-with-Source-Code.html][work with source code]] in Emacs for a number of different
+  languages:
+  1) To run a code chunk as a whole, type ~C-c C-c~. The result will
+     appear immediately below the chunk.[fn:1]
+  2) look at the code in a separate buffer and run them in parts. To
+     open a buffer with the code, type ~C-c '~.
+  3) To print an org-mode file, type ~C-c C-e~ and choose a print format
+     from the list.
+
+- Running chunks will only work if Emacs can find the respective
+  programs[fn:2], and if a compiler (for C), or an interpreter (for R
+  and SQLite) were installed.
+
+- The code block needs to be named as shown. If you want the result
+  and the code shown in the printout, you need to specify ~:exports
+  both~.
+
+  #+begin_src C :exports both
+    #include <stdio.h>
+
+    int main(void) {
+      puts("hello world");
+      return 0;
+    }
+  #+end_src
+
+  #+RESULTS:
+  : hello world
+
+  In the second version, both the header and the function definition
+  are preset so that you can see the inside of the function only.
+
+  #+begin_src C :exports both :includes <stdio.h> :main yes
+
+    puts("hello world");
+
+  #+end_src
+
+  #+RESULTS:
+  : hello world
+
+* Summary
+
+- To program in C, we need a computer, a compiler, and an editor
+- You'll have to download the compiler for Windows or MacOS
+- You can download and install Emacs (ready for data science)
+- Emacs is a highly customizable editor (using Emacs Lisp)
+- Org-mode is a literate programming environment
+
+* Jargon
+
+| CONCEPT          | EXPLANATION                                       |
+|------------------+---------------------------------------------------|
+| Source code      | Human-readable program                            |
+| Compiling        | Translating source                                |
+| Linking          | Linking compiled program to libraries             |
+| Library          | Bundle of reusable macros or functions            |
+| Object code      | Code ready for execution by a machine             |
+| Execution        | Running object code on a machine                  |
+| Interpreter      | Machine that interprets and executes source code  |
+| Script           | Source code for an interpreter                    |
+| Emacs            | Extensible text editor (via Emacs Lisp)           |
+| Literate Program | Readable code - expands into doc + executable     |
+| GNU              | "GNU's not UNIX"                                  |
+| GNU/Linux        | Free, open source operating system                |
+| Richard Stallman | Creator of the GNU project and Emacs              |
+| Org-mode         | Emacs package for literate programming (and more) |
+
+* References
+- Biggs/Donovan (November 9, 2020). Modern IDEs are magic. Why are
+  so many coders still using Vim and Emacs? [Blog]. URL:
+  [[https://stackoverflow.blog/2020/11/09/modern-ide-vs-vim-emacs/][stackoverflow.org]].
+- DistroTube (October 4, 2019). Switching to GNU Emacs [video]. [[https://youtu.be/Y8koAgkBEnM][URL:
+  youtu.be/Y8koAgkBEnM]].
+- Galov (August 9, 2021). 111+ Linux Statistics and Facts - Linux
+  Rocks! [blog]. [[https://hostingtribunal.com/blog/linux-statistics/#gref][URL: hostingtribunal.com]].
+- GCC, the GNU Compiler Collection. [[https://gcc.gnu.org][URL: gcc.gnu.org.]]
+- GitHub (Dec 19, 2016). What is GitHub? [video]. [[https://youtu.be/w3jLJU7DT5E][URL:
+  youtu.be/w3jLJU7DT5E]].
+- GNU Emacs, an extensible, customizable, free/libre text
+  editor. [[https://gnu.org/software/emacs][URL: gnu.org/software/emacs.]]
+- Kenlon (March 10, 2020). Getting started with Emacs [blog]. [[https://opensource.com/article/20/3/getting-started-emacs][URL:
+  opensource.com.]]
+- MinGW-w64 - Minimal GCC for Windows. A complete runtime
+  environment for GCC & LLVM for 32 and 64 bit Windows. [[https://mingw-w64.org][URL:
+  mingw-w64.org]].
+- Steinhart (2019). The Secret Life of Programs. NoStarch
+  Press. [[https://nostarch.com/foundationsofcomp][URL: nostarch.com.]]
+- System Crafters (March 8, 2021). The Absolute Beginner's Guide to
+  Emacs [video]. [[https://youtu.be/48JlgiBpw_I][URL: youtu.be/48JlgiBpw_I]].
+- System Crafters (November 28, 2021). M-x Forever: Why Emacs will
+  outlast text editor trends. Emacs conference 2021 [video]. [[https://youtu.be/9ahR5K_wkNQ][URL:
+  youtu.be/9ahR5K_wkNQ]].
+- Timachi (Dec 7, 2019). Why I switched from VScode to Emacs | Why I
+  switched from VScode to Emacs [blog]. [[https://hadi.timachi.com/2019/12/07/Why_I_switched_from_VScode_to_Emacs][URL: hadi.timachi.com]].
+- Wulff (Jul 27, 2021). 8 Reasons Why Emacs is the Best Text Editor
+  for Programming [blog]. [[https://hackernoon.com/8-reasons-why-emacs-is-the-best-text-editor-for-programming-0w4o37ld][URL: hackernoon.com]].
+- xkcd (n.d.). A webcomic of romance, sarcasm, math, and language
+  [website]. [[https://xkcd.com][URL: xkcd.com]].
+- Zamboni (March 21, 2018). Beautifying Org Mode in Emacs
+  [blog]. [[https://zzamboni.org/post/beautifying-org-mode-in-emacs/][URL: zzamboni.org]].
+
+* Footnotes
+
+[fn:1]Provided the block has been formatted correctly.
+
+[fn:2]This is why we changed the Windows ~PATH~ variable during the
+installation of the programs ~R~ and ~GNU gcc~ ([[./setup.org][here]]).
+
+[fn:3] Only Markdown (~.md~) files are rendering in the mobile
+app. Org-mode files (~.org~) do not. Since you have Emacs, feel free
+to add a Markdown version of an Org file if you want one because you
+use the mobile version a lot.
+
+[fn:4]Here is an example from my ~/.emacs~ file: I defined the
+function ~iwb~ to indent a whole buffer according to the buffer's
+mode - something that can also be done with the key sequence ~C-x h
+C-M-\~ (~mark-whole-buffer + indent-region~).
+#+attr_latex: :width 100px
+[[../img/2_iwb.png]]
+
+[fn:5]Emacs Lisp is a Lisp dialect. Lisp was one of the first
+languages used for Artificial Intelligence research (cp. [[https://hci.stanford.edu/~winograd/shrdlu/][SHRDLU]], an
+early natural language processing system).
+
+[fn:6]Written in 1976 by Richard Stallman, who then tinkered with it
+for ten years before releasing it. Emacs is also one of the two
+contenders, along with ~vi~, of the famous editor wars of the UNIX
+culture. UNIX is the "mother" of all operating systems, the systems
+that make computer run and do stuff.
+
+[fn:7] (1) Emacs has versions (at the time the screenshot was taken:
+27.1); (2) Emacs has named "buffers", and you can open several
+simultaneously [the names correspond to Emacs plugins or packages for
+organization (org), Git (magit) and file management (dired); (3) Emacs
+has layout themes with title and borders. (4) Each buffer is
+accompanied by a status line at the bottom [modeline].
+
+[fn:8]Neal Stephenson is a sci-fi author who also coined the term
+"cyberspace", and developed a spacecraft and launch system for Bezos'
+Blue Origin.
+
+[fn:9]"Meta skills" are transferable skills that you learn, or
+improve, while you learn something specific (like Emacs or
+Org-mode). While the special skills might become obsolete or less
+important to you over time (because of a change of job, interest, or
+the market), meta skills stay important and fresh forever, because you
+can use them for every new special skill learning project.
+
+[fn:10]On my Windows machine, ~$HOME~ is ~C:\Users\birkenkrahe\~. On
+my Linux box, it is ~/home/marcus/~.
+
+[fn:11]However, on my Windows 10 PC, WORD refuses to open OpenOffice
+files (perhaps because the package is only available as a 32-bit
+version from [[https://www.openoffice.org/][Apache OpenOffice]]?).
+
+[fn:12]The best way is to find the folder in the file explorer and copy
+the address as text:
+[[../img/2_address.png]]

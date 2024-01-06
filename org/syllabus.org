@@ -11,15 +11,17 @@
 - Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
 - Office hours: MonWedFri 10-10:50 am & 3-3.50 pm, Tue-Thu 4.15-4.45
   pm & by appointment
-- Textbook: Malik DS, C++ Programming: Program Design including Data
-  Structures (8e), [[https://www.cengage.com/c/c-programming-8e-malik/9781337117562/][Cengage 2018]] ([[https://www.amazon.com/Programming-Program-Design-Including-Structures/dp/1337117560][Amazon]]: New from $83.87 - Dec 2023).
-  This is also the textbook for [[https://catalog.lyon.edu/computer-science/csc-240][CSC 240 Data Structures with C++]] (Fall
-  2024).
+- Textbook: King (2008). C Programming - A Modern Approach. New York:
+  Norton. [[http://knking.com/books/c2/index.html][Online: knking.com]] and see also [[https://github.com/Embed-Threads/Learn-C/tree/main/books][this GitHub repo]].
 - See also other books used for this course:
-  1) Oualline S, Practical C++ (2e), [[https://www.oreilly.com/library/view/practical-c-programming/0596004192/][O'Reilly 2002]],
-  2) Stroustrup B, Programming - Principles and Practice Using C++,
+  1) Malik DS, C++ Programming: Program Design including Data
+     Structures (8e), [[https://www.cengage.com/c/c-programming-8e-malik/9781337117562/][Cengage 2018]] ([[https://www.amazon.com/Programming-Program-Design-Including-Structures/dp/1337117560][Amazon]]: New from $83.87 - Dec
+     2023). This is also the textbook for [[https://catalog.lyon.edu/computer-science/csc-240][CSC 240 Data Structures with
+     C++]] (Fall 2024).
+  2) Oualline S, Practical C++ (2e), [[https://www.oreilly.com/library/view/practical-c-programming/0596004192/][O'Reilly 2002]],
+  3) Stroustrup B, Programming - Principles and Practice Using C++,
      Addison Wesley 2014. See also [[https://www.stroustrup.com/programming.html][Author's website]].
-  3) Haephrasti M and R, Learning C++, [[https://www.manning.com/books/learning-c-plus-plus][Manning 2024]].
+  4) Haephrasti M and R, Learning C++, [[https://www.manning.com/books/learning-c-plus-plus][Manning 2024]].
   
 * Standard and course policies
 
@@ -32,16 +34,21 @@ incorporated into this syllabus also and can be found at:
 
 * Objectives
 
-This course introduces you to programming using C++20. You also learn
+This course introduces you to programming using C. We cover C++ as an
+extension. C is a system programming language of pure power: it
+enables you to converse with the computer at a level unknown to users
+other high level languages many of which come from C. You also learn
 about: compilers, working on the command line, text editors Emacs,
 using C for Internet of Things (IoT) devices, cybersecurity, using
 pseudocode and process modeling. You get a foundation in critical
-thinking in concert with one of the three currently most popular
-languages (the other two, according to the TIOBE index at the time of
-writing in October 2023, are Python and C, a subset of C++). You’ll
-learn some great tools: we use the “hacker’s editor” Emacs, the
-world’s foremost software engineering platform, GitHub, and BPMN for
-process modeling and pseudo code generation.
+thinking in concert with two of the three currently most popular
+languages (cp. TIOBE, 2023): the next three languages are Java, C# and
+JavaScript, which you can learn in a fortnight after this
+course). You’ll learn some great tools: we use the “hacker’s editor”
+Emacs, the world’s foremost software engineering platform, GitHub, and
+BPMN for process modeling and pseudo code generation. For those
+interested in computer and data science, this course is a bridge to
+CSC 240 Data structures in C++ (and Python).
 
 * Student Learning Outcomes
 
@@ -89,7 +96,9 @@ Notes:
 - You only have to write the final exam if you want to improve your
   grade at the end of the course. If the final exam result is below
   your final grade average up to this point, it will be ignored.
-
+- There will be numerous (optional) bonus assignments to improve your
+  midterm and final grades.
+  
 * Grading table
 
 This table is used to convert completion rates into letter grades. for
@@ -119,26 +128,42 @@ For *important dates*, see the 2023-2024 Academic Calendar at:
 
 No class on: Monday 19 Feb (Mental-Health Monday) - Monday 18,
 Wednesday 20, Friday 22 March (Spring break) - Friday 29 March (Easter
-break).
+break). Last day of classes: Wednesday, 8 May. Final exams: 10-15 May.
 
-| Week | Topic                                       | Activities                                                                                                |
-|------+---------------------------------------------+-----------------------------------------------------------------------------------------------------------|
-|    1 | Overview of Computers & Programming         | Discuss history of computers, hardware & software basics, language of computer, programming methodologies |
-|    2 | Basic Elements of C++                       | Explore C++ program structure, data types, expressions, and input/output statements                       |
-|    3 | Input/Output & Basic Control Structures     | Learn about I/O streams, formatting output, selection structures in C++                                   |
-|    4 | Control Structures I (Selection)            | Deep dive into if, if...else structures, logical operators, and switch structures                         |
-|    5 | Control Structures II (Repetition)          | Study while, for, and do...while loops, break and continue statements                                     |
-|    6 | User-Defined Functions                      | Learn about predefined and user-defined functions, value-returning functions, and void functions          |
-|    7 | User-Defined Simple Data Types & Namespaces | Explore enumeration types, namespaces, and string type in C++                                             |
-|    8 | Arrays and Strings                          | Study arrays, accessing array components, processing one-dimensional arrays, and C-Strings                |
-|    9 | Arrays and Strings (Continued)              | Delve into two- and multi-dimensional arrays, arrays of strings, and the string type                      |
-|   10 | Records (Structs)                           | Learn about structs, accessing struct members, arrays in structs, and structs within structs              |
-|   11 | Classes and Data Abstraction                | Introduction to classes, accessing class members, member functions, and constructors                      |
-|   12 | Classes and Data Abstraction (Continued)    | Study destructors, data abstraction, inline functions, and static members of a class                      |
-|   13 | Comprehensive Review and Advanced Topics    | Comprehensive review of previous chapters and introduction to advanced topics                             |
-|   14 | Special Topics in C++                       | Cover special topics and advanced features in C++                                                         |
-|   15 | Advanced Programming Concepts               | Delve deeper into advanced programming concepts and techniques in C++                                     |
-|   16 | Final Review and Exam Preparation           | Final review of course material, exam preparation, and practice tests                                     |
+| WK | ASSIGNMENT     | TEXTBOOK CHAPTER          |  TEST |
+|----+----------------+---------------------------+-------|
+|  1 | Emacs Tutorial | 1 Introducing C           |     1 |
+|----+----------------+---------------------------+-------|
+|  2 | Program 1      | 2 C Fundamentals          |     2 |
+|----+----------------+---------------------------+-------|
+|  3 | Program 2      | 3 Input/Output            |     3 |
+|----+----------------+---------------------------+-------|
+|  4 | Program 3      | 4 Expressions             |     4 |
+|----+----------------+---------------------------+-------|
+|  5 | Program 4      | 5 Selection               |     5 |
+|----+----------------+---------------------------+-------|
+|  6 | Program 5      | 6 Loops                   |     6 |
+|----+----------------+---------------------------+-------|
+|  7 | Program 6      | 7 Basic types             |     7 |
+|----+----------------+---------------------------+-------|
+|  8 | Program 7      | 8 Arrays                  |     8 |
+|----+----------------+---------------------------+-------|
+|  9 | Program 8      | 9 Functions               |     9 |
+|----+----------------+---------------------------+-------|
+| 10 | Program 9      | 11 Pointers               |    10 |
+|----+----------------+---------------------------+-------|
+| 11 | Program 10     | 12 Pointers & Arrays      |    11 |
+|----+----------------+---------------------------+-------|
+| 12 | Program 11     | 13 Strings                |    12 |
+|----+----------------+---------------------------+-------|
+| 13 | Program 12     | 14 The Preprocessor       |    13 |
+|----+----------------+---------------------------+-------|
+| 14 | Program 13     | 15 Structs, Unions & Enum |    14 |
+|----+----------------+---------------------------+-------|
+| 15 | Program 14     | 16 Advanced Pointers      |    15 |
+|----+----------------+---------------------------+-------|
+| 16 | Program 15     | From C to C++             | Final |
+|----+----------------+---------------------------+-------|
 
 *Workload:* approx. 4-5 hours per week.
 1. Class time = 16 * 3 * 50/60 = 40 hours
