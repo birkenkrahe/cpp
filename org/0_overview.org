@@ -76,7 +76,7 @@ Your top selections:
 
 Do you know what to do with these?
 
-* GCC installation on MacOS (ask ChatGPT)
+* GCC installation on MacOS (ChatGPT)
 
 #+begin_quote
 How can I install the GNU gcc compiler on MacOS?
@@ -108,16 +108,61 @@ This command should display the version of gcc that you have installed.
 That's it! You should now have the GNU gcc compiler installed on your
 MacOS system.
 #+end_quote
-
-The following two answers came from ChatGPT, a conversational machine
-learning model created by OpenAI.
-#+attr_latex: :width 400px
-#+caption: First answer on how to install GCC on MacOS
-[[../img/0_gcc_mac.png]]
-#+attr_latex: :width 400px
-#+caption: Second answer on how to install GCC on MacOS 
-[[../img/0_gcc_mac_new.png]]
    
+* GCC installation on Windows (ChatGPT)
+
+#+begin_ai
+Provide step by step instructions for installation of MinGW via MSYS2
+for a complete beginner.
+
+[AI]: Sure! Here are step-by-step instructions for installing MinGW via MSYS2:
+
+Step 1: Download MSYS2 installer
+- Go to the MSYS2 website: https://www.msys2.org/
+- Download the installer
+
+Step 2: Run the installer
+- Double-click on the downloaded installer to run it.
+- Choose the installation directory (the default is usually fine).
+- Click "Next" and then "Install" to start the installation.
+- The installer will download and install the necessary files. This
+  may take some time, so be patient.
+
+Step 3: Update MSYS2
+- After the installation is complete, you'll see an MSYS2
+  terminal. Type the following command after the `$` prompt, and press
+  Enter:
+  #+begin_example
+     pacman -Syu 
+  #+end_example
+- This will update the MSYS2 installation with the latest
+  packages. Follow the prompts and press Enter when asked.
+- For updates (using the same command), add the MYSYS2 terminal to
+  your taskbar and run the update regularly.
+
+Step 4: Install MinGW
+- Once the update is finished, you can install MinGW by typing the following command and pressing Enter:
+  #+begin_example
+  pacman -S mingw-w64-x86_64-toolchain
+  #+end_example
+- Follow the prompts and press Enter when asked.
+- This step can take a few minutes, be patient.
+
+Step 5: Test the installation
+- To test if MinGW is installed correctly, open a new MSYS2 terminal.
+- Type the following command and press Enter:
+  #+begin_example
+  gcc --version
+  #+end_example
+- You should see the version of GCC (the GNU Compiler Collection)
+  installed with MinGW.
+- If you see the version number, congratulations! MinGW is installed
+  and ready to use.
+
+That's it! You have successfully installed MinGW via MSYS2. You can
+now use MinGW to compile and run C/C++ programs on your system.
+#+end_ai
+
 * How will you be evaluated?
 #+attr_latex: :width 400px
 #+caption: Source: syllabus, Canvas (lyon.instructure.com) or GitHub (github.com/birkenkrahe/ml)
