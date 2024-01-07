@@ -88,9 +88,9 @@ Homebrew package manager. Follow these steps:
 
 2. Install Homebrew by entering the following command and following
    the on-screen instructions:
-```
+#+begin_example
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
+#+end_example
 3. Once Homebrew is installed, you can install gcc by entering the
    following command:
 ```
