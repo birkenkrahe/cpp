@@ -111,6 +111,9 @@ MacOS system.
    
 * GCC installation on Windows (ChatGPT)
 
+The following installation instructions were retrieved from ChatGPT
+(the "free" model GPT-3.5), tested and modified by me. 
+
 #+begin_ai
 Provide step by step instructions for installation of MinGW via MSYS2
 for a complete beginner.
