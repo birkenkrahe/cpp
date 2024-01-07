@@ -93,16 +93,16 @@ Homebrew package manager. Follow these steps:
 #+end_example
 3. Once Homebrew is installed, you can install gcc by entering the
    following command:
-```
+#+begin_example
 brew install gcc
-```
+#+end_example
 This will install the latest version of gcc available through Homebrew.
 
 4. After the installation is complete, you can verify that gcc is
    installed by running the following command:
-```
+#+begin_example
 gcc --version
-```
+#+end_example
 This command should display the version of gcc that you have installed.
 
 That's it! You should now have the GNU gcc compiler installed on your
