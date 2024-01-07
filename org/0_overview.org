@@ -26,45 +26,90 @@
   2) FORTRAN - FORMula TRANslator (1985)
   3) C++ (1989)
 
-- [X] How many programming languages are there today?
+- How many programming languages are there today?
+  #+begin_notes
+  Answer: more than 500 languages were used on GitHub
+  in 2022. Overall, almost 9,000 languages are known.
+  #+end_notes
+
 * The importance of infrastructure
 #+attr_latex: :width 400px
 #+caption: Layers between you and a document on your computer
 [[../img/0_infrastructure.jpg]]
 
-The image shows eight layers that your computing infrastructure has to
-manage (there are more in fact) - most of the software enabling you to
-do this (without you noticing) is written in C.
+- There are many layers between your input and the CPU.
+- Most of the software enabling you to do stuff is written in C.
+- The primary software to connect to the OS is the shell program.
 
 * What do you expect from this course?
 #+attr_latex: :width 400px
 #+caption: Dandelion in the grass, by Aaron Burden, @Unsplash
 [[../img/0_expectations.jpg]]
 
-- I would like to make a website
-- I want to learn as many languages as I can
-- I may need it (formally) for my Math major
-- I want to make video games
-- I want to get better at computing because of math/eng
-- I want to become a software developer
-- I want to see if computing may be in my future
+Your top selections:
 
 * What careers do our students have?
 #+attr_latex: :width 400px
-#+caption: Careers of recent computer and data science graduates from Lyon College
-[[../img/0_careers.png]]
+[[../img/careers.png]]
+
+*Where our CS and DS graduates went to work in the last 2 years:*
++ Full stack developer @OneBrief (military planning software)
++ Computer Aided Design at Bad Boy Mowers (comp sci/math/engineering)
++ IT project specialist at Bad Boy Mowers (data science/math/comp sci)
++ Data analyst at Future Fuel Chemical (data science/comp sci)
++ Database specialist at the Department of Homeland Security
++ Software engineer at Riot Games (League of Legends/game company)
++ Cybersecurity engineer at Sierra Nevada (aircraft engineering)
++ Head of data analysis at Enterprise Inc. (rental cars)
++ Programmer at Outlaw Snax Chips (snack foods)
++ Manager Enterprise Applications at Lyon College IT Services
 
 * What will you do in this course?
 #+attr_latex: :width 300px
-#+caption: Syllabus, Canvas (lyon.instructure.com) or GitHub (github.com/birkenkrahe/ds2)
+#+caption: Syllabus, Canvas (lyon.instructure.com) or GitHub (github.com/birkenkrahe/cpp)
 [[../img/0_schedule.png]]
 
 - We have a *textbook* - King, C Programming - A modern approach (2008)
-- We have an *operating system* - Linux (maybe) or Windows/MacOS
+- We have an *operating system* - Linux (if you're lucky), Windows/MacOS
 - We have (more than) an *editor* - Emacs + Org-mode
 - We have a *compiler* - GCC ([[https://raw.githubusercontent.com/birkenkrahe/cc/piHome/img/0_gcc_mac.png][also on a Mac]])
 
-* GCC installation on MacOS
+Do you know what to do with these?
+
+* GCC installation on MacOS (ask ChatGPT)
+
+#+begin_ai
+How can I install the GNU gcc compiler on MacOS?
+
+[AI]: To install the GNU gcc compiler on MacOS, you can use the
+Homebrew package manager. Follow these steps:
+
+1. Open a Terminal window.
+
+2. Install Homebrew by entering the following command and following
+   the on-screen instructions:
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+3. Once Homebrew is installed, you can install gcc by entering the
+   following command:
+```
+brew install gcc
+```
+This will install the latest version of gcc available through Homebrew.
+
+4. After the installation is complete, you can verify that gcc is
+   installed by running the following command:
+```
+gcc --version
+```
+This command should display the version of gcc that you have installed.
+
+That's it! You should now have the GNU gcc compiler installed on your
+MacOS system.
+
+[ME]: 
+#+end_ai
 
 The following two answers came from ChatGPT, a conversational machine
 learning model created by OpenAI.
