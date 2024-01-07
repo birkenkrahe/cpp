@@ -114,9 +114,10 @@ MacOS system.
 [The following installation instructions were retrieved from ChatGPT
 (the "free" model GPT-3.5), tested and modified by me. -MB]
 
-
-Provide step by step instructions for installation of MinGW via MSYS2
-for a complete beginner.
+#+begin_quote
+[Me:] Provide step by step instructions for installation of MinGW via
+MSYS2 for a complete beginner.
+#+end_quote
 
 [AI]: Sure! Here are step-by-step instructions for installing MinGW
 via MSYS2:
