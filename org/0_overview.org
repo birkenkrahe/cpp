@@ -111,10 +111,10 @@ MacOS system.
    
 * GCC installation on Windows (ChatGPT)
 
-The following installation instructions were retrieved from ChatGPT
-(the "free" model GPT-3.5), tested and modified by me. 
+[The following installation instructions were retrieved from ChatGPT
+(the "free" model GPT-3.5), tested and modified by me. -MB]
 
-#+begin_ai
+
 Provide step by step instructions for installation of MinGW via MSYS2
 for a complete beginner.
 
@@ -145,7 +145,8 @@ Step 3: Update MSYS2
   your taskbar and run the update regularly.
 
 Step 4: Install MinGW
-- Once the update is finished, you can install MinGW by typing the following command and pressing Enter:
+- Once the update is finished, you can install MinGW by typing the
+  following command and pressing Enter:
   #+begin_example
   pacman -S mingw-w64-x86_64-toolchain
   #+end_example
@@ -165,7 +166,6 @@ Step 5: Test the installation
 
 That's it! You have successfully installed MinGW via MSYS2. You can
 now use MinGW to compile and run C/C++ programs on your system.
-#+end_ai
 
 * How will you be evaluated?
 #+attr_latex: :width 400px
