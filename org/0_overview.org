@@ -78,7 +78,7 @@ Do you know what to do with these?
 
 * GCC installation on MacOS (ask ChatGPT)
 
-#+begin_notes
+#+begin_quote
 How can I install the GNU gcc compiler on MacOS?
 
 [AI]: To install the GNU gcc compiler on MacOS, you can use the
@@ -107,7 +107,7 @@ This command should display the version of gcc that you have installed.
 
 That's it! You should now have the GNU gcc compiler installed on your
 MacOS system.
-#+end_notes
+#+end_quote
 
 The following two answers came from ChatGPT, a conversational machine
 learning model created by OpenAI.
