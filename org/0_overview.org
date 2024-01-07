@@ -115,7 +115,8 @@ MacOS system.
 Provide step by step instructions for installation of MinGW via MSYS2
 for a complete beginner.
 
-[AI]: Sure! Here are step-by-step instructions for installing MinGW via MSYS2:
+[AI]: Sure! Here are step-by-step instructions for installing MinGW
+via MSYS2:
 
 Step 1: Download MSYS2 installer
 - Go to the MSYS2 website: https://www.msys2.org/
