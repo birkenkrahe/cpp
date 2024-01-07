@@ -9,34 +9,17 @@
 #+attr_html: :width 400px
 [[../img/cover.jpg]]
 
- 1. Review: [[https://forms.gle/pAJgAXjgBzCAqcqY7][Entry Survey]] ([[https://docs.google.com/forms/d/1mXocjlwiBrzM9wQS819rQYttRWoSNIt5eN0OSDUMdJc/edit#settings][Google forms]])
- 2. Introduction to the course
+ 1. *Review:* [[https://forms.gle/pAJgAXjgBzCAqcqY7][Entry Survey]] ([[https://docs.google.com/forms/d/1mXocjlwiBrzM9wQS819rQYttRWoSNIt5eN0OSDUMdJc/edit#settings][Google forms]])
+ 2. *Lecture:* Introduction to the course ([[file:0_overview.org][0_overview.org]])
     - Schedule, grading, attendance policy: see [[https://github.com/birkenkrahe/cpp/blob/main/org/syllabus.org][syllabus]].
     - Assignments and tests: see [[https://lyon.instructure.com/courses/2107][Canvas]].
-    - Other course materials: see GitHub.
-    - Extras and online discussion: see C++ Google Space.
-    - Questions: see me on Google Chat or during office hours.
+    - Other course materials: see [[https://github.com/birkenkrahe/cpp/tree/main][GitHub]].
+    - Extras and online discussion: see [[https://chat.google.com/room/AAAAIk8SqZE?cls=7][C++ Space]] in Google Chat.
+    - Questions: contact me on Google Chat or during office hours.
+ 3. *Lecture*: Course infrastructure
+ 4. *Practice:* the C programming toolchain
 
-** TODO Introduction to the course
-
-See presentation (GitHub).
-
-Link summary:
-
-
-1. REVIEW: Entry survey
-
-2. Course overview
-
-3. 
-
-4. 
-
-5. [X] Entry *survey* - [[https://docs.google.com/forms/d/1yz2EtuSin3r54zMG1d_JCnnVAGb0XI8cP-Yvr7FmZbo/edit#responses][review of your responses]]
-6. [X] Course *overview* - assignments, grading, topics, platforms
-7. [X] The C programming *toolchain*: course infrastructure
-8. [X] *Practice:* the C programming toolchain
-
+* NEXT 
 ** Review topics/questions (Friday 13-Jan)
 #+attr_latex: :width 400px
 #+caption: Illustration of ignorance and ignorance of your own ignorance

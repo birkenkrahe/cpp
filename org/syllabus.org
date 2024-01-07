@@ -12,7 +12,7 @@
 - Office hours: MonWedFri 10-10:50 am & 3-3.50 pm, Tue-Thu 4.15-4.45
   pm & by appointment
 - Textbook: King (2008). C Programming - A Modern Approach. New York:
-  Norton. [[http://knking.com/books/c2/index.html][Online: knking.com]] and see also [[https://github.com/Embed-Threads/Learn-C/tree/main/books][this GitHub repo]].
+  Norton. [[http://knking.com/books/c2/index.html][Online: knking.com]], [[https://archive.org/details/c-programming-a-modern-approach-2nd-ed-c-89-c-99-king-by][Internet Archive]] (cp. [[https://github.com/Embed-Threads/Learn-C/tree/main/books][this GitHub repo]]).
 - See also other books used for this course:
   1) Malik DS, C++ Programming: Program Design including Data
      Structures (8e), [[https://www.cengage.com/c/c-programming-8e-malik/9781337117562/][Cengage 2018]] ([[https://www.amazon.com/Programming-Program-Design-Including-Structures/dp/1337117560][Amazon]]: New from $83.87 - Dec
