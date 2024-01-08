@@ -169,66 +169,77 @@ That's it! You have successfully installed MinGW via MSYS2. You can
 now use MinGW to compile and run C/C++ programs on your system.
 
 * How will you be evaluated?
-#+attr_latex: :width 400px
+#+attr_latex: :width 300px
 #+caption: Source: syllabus, Canvas (lyon.instructure.com) or GitHub (github.com/birkenkrahe/ml)
 [[../img/0_grades.png]]
 
-- All course requirements have deadlines
-- Late submissions will be penalized (loss of points)
-- Final exam will be sourced by term test questions
-- Programming assignments are home assignments
-- In-class practices are "literate programming" exercises
+- All course requirements have firm deadlines. However:
+- If you have to miss a deadline, come talk to me first.
+- Unexcused late submissions will be penalized (50%).
+- Final exam is optional and will be sourced by term test questions.
+- Programming assignments are home assignments.
+- In-class practices are "literate programming" exercises.
+- All assignments require submission of Emacs Org-mode files.
 
 * Which tools are you going to use?
 #+attr_latex: :width 400px
 #+caption: Unsplash, workshop
 [[../img/0_tools.jpg]]
 
-- [[https://lyon.instructure.com/][Canvas]] (learning management system)
+- [[https://lyon.instructure.com/courses/2107][Canvas]] (learning management system) - get the mobile app.
 
-- [[https://github.com/birkenkrahe/cc][GitHub repository]] (all course materials except tests)
+- [[https://github.com/birkenkrahe/cpp][GitHub repository]] (all course materials except tests/announcements).
 
-- [[https://github.com/birkenkrahe/org/blob/master/FAQ.org][GNU Emacs]] (literate programming environment)
+- [[https://www.gnu.org/software/emacs/download.html][GNU Emacs]] (literate programming environment) - [[https://github.com/birkenkrahe/org/blob/master/FAQ.org][see also: FAQ]].
 
-- [[https://en.wikipedia.org/wiki/Command-line_interface][Command line interface]] / interpreter - (shell / replit.com)[fn:1]
+- [[https://en.wikipedia.org/wiki/Command-line_interface][Command line interface]] (shell / REPL) see also: [[https://replit.com/@birkenkrahe/DisfiguredMiniSystemintegrator#main.c][replit.com]].
 
-* The (new) Canvas LMS
+* Learning Management System: Canvas
 #+attr_latex: :width 400px
-#+caption: Canvas
+#+caption: Canvas (Student view - Syllabus page)
 [[../img/0_canvas.png]]
 
-- Announcements
+- Announcements (you'll get them also via Email)
 - Assignments (Programming assignments and in-class practice)
-- Zoom links (participate/cloud recording)
-- Course links (GitHub, Whiteboard)
-- Gradebook
+- Zoom links (cloud recording - will be deleted after a few weeks)
+- Course links (GitHub, Whiteboard, Emacs/GCC download)
+- Gradebook (up to date grades) & Attendance record
 
-* The (popular) GitHub platform
+* Software development platform: GitHub
 #+attr_latex: :width 400px
 #+caption: My GitHub dashboard - close to 4,000 commits in 2022 (100,000 lines of code?)
 [[../img/0_github.png]]
 
-- [[https://github.com/birkenkrahe][GitHub]] is the most popular software development platform.
+- GitHub is the most popular software development platform but not
+  just for programmers (cp. [[https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14108][Braga et al 2023]])
 
 - It's now owned by Microsoft (which is becoming a problem)
 
 - Here for you: all course materials, and the course FAQ
 
-* The (feared) Emacs editor
+* The (feared) Emacs editor & Literate Programming
 #+attr_latex: :width 400px
 #+caption: My GitHub dashboard
 [[../img/0_litprog.png]]
 
-* DONE Practice: first "literate" C program!
+"Story + code = source code + documentation"
+- Humans can't read machine code - they require stories.
+- Literate programming delivers human-readable programs.
+- Emacs + Org-mode is our platform to do this.
+  
+* Practice: first "literate" C program! (30 min)
 #+attr_latex: :width 400px
 #+caption: Books aren't the only way to be "literate" in programming!
 [[../img/0_books.png]]
 
-(You can find a [[https://github.com/birkenkrahe/cc/blob/piHome/pdf/first_org_print.pdf][PDF of this exercise]] on GitHub)
+(You can find a [[https://github.com/birkenkrahe/cc/blob/piHome/pdf/first_org_print.pdf][PDF of this exercise]] on GitHub.)
 
-Let's set Emacs up, write and run a first "literate" C program!
+Let's set emacs up, write and run a first "literate" c program! it is
+very important that you enter everything *exactly as shown*. if you get
+something wrong just go back one step. Contact me if you need me after
+checking with your neighbor if he or she can help.
 
-1) Open the command line terminal with ~CMD~ in the search field
+1) Open the command line terminal with ~cmd~ in the search field
 
 2) At the prompt, type ~gcc --version~
 
@@ -244,7 +255,7 @@ Let's set Emacs up, write and run a first "literate" C program!
 
 8) Open a terminal by entering ~CMD~ in the Windows search bar
 
-9) Pin the terminal to your taskbar
+9) Pin the terminal to your taskbar to open it quickly next time!
 
 10) At the prompt, enter ~DIR emacs.txt~ - you should see the file
 
@@ -252,31 +263,81 @@ Let's set Emacs up, write and run a first "literate" C program!
 
 12) Enter ~emacs -nw -l emacs.txt~
 
-13) Inside Emacs, click ~<F10>~ and ~ENTER~ to open a new file
+13) Inside Emacs, enter ~CTRL + x CTRL + f~ to enter a new file.
 
 14) At the prompt at the bottom of the screen, enter ~first.org~
 
 15) Enter the following text (replace ~yourname~ with your own name):
-    #+attr_latex: :width 400px
+    #+attr_latex: :width 200px
     [[../img/0_first.png]]
 
-16) Run the program by putting the cursor anywhere on the code block
-    and typing ~CTRL-c CTRL-c~ (or ~C-c C-c~)
+16) 'Run' the program by putting the cursor anywhere on the code block
+    and typing ~CTRL-c CTRL-c~. You should see the result on the screen.
 
-17) Tangle the code with ~C-c C-v t~ (or ~M-x org-babel-tangle~)
-    #+attr_latex: :width 400px
+17) Save the file with ~CTRL + x CTRL + s~ 
+
+18) 'Tangle' the code with ~CTRL + c CTRL + v t~ (or ~M-x
+    org-babel-tangle~): Emacs reports ="Tangled 1 code block from first.org"=.
+    #+attr_latex: :width 200px
     #+caption: What happens when you tangle or weave a literate program
     [[../img/0_litprog1.png]]
 
-18) Open a shell (terminal program) with ~ALT-x eshell~
+19) Open a shell inside Emacs by entering ~ALT-x eshell~
 
-19) At the prompt, enter ~ls -l first*~ - you should see ~first.C~
+20) At the =$= prompt, enter ~ls -l first*~ - you should see ~first.c~ listed
 
-20) Enter ~gcc first.C -o hello~
+21) Display ~first.c~ by entering ~cat first.c~
 
-21) Enter ~hello~ to run the program.
+22) Enter ~gcc first.c -o hello~ to compile the C program into an executable
 
-22) Upload ~first.org~ as your first in-class assignment [[https://lyon.instructure.com/courses/1041/assignments/5889][to Canvas!]]
+23) Enter ~hello~ to run the executable. You should see the output.
+
+24) Exit and close Emacs with ~CTRL-x CTRL-c~
+
+25) Exit and close the shell by entering ~exit~ after the prompt
+
+26) Save your file to a directory on your GDrive (you can do this with
+    File Explorer, or directly in Emacs with the following commands
+    (you don't have to worry about spaces etc. because you can
+    auto-complete using the <TAB> key):
+    #+begin_example elisp 
+    C-x C-w                   ;; write file
+    w:/My Drive/              ;; target directory
+    C-x d w:/My Drive/        ;; open target directory
+    s                         ;; sort to see recent files at top
+    #+end_example
+    You can also do it in the Emacs eshell that you used earlier to
+    compile and run the file on the shell (auto-complete with <TAB>):
+    #+begin_example bash 
+    cp first.org w:/My\ Drive/      # copy file to target directory
+    cat w:/My\ Drive/first.org      # view copy of file at target location
+    #+end_example
+    
+27) Upload ~first.org~ as your first in-class assignment:
+    1. Open a browser to GDrive and upload the file
+    2. Open the [[https://lyon.instructure.com/courses/2107/assignments/22790][assignment in Canvas]] at lyon.instructure.com
+    3. Upload the file from GDrive (click on "~More~")
+    4. When you see it attached, click on ~Submit Assignment~.
+
+* What did you just learn?
+
+You learnt:
+1) How to open and close a command line (aka shell) on Windows.
+2) How to check the version of the C compiler =gcc=.
+3) How to find a file on the GitHub platform and download it.
+4) How to list, display, and move files from the command line.
+5) How to open and close the GNU Emacs editor.
+6) How to create, save, and write an Emacs Org-mode file.
+7) How to create, compile, and run a C program.
+8) How to tangle a literate program into source code.
+9) How to save a file on your GDrive in three ways.
+10) How to submit a completed assignment to Canvas.
+
+It would be worth repeating these steps on your own without peeking in
+your notes to make sure that you understood what you did and that you
+can do it again - we'll do this hundreds of times in class!
+
+You can watch me complete this exercise in this video.
 
 * When is the first assignment due?
 #+attr_latex: :width 400px
@@ -337,6 +398,14 @@ Let's set Emacs up, write and run a first "literate" C program!
 
 * References
 
+- Braga, P. H. P., Hébert, K., Hudgins, E. J., Scott, E. R., Edwards,
+  B. P. M., Sánchez Reyes, L. L., Grainger, M. J., Foroughirad, V.,
+  Hillemann, F., Binley, A. D., Brookson, C. B., Gaynor, K. M.,
+  Shafiei Sabet, S., Güncan, A., Weierbach, H., Gomes, D. G. E., &
+  Crystal-Ornelas, R. (2023). Not just for programmers: How GitHub can
+  accelerate collaborative and reproducible research in ecology and
+  evolution. Methods in Ecology and Evolution, 14,
+  1364–1380. https://doi.org/10.1111/2041-210X.14108
 - King K N (2008). C Programming - A Modern Approach. Norton.
 
 * Footnotes
