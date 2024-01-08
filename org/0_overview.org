@@ -337,23 +337,25 @@ It would be worth repeating these steps on your own without peeking in
 your notes to make sure that you understood what you did and that you
 can do it again - we'll do this hundreds of times in class!
 
-You can watch me complete this exercise in this video.
+You can watch me complete this exercise [[https://youtu.be/zRgIaJzrbnY?si=NwOl0u9Nr06FkkoU][in this video]] (30').
 
 * When is the first assignment due?
 #+attr_latex: :width 400px
 #+caption: Four monks by Claudio Rinaldi (1852-1909)
 [[../img/0_monks.png]]
 
-- The first in-class assignment (~first.org~, see Canvas) is due on
-  Friday, January 27. For late submissions, you lose 1 point per day
-  (out of 10 possible points)
+- The first in-class assignment (~first.org~, [[https://lyon.instructure.com/courses/2107/assignments/22790][see Canvas]]) is due no
+  later than Friday, January 26. For late submissions, you lose 50% of
+  your points.
 
-- The first home assignment (~Emacs tutorial~, see Canvas) is due on
-  Monday, January 27. For late submissions, you lose 1 point per day
-  (out of 10 possible points)
+- The second home assignment (~Emacs tutorial~, see Canvas) is due on
+  Friday, January 26, too. For late submissions, you lose 50% of your
+  points.
   
-- We'll write the first weekly multiple-choice test on January 23,
+- The first multiple-choice test is due on Monday, 22 January,
   covering all of the material that was covered until then.
+
+For grading details, see [[https://lyon.instructure.com/courses/2107/assignments/syllabus][syllabus]].
 
 * What are you looking forward to?
 #+attr_latex: :width 400px
