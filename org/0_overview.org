@@ -232,7 +232,7 @@ now use MinGW to compile and run C/C++ programs on your system.
 #+caption: Books aren't the only way to be "literate" in programming!
 [[../img/0_books.png]]
 
-(You can find a [[https://github.com/birkenkrahe/cc/blob/piHome/pdf/first_org_print.pdf][PDF of this exercise]] on GitHub.)
+(You can find a [[https://github.com/birkenkrahe/cpp/blob/main/pdf/first_org_print.pdf][PDF of this exercise]] on GitHub.)
 
 Let's set emacs up, write and run a first "literate" c program! it is
 very important that you enter everything *exactly as shown*. if you get
