@@ -102,6 +102,8 @@ again.
 
    #+name: pgm:comment2
    #+begin_src C
+     /* WRITE COMMENT HERE
+       */
      #include <stdio.h> // WRITE COMMENT HERE
 
      int main (void) // WRITE COMMENT HERE
