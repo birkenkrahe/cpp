@@ -1,0 +1,21 @@
+graph TD
+    A[Start] -->|Check Emacs installed| B{Emacs installed?}
+    B -- Yes --> C{R installed?}
+    B -- No --> D[Download and install modified Emacs & add to PATH]
+    D --> E[Install Emacs in C:/Users/EmacsLyon]
+    E --> C
+    C -- Yes --> F{Python installed?}
+    C -- No --> G[Download and install base R & add to PATH]
+    G --> F
+    F -- Yes --> H{GCC installed?}
+    F -- No --> I[Install Python & add to PATH]
+    I --> H
+    H -- Yes --> J{SQLite installed?}
+    H -- No --> K[Install GCC with MSYS2]
+    K --> L[Add to PATH C:/msys64/mingw64/bin]
+    L --> J
+    J -- Yes --> M[Download babel.org file]
+    J -- No --> N[Install sqlite3 with MSYS2]
+    N --> M
+    M --> O[Run test suite with C-c C-c]
+    O --> P[End]

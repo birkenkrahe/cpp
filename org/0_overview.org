@@ -3,52 +3,37 @@
 #+SUBTITLE: CSC 100 - Introduction to programming - Spring 2024
 #+STARTUP: overview hideblocks indent
 #+attr_latex: :width 400px
-#+caption: Dashboard of a sportscar of the 1970s
-[[../img/cover.jpg]]
-* Who is your lecturer?
-#+attr_latex: :width 400px
-#+caption: Photo of Poppy as a puppy
-[[../img/0_poppy.png]]
+#+caption: Poster for this course created by DALL-E 3
+[[../img/cover.png]]
 
-- ~not~ cats ~or~ dogs, but [[https://drive.google.com/file/d/1z-0cbqfXPA_6HMgIxb043CN5qCUJLEYz/view?usp=sharing][cats ~and~ dogs]]
-- Physicist by training ([[https://images.nature.com/original/magazine-assets/d41586-022-01388-6/d41586-022-01388-6_20499086.jpg][Particle smash and grab]])
-- Teacher by profession ([[https://m.media-amazon.com/images/I/91UJz-ti6BL.jpg]["Automatic transmission for ideas"]] - Lisa)
-- Data scientist by choice ([[https://media.wired.com/photos/601c6246898afb612573ad4c/master/w_960,c_limit/BLACK%20SUN%20#34.jpg]["Master patterner"]] - LeGuin)
-- Lyon College since 2021 ([[https://www.visitberlin.de/system/files/styles/visitberlin_hero_visitberlin_desktop_2x/private/image/eberswalderstrasse26_c_visitBerlin_Foto_Dagmar_Schwelle_web.jpg?h=1c9b88c9&itok=xMVdiKwM][Migrated from Berlin, Germany]])
-
-* My first programming languages
+* What was my first programming language?
 #+attr_latex: :width 400px
 #+caption: Texas Instruments TI-99/4 16-bit microcomputer, 1979
 [[../img/0_ti99.jpg]]
 
 - My first programming languages:
-  1) [[https://upload.wikimedia.org/wikipedia/commons/7/7b/AtariBASIC.png][BASIC]] - Beginner's All-purpose Symbolic Instruction Code (1979)
-  2) FORTRAN - FORMula TRANslator (1985)
-  3) C++ (1989)
+  * [[https://upload.wikimedia.org/wikipedia/commons/7/7b/AtariBASIC.png][BASIC]] - Beginner's All-purpose Symbolic Instruction Code (1979)
+  * FORTRAN - FORMula TRANslator (1985)
+  * C++ (1989)
 
-- How many programming languages are there today?
-  #+begin_notes
-  Answer: more than 500 languages were used on GitHub
-  in 2022. Overall, almost 9,000 languages are known.
-  #+end_notes
+- My last programming languages:
+  * R (2019)
+  * Python (2023)
+  * Lisp (2024)
 
-* The importance of infrastructure
-#+attr_latex: :width 400px
-#+caption: Layers between you and a document on your computer
-[[../img/0_infrastructure.jpg]]
+- Languages in between:
+  * Shell (OS)
+  * SQL/SQLite (databases)
+  * Snap! (visual)
+  * Perl (text)
 
-- There are many layers between your input and the CPU.
-- Most of the software enabling you to do stuff is written in C.
-- The primary software to connect to the OS is the shell program.
+- Languages that I still want to learn:
+  * Assembly (machine)
+  * Haskell (functional)
+  * Verilog (parallel)
+  * Prolog (logical)
 
-* What do you expect from this course?
-#+attr_latex: :width 400px
-#+caption: Dandelion in the grass, by Aaron Burden, @Unsplash
-[[../img/0_expectations.jpg]]
-
-Your top selections:
-
-* What careers do our students have?
+* Which careers do our graduates have?
 #+attr_latex: :width 400px
 [[../img/careers.png]]
 
@@ -74,15 +59,15 @@ Your top selections:
 - We have (more than) an *editor* - Emacs + Org-mode
 - We have a *compiler* - GCC ([[https://raw.githubusercontent.com/birkenkrahe/cc/piHome/img/0_gcc_mac.png][also on a Mac]])
 
-Do you know what to do with these?
-
 * GCC installation on MacOS (ChatGPT)
+#+attr_latex: :width 400px
+#+caption: GCC installation on MacOS (DALL-E3)
+[[../img/0_macos.png]]
 
-#+begin_quote
 How can I install the GNU gcc compiler on MacOS?
 
-[AI]: To install the GNU gcc compiler on MacOS, you can use the
-Homebrew package manager. Follow these steps:
+To install the GNU =gcc= compiler on MacOS, you can use the =Homebrew=
+package manager. Follow these steps:
 
 1. Open a Terminal window.
 
@@ -107,20 +92,13 @@ This command should display the version of gcc that you have installed.
 
 That's it! You should now have the GNU gcc compiler installed on your
 MacOS system.
-#+end_quote
-   
-* GCC installation on Windows (ChatGPT)
 
-[The following installation instructions were retrieved from ChatGPT
-(the "free" model GPT-3.5), tested and modified by me. -MB]
+* GCC installation on Windows
+#+attr_latex: :width 400px
+#+caption: GCC installation on Windows OS (DALL-E 3)
+[[../img/0_win.png]]
 
-#+begin_quote
-[Me:] Provide step by step instructions for installation of MinGW via
-MSYS2 for a complete beginner.
-#+end_quote
-
-[AI]: Sure! Here are step-by-step instructions for installing MinGW
-via MSYS2:
+Step-by-step instructions for installing MinGW via MSYS2:
 
 Step 1: Download MSYS2 installer
 - Go to the MSYS2 website: https://www.msys2.org/
@@ -138,7 +116,7 @@ Step 3: Update MSYS2
   terminal. Type the following command after the `$` prompt, and press
   Enter:
   #+begin_example
-     pacman -Syu 
+     pacman -Syu
   #+end_example
 - This will update the MSYS2 installation with the latest
   packages. Follow the prompts and press Enter when asked.
@@ -149,7 +127,7 @@ Step 4: Install MinGW
 - Once the update is finished, you can install MinGW by typing the
   following command and pressing Enter:
   #+begin_example
-  pacman -S mingw-w64-x86_64-toolchain
+  pacman -S gcc
   #+end_example
 - Follow the prompts and press Enter when asked.
 - This step can take a few minutes, be patient.
@@ -164,6 +142,17 @@ Step 5: Test the installation
   installed with MinGW.
 - If you see the version number, congratulations! MinGW is installed
   and ready to use.
+
+Step 6: Put MSYS2 in the ~PATH~ of your PC
+- Type ~PATH~ in your Windows search field and open "Edit the system
+  environment variables".
+- Click on the "Environment Variables..." button.
+- In the "System variables" menu, find the line for "Path" with your
+  cursor, and click "Edit".
+- In the menu, click "New" and enter ~C:\msys64\mingw64\bin~.
+- Click "OK" for all three menus.
+- You can now execute ~gcc~ from anywhere on your computer (e.g. from
+  inside Emacs, or from the Windows CMD line).
 
 That's it! You have successfully installed MinGW via MSYS2. You can
 now use MinGW to compile and run C/C++ programs on your system.
@@ -183,8 +172,8 @@ now use MinGW to compile and run C/C++ programs on your system.
 
 * Which tools are you going to use?
 #+attr_latex: :width 400px
-#+caption: Unsplash, workshop
-[[../img/0_tools.jpg]]
+#+caption: How the AI imagines our toolshop (DALL-E 3)
+[[../img/0_tools.png]]
 
 - [[https://lyon.instructure.com/courses/2107][Canvas]] (learning management system) - get the mobile app.
 
@@ -193,6 +182,8 @@ now use MinGW to compile and run C/C++ programs on your system.
 - [[https://www.gnu.org/software/emacs/download.html][GNU Emacs]] (literate programming environment) - [[https://github.com/birkenkrahe/org/blob/master/FAQ.org][see also: FAQ]].
 
 - [[https://en.wikipedia.org/wiki/Command-line_interface][Command line interface]] (shell / REPL) see also: [[https://replit.com/@birkenkrahe/DisfiguredMiniSystemintegrator#main.c][replit.com]].
+
+- [[https://drive.google.com/drive/folders/1zZ_1y6fh3wzZcRJ7-LNpvTjw4MVwAr52?usp=sharing][Google Drive]] for whiteboard screenshots.
 
 * Learning Management System: Canvas
 #+attr_latex: :width 400px
@@ -211,11 +202,14 @@ now use MinGW to compile and run C/C++ programs on your system.
 [[../img/0_github.png]]
 
 - GitHub is the most popular software development platform but not
-  just for programmers (cp. [[https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14108][Braga et al 2023]])
+  just for programmers (cp. [[https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14108][Braga et al., 2023]])
 
 - It's now owned by Microsoft (which is becoming a problem)
 
 - Here for you: all course materials, and the course FAQ
+
+- To get some bonus points, watch "How GitHub works", complete the
+  "Hello world exercise" on the GitHub platform and [[https://lyon.instructure.com/courses/2107/assignments/23317][submit the result]].
 
 * The (feared) Emacs editor & Literate Programming
 #+attr_latex: :width 400px
@@ -226,7 +220,18 @@ now use MinGW to compile and run C/C++ programs on your system.
 - Humans can't read machine code - they require stories.
 - Literate programming delivers human-readable programs.
 - Emacs + Org-mode is our platform to do this.
-  
+
+* What are we going to do besides programming? 
+#+attr_latex: :width 400px
+#+caption: Layers between you and a document on your computer (DALL-E3)
+[[../img/0_infrastructure.png]]
+
+- There are many layers between your input and the CPU.
+- Most of the software enabling you to do stuff is written in C.
+- The primary software to connect to the OS is the shell program.
+
+Does anybody know what a "shebang" in computing is?[fn:1]
+
 * Practice: first "literate" C program! (30 min)
 #+attr_latex: :width 400px
 #+caption: Books aren't the only way to be "literate" in programming!
@@ -268,17 +273,17 @@ checking with your neighbor if he or she can help.
 14) At the prompt at the bottom of the screen, enter ~first.org~
 
 15) Enter the following text (replace ~yourname~ with your own name):
-    #+attr_latex: :width 200px
+    #+attr_latex: :width 400px
     [[../img/0_first.png]]
 
 16) 'Run' the program by putting the cursor anywhere on the code block
     and typing ~CTRL-c CTRL-c~. You should see the result on the screen.
 
-17) Save the file with ~CTRL + x CTRL + s~ 
+17) Save the file with ~CTRL + x CTRL + s~
 
 18) 'Tangle' the code with ~CTRL + c CTRL + v t~ (or ~M-x
     org-babel-tangle~): Emacs reports ="Tangled 1 code block from first.org"=.
-    #+attr_latex: :width 200px
+    #+attr_latex: :width 400px
     #+caption: What happens when you tangle or weave a literate program
     [[../img/0_litprog1.png]]
 
@@ -300,7 +305,7 @@ checking with your neighbor if he or she can help.
     File Explorer, or directly in Emacs with the following commands
     (you don't have to worry about spaces etc. because you can
     auto-complete using the <TAB> key):
-    #+begin_example elisp 
+    #+begin_example elisp
     C-x C-w                   ;; write file
     w:/My Drive/              ;; target directory
     C-x d w:/My Drive/        ;; open target directory
@@ -308,11 +313,11 @@ checking with your neighbor if he or she can help.
     #+end_example
     You can also do it in the Emacs eshell that you used earlier to
     compile and run the file on the shell (auto-complete with <TAB>):
-    #+begin_example bash 
+    #+begin_example bash
     cp first.org w:/My\ Drive/      # copy file to target directory
     cat w:/My\ Drive/first.org      # view copy of file at target location
     #+end_example
-    
+
 27) Upload ~first.org~ as your first in-class assignment:
     1. Open a browser to GDrive and upload the file
     2. Open the [[https://lyon.instructure.com/courses/2107/assignments/22790][assignment in Canvas]] at lyon.instructure.com
@@ -346,29 +351,16 @@ You can watch me complete this exercise [[https://youtu.be/zRgIaJzrbnY?si=NwOl0u
 
 - The first in-class assignment (~first.org~, [[https://lyon.instructure.com/courses/2107/assignments/22790][see Canvas]]) is due no
   later than Friday, January 26. For late submissions, you lose 50% of
-  your points.
+  your points. You just did this, all you have to do is submit it!
 
 - The second home assignment (~Emacs tutorial~, see Canvas) is due on
   Friday, January 26, too. For late submissions, you lose 50% of your
-  points.
-  
+  points. We'll start this assignment together in the next session.
+
 - The first multiple-choice test is due on Monday, 22 January,
-  covering all of the material that was covered until then.
+  including all of the material that was covered until then.
 
 For grading details, see [[https://lyon.instructure.com/courses/2107/assignments/syllabus][syllabus]].
-
-* What are you looking forward to?
-#+attr_latex: :width 400px
-[[../img/0_package.jpg]]
-
-* Next
-#+attr_latex: :width 400px
-#+caption: Introduction to C programming
-[[../img/0_gnuemacs.png]]
-
-#+attr_latex: :width 400px
-#+caption: Introduction to C programming
-[[../img/0_cprogramming.png]]
 
 * Glossary
 
@@ -412,6 +404,7 @@ For grading details, see [[https://lyon.instructure.com/courses/2107/assignments
 
 * Footnotes
 
-[fn:1] A command line prompt is the place in the CLI where you type
-commands for the computer. It typically includes text that indicates a
-location on your computer, e.g. ~c:/Users/birkenkrahe>~
+[fn:1]A shebang is the command sequence ~#!~ at the beginning of a shell
+script. It is followed by the ~PATH~ to an executable program,
+e.g. ~bash~.
+

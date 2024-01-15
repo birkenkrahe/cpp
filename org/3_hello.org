@@ -1,7 +1,7 @@
  #+TITLE:C Basics - Hello world program
 #+AUTHOR:Marcus Birkenkrahe
-#+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2023
-#+DATE: Time-stamp: <2023-01-27 17:24:49 Birkenkrahe>
+#+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2024
+#+DATE: Time-stamp: <2024-01-13 21:37:11 Birkenkrahe>
 #+STARTUP: overview hideblocks indent inlineimages
 #+attr_latex: :width 400px
 [[../img/helloworld.png]]
@@ -45,6 +45,7 @@
 - ~;~ ends every command - the computer waits for the next one!
 
 - The computer (aka compiler) ignores "white space"
+
 * "What a Tangled Web We Weave..."
 
 #+begin_quote
@@ -207,7 +208,7 @@ Windows. Compare the two executables - what do you notice?
   different themes[fn:5].
 
 - Display line numbers with ~display-line-numbers-mode~, and highlight
-  lines with ~hl-line-mode~ [fn:6] - you can toggle these, and you can
+  lines with ~hl-line-mode~ - you can toggle these, and you can
   go through the minibuffer history with ~M-x M-p~ and ~M-n~:
 
   #+attr_latex: :width 200px
@@ -326,8 +327,3 @@ languages - here is a [[https://replit.com/@birkenkrahe/DiscreteDearObjectdataba
 them using ~M-x package-list-packages~. To see the differences, enter
 ~M-x custom-themes~ and pick another theme now. You can save it
 automatically for future sessions.
-
-[fn:6]If you always want to have line numbers and highlight the line
-under the cursor, put these lines in your ~.emacs~ file:
- #+attr_latex: :width 100px
- [[../img/3_lisp.png]]
