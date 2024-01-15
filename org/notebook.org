@@ -12,9 +12,11 @@
  1. *Review:* [[https://forms.gle/pAJgAXjgBzCAqcqY7][Entry Survey]] ([[https://docs.google.com/forms/d/1mXocjlwiBrzM9wQS819rQYttRWoSNIt5eN0OSDUMdJc/edit#settings][Google forms]])
  2. *Lecture:* Introduction to the course ([[file:0_overview.org][0_overview.org]])
  3. *Practice*: Your first literate program ([[file:0_overview_practice.org][0_overview_practice.org]])
+
  4. *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]])
  5. *DYI content*: Installation issues / Emacs / GitHub ([[file:2_install.org][2_install.org]])
  6. *Practice*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
+
  7. *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]])
  8. *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
 
