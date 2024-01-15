@@ -12,8 +12,6 @@
 - What's the difference to C++?
 - Why are we not just learning C++?
 - What are C's strengths and weaknesses?
-- Why are you learning C from me?
-- What's next in the course?
 
 Source:
 - Textbook King (2008) ch.1[fn:1]
