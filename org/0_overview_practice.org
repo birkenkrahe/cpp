@@ -3,16 +3,16 @@
 #+subtitle: Introduction to Programming - Spring 2023 - Lyon College
 #+startup: overview hideblocks indent
 #+options: toc:nil num:nil ^:nil
-* Class Practice: first C program (due Jan 20)
-#+attr_latex: :width 400px
-#+caption: Books aren't the only way to be "literate" in programming!
-[[../img/0_books.png]]
+* Practice: first "literate" C program! (30 min)
 
-(You can find a [[https://github.com/birkenkrahe/cc/blob/piHome/pdf/first_org_print.pdf][PDF of this exercise]] on GitHub)
+There's a [[https://github.com/birkenkrahe/cpp/blob/main/pdf/first_org_print.pdf][PDF of this exercise]] on GitHub, and a [[https://youtu.be/zRgIaJzrbnY?si=PfK3CMPTa1DyC-yk][YouTube video]].
 
-Let's set Emacs up, write and run a first "literate" C program!
+Let's set Emacs up, write and run a first "literate" c program! it is
+very important that you enter everything *exactly as shown*. if you get
+something wrong just go back one step. Contact me if you need me after
+checking with your neighbor if he or she can help.
 
-1) Open the command line terminal with ~CMD~ in the search field
+1) Open the command line terminal with ~cmd~ in the search field
 
 2) At the prompt, type ~gcc --version~
 
@@ -28,39 +28,67 @@ Let's set Emacs up, write and run a first "literate" C program!
 
 8) Open a terminal by entering ~CMD~ in the Windows search bar
 
-9) Pin the terminal to your taskbar
+9) Pin the terminal to your taskbar to open it quickly next time!
 
 10) At the prompt, enter ~DIR emacs.txt~ - you should see the file
 
 11) At the prompt, enter ~emacs --version~
 
-12) Rename ~emacs.txt~ to ~.emacs~: ~RENAME emacs.txt .emacs~
+12) Enter ~emacs -nw -l emacs.txt~
 
-13) Start (non-graphical/terminal) Emacs: ~emacs -nw~
+13) Inside Emacs, enter ~CTRL + x CTRL + f~ to enter a new file.
 
-14) Inside Emacs, click ~<F10>~ and ~ENTER~ to open a new file
+14) At the prompt at the bottom of the screen, enter ~first.org~
 
-15) At the prompt at the bottom of the screen, enter ~first.org~
-
-16) Enter the following text (replace ~yourname~ with your own name):
+15) Enter the following text (replace ~yourname~ with your own name):
     #+attr_latex: :width 400px
     [[../img/0_first.png]]
 
-17) Run the program by putting the cursor anywhere on the code block
-    and typing ~CTRL-c CTRL-c~ (or ~C-c C-c~)
+16) 'Run' the program by putting the cursor anywhere on the code block
+    and typing ~CTRL-c CTRL-c~. You should see the result on the screen.
 
-18) Tangle the code with ~C-c C-v t~ (or ~M-x org-babel-tangle~)
+17) Save the file with ~CTRL + x CTRL + s~ 
+
+18) 'Tangle' the code with ~CTRL + c CTRL + v t~ (or ~M-x
+    org-babel-tangle~): Emacs reports ="Tangled 1 code block from first.org"=.
     #+attr_latex: :width 400px
     #+caption: What happens when you tangle or weave a literate program
     [[../img/0_litprog1.png]]
 
-19) Open a shell (terminal program) with ~ALT-x eshell~
+19) Open a shell inside Emacs by entering ~ALT-x eshell~
 
-20) At the prompt, enter ~ls -l first*~ - you should see ~first.C~
+20) At the =$= prompt, enter ~ls -l first*~ - you should see ~first.c~ listed
 
-21) Enter ~gcc first.C -o hello~
+21) Display ~first.c~ by entering ~cat first.c~
 
-22) Enter ~hello~ to run the program.
+22) Enter ~gcc first.c -o hello~ to compile the C program into an executable
 
-23) Upload ~first.org~ as your first in-class assignment [[https://lyon.instructure.com/courses/1014/assignments/6463][to Canvas!]]
+23) Enter ~hello~ to run the executable. You should see the output.
+
+24) Exit and close Emacs with ~CTRL-x CTRL-c~
+
+25) Exit and close the shell by entering ~exit~ after the prompt
+
+26) Save your file to a directory on your GDrive (you can do this with
+    File Explorer, or directly in Emacs with the following commands
+    (you don't have to worry about spaces etc. because you can
+    auto-complete using the <TAB> key):
+    #+begin_example elisp 
+    C-x C-w                   ;; write file
+    w:/My Drive/              ;; target directory
+    C-x d w:/My Drive/        ;; open target directory
+    s                         ;; sort to see recent files at top
+    #+end_example
+    You can also do it in the Emacs eshell that you used earlier to
+    compile and run the file on the shell (auto-complete with <TAB>):
+    #+begin_example bash 
+    cp first.org w:/My\ Drive/      # copy file to target directory
+    cat w:/My\ Drive/first.org      # view copy of file at target location
+    #+end_example
+    
+27) Upload ~first.org~ as your first in-class assignment:
+    1. Open a browser to GDrive and upload the file
+    2. Open the [[https://lyon.instructure.com/courses/2107/assignments/22790][assignment in Canvas]] at lyon.instructure.com
+    3. Upload the file from GDrive (click on "~More~")
+    4. When you see it attached, click on ~Submit Assignment~.
 

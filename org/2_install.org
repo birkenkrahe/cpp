@@ -1,7 +1,7 @@
 #+TITLE:Installation
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:CSC100 Introduction to programming in C/C++
-#+STARTUP:overview indent hideblocks inlineimages
+#+STARTUP: overview indent hideblocks inlineimages
 * What are you going to learn?
 
 - Why we don't just get coding
@@ -18,21 +18,20 @@
 There are two BIG reasons - one is philosophical, the other is
 technical.
 #+caption: Automation by xkcd.
-#+attr_latex: :width 300px
+#+attr_html: :width 300px
 [[../img/2_automation.png]]
 
 * Philosophy
 
 #+begin_quote
 "Understanding underlying technologies helps you develop a sense of
-what can go wrong. Knowing just high-level tools makes it easy to
-ask the wrong questions. It's worth learning to use a hammer before
-graduating to a nail gun. Learning underlying systems and tools
-gives you the power to build new tools, which is important because
-there will always be a need for tool builders, even if tool users
-are more common. Learning about computers so that the behavior of
-programs isn't a mystery enables you to craft better code."
-(Steinhart, 2019)
+what can go wrong. Knowing just high-level tools makes it easy to ask
+the wrong questions. It's worth learning to use a hammer before
+graduating to a nail gun. Learning underlying systems and tools gives
+you the power to build new tools, which is important because there
+will always be a need for tool builders, even if tool users are more
+common. Learning about computers so that the behavior of programs
+isn't a mystery enables you to craft better code."  ([[https://nostarch.com/foundationsofcomp][Steinhart, 2019]])
 #+end_quote
 
 - Understanding technologies makes them safer
@@ -50,50 +49,46 @@ The other reason has to do with C itself:
 | C source code is compiled, linked, debugged | compiler | [[https://gcc.gnu.org/][GNU CC]]    |
 | C object code is run                        | shell    | [[https://www.gnu.org/software/bash/][GNU bash]]  |
 
-#+attr_latex: :width 400px
+#+attr_html: :width 400px
 #+caption: C programming workflow (BPMN model)
 [[../img/2_workflow.png]]
 
 There are different routes to get C running on your computer,
 depending on your operating system (Linux, MacOS or Windows)[fn:1].
 
-The problem with most IDEs is that they're clunky. They take some
-time getting used to, have many functions that you'll never need,
-and any time spent on learning the IDE is wasted unless you keep
-working with it. IDEs do not teach you transferable skills.
+The problem with most IDEs is that they're clunky. They take some time
+getting used to, have many functions that you'll never need, and any
+time spent on learning the IDE is wasted unless you keep working with
+it. Graphic especially IDEs do not teach you transferable skills.
 
 * Infrastructure Setup
 
 The sections below cover most of the infrastructure used in my
-courses. They are also available as [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-to-install-gcc--a-c-compiler-under-windows-and-macos][FAQs on GitHub]].
+courses. They are also available as [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-to-install-gcc--a-c-compiler-under-windows-and-macos][FAQs on GitHub]] (not updated in
+2024).
 
-If you look at this at GitHub, look at ~*.org~ files for syntax
-highlighting. The Markdown (~*.md~) files do not have it (instead they
-have inline links, which the Org-files don't have).
-
-| PLATFORM | SOFTWARE | PURPOSE  |
-|----------+----------+----------|
-| GitHub   | Git      | Hosting  |
-| MinGW    | GCC      | Compiler |
-| GNU      | Emacs    | Editor   |
+| PLATFORM | SOFTWARE | PURPOSE  | Meaning                    |
+|----------+----------+----------+----------------------------|
+| GitHub   | Git      | Hosting  | Global Information Tracker |
+| MinGW    | GCC      | Compiler | Minimal GNU for Windows    |
+| GNU      | Emacs    | Editor   | GNU's Not Unix             |
 
 * GitHub - What is it?
 
 - Largest software development platform ([[https://github.blog/2023-01-25-100-million-developers-and-counting/][2023: 100 mio developers]])
 - Built around the version control system Git by Linus Torvalds
 - Bought by Microsoft in 2018
-- AI support (e.g. [[https://copilot.github.com/][GitHub Copilot]])
+- AI support (e.g. [[https://copilot.github.com/][GitHub Copilot]]) for students for free!
 
   Watch: "[[https://youtu.be/w3jLJU7DT5E][What is GitHub?]]" (GitHub, 2016)
 
-  #+attr_latex: :width 300px
+  #+attr_html: :width 300px
   #+caption: Gif: "So long binder of requirements" Source: GitHub
   [[../img/2_github.gif]]
 
 * GitHub - Why are we using it?
-
 /Image: Org-mode file in GitHub/
-#+attr_latex: :width 300px
+#+attr_html: :width 300px
 #+caption: Screenshot of an Org-file rendered in GitHub
 [[../img/2_org.png]]
 
@@ -111,7 +106,7 @@ have inline links, which the Org-files don't have).
 - Pick an available username *using your own first and last name*,
   e.g. ~MarcusBirkenkrahe~, or ~DonaldTrump~
 
-- Optional: [[https://docs.github.com/en/get-started/quickstart/hello-world][Complete the "Hello World" exercise]] ([[https://github.com/birkenkrahe/org/blob/master/FAQ.md#completing-the-github-hello-world-exercise][FAQ]])
+- Optional: [[https://docs.github.com/en/get-started/quickstart/hello-world][Complete the "Hello World" exercise]] ([[https://github.com/birkenkrahe/org/blob/master/FAQ.md#completing-the-github-hello-world-exercise][FAQ]]) for bonus points.
 
   #+begin_quote
   If you do have a GitHub account already, do the exercise anyway
@@ -120,11 +115,11 @@ have inline links, which the Org-files don't have).
 
 * GitHub - What else can you do?
 
-- You can [[https://docs.github.com/en/get-started/quickstart/fork-a-repo][fork]] the [[https://docs.github.com/en/get-started/quickstart/fork-a-repo][cc]] repository
-- You can [[https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/viewing-your-subscriptions][watch]] the [[https://docs.github.com/en/get-started/quickstart/fork-a-repo][cc]] repository - and set [[https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications][Notifications]] to
-  ~Participating and @mentions~ so that you see my comments (see
-  image below).
-  #+attr_latex: :width 300px
+- You can [[https://docs.github.com/en/get-started/quickstart/fork-a-repo][fork]] the [[https://github.com/birkenkrahe/cpp][cpp]] repository
+- You can [[https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/managing-subscriptions-for-activity-on-github/viewing-your-subscriptions][watch]] the [[https://github.com/birkenkrahe/cpp][cpp]] repository - and set [[https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications][Notifications]] to
+  ~Participating and @mentions~ so that you see my comments (see image
+  below).
+  #+attr_html: :width 300px
   #+caption: GitHub notifications setting
   [[../img/2_watch.png]]
   /Image: Notifications settings when watching a repository/
@@ -139,7 +134,7 @@ have inline links, which the Org-files don't have).
   - You can download the [[https://desktop.github.com/][desktop client]] to manage repos on your PC
     (see image below).
     #+caption: GitHub desktop client commit
-    #+attr_latex: :width 300px
+    #+attr_html: :width 300px
     [[../img/2_gh.png]]
 
 * Install GNU CC
@@ -149,20 +144,29 @@ have inline links, which the Org-files don't have).
 - [[https://www.mingw-w64.org/][MinGW]] ("Minimalist GNU for Windows") is a port of ~GNU gcc~ to
   Windows
   #+Caption: Shameless plug for the Free Software Foundation - [[https://www.fsf.org/][fsf.org]]
-  #+attr_latex: :width 300px
+  #+attr_html: :width 300px
   [[../img/2_fsf.png]]
 
 * Install GCC on Windows
 
-1)  Download the ~64bit~ installer from ~strawberryperl.com~:
-   ~strawberry-perl-5.32.1.1-64bit.msi.~
+Best way to install =gcc= is by installing ~MSYS2~ from msys2.org
+#+begin_src mermaid :file ../img/gcc_install.png :cmdline -w 200
+    ---
+    title: Installing GCC on Windows
+    ---
+    graph TD
+     A[Download .exe installer file] -->
+        B[Run installer] -->
+        C[Execute `pacman -Syu` to update] -->
+        D[Open MSYS2 UCRT64 app] -->
+        E[Install gcc with `pacman -S gcc` ] -->
+        F[Add C:\msys64\mingw64\bin` to PATH] -->
+        G[Open CMD and test with `gcc --version`]
+#+end_src
 
-2) Run the installer - accept all presets. This program will
-   automatically update the ~PATH~ to ~gcc~.
+#+RESULTS:
+[[file:../img/gcc_install.png]]
 
-3) Open a command line terminal and check that installation is
-   complete with ~gcc --version~
-   
 * Install Clang on MacOS
 
 Apple no longer allows GNU tools - instead, you can install the free
@@ -173,7 +177,7 @@ Apple no longer allows GNU tools - instead, you can install the free
 - If no compiler is found, download it by entering ~xcode-select
   --install~
 - Test it by typing ~cc -v~.
-  #+attr_latex: :width 300px
+  #+attr_html: :width 300px
   #+caption: Checking Clang compiler exists on a Mac
   [[../img/2_cc.png]]
 
@@ -191,10 +195,12 @@ With the Emacs editor + Org-mode, you can almost program
 interactively (live code) with C - akin to Python or R. Org-mode
 inside Emacs works like a REPL (Read-Evaluate-Print-Loop).
 
-A resource to look at, and use (for free, at first) that uses the
-REPL concept, is [[https://repl.it][repl.it]]. See image below for the "hello world"
-program in C.
-#+attr_latex: :width 350px
+* Free online C coding
+
+A resource to look at, and use (for free, at first) that uses the REPL
+concept, is [[https://repl.it][repl.it]] (aka replit.com) See image below for the "hello
+world" program in C.
+#+attr_html: :width 350px
 #+caption: Replit.com C template
 [[../img/2_replit.png]]
 
@@ -207,7 +213,7 @@ program in C.
 | Ancient software             | Written 1976, released in 1985[fn:6]                 |
 | Ca. 1.5M lines of code       | By comparison: Windows ca. 50M; Linux kernel ca. 30M |
 
-#+attr_latex: :width 400px
+#+attr_html: :width 400px
 #+caption: Emacs 27.1 showing Org, Magit and Dired
 [[../img/2_panels.png]]
 
@@ -222,10 +228,13 @@ See [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#which-editor-and-id
 - Planning (Calendar, ToDo)
 - Organizing (Files)
 
-See also the article "[[https://opensource.com/article/20/3/getting-started-emacs][Getting started with Emacs"]] (Kenlon, 2020), and
-the video "[[https://youtu.be/48JlgiBpw_I][The Absolute Beginner's Guide to Emacs]]" (System
-Crafters, 2020) with [[https://github.com/birkenkrahe/org/blob/master/emacs/emacs_beginner.org][my notes]].
-#+attr_latex: :width 300px
+See also:
+- Article: "[[https://opensource.com/article/20/3/getting-started-emacs][Getting started with Emacs"]] (Kenlon, 2020)
+- Video: "[[https://youtu.be/48JlgiBpw_I][The Absolute Beginner's Guide to Emacs]]" (System
+  Crafters, 2020) with [[https://github.com/birkenkrahe/org/blob/master/emacs/emacs_beginner.org][my notes]].
+
+This is how I looked when I first began to use Emacs:
+#+attr_html: :width 300px
 #+caption: DESY APE research group (1994). Can you find me?
 [[../img/2_desy.jpg]]
 
@@ -235,8 +244,8 @@ Other uses:
 - Remote access (with [[https://www.gnu.org/software/tramp/][GNU Tramp]])
 
 * How will we use Emacs?
-#+attr_latex: :width 300px
-#+caption: Neal Stephenson
+#+attr_html: :width 300px
+#+caption: Neal Stephenson (Cyberpunk)
 [[../img/2_neal.jpg]]
 
 We'll use it as:
@@ -254,7 +263,7 @@ In the Beginning was the Command Line (1998)[fn:8]
 
 We will not use Emacs as a substitute for religion even though
 there is a [[https://www.emacswiki.org/emacs/ChurchOfEmacs]["Church of Emacs"]] (EmacsWiki)! Huh?! What?!
-#+attr_latex: :width 300px
+#+attr_html: :width 300px
 #+caption: The real Church: Notre Dame de Paris. Source: Wikipedia.
 [[../img/2_notredame.png]]
 
@@ -268,7 +277,6 @@ If you look around, you'll see a lot of discussion on different source
 code editors and IDEs. Currently [[https://code.visualstudio.com/][Microsoft's Visual Studio (VS) Code]]
 seems to be the most popular contender. However, as one developer
 said:
-
 #+begin_quote
 "One thing that cannot be replaced by any extension in VS code, VIM or
 any other editor: Emacs' Org mode. Org mode is for sure one of the
@@ -301,48 +309,22 @@ command behind the keys, which your fingers will learn):
 | C-e     | ~org-end-of-line~         |
 | C-x C-s | ~save-buffer~             |
 
+I'll show you!
+
 Computer science, and IT, are largely about mastering, and creating
 new tools. Therefore, almost any effort is justified that goes into
 improving your *meta skills*[fn:9] in this area.
 
-* Install GNU Emacs
-#+attr_latex: :width 200px
+* Install GNU Emacs on Windows or Mac
+#+attr_html: :width 200px
 #+caption: GNU Emacs creator, Richard M Stallman (MIT)
 [[../img/2_rms.jpg]]
 
-* Emacs download and Installation for Windows
-
-- Download GNU Emacs + ESS as a modified version for [[https://vigou3.gitlab.io/emacs-modified-windows/][Windows]].
-- Run the installer - accept all presets.
-- Once you're done, you can open Emacs from the desktop with a
-  shortcut. If you also want to open it in the command line terminal
-  as ~emacs -nw~, you need to update the ~PATH~ variable for Windows:
-  1) Find the ~bin~ directory for Emacs in the File explorer - if you
-     followed the standard instructions, it is in ~c:\Program
-     Files\Emacs\emacs-28.2\bin~ - copy this address as text
-  2) search for ~PATH~ in the Windows search bar
-  3) in ~System Properties~, select ~Environment Variables~
-  4) in ~Environment Variables~, select the lower screen, ~System
-     variables~, then select the line with ~PATH~ on it, and select
-     ~Edit...~
-  5) In ~Edit environment variable~, select ~New~
-  6) Paste the address as text on a new line
-  7) Select ~OK~ three times until all screen dialogues are gone.
-  8) Open a Windows command line terminal
-  9) Enter ~emacs -nw~ on the terminal
-  10) If successful, leave Emacs with ~C-x C-c~
+You won't have to do it but you can simply download an installer from
+[[https://emacs-modified.gitlab.io/][here]] and install it using the installer. You need admin rights.
 
 - Check out my [[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][new tutorial]] at GitHub (with videos)
 
-* Emacs download and Installation for MacOS
-
-- Download [[https://emacsformacosx.com/][Emacs for MacOS from here]] (currently version 28.2)
-- Run the installer - accept all presets.
-- Drag the Emacs icon into your Applications icon
-- Ignore the warning
-- In a terminal, type ~emacs --version~ to see if it worked, and start
-  emacs with ~emacs~.
-  
 * Customize GNU Emacs
 
 - GNU Emacs is much more than a text editor and an IDE. It's more like
@@ -377,8 +359,9 @@ improving your *meta skills*[fn:9] in this area.
   is actually located on your computer depends on your operating
   system[fn:10].
 
-- Download the configuration file [[https://raw.githubusercontent.com/birkenkrahe/org/master/emacs/.emacs][from GitHub]] and copy and paste it
-  into a ~.emacs~ file or save it as ~emacs.txt~ and rename it to ~.emacs~.
+- Download the configuration file [[https://raw.githubusercontent.com/birkenkrahe/org/master/emacs/.emacs][from GitHub]] (tinyurl.com/EmacsLyon)
+  and copy and paste it into a ~.emacs~ file or save it as ~emacs.txt~ and
+  rename it to ~.emacs~.
 
 - Once you've created the ~.emacs~ file, you can start Emacs and code
   away "literarily". The customizations below are optional. But even
@@ -390,6 +373,7 @@ improving your *meta skills*[fn:9] in this area.
 - To create a notebook using Org-mode, create an ~.org~ file. Then type
   ~C-c C-,~ and select your chunk from the list. You can also abbreviate
   this by entering ~<s~ on any line.
+
 - You can [[https://orgmode.org/manual/Working-with-Source-Code.html][work with source code]] in Emacs for a number of different
   languages:
   1) To run a code chunk as a whole, type ~C-c C-c~. The result will
@@ -508,7 +492,7 @@ use the mobile version a lot.
 function ~iwb~ to indent a whole buffer according to the buffer's
 mode - something that can also be done with the key sequence ~C-x h
 C-M-\~ (~mark-whole-buffer + indent-region~).
-#+attr_latex: :width 100px
+#+attr_html: :width 300px
 [[../img/2_iwb.png]]
 
 [fn:5]Emacs Lisp is a Lisp dialect. Lisp was one of the first

@@ -1,6 +1,6 @@
-#+TITLE: Introduction to C
+#+TITLE: Introduction to C and C++
 #+AUTHOR:Marcus Birkenkrahe
-#+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2023
+#+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2024
 #+STARTUP:overview hideblocks indent inlineimages
 #+OPTIONS: toc:1
 #+OPTIONS:hideblocks
@@ -33,41 +33,77 @@ Source:
 
 - C consistently ranks among the top 3 programming languages.
 - TIOBE Language of the year 2008, 2017, 2019
-
+- Highest position since 2001: #1 in Sep 2021
+- Lowest position sicne 2001: #2 in Jan 2024
 #+caption: TIOBE Index for C, 2002-2023 (Source: TIOBE)
 #+attr_latex: :width 400px
 [[../img/1_tiobe.png]]
 
 - Popularity contest: cp. [[https://www.tiobe.com/tiobe-index/][TIOBE Index]][fn:2]
 
-#+caption: TIOBE Index ranking 1-10 (tiobe.com)
+#+caption: TIOBE Index ranking 1-10 (tiobe.com), January 2024
 #+attr_latex: :width 400px
-_[[../img/1_tiobe1.png]]+
+_[[../img/1_tiobe2.png]]
 
-- Of the top 10 languages, 7 are direct descendants of C - only Visual
-  Basic, SQL and Assembly language are not C-type languages
+- Of the top 10 languages, only SQL (databases), and Assembly
+  (machine) language are not C-type languages!
 
-#+caption: IEEE index (Source: Cass, 2019)
+#+caption: IEEE index - by (Source: Cass, 2023)
 #+attr_latex: :width 400px
-[[../img/1_ieee.png]]
+[[../img/1_ieee1.png]]
+
+#+begin_quote
+"Python alone does not make a career. In our “Jobs” ranking, it is SQL
+that shines at No. 1. Ironically though, you’re very unlikely to get
+a job as a pure SQL programmer. Instead, employers love, love, love,
+seeing SQL skills in tandem with some other language such as Java or
+C++." (Cass, 2023)
+#+end_quote
 
 * How important is C?
 
 #+caption: Real world applications of C (Source: DataFlair)
 #+attr_latex: :width 400px
-[[../img/1_usage.jpg]]
+[[../img/1_usage1.png]]
 
 Some well-known programs written in C:
-- The Linux kernel (and therefore, Android)
-- UNIX operating system (core of MacOS)
-- Windows 1.0 to Windows XP
-- Doom (early video game)
-- Wolfenstein 3D
+- The Linux kernel (and therefore, Android - 40%)
+- UNIX operating system (core of MacOS and iOS - 25%)
+- Windows operating system (core of most PCs - 30%)
+- Doom (early video game) and Wolfenstein 3D
 - Git version control system
 - C compilers (Clang, GCC/MinGW)
+- Interpreted languages like Python
 - Any software that crosses platforms easily (portable)
+- Software for the Curiosity Mars rover and most space apps
 
-See also: "[[https://youtu.be/smGalmxPVYc][Why C programming is awesome]]" (Hawkes, 2016).
+See also:
+1) "Why C programming is awesome" ([[https://youtu.be/smGalmxPVYc][Hawkes, 2016]]).
+   #+begin_notes
+   Video summary:
+   1. Basis of most modern programming languages like Java, C#, C++, Python etc.
+   2. Use in high performance embedded systems like the Curiosity Rover on Mars.
+   3. Language for kernel development (manager for the operating system).
+   4. Writing code in C requires you managing your own memory.
+   5. In the process you find out how a computer really works.
+   6. C is in high demand for jobs
+   7. C is portable (runs everywhere) and efficient (runs fast)
+   #+end_notes
+2) "C Programming Language (Brian Kernighan)" ([[https://youtu.be/G1-wse8nsxY?si=Dx_csT2ms64wqF3A][Lex Fridman, 2020]])
+   #+begin_notes
+   1. Why did C survive, and why did it have such a long-lasting impact?
+      - Expressiveness (natural to use), efficiency (fast, small),
+        environment (Unix)
+   2. What did it take to write the definitive book on C? (Popular and standardizing)
+      - In 1977 there were many Unix systems and no authoritative document
+      - Book included a crystal-clear reference manual
+      - Find examples that might hang together
+   3. What do you find powerful about examples?
+      - It'll tell you how to do something
+      - It'll help you do something similar but perhaps more ambitious
+      - Many examples were picked for Unix' text processing problems: "read input, write output"
+      - Find things that are representative of what people want to do (in core form)
+   #+end_notes
 
 * What is a programming language?
 
@@ -86,11 +122,57 @@ are used in computer programming to implement algorithms." (Source:
 
 Fortunately, computer (and data) science isn't really a science at all!
 
-(it's more of a craft like mining, knitting, or pottering.)
+(It's more of a craft like mining, knitting, or pottering.)
 
-#+caption: Scientific fields arranged by "purity" (xkcd)
+#+caption: [Scientific] fields arranged by "purity" (xkcd)
 #+attr_latex: :width 400px
 [[../img/1_purity.png]]
+
+In the xkcd cartoon, computer (and data) science do not even figure,
+because they're so interdisciplinary (the opposite of "pure"). Still,
+there is a lot of "pure" mathematics, physics and even biology that
+plays a role in computer science (and programming).
+
+The most important parts of maths for computer science are...? That's
+a good question for our new mildly demented friend, ChatGPT (GPT-3.5):
+#+begin_ai
+The most important parts of mathematics for computer science are...?
+
+[AI]: The most important parts of mathematics for computer science include:
+
+1. Discrete Mathematics: This branch of mathematics deals with objects
+   that are finite or countable. It is essential for understanding
+   logic, set theory, combinatorics, and graph theory, which form the
+   foundation of computer science.
+
+2. Logic: Logic is crucial for reasoning and problem-solving in
+   computer science. It covers topics such as propositional logic,
+   predicate logic, and formal proof techniques.
+
+3. Probability and Statistics: Probability theory plays a significant
+   role in analyzing uncertainty and randomness in algorithms and
+   data. Statistics is essential for understanding data analysis,
+   machine learning, and data-driven decision-making.
+
+4. Calculus: Calculus is important for analyzing the behavior of
+   algorithms, optimizing functions, and solving problems involving
+   continuous quantities.
+
+5. Linear Algebra: Linear algebra is used extensively in computer
+   graphics, machine learning, data analysis, and many other areas of
+   computer science. It provides tools to understand and manipulate
+   vectors, matrices, and linear transformations.
+
+6. Number Theory: Number theory is foundational to cryptography and
+   data encryption techniques used in computer security.
+
+These areas of mathematics provide a solid foundation for
+understanding fundamental concepts and theoretical aspects of computer
+science and form the basis for many algorithms, data structures, and
+analysis techniques used in the field.
+
+[ME]:
+#+end_ai
 
 * Where does C come from?
 
@@ -106,7 +188,7 @@ Fortunately, computer (and data) science isn't really a science at all!
 
 #+begin_quote
 *Challenge:* what does "8K words of main memory" mean? [fn:4]
-#+end_quote  
+#+end_quote
 
 See also: [[https://youtu.be/G1-wse8nsxY][C Programming Language | Brian Kernighan & Lex Fridman]]
 - Text processing problems were inherited from Unix
@@ -120,8 +202,12 @@ See also: [[https://youtu.be/G1-wse8nsxY][C Programming Language | Brian Kernigh
 [[../img/1_standards.png]]
 
 Details: see [[https://blog.ansi.org/2018/11/c-language-standard-iso-iec-9899-2018-c18/#gref][ANSI]] (American National Standards Institute)
+#+begin_notes
+Sometimes, standardization goes awry. For example, Python 3 was not
+"backwards compatible" with Python 2.7, R seems split in a "Tidyverse"
+and a "base R" community.
+#+end_notes
 
-Python 3 was not "backwards compatible" with Python 2.7
 * How computers work
 
 Well, at least this is one way of looking at it.
@@ -134,8 +220,8 @@ The "hard disk" can also be a Solid State Drive (SSD) or some other
 form of Non-Volatile Memory (NVM) - i.e. it doesn't disappear when
 the power goes out.
 
-* How programs are processed
-**  Simplified process
+* How programs are created and processed
+** Simplified process
 
 1) *WRITE* source code in an editor (NVM = harddisk)
 2) *COMPILE* source code to machine code (RAM = memory)
@@ -151,49 +237,6 @@ technically like this:
 #+caption: GCC compilation process (Source: Hock-Chuan, 2018).
 #+attr_latex: :width 400px
 [[../img/1_gcc.png]]
-
-* Looks matter
-
-She's a beauty.
-
-#+caption: PDP-11/70
-#+attr_latex: :width 400px
-[[../img/1_pdp11.jpg]]
-
-| Challenge: was C the first programming language? [fn:5] |
-
-* The Latin of programming languages
-
-The following languages are C-based:
- - C++ (OOP extension of C, games)
- - Java (OOP, VM-portable, and no pointers)
- - C# (Microsoft, games)
- - Perl (scripting, text mining)
-
-#+begin_quote
-"C is to programming languages what Latin is to Western natural
-languages." (Anonymous)
-#+end_quote
-
- - C is lightning fast and terribly tiny
-
-   #+begin_quote
-   "C is fast because it's the speed of light, and relativity?"[fn:6]
-   ([[https://stackoverflow.com/questions/418914/why-is-c-so-fast-and-why-arent-other-languages-as-fast-or-faster][Stackoverflow]])
-   #+end_quote
-
-* Benchmarking
-     
-   #+caption: Image source: Kostya benchmark, GitHub, Nov 2021
-   [[../img/1_fast.png]]
-
-    #+caption: Image source: Kostya benchmark, GitHub, Nov 2021
-    [[../img/1_slow.png]]
-
- * Excerpts for parsing and printing a /Mandelbrot/ set
- * /Benchmarks/ depend on algorithm implementation
- * C always wins the size battle (/memory allocation/)
- * Some very /specialized/ languages are even faster
 
 * Strengths and weaknesses of C
 
@@ -233,61 +276,36 @@ Source: Lemonaki, 2021.
 
 * Why are we not just learning C++?
 
- - Object-orientation is a difficult paradigm (C++)
- - System programming is pure power (C)
- - C is simpler, smaller, and faster
+- Object-orientation is a difficult paradigm (C++)
+- System programming is pure power (C)
+- C is simpler, smaller, and faster
+- C has 35 keywords, C++ has 95
 
- #+caption: Computer Landscape. (Modified from: Steinhart, 2019)
- #+attr_latex: :width 400px
- [[../img/1_power2.png]]
+  #+caption: Computer Landscape. (Modified from: Steinhart, 2019)
+  #+attr_latex: :width 400px
+  [[../img/1_power2.png]]
 
- - Bjarne Stroustrup (2011): "[[https://youtu.be/KlPC3O1DVcg][C is obsolete]]"[fn:7]
- - Linus Torvalds (2007): "[[http://harmful.cat-v.org/software/c++/linus][C++ is a horrible language]]"[fn:8].
+  - Bjarne Stroustrup (2011): "[[https://youtu.be/KlPC3O1DVcg][C is obsolete]]"[fn:7]
+  - Linus Torvalds (2007): "[[http://harmful.cat-v.org/software/c++/linus][C++ is a horrible language]]"[fn:8].
 
-  Also, there's this:
+    Also, there's this:
 
-  #+begin_quote
-  "Languages are tools. Memorizing them no more makes you a computer
-  scientist than studying hammers makes you a carpenter." -[[https://qr.ae/pGzZ9z][Neilsen]]
-  #+end_quote
+    #+begin_quote
+    "Languages are tools. Memorizing them no more makes you a computer
+    scientist than studying hammers makes you a carpenter." -[[https://qr.ae/pGzZ9z][Neilsen]]
+    #+end_quote
 
-  - It's easy to pick up additional languages
-  - Data structures and algorithms are key to understanding
-  - First language could be anything[fn:9]
-
-* Why am I teaching C/C++?
-
-It's personal.
-
-#+caption: The C++ Virtual Library, 1993-1995 (DESY)
-#+attr_latex: :width 400px
-[[../img/1_desy.png]]
-
-#+begin_quote
-I used C++ during my PhD studies at DESY, Germany, to write a
-library of multigrid functions (numerical method for lattice gauge
-theory simulations in theoretical particle physics).[fn:10]
-#+end_quote
-
-* What will happen to C/C++ in the next 20 years?
-
-Whatever happens, good new for learning C.
-
-#+caption: One expert's opinion (Source: Quora)
-#+attr_latex: :width 400px
-[[../img/1_future.png]]
-
-I increasingly see propaganda for [[https://www.incredibuild.com/blog/rust-vs-c-and-is-it-good-for-enterprise][replacing C++ by Rust]] (Kirsh, 2021),
-another relatively new language with OOP support and better security
-properties.
+    - It's easy to pick up additional languages
+    - Data structures and algorithms are key to understanding
+    - First language could be anything[fn:9]
 
 * Summary
 
- 1) The C programming language was created 50 years ago
- 2) C is small, simple, very fast, and close to the computer
- 3) Linux (and Android) are largely written in C
- 4) The object-oriented programming (OOP) language C++ contains C
- 5) System programming is a powerful skill set
+1) The C programming language was created 50 years ago
+2) C is small, simple, very fast, and close to the computer
+3) Linux (and Android) are largely written in C
+4) The object-oriented programming (OOP) language C++ contains C
+5) System programming is a powerful skill set
 
 * Glossary
 
@@ -317,14 +335,6 @@ properties.
 | System programming      | Programming close to the machine                    |
 | Application programming | Programming close to the user                       |
 
-* What's next?
-
-- Getting started: Infrastructure (Lab)
-- MinGW (compiler) + Emacs (editor) + GitHub (collaboration)
-- First program: "hello world" (Lecture + Lab)
-
-  [[../img/1_river.gif]]
-
 * References
 
 - Big Think (Jun 13, 2011). Bjarne Stroustrup: Why the Programming
@@ -332,7 +342,7 @@ properties.
   [video]. [[https://youtu.be/KlPC3O1DVcg][URL:youtu.be/KlPC3O1DVcg]].
 - Brock (October 17, 2019). The Earliest Unix Code: An Anniversary
   Source Code Release [Blog]. URL: [[https://computerhistory.org/blog/the-earliest-unix-code-an-anniversary-source-code-release/][computerhistory.org]].
-- Cass (6 Sept 2019). The Top Programming Languages 2019 > Python
+- Cass (29 August 2023). The Top Programming Languages 2019 > Python
   remains the big kahuna, but specialist languages hold their
   own. IEEE Spectrum. [[https://spectrum.ieee.org/the-top-programming-languages-2019][URL: spectrum.ieee.org]].
 - Chatley R., Donaldson A., Mycroft A. (2019) The Next 7000
@@ -371,8 +381,9 @@ the ANSI standard for C, like C11, and the current standard C17. The
 next major C standard revision (C23) is expected for 2023. Gustedt
 (2019) is a good (but quite difficult) book on "modern C".
 
-[fn:2]Since 2000, C has consistently ranked among the top two
-languages in the TIOBE index (based on searches).
+[fn:2]Since 2000, C is one of the top two languages in the TIOBE index
+(based on searches), and one of the top three of the (more relevant)
+IEEE ranking.
 
 [fn:3]The motivation to create Unix, according to [[https://en.wikipedia.org/wiki/Space_Travel_(video_game)][Wikipedia]], was to
 port Thompson's space travel video game to the PDP-7 mainframe
@@ -409,5 +420,3 @@ scientific computing), then C++. Recently, I picked up R (for data
 science). In between I've sampled (not mastered) many others,
 including: Python, Lisp, PROLOG, C, PHP, SQL, SQLite etc.
 
-[fn:10]I changed my name from 'Speh' to 'Birkenkrahe' when I got
-married.
