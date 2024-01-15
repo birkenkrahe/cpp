@@ -5,7 +5,7 @@
 #+OPTIONS: toc:nil num:nil ^:nil
 #+property: header-args:C :main yes :includes <stdio.h> :results output :noweb yes
 #+property: header-args:R :results output :noweb yes :session *R* :exports both
-* Week 1 - Course overview & introducing C/C++
+* Week 1 - Overview & introduction to C/C++
 #+attr_html: :width 400px
 [[../img/cover.png]]
 

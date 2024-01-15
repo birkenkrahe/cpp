@@ -14,24 +14,24 @@
 - My first programming languages:
   * [[https://upload.wikimedia.org/wikipedia/commons/7/7b/AtariBASIC.png][BASIC]] - Beginner's All-purpose Symbolic Instruction Code (1979)
   * FORTRAN - FORMula TRANslator (1985)
-  * C++ (1989)
+  * C++ - C with classes (1993)
 
 - My last programming languages:
-  * R (2019)
-  * Python (2023)
-  * Lisp (2024)
+  * R - statistical programming language (2019)
+  * Python - all-purpose programming language (2022)
+  * Lisp - the first AI programming language (2024)
 
 - Languages in between:
-  * Shell (OS)
-  * SQL/SQLite (databases)
-  * Snap! (visual)
-  * Perl (text)
+  * HTML/CSS - web layout (1991)
+  * Shell - operating system control (1992)
+  * SQL/SQLite - relational databases (2005)
+  * Snap! - visual block-based coding (2020)
 
 - Languages that I still want to learn:
-  * Assembly (machine)
-  * Haskell (functional)
-  * Verilog (parallel)
-  * Prolog (logical)
+  * Assembly - machine language
+  * Haskell - functional language
+  * Verilog - parallel computing
+  * Prolog - logical)
 
 * Which careers do our graduates have?
 #+attr_latex: :width 400px
