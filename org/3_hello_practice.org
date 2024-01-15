@@ -4,9 +4,16 @@
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both :comments both
 * READ README
 
-- This file is a practice file for C fundamentals.
+- This file is a practice file for C fundamentals. To work through it,
+  you need to download the "[[https://raw.githubusercontent.com/birkenkrahe/cpp/main/org/3_hello_practice.org][raw]]" version of the file and open it in
+  Emacs.
 
-- You will learn how to:
+- Use an .emacs configuration file [[https://raw.githubusercontent.com/birkenkrahe/org/master/emacs/.emacs][like this one]] to enable active code
+  blocks.
+
+- If your Emacs skills are shaky, try my [[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial]].
+
+- In this exercise, you will learn how to:
   1) understand and change syntax highlighting
   2) understand and use comments in C
 
@@ -15,10 +22,12 @@
 - When you're done with a section move the cursor on the section
   heading and type ~S-<right>~ (or SHIFT+<right-arrow>).
 
-  - When you leave class without having completed the file, save a
-    copy to your GDrive as a backup and/or to work on it from home
+- When you leave class without having completed the file, save a copy
+  to your GDrive as a backup and/or to work on it from home
 
-- When you've completed the file, upload it to Canvas
+- When you've completed the file, upload it to Canvas.
+
+- Here is a [[https://youtu.be/SVLrLr_EEgA?si=xFhGFd9GMJcXdoQz][solution video]] (10 min).
 
 * TODO Identify yourself
 
