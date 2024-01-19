@@ -12,6 +12,7 @@
 - What's the difference to C++?
 - Why are we not just learning C++?
 - What are C's strengths and weaknesses?
+- First 'literate' C program and Emacs + Org-mode
 
 Source:
 - Textbook King (2008) ch.1[fn:1]
@@ -296,6 +297,109 @@ Source: Lemonaki, 2021.
     - It's easy to pick up additional languages
     - Data structures and algorithms are key to understanding
     - First language could be anything[fn:9]
+
+* Practice: first "literate" C program! (30 min)
+#+attr_latex: :width 400px
+#+caption: Books aren't the only way to be "literate" in programming!
+[[../img/0_books.png]]
+
+(You can find a [[https://github.com/birkenkrahe/cpp/blob/main/pdf/first_org_print.pdf][PDF of this exercise]] on GitHub.)
+
+Let's set emacs up, write and run a first "literate" c program! it is
+very important that you enter everything *exactly as shown*. if you get
+something wrong just go back one step. Contact me if you need me after
+checking with your neighbor if he or she can help.
+
+1) Open the command line terminal with ~cmd~ in the search field
+
+2) At the prompt, type: ~where gcc~
+
+3) At the prompt, type: ~where emacs~
+
+4) Enter: ~emacs -nw~ (if Emacs was installed)
+
+5) Navigate to Emacs' home directory: type ~CTRL-x d~ and then enter: ~~~
+
+6) Enter: ~ALT + x eww~ to open a browser inside Emacs.
+
+7) At the prompt, enter: ~tinyurl.com/EmacsLyon~
+
+8) Save the downloaded file with ~CTRL + x CTRL + w~ as ~.emacs~
+
+9) Inside Emacs, enter: ~CTRL + x CTRL + f~ to enter a new file: Emacs
+   will  ~C-x C-f~ in the minibuffer at the bottom.
+
+10) After the prompt at the bottom of the screen, enter ~first.org~
+
+11) Enter the following text (replace ~yourname~ with your own name):
+    #+attr_latex: :width 400px
+    [[../img/0_first.png]]
+
+12) 'Run' the program by putting the cursor anywhere on the code block
+    and typing ~CTRL-c CTRL-c~. You should see the result on the screen.
+
+13) This is your first C program! Save the file with ~CTRL + x CTRL + s~
+    (in the minibuffer, you will see ~C-x C-s~).
+
+14) 'Tangle' the code with ~CTRL + c CTRL + v t~ (or, alternatively,
+    with ~ALT + x org-babel-tangle RET~): Emacs reports ="Tangled 1 code
+    block from first.org"= in the minibuffer.
+    #+attr_latex: :width 400px
+    #+caption: What happens when you tangle or weave a literate program
+    [[../img/0_litprog1.png]]
+
+15) Open a shell inside Emacs by entering: ~ALT-x eshell~
+
+16) At the =$= prompt, enter ~ls -l first*~ - you should see ~first.c~ listed
+
+17) Display ~first.c~ by entering ~cat first.c~
+
+18) Enter ~gcc first.c -o hello~ to compile the C program into an executable
+
+19) Enter ~hello~ to run the executable. You should see the output.
+
+20) Exit and close Emacs with ~CTRL-x CTRL-c~
+
+21) Exit and close the shell by entering ~exit~ after the prompt
+
+22) Save your file to a directory on your GDrive (you can do this from
+    GDrive in a browser, with File Explorer, or directly in Emacs with
+    the following commands (you don't have to worry about spaces
+    etc. because you can auto-complete using the <TAB> key):
+    #+begin_example elisp 
+    C-x C-w                   ;; write file
+    w:/My Drive/              ;; target directory
+    C-x d w:/My Drive/        ;; open target directory
+    s                         ;; sort to see recent files at top
+    #+end_example
+    You can also do it in the Emacs eshell that you used earlier to
+    compile and run the file on the shell (auto-complete with <TAB>):
+    #+begin_example bash 
+    cp first.org w:/My\ Drive/      # copy file to target directory
+    cat w:/My\ Drive/first.org      # view copy of file at target location
+    #+end_example
+    
+23) Upload ~first.org~ as your first 'literate' in-class assignment:
+    1. Open a browser to GDrive and upload the file
+    2. Open the [[https://lyon.instructure.com/courses/2107/assignments/22790][assignment in Canvas]] at lyon.instructure.com
+    3. Upload the file from GDrive (click on "~More~")
+    4. When you see it attached, click on ~Submit Assignment~.
+
+* What did you just learn?
+
+You learnt:
+1) How to open and close the GNU Emacs editor.
+2) How to create, save, and write an Emacs Org-mode file.
+3) How to create, compile, and run a C program inside Emacs.
+4) How to tangle a literate program into source code.
+5) How to save a file on your GDrive in three ways.
+6) How to submit a completed assignment to Canvas.
+
+It would be worth repeating these steps on your own without peeking in
+your notes to make sure that you understood what you did and that you
+can do it again - we'll do this hundreds of times in class!
+
+You can watch me complete this exercise [[https://youtu.be/zRgIaJzrbnY?si=NwOl0u9Nr06FkkoU][in this video]] (30').
 
 * Summary
 

@@ -1,92 +1,71 @@
-#+title: Course Overview Practice Assignments
+#+title: Course Overview Practice Assignment: First C Program
 #+author: Marcus Birkenkrahe
 #+subtitle: Introduction to Programming - Spring 2023 - Lyon College
 #+startup: overview hideblocks indent
 #+options: toc:nil num:nil ^:nil
-* Practice: first "literate" C program! (30 min)
-
-There's a [[https://github.com/birkenkrahe/cpp/blob/main/pdf/first_org_print.pdf][PDF of this exercise]] on GitHub, and a [[https://youtu.be/zRgIaJzrbnY?si=PfK3CMPTa1DyC-yk][YouTube video]].
-
-Let's set Emacs up, write and run a first "literate" c program! it is
+* Practice: first C program! (15 min)
+Let's set emacs up, write and run a first "literate" c program! it is
 very important that you enter everything *exactly as shown*. if you get
 something wrong just go back one step. Contact me if you need me after
 checking with your neighbor if he or she can help.
 
-1) Open the command line terminal with ~cmd~ in the search field
+1) Open the command line terminal with ~cmd~ in the search field and pin
+   the app to the task bar to open it more quickly next time.
 
-2) At the prompt, type ~gcc --version~
+2) At the prompt, type ~gcc --version~ - this should tell you the
+   location of the C compiler, GNU CC.
 
-3) Open https://github.com/birkenkrahe/org/ in a browser
+3) Open the Windows search field and type ~notepad~, then open the
+   app. You can also pin it to the taskbar. This is your editor now.
 
-4) Navigate to the repository ~emacs~ in GitHub
+4) Pin the terminal to your taskbar to open it quickly next time!
 
-5) Click on the file name ~.emacs~ to open it
+5) In the ~notepad~ app window, enter the following lines - don't miss
+   a single character, including empty 'whitespace':
+   #+begin_example
+     #include <stdio.h>
 
-6) Open the ~Raw~ version of this file (there's a button)
+     int main (void)
+     {
+        puts("Hello, world!");
+        return 0;
+     }
+   #+end_example
 
-7) Right click to ~Save as~ and save file as ~emacs.txt~ in ~/Downloads~
+6) Save the file with ~CTRL + s~ to the name: ~hello.c~. Pay attention to
+   the file location on your computer, e.g. ~This PC > Downloads~.
 
-8) Open a terminal by entering ~CMD~ in the Windows search bar
+7) Close the ~notepad~ app.
 
-9) Pin the terminal to your taskbar to open it quickly next time!
+8) Open the CMD line terminal again.
 
-10) At the prompt, enter ~DIR emacs.txt~ - you should see the file
+9) Go to the location of your ~hello.c~ file by entering ~cd~ followed by
+   the location, e.g. ~cd Downloads~ or ~cd C:\~.
 
-11) At the prompt, enter ~emacs --version~
+10) Make sure your file is there and ready by entering ~type
+    hello.c~. You should now see it on the screen.
 
-12) Enter ~emacs -nw -l emacs.txt~
+11) Compile the program by entering ~gcc hello.c~. If all is well,
+    you'll get no response, just another prompt.
 
-13) Inside Emacs, enter ~CTRL + x CTRL + f~ to enter a new file.
+12) At the prompt, enter ~DIR hello.c a.exe~ - this will give you
+    information about your C file and the executable machine file.
 
-14) At the prompt at the bottom of the screen, enter ~first.org~
+13) Run the program by entering ~a.exe~.
 
-15) Enter the following text (replace ~yourname~ with your own name):
-    #+attr_latex: :width 400px
-    [[../img/0_first.png]]
+14) Now compile the program again with the command ~gcc hello.c -o hello~.
 
-16) 'Run' the program by putting the cursor anywhere on the code block
-    and typing ~CTRL-c CTRL-c~. You should see the result on the screen.
+15) Your executable (the compiler's output) is now called ~hello~.
 
-17) Save the file with ~CTRL + x CTRL + s~ 
+16) Check that by entering ~hello~ at the prompt. You should get your
+    output ~Hello, world!~ on the screen.
 
-18) 'Tangle' the code with ~CTRL + c CTRL + v t~ (or ~M-x
-    org-babel-tangle~): Emacs reports ="Tangled 1 code block from first.org"=.
-    #+attr_latex: :width 400px
-    #+caption: What happens when you tangle or weave a literate program
-    [[../img/0_litprog1.png]]
-
-19) Open a shell inside Emacs by entering ~ALT-x eshell~
-
-20) At the =$= prompt, enter ~ls -l first*~ - you should see ~first.c~ listed
-
-21) Display ~first.c~ by entering ~cat first.c~
-
-22) Enter ~gcc first.c -o hello~ to compile the C program into an executable
-
-23) Enter ~hello~ to run the executable. You should see the output.
-
-24) Exit and close Emacs with ~CTRL-x CTRL-c~
-
-25) Exit and close the shell by entering ~exit~ after the prompt
-
-26) Save your file to a directory on your GDrive (you can do this with
-    File Explorer, or directly in Emacs with the following commands
-    (you don't have to worry about spaces etc. because you can
-    auto-complete using the <TAB> key):
-    #+begin_example elisp 
-    C-x C-w                   ;; write file
-    w:/My Drive/              ;; target directory
-    C-x d w:/My Drive/        ;; open target directory
-    s                         ;; sort to see recent files at top
+17) Now open ~hello.c~ again using ~notepad~ and at the top add the line:
+    #+begin_example
+    // Hello world program by [yourname] (Pledged)
     #+end_example
-    You can also do it in the Emacs eshell that you used earlier to
-    compile and run the file on the shell (auto-complete with <TAB>):
-    #+begin_example bash 
-    cp first.org w:/My\ Drive/      # copy file to target directory
-    cat w:/My\ Drive/first.org      # view copy of file at target location
-    #+end_example
-    
-27) Upload ~first.org~ as your first in-class assignment:
+
+18) Save it again and submit it as your first in-class assignment:
     1. Open a browser to GDrive and upload the file
     2. Open the [[https://lyon.instructure.com/courses/2107/assignments/22790][assignment in Canvas]] at lyon.instructure.com
     3. Upload the file from GDrive (click on "~More~")

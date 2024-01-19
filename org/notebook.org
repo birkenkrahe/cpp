@@ -9,30 +9,77 @@
 #+attr_html: :width 400px
 [[../img/cover.png]]
 
- 1. *Review:* [[https://forms.gle/pAJgAXjgBzCAqcqY7][Entry Survey]] ([[https://docs.google.com/forms/d/1mXocjlwiBrzM9wQS819rQYttRWoSNIt5eN0OSDUMdJc/edit#settings][Google forms]])
- 2. *Lecture:* Introduction to the course ([[file:0_overview.org][0_overview.org]])
- 3. *Practice*: Your first literate program ([[file:0_overview_practice.org][0_overview_practice.org]])
+1. [X] *Review:* [[https://forms.gle/pAJgAXjgBzCAqcqY7][Entry Survey]] ([[https://docs.google.com/forms/d/1mXocjlwiBrzM9wQS819rQYttRWoSNIt5eN0OSDUMdJc/edit#settings][Google forms]])
+2. [X] *Lecture:* Introduction to the course ([[file:0_overview.org][0_overview.org]])
+3. [ ] *Practice:* Your first C program.
+4. [ ] *Practice*: Your first literate program ([[file:0_overview_practice.org][0_overview_practice.org]])
 
- 4. *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]])
- 5. *DYI content*: Installation issues / Emacs / GitHub ([[file:2_install.org][2_install.org]])
- 6. *Practice*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
+TEST YOURSELF (Google Chat)
 
- 7. *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]])
- 8. *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
+*Please check in with:*
+1) one word related to this course
+2) your major (if you already know)
+3) your name (so that I can remember it)
+   
+** You're not the only one
+#+ATTR_HTML: :WIDTH 400px:
+#+CAPTION: Source: DALL-E 3
+[[../img/no_idea_what_is_going_on.png]]
 
-** Assignments and tests
+A student after the last class:
+#+begin_quote
+*"I think I was the only one who had no idea what was going on"*
+#+end_quote
+
+Yeah, right. In your dreams. I saw the blank stares of (almost)
+everyone else. The truth: you weren't supposed to understand
+anything - the learning doesn't happen when I'm talking but when
+you're typing - when you're doing stuff either alongside me in class,
+or (better) on your own.
+
+** Announcement: Journal club!
+
+
+Data science enthusiasts: there will be a "journal club" on Wednesday
+12-12:45 pm in Derby room 209. We'll put the papers in a GDrive.
+
+For the first journal club on Januar 31, I'd like to submit my last
+non-technical paper, "The role of AI coding assistants: revisiting the
+need for literate programming in computer and data science education."
+([[https://drive.google.com/file/d/1OonJ1pesK2iRP3JDf4MoBRgg4NKk91yU/view?usp=sharing][Link]]) This paper will be presented at INTED'24, the 18th annual
+International Technology, Education and Development Conference in
+Valencia (Spain), March 4-6.
+
+You can get some background on this topic from the wall poster in
+front of my office, about the paper that I wrote before this one.
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/MDPI_2023_BIRKENKRAHE_poster.pptx.png]]
+
+*Caveat:* in a journal club, you discuss other people's papers and not
+your own - I will try to simulate that by discussing my paper as if
+someone else had written it, and also using AI to deliver a critique.
+
+** Coming assignments and tests (by 26 January)
 
 - Complete your first C program (in Emacs) and the Emacs tutorial.
 - Upload the Org-mode files.
 - Bonus: GitHub Hello World exercise (upload screenshot).
 - Test 1
+  
+* Week 2 - C Fundamentals
+
+4. [ ] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]])
+5. [ ] *DYI content*: Installation issues / Emacs / GitHub ([[file:2_install.org][2_install.org]])
+6. [ ] *Practice*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
+
+7. [ ] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]])
+8. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
 
 ** Sources
 
 - Parts of the introduction are inspired by King, chapter 1 (pp. 1-8).
 - Parts of the hello world basics are inspired by King, chapter 2 (9-18).
- 
-* Week 2 - C Fundamentals
+
 * Week 3 - Input/output
 * Week 4 - Expressions
 * Week 5 - Selection
