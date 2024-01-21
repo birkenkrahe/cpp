@@ -344,7 +344,7 @@ Process:
 #+caption: Books aren't the only way to be "literate" in programming!
 [[../img/0_books.png]]
 
-Here is a [[https://github.com/birkenkrahe/cpp/blob/main/pdf/helloEmacs.pdf][PDF of this exercise]] and a YouTube video (30 min).
+Here is a [[https://github.com/birkenkrahe/cpp/blob/main/pdf/helloEmacs.pdf][PDF of this exercise]] and a [[https://youtu.be/Oq83ZCu8FUI][YouTube video (30 min)]].
 
 Let's set Emacs up, write and run a first "literate" C program! it is
 very important that you enter everything *exactly as shown*. if you get
