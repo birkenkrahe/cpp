@@ -1,7 +1,7 @@
  #+TITLE:C Basics - Hello world program
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2024
-#+DATE: Time-stamp: <2024-01-13 21:37:11 Birkenkrahe>
+#+DATE: Time-stamp: <2024-01-20 14:43:17 Birkenkrahe>
 #+STARTUP: overview hideblocks indent inlineimages
 #+attr_latex: :width 400px
 [[../img/helloworld.png]]
@@ -9,21 +9,6 @@
 
 - This script summarizes and adds to the treatment by King (2008),
   chapter 2, C Fundamentals - see also [[https://docs.google.com/presentation/d/14qvh00aVb_R09_hrQY0EDEK_JLAkgZ0S/edit?usp=sharing&ouid=102963037093118135110&rtpof=true&sd=true][slides (GDrive)]].
-
-- There is an Org-mode file available for practice. Download
-  ~3_hello_practice.org~ as a raw file from GitHub
-  ([[https://tinyurl.com/y32yd3ax][tinyurl.com/y32yd3ax]])
-
-- Open a command line terminal and change (~cd~) to the Downloads
-  directory
-
-- Open the file in Emacs with ~emacs -nw --file 3_hello_practice.org~
-
-- When you leave class without having completed the file, save a
-  copy to GDrive as a backup and/or to work on it from home
-
-- When you've completed the file, upload it to Canvas where you'll
-  find a "Class practice" assignment named ~3_hello_practice.org~.
 
 * Program structure
 #+attr_latex: :width 300px
@@ -248,10 +233,17 @@ Let's fix this:
 
 * Let's practice!
 
-Save the [[https://raw.githubusercontent.com/birkenkrahe/cc/piHome/org/2_hello_practice.org][practice file]] as ~1_hello_practice.org~ and complete it:
+- There is an Org-mode file available for practice. Upload the file to
+  Emacs from [[https://tinyurl.com/y32yd3ax][tinyurl.com/y32yd3ax]].
 
-1) understand and change syntax highlighting
-2) understanding and using comments in C
+- When you leave class without having completed the file, save a
+  copy to GDrive as a backup and/or to work on it from home.
+
+- When you've completed the file, upload it to Canvas.
+
+- What you'll learn: 
+  1) understand and change syntax highlighting
+  2) understanding and using comments in C
 
    #+attr_latex: :width 200px
    [[../img/3_practice1.gif]]

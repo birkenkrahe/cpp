@@ -1,7 +1,9 @@
 #+TITLE: Introduction to C and C++
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2024
-#+STARTUP:overview hideblocks indent inlineimages
+#+STARTUP: overview hideblocks indent inlineimages
+#+PROPERTY:header-args:C :results output
+#+PROPERTY:header-args:C++ :results output  
 #+OPTIONS: toc:1
 #+OPTIONS:hideblocks
 * What will you learn?
@@ -186,10 +188,10 @@ analysis techniques used in the field.
 - Standardization of C, 1973-2018
 
 #+begin_quote
-*Challenge:* what does "8K words of main memory" mean? [fn:4]
+*Challenge:* what does "8K words of main memory" actually mean? [fn:4]
 #+end_quote
 
-See also: [[https://youtu.be/G1-wse8nsxY][C Programming Language | Brian Kernighan & Lex Fridman]]
+See also: [[https://youtu.be/G1-wse8nsxY][Podcast with Brian Kernighan & Lex Fridman]]:
 - Text processing problems were inherited from Unix
 - Examples should be realistic, useful and representative
 - If you're the first in anything, everybody else has to follow
@@ -298,75 +300,119 @@ Source: Lemonaki, 2021.
     - Data structures and algorithms are key to understanding
     - First language could be anything[fn:9]
 
-* Practice: first "literate" C program! (30 min)
+* Practice: 'Hello world' program in C++
+
+To round this section off, let's repeat our last practice exercise
+with C++ instead of C, using =notepad= and the =g++= compiler:
+
+1. Implement the following program (replace "your name" by your name:
+   #+begin_src C++ :results output :tangle c:/Users/birkenkrahe/hello1.cpp
+     // Hello world program in C++
+     // By [your name] (pledged)
+     #include <iostream>
+
+     /* print hello world message
+        a first C++ program */
+     int main()
+     {
+       std::cout << "Hello, world!" << std::endl;
+       return 0;
+     }
+   #+end_src
+
+2. Save the program with the file extention ~.cpp~
+
+3. Run the program on the command line using the =g++= compiler and the
+   =-o= flag to rename the executable file to ~hello++~.
+
+4. Upload your file directly to Canvas.
+
+What's different about this code compared to ~hello.c~?
+
+*** Solution:
+Process:
+1. Open the Windows command line
+2. Enter ~notepad hello.cpp~
+3. Enter the program text as shown
+4. Save the program in the editor
+5. On the command line, enter ~g++ hello.cpp -o hello++~
+6. On the command line, enter ~hello++~ (may not work for g++ 13.2)
+8. Open Canvas and upload the C++ file.
+
+* Practice: first "literate" C program!
 #+attr_latex: :width 400px
 #+caption: Books aren't the only way to be "literate" in programming!
 [[../img/0_books.png]]
 
-(You can find a [[https://github.com/birkenkrahe/cpp/blob/main/pdf/first_org_print.pdf][PDF of this exercise]] on GitHub.)
+Here is a [[https://github.com/birkenkrahe/cpp/blob/main/pdf/helloEmacs.pdf][PDF of this exercise]] and a YouTube video (30 min).
 
-Let's set emacs up, write and run a first "literate" c program! it is
+Let's set Emacs up, write and run a first "literate" C program! it is
 very important that you enter everything *exactly as shown*. if you get
 something wrong just go back one step. Contact me if you need me after
 checking with your neighbor if he or she can help.
 
 1) Open the command line terminal with ~cmd~ in the search field
 
-2) At the prompt, type: ~where gcc~
+2) At the prompt, type: ~gcc --version~
 
-3) At the prompt, type: ~where emacs~
+3) At the prompt, type: ~emacs --version~
 
-4) Enter: ~emacs -nw~ (if Emacs was installed)
+4) If Emacs is available, enter: ~emacs -q~ 
 
-5) Navigate to Emacs' home directory: type ~CTRL-x d~ and then enter: ~~~
+5) Enter: ~ALT + x eww~ to open a browser inside Emacs.
 
-6) Enter: ~ALT + x eww~ to open a browser inside Emacs.
+6) At the prompt, enter: ~tinyurl.com/EmacsLyon~
 
-7) At the prompt, enter: ~tinyurl.com/EmacsLyon~
+7) Save the downloaded file with ~CTRL + x CTRL + w~ as ~~/.emacs~ 
 
-8) Save the downloaded file with ~CTRL + x CTRL + w~ as ~.emacs~
+8) Kill the current ~*EWW*~ buffer with ~C-x k~
 
-9) Inside Emacs, enter: ~CTRL + x CTRL + f~ to enter a new file: Emacs
-   will  ~C-x C-f~ in the minibuffer at the bottom.
+9) Shut Emacs down with ~C-x C-w~.
 
-10) After the prompt at the bottom of the screen, enter ~first.org~
+10) Restart Emacs. The file you just created, ~.emacs~, is now loaded.
 
-11) Enter the following text (replace ~yourname~ with your own name):
+11) Create a new file: ~C-x C-f~ - at the prompt, enter ~firstLit.org~.
+
+12) Enter the following text (replace ~yourname~ with your own name):
     #+attr_latex: :width 400px
     [[../img/0_first.png]]
 
-12) 'Run' the program by putting the cursor anywhere on the code block
+13) 'Run' the program by putting the cursor anywhere on the code block
     and typing ~CTRL-c CTRL-c~. You should see the result on the screen.
 
-13) This is your first C program! Save the file with ~CTRL + x CTRL + s~
+14) This is your first C program! Save the file with ~CTRL + x CTRL + s~
     (in the minibuffer, you will see ~C-x C-s~).
 
-14) 'Tangle' the code with ~CTRL + c CTRL + v t~ (or, alternatively,
+15) 'Tangle' the code with ~CTRL + c CTRL + v t~ (or, alternatively,
     with ~ALT + x org-babel-tangle RET~): Emacs reports ="Tangled 1 code
     block from first.org"= in the minibuffer.
+
+16) 'Weave' the document from the literate file with ~C-c C-e~ followed
+    by ~h~ ~o~ to open the document as HTML in a browser.
+    
     #+attr_latex: :width 400px
     #+caption: What happens when you tangle or weave a literate program
     [[../img/0_litprog1.png]]
 
-15) Open a shell inside Emacs by entering: ~ALT-x eshell~
+17) Open a shell inside Emacs by entering: ~ALT-x eshell~
 
-16) At the =$= prompt, enter ~ls -l first*~ - you should see ~first.c~ listed
+18) At the =$= prompt, enter ~ls -l first*~ - you should see ~first.c~ listed
 
-17) Display ~first.c~ by entering ~cat first.c~
+19) Display ~first.c~ by entering ~cat first.c~
 
-18) Enter ~gcc first.c -o hello~ to compile the C program into an executable
+20) Enter ~gcc first.c -o hello~ to compile the C program into an executable
 
-19) Enter ~hello~ to run the executable. You should see the output.
+21) Enter ~hello~ to run the executable. You should see the output.
 
-20) Exit and close Emacs with ~CTRL-x CTRL-c~
+22) Exit and close Emacs with ~CTRL-x CTRL-c~
 
-21) Exit and close the shell by entering ~exit~ after the prompt
+23) Exit and close the shell by entering ~exit~ after the prompt
 
-22) Save your file to a directory on your GDrive (you can do this from
+24) Save your file to a directory on your GDrive (you can do this from
     GDrive in a browser, with File Explorer, or directly in Emacs with
     the following commands (you don't have to worry about spaces
     etc. because you can auto-complete using the <TAB> key):
-    #+begin_example elisp 
+    #+begin_example elisp
     C-x C-w                   ;; write file
     w:/My Drive/              ;; target directory
     C-x d w:/My Drive/        ;; open target directory
@@ -374,12 +420,12 @@ checking with your neighbor if he or she can help.
     #+end_example
     You can also do it in the Emacs eshell that you used earlier to
     compile and run the file on the shell (auto-complete with <TAB>):
-    #+begin_example bash 
+    #+begin_example bash
     cp first.org w:/My\ Drive/      # copy file to target directory
     cat w:/My\ Drive/first.org      # view copy of file at target location
     #+end_example
-    
-23) Upload ~first.org~ as your first 'literate' in-class assignment:
+
+25) Upload ~first.org~ as your first 'literate' in-class assignment:
     1. Open a browser to GDrive and upload the file
     2. Open the [[https://lyon.instructure.com/courses/2107/assignments/22790][assignment in Canvas]] at lyon.instructure.com
     3. Upload the file from GDrive (click on "~More~")
@@ -493,9 +539,10 @@ computer. So in a way we owe modern computing to gaming.
 
 [fn:4]How many bits can be stored in memory of 8K words depends on the
 bit length of a word (or byte). One byte holds 8 = 2^3 bits (binary
-digits, or memory locations capable of storing 2 states). 8K byte
-correspond to 8 * 2^10 = 8 * 1,024 = 8,192 bits. By comparison, the
-main memory of my laptop is 16GB = 16 * 2^30 = 3.2E+31 bits. It
+digits, or memory locations capable of storing 2 states). For example,
+the binary "1111111" represents the decimal number 255 = 2^8 - 1. 8K
+byte correspond to 8 * 2^10 = 8 * 1,024 = 8,192 bits. By comparison,
+the main memory of my laptop has 16GB = 16 * 2^30 = 3.2E+31 bits. It
 follows from these memory restrictions that UNIX (and C) had to be
 designed to be very small, or space effective.
 
@@ -521,4 +568,3 @@ system-level, portable code.
 scientific computing), then C++. Recently, I picked up R (for data
 science). In between I've sampled (not mastered) many others,
 including: Python, Lisp, PROLOG, C, PHP, SQL, SQLite etc.
-
