@@ -5,13 +5,13 @@
 #+OPTIONS: toc:nil num:nil ^:nil
 #+property: header-args:C :main yes :includes <stdio.h> :results output :noweb yes
 #+property: header-args:R :results output :noweb yes :session *R* :exports both
-* Week 1 - Overview & introduction to C/C++
+* DONE Week 1 - Overview & introduction to C/C++
 #+attr_html: :width 400px
 [[../img/cover.png]]
 
 1. [X] *Review:* [[https://forms.gle/pAJgAXjgBzCAqcqY7][Entry Survey]] ([[https://docs.google.com/forms/d/1mXocjlwiBrzM9wQS819rQYttRWoSNIt5eN0OSDUMdJc/edit#settings][Google forms]])
 2. [X] *Lecture:* Introduction to the course ([[file:0_overview.org][0_overview.org]])
-3. [ ] *Practice:* Your first C program.
+3. [X] *Practice:* Your first C program.
 4. [ ] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]]) 
 
 TEST YOURSELF (Google Chat)
@@ -39,7 +39,6 @@ or (better) on your own.
 
 ** Announcement: Journal club!
 
-
 Data science enthusiasts: there will be a "journal club" on Wednesday
 12-12:45 pm in Derby room 209. We'll put the papers in a GDrive.
 
@@ -59,16 +58,18 @@ front of my office, about the paper that I wrote before this one.
 your own - I will try to simulate that by discussing my paper as if
 someone else had written it, and also using AI to deliver a critique.
 
-** Coming assignments and tests (by 26 January)
+** Coming assignments and tests (by 25/26 January)
 
 - Complete your first C program (in Emacs)
 - Complete your first 'literate' program
 - Complete the Emacs tutorial.
 - Upload the Org-mode files.
 - Bonus: GitHub Hello World exercise (upload screenshot).
-- Test 1
+- Test 1 (by Thu 25 Jan) 
   
 * Week 2 - C Fundamentals
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/first_test.png]]
 
 1. [ ] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]]) 
 2. [ ] *DYI content*: Installation issues / Emacs / GitHub ([[file:2_install.org][2_install.org]])
