@@ -3,7 +3,7 @@
 #+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2024
 #+STARTUP: overview hideblocks indent inlineimages
 #+PROPERTY:header-args:C :results output
-#+PROPERTY:header-args:C++ :results output  
+#+PROPERTY:header-args:C++ :results output
 #+OPTIONS: toc:1
 #+OPTIONS:hideblocks
 * What will you learn?
@@ -90,30 +90,14 @@ See also:
    6. C is in high demand for jobs
    7. C is portable (runs everywhere) and efficient (runs fast)
    #+end_notes
-2) "C Programming Language (Brian Kernighan)" ([[https://youtu.be/G1-wse8nsxY?si=Dx_csT2ms64wqF3A][Lex Fridman, 2020]])
-   #+begin_notes
-   1. Why did C survive, and why did it have such a long-lasting impact?
-      - Expressiveness (natural to use), efficiency (fast, small),
-        environment (Unix)
-   2. What did it take to write the definitive book on C? (Popular and standardizing)
-      - In 1977 there were many Unix systems and no authoritative document
-      - Book included a crystal-clear reference manual
-      - Find examples that might hang together
-   3. What do you find powerful about examples?
-      - It'll tell you how to do something
-      - It'll help you do something similar but perhaps more ambitious
-      - Many examples were picked for Unix' text processing problems: "read input, write output"
-      - Find things that are representative of what people want to do (in core form)
-   #+end_notes
 
 * What is a programming language?
 
 #+begin_quote
 "A programming language is a /formal language/ comprising of a set of
-/strings/ that produce various kinds of /machine code/
-output. Programming languages are one kind of computer language, and
-are used in computer programming to implement algorithms." (Source:
-[[https://en.wikipedia.org/wiki/Programming_language][Wikipedia]])
+/strings/ that produce various kinds of /machine code/ output. Programming
+languages are one kind of computer language, and are used in computer
+programming to implement algorithms." (Source: [[https://en.wikipedia.org/wiki/Programming_language][Wikipedia]])
 #+end_quote
 
 - *Formal* language?
@@ -134,47 +118,6 @@ because they're so interdisciplinary (the opposite of "pure"). Still,
 there is a lot of "pure" mathematics, physics and even biology that
 plays a role in computer science (and programming).
 
-The most important parts of maths for computer science are...? That's
-a good question for our new mildly demented friend, ChatGPT (GPT-3.5):
-#+begin_ai
-The most important parts of mathematics for computer science are...?
-
-[AI]: The most important parts of mathematics for computer science include:
-
-1. Discrete Mathematics: This branch of mathematics deals with objects
-   that are finite or countable. It is essential for understanding
-   logic, set theory, combinatorics, and graph theory, which form the
-   foundation of computer science.
-
-2. Logic: Logic is crucial for reasoning and problem-solving in
-   computer science. It covers topics such as propositional logic,
-   predicate logic, and formal proof techniques.
-
-3. Probability and Statistics: Probability theory plays a significant
-   role in analyzing uncertainty and randomness in algorithms and
-   data. Statistics is essential for understanding data analysis,
-   machine learning, and data-driven decision-making.
-
-4. Calculus: Calculus is important for analyzing the behavior of
-   algorithms, optimizing functions, and solving problems involving
-   continuous quantities.
-
-5. Linear Algebra: Linear algebra is used extensively in computer
-   graphics, machine learning, data analysis, and many other areas of
-   computer science. It provides tools to understand and manipulate
-   vectors, matrices, and linear transformations.
-
-6. Number Theory: Number theory is foundational to cryptography and
-   data encryption techniques used in computer security.
-
-These areas of mathematics provide a solid foundation for
-understanding fundamental concepts and theoretical aspects of computer
-science and form the basis for many algorithms, data structures, and
-analysis techniques used in the field.
-
-[ME]:
-#+end_ai
-
 * Where does C come from?
 
 #+caption: "K&R" (Kernighan/Ritchie, 1978)
@@ -182,19 +125,27 @@ analysis techniques used in the field.
 [[../img/1_kr.png]]
 
 - By-product of the UNIX operating system 1969 [fn:3]
-- Developed on DEC PDP-7 (computer with 8K words of main memory)
+- Developed on DEC PDP-7 (computer with 8K words of main memory[fn:4])
 - Written originally in assembly language
 - UNIX rewritten in C by 1973 for [[https://en.wikipedia.org/wiki/PDP-11][DEC PDP-11]]
 - Standardization of C, 1973-2018
 
-#+begin_quote
-*Challenge:* what does "8K words of main memory" actually mean? [fn:4]
-#+end_quote
-
-See also: [[https://youtu.be/G1-wse8nsxY][Podcast with Brian Kernighan & Lex Fridman]]:
-- Text processing problems were inherited from Unix
-- Examples should be realistic, useful and representative
-- If you're the first in anything, everybody else has to follow
+See also "C Programming Language (Brian Kernighan)" ([[https://youtu.be/G1-wse8nsxY?si=Dx_csT2ms64wqF3A][Lex Fridman,
+2020]])
+#+begin_notes
+1. Why did C survive, and why did it have such a long-lasting impact?
+   - Expressiveness (natural to use), efficiency (fast, small),
+     environment (Unix)
+2. What did it take to write the definitive book on C? (Popular and standardizing)
+   - In 1977 there were many Unix systems and no authoritative document
+   - Book included a crystal-clear reference manual
+   - Find examples that might hang together
+3. What do you find powerful about examples?
+   - It'll tell you how to do something
+   - It'll help you do something similar but perhaps more ambitious
+   - Many examples were picked for Unix' text processing problems: "read input, write output"
+   - Find things that are representative of what people want to do (in core form)
+#+end_notes
 
 * Standardization
 
@@ -203,25 +154,40 @@ See also: [[https://youtu.be/G1-wse8nsxY][Podcast with Brian Kernighan & Lex Fri
 [[../img/1_standards.png]]
 
 Details: see [[https://blog.ansi.org/2018/11/c-language-standard-iso-iec-9899-2018-c18/#gref][ANSI]] (American National Standards Institute)
+
 #+begin_notes
 Sometimes, standardization goes awry. For example, Python 3 was not
 "backwards compatible" with Python 2.7, R seems split in a "Tidyverse"
 and a "base R" community.
 #+end_notes
 
-* How computers work
-
-Well, at least this is one way of looking at it.
-
+* How computers work (hardware)
 #+caption: Computer architecture (simplified)
 #+attr_latex: :width 400px
-[[../img/1_computer.png]]
+[[../img/1_infrastructure.png]]
 
-The "hard disk" can also be a Solid State Drive (SSD) or some other
-form of Non-Volatile Memory (NVM) - i.e. it doesn't disappear when
-the power goes out.
+(a) CPU + RAM + Non-Volatile Memory (NVM)
 
-* How programs are created and processed
+- Central Processing Unit: very, very fast. General purpose (like
+  Intel Core, AMD Ryzen or Apple M-series); embedded CPUs (on
+  microcontrollers); server CPUs (Intel XEON, AMD's EPYC).
+
+- GPUs are workhorses for parallel computing that usually run
+  alongside a CPU (e.g. for fast scientific or graphics
+  calculations). An example for AI is Google's TPU (Tensor Processing
+  Unit) designed specifically for neural network machine learning.
+
+- Secondary storage (non-volatile memory, NVM): very, very slow. Much
+  too slow for the CPU. NVM can be a hard disk, or a Solid State Drive
+  (SSD) - it doesn't disappear when the power goes off (by way of
+  permanent magnetic fields).
+  
+b) Main memory (Random Access Memory): fast enough for the
+  CPU. Organized as a "stack" of memory addresses. All programs must
+  be loaded into memory before they can be executed. In C, you can
+  access memory cells directly through the "pointer" data structure.
+
+* How programs are created and processed (software)
 ** Simplified process
 
 1) *WRITE* source code in an editor (NVM = harddisk)
@@ -277,28 +243,10 @@ Source: Lemonaki, 2021.
 
 * Why are we not just learning C++?
 
-- Object-orientation is a difficult paradigm (C++)
-- System programming is pure power (C)
-- C is simpler, smaller, and faster
-- C has 35 keywords, C++ has 95
-
-  #+caption: Computer Landscape. (Modified from: Steinhart, 2019)
-  #+attr_latex: :width 400px
-  [[../img/1_power2.png]]
-
-  - Bjarne Stroustrup (2011): "[[https://youtu.be/KlPC3O1DVcg][C is obsolete]]"[fn:7]
-  - Linus Torvalds (2007): "[[http://harmful.cat-v.org/software/c++/linus][C++ is a horrible language]]"[fn:8].
-
-    Also, there's this:
-
-    #+begin_quote
-    "Languages are tools. Memorizing them no more makes you a computer
-    scientist than studying hammers makes you a carpenter." -[[https://qr.ae/pGzZ9z][Neilsen]]
-    #+end_quote
-
-    - It's easy to pick up additional languages
-    - Data structures and algorithms are key to understanding
-    - First language could be anything[fn:9]
+- Object-orientation is a difficult paradigm (C++).
+- System programming is pure power (C).
+- C is simpler, smaller, and faster.
+- C has 35 keywords, C++ has 95.
 
 * Practice: 'Hello world' program in C++
 
@@ -357,13 +305,13 @@ checking with your neighbor if he or she can help.
 
 3) At the prompt, type: ~emacs --version~
 
-4) If Emacs is available, enter: ~emacs -q~ 
+4) If Emacs is available, enter: ~emacs -q~
 
 5) Enter: ~ALT + x eww~ to open a browser inside Emacs.
 
 6) At the prompt, enter: ~tinyurl.com/EmacsLyon~
 
-7) Save the downloaded file with ~CTRL + x CTRL + w~ as ~~/.emacs~ 
+7) Save the downloaded file with ~CTRL + x CTRL + w~ as ~~/.emacs~
 
 8) Kill the current ~*EWW*~ buffer with ~C-x k~
 
@@ -389,7 +337,7 @@ checking with your neighbor if he or she can help.
 
 16) 'Weave' the document from the literate file with ~C-c C-e~ followed
     by ~h~ ~o~ to open the document as HTML in a browser.
-    
+
     #+attr_latex: :width 400px
     #+caption: What happens when you tangle or weave a literate program
     [[../img/0_litprog1.png]]
