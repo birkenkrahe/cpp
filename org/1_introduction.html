@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-01-24 Wed 10:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Introduction to C and C++</title>
+<meta name="author" content="Marcus Birkenkrahe" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Introduction to C and C++
+<br />
+<span class="subtitle">CSC100 Introduction to programming in C/C++ Spring 2024</span>
+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org181921f">1. What will you learn?</a></li>
+<li><a href="#org888fd6b">2. What is C?</a></li>
+<li><a href="#org0f6ab5e">3. How popular is C?</a></li>
+<li><a href="#orgc8c4202">4. How important is C?</a></li>
+<li><a href="#org8a8f60a">5. What is a programming language?</a></li>
+<li><a href="#orgafee91e">6. Where does C come from?</a></li>
+<li><a href="#org596baf4">7. Standardization</a></li>
+<li><a href="#org79882c1">8. How computers work (hardware)</a></li>
+<li><a href="#org87af9c2">9. How programs are created and processed (software)</a></li>
+<li><a href="#orgbdf03de">10. Strengths and weaknesses of C</a></li>
+<li><a href="#org86fc793">11. What is the difference between C and C++?</a></li>
+<li><a href="#org6c0e679">12. Why are we not just learning C++?</a></li>
+<li><a href="#org73274c1">13. Practice: 'Hello world' program in C++</a></li>
+<li><a href="#org28cc482">14. Practice: first "literate" C program!</a></li>
+<li><a href="#org25ed6a9">15. What did you just learn?</a></li>
+<li><a href="#orgeb31db9">16. Summary</a></li>
+<li><a href="#org33627c1">17. Glossary</a></li>
+<li><a href="#org2f9fb1c">18. References</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org181921f" class="outline-2">
+<h2 id="org181921f"><span class="section-number-2">1.</span> What will you learn?</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>What is C?</li>
+<li>What is its origin?</li>
+<li>What is its importance?</li>
+<li>What's the difference to C++?</li>
+<li>Why are we not just learning C++?</li>
+<li>What are C's strengths and weaknesses?</li>
+<li>First 'literate' C program and Emacs + Org-mode</li>
+</ul>
+
+<p>
+Source:
+</p>
+<ul class="org-ul">
+<li>Textbook King (2008) ch.1<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></li>
+<li>See also <a href="https://docs.google.com/presentation/d/16jVt1LYw_an7na_Ex0bz8l2uySJtydBK/edit?usp=sharing&amp;ouid=102963037093118135110&amp;rtpof=true&amp;sd=true">slides (GDrive)</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org888fd6b" class="outline-2">
+<h2 id="org888fd6b"><span class="section-number-2">2.</span> What is C?</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>C is a programming language created in the early 1970s.</li>
+<li>It grew out of the development of the UNIX operating system</li>
+<li>In turn, UNIX grew out of a space travel game (Brock, 2019).</li>
+</ul>
+
+
+<div id="orge98c2d8" class="figure">
+<p><img src="../img/1_unix.png" alt="1_unix.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Thompson &amp; Ritchie &amp; DEC PDP-11, 1970. (Brock, 2019)</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0f6ab5e" class="outline-2">
+<h2 id="org0f6ab5e"><span class="section-number-2">3.</span> How popular is C?</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>C consistently ranks among the top 3 programming languages.</li>
+<li>TIOBE Language of the year 2008, 2017, 2019</li>
+<li>Highest position since 2001: #1 in Sep 2021</li>
+<li>Lowest position since 2001: #2 in Jan 2024</li>
+</ul>
+
+<div id="org75fd463" class="figure">
+<p><img src="../img/1_tiobe.png" alt="1_tiobe.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>TIOBE Index for C, 2002-2023 (Source: TIOBE)</p>
+</div>
+
+<ul class="org-ul">
+<li>Popularity contest: cp. <a href="https://www.tiobe.com/tiobe-index/">TIOBE Index</a><sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup></li>
+</ul>
+
+<p>
+_<img src="../img/1_tiobe2.png" alt="1_tiobe2.png" />
+</p>
+
+<ul class="org-ul">
+<li>Of the top 10 languages, only SQL (databases), and Assembly
+(machine) language are not C-type languages!</li>
+</ul>
+
+
+<div id="orgf4e1f3f" class="figure">
+<p><img src="../img/1_ieee1.png" alt="1_ieee1.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>IEEE index - by (Source: Cass, 2023)</p>
+</div>
+
+<blockquote>
+<p>
+"Python alone does not make a career. In our “Jobs” ranking, it is SQL
+that shines at No. 1. Ironically though, you’re very unlikely to get
+a job as a pure SQL programmer. Instead, employers love, love, love,
+seeing SQL skills in tandem with some other language such as Java or
+C++." (Cass, 2023)
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgc8c4202" class="outline-2">
+<h2 id="orgc8c4202"><span class="section-number-2">4.</span> How important is C?</h2>
+<div class="outline-text-2" id="text-4">
+
+<div id="org873ef5f" class="figure">
+<p><img src="../img/1_usage1.png" alt="1_usage1.png" />
+</p>
+<p><span class="figure-number">Figure 4: </span>Real world applications of C (Source: DataFlair)</p>
+</div>
+
+<p>
+Some well-known programs written in C:
+</p>
+<ul class="org-ul">
+<li>The Linux kernel (and therefore, Android - 40%)</li>
+<li>UNIX operating system (core of MacOS and iOS - 25%)</li>
+<li>Windows operating system (core of most PCs - 30%)</li>
+<li>Doom (early video game) and Wolfenstein 3D</li>
+<li>Git version control system</li>
+<li>C compilers (Clang, GCC/MinGW)</li>
+<li>Interpreted languages like Python</li>
+<li>Any software that crosses platforms easily (portable)</li>
+<li>Software for the Curiosity Mars rover and most space apps</li>
+</ul>
+
+<p>
+See also:
+</p>
+<ol class="org-ol">
+<li><p>
+"Why C programming is awesome" (<a href="https://youtu.be/smGalmxPVYc">Hawkes, 2016</a>).
+</p>
+<div class="notes" id="orgba2b86e">
+<p>
+Video summary:
+</p>
+<ol class="org-ol">
+<li>Basis of most modern programming languages like Java, C#, C++, Python etc.</li>
+<li>Use in high performance embedded systems like the Curiosity Rover on Mars.</li>
+<li>Language for kernel development (manager for the operating system).</li>
+<li>Writing code in C requires you managing your own memory.</li>
+<li>In the process you find out how a computer really works.</li>
+<li>C is in high demand for jobs</li>
+<li>C is portable (runs everywhere) and efficient (runs fast)</li>
+</ol>
+
+</div></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org8a8f60a" class="outline-2">
+<h2 id="org8a8f60a"><span class="section-number-2">5.</span> What is a programming language?</h2>
+<div class="outline-text-2" id="text-5">
+<blockquote>
+<p>
+"A programming language is a <i>formal language</i> comprising of a set of
+<i>strings</i> that produce various kinds of <i>machine code</i> output. Programming
+languages are one kind of computer language, and are used in computer
+programming to implement algorithms." (Source: <a href="https://en.wikipedia.org/wiki/Programming_language">Wikipedia</a>)
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li><b>Formal</b> language?</li>
+<li>Set of <b>strings</b>?</li>
+<li><b>Machine</b> code?</li>
+<li><b>Algorithm</b>?</li>
+</ul>
+
+<p>
+Fortunately, computer (and data) science isn't really a science at all!
+</p>
+
+<p>
+(It's more of a craft like mining, knitting, or pottering.)
+</p>
+
+
+<div id="orge1bbe2c" class="figure">
+<p><img src="../img/1_purity.png" alt="1_purity.png" />
+</p>
+<p><span class="figure-number">Figure 5: </span>[Scientific] fields arranged by "purity" (xkcd)</p>
+</div>
+
+<p>
+In the xkcd cartoon, computer (and data) science do not even figure,
+because they're so interdisciplinary (the opposite of "pure"). Still,
+there is a lot of "pure" mathematics, physics and even biology that
+plays a role in computer science (and programming).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgafee91e" class="outline-2">
+<h2 id="orgafee91e"><span class="section-number-2">6.</span> Where does C come from?</h2>
+<div class="outline-text-2" id="text-6">
+
+<div id="org9c521f0" class="figure">
+<p><img src="../img/1_kr.png" alt="1_kr.png" />
+</p>
+<p><span class="figure-number">Figure 6: </span>"K&amp;R" (Kernighan/Ritchie, 1978)</p>
+</div>
+
+<ul class="org-ul">
+<li>By-product of the UNIX operating system 1969 <sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup></li>
+<li>Developed on DEC PDP-7 (computer with 8K words of main memory<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>)</li>
+<li>Written originally in assembly language</li>
+<li>UNIX rewritten in C by 1973 for <a href="https://en.wikipedia.org/wiki/PDP-11">DEC PDP-11</a></li>
+<li>Standardization of C, 1973-2018</li>
+</ul>
+
+<p>
+See also "C Programming Language (Brian Kernighan)" (<a href="https://youtu.be/G1-wse8nsxY?si=Dx_csT2ms64wqF3A">Lex Fridman,
+2020</a>)
+</p>
+<div class="notes" id="org8110da4">
+<ol class="org-ol">
+<li>Why did C survive, and why did it have such a long-lasting impact?
+<ul class="org-ul">
+<li>Expressiveness (natural to use), efficiency (fast, small),
+environment (Unix)</li>
+</ul></li>
+<li>What did it take to write the definitive book on C? (Popular and standardizing)
+<ul class="org-ul">
+<li>In 1977 there were many Unix systems and no authoritative document</li>
+<li>Book included a crystal-clear reference manual</li>
+<li>Find examples that might hang together</li>
+</ul></li>
+<li>What do you find powerful about examples?
+<ul class="org-ul">
+<li>It'll tell you how to do something</li>
+<li>It'll help you do something similar but perhaps more ambitious</li>
+<li>Many examples were picked for Unix' text processing problems: "read input, write output"</li>
+<li>Find things that are representative of what people want to do (in core form)</li>
+</ul></li>
+</ol>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org596baf4" class="outline-2">
+<h2 id="org596baf4"><span class="section-number-2">7.</span> Standardization</h2>
+<div class="outline-text-2" id="text-7">
+
+<div id="orgb564497" class="figure">
+<p><img src="../img/1_standards.png" alt="1_standards.png" />
+</p>
+<p><span class="figure-number">Figure 7: </span>How standards proliferate (Source: xkcd)</p>
+</div>
+
+<p>
+Details: see <a href="https://blog.ansi.org/2018/11/c-language-standard-iso-iec-9899-2018-c18/#gref">ANSI</a> (American National Standards Institute)
+</p>
+
+<div class="notes" id="orgcf88874">
+<p>
+Sometimes, standardization goes awry. For example, Python 3 was not
+"backwards compatible" with Python 2.7, R seems split in a "Tidyverse"
+and a "base R" community.
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org79882c1" class="outline-2">
+<h2 id="org79882c1"><span class="section-number-2">8.</span> How computers work (hardware)</h2>
+<div class="outline-text-2" id="text-8">
+
+<div id="org50565bf" class="figure">
+<p><img src="../img/1_infrastructure.png" alt="1_infrastructure.png" />
+</p>
+<p><span class="figure-number">Figure 8: </span>Computer architecture (simplified)</p>
+</div>
+
+<p>
+(a) CPU + RAM + Non-Volatile Memory (NVM)
+</p>
+
+<ul class="org-ul">
+<li>Central Processing Unit: very, very fast. General purpose (like
+Intel Core, AMD Ryzen or Apple M-series); embedded CPUs (on
+microcontrollers); server CPUs (Intel XEON, AMD's EPYC).</li>
+
+<li>GPUs are workhorses for parallel computing that usually run
+alongside a CPU (e.g. for fast scientific or graphics
+calculations). An example for AI is Google's TPU (Tensor Processing
+Unit) designed specifically for neural network machine learning.</li>
+
+<li>Secondary storage (non-volatile memory, NVM): very, very slow. Much
+too slow for the CPU. NVM can be a hard disk, or a Solid State Drive
+(SSD) - it doesn't disappear when the power goes off (by way of
+permanent magnetic fields).</li>
+</ul>
+
+<p>
+b) Main memory (Random Access Memory): fast enough for the
+  CPU. Organized as a "stack" of memory addresses. All programs must
+  be loaded into memory before they can be executed. In C, you can
+  access memory cells directly through the "pointer" data structure.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org87af9c2" class="outline-2">
+<h2 id="org87af9c2"><span class="section-number-2">9.</span> How programs are created and processed (software)</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org3a8c330" class="outline-3">
+<h3 id="org3a8c330"><span class="section-number-3">9.1.</span> Simplified process</h3>
+<div class="outline-text-3" id="text-9-1">
+<ol class="org-ol">
+<li><b>WRITE</b> source code in an editor (NVM = harddisk)</li>
+<li><b>COMPILE</b> source code to machine code (RAM = memory)</li>
+<li><b>RUN</b> program (CPU = Central Processing Unit)</li>
+<li><b>DISPLAY</b> results (RAM = Memory)</li>
+<li><b>SAVE</b> result (NVM = harddisk)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org1540351" class="outline-3">
+<h3 id="org1540351"><span class="section-number-3">9.2.</span> Complete process</h3>
+<div class="outline-text-3" id="text-9-2">
+<p>
+Specifically for C and our compiler GCC, this process looks
+technically like this:
+</p>
+
+
+<div id="org74d91a6" class="figure">
+<p><img src="../img/1_gcc.png" alt="1_gcc.png" />
+</p>
+<p><span class="figure-number">Figure 9: </span>GCC compilation process (Source: Hock-Chuan, 2018).</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbdf03de" class="outline-2">
+<h2 id="orgbdf03de"><span class="section-number-2">10.</span> Strengths and weaknesses of C</h2>
+<div class="outline-text-2" id="text-10">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">STRENGTH</th>
+<th scope="col" class="org-left">WEAKNESS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Efficiency</td>
+<td class="org-left">Permissiveness (Error-prone)</td>
+</tr>
+
+<tr>
+<td class="org-left">Portability</td>
+<td class="org-left">Terseness and Understanding</td>
+</tr>
+
+<tr>
+<td class="org-left">Power</td>
+<td class="org-left">Large program maintenance</td>
+</tr>
+
+<tr>
+<td class="org-left">Flexibility</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Standard library</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Integration with UNIX</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<ul class="org-ul">
+<li>Efficiency: do a lot with little effort (small programs)</li>
+<li>Portability: it works everywhere, on anything</li>
+<li>"Power": you can do brain surgery with a pencil</li>
+<li>Flexbility: you can do the same thing in many different ways</li>
+<li>"Standard library": pre-defined functions/tasks; "stdio.h", a
+standard library for "I/O" (Input/output)</li>
+<li>Integration with UNIX (because UNIX is the motherlobe)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org86fc793" class="outline-2">
+<h2 id="org86fc793"><span class="section-number-2">11.</span> What is the difference between C and C++?</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+C++ is a superset of C.
+</p>
+
+
+<div id="org87c24dd" class="figure">
+<p><img src="../img/1_ccpp.png" alt="1_ccpp.png" />
+</p>
+<p><span class="figure-number">Figure 10: </span>C/C++ logos</p>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">WHAT</th>
+<th scope="col" class="org-left">C</th>
+<th scope="col" class="org-left">C++</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">TIME</td>
+<td class="org-left">Thompson/Ritchie 1970s</td>
+<td class="org-left">Stroustrup 1980s</td>
+</tr>
+
+<tr>
+<td class="org-left">TYPE</td>
+<td class="org-left">Imperative procedural</td>
+<td class="org-left">Object-oriented</td>
+</tr>
+
+<tr>
+<td class="org-left">GOOD</td>
+<td class="org-left">System programming</td>
+<td class="org-left">Games and graphics</td>
+</tr>
+
+<tr>
+<td class="org-left">USED</td>
+<td class="org-left">Internet of Things</td>
+<td class="org-left">Flight Software</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Source: Lemonaki, 2021.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6c0e679" class="outline-2">
+<h2 id="org6c0e679"><span class="section-number-2">12.</span> Why are we not just learning C++?</h2>
+<div class="outline-text-2" id="text-12">
+<ul class="org-ul">
+<li>Object-orientation is a difficult paradigm (C++).</li>
+<li>System programming is pure power (C).</li>
+<li>C is simpler, smaller, and faster.</li>
+<li>C has 35 keywords, C++ has 95.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org73274c1" class="outline-2">
+<h2 id="org73274c1"><span class="section-number-2">13.</span> Practice: 'Hello world' program in C++</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+To round this section off, let's repeat our last practice exercise
+with C++ instead of C, using <code>notepad</code> and the <code>g++</code> compiler:
+</p>
+
+<ol class="org-ol">
+<li><p>
+Implement the following program (replace "your name" by your name:
+</p>
+<div class="org-src-container">
+<pre class="src src-C++"><span style="color: #b0bec5;">// </span><span style="color: #b0bec5;">Hello world program in C++</span>
+<span style="color: #b0bec5;">// </span><span style="color: #b0bec5;">By [your name] (pledged)</span>
+<span style="color: #ffd700;">#include</span> <span style="color: #e91e63;">&lt;</span><span style="color: #9ccc65;">iostream</span><span style="color: #e91e63;">&gt;</span>
+
+<span style="color: #b0bec5;">/* </span><span style="color: #b0bec5;">print hello world message</span>
+<span style="color: #b0bec5;">   a first C++ program</span><span style="color: #b0bec5;"> */</span>
+<span style="color: #84ffff;">int</span> <span style="color: #84ffff;">main</span><span style="color: #e91e63;">()</span>
+<span style="color: #e91e63;">{</span>
+  <span style="color: #8bc34a;">std</span>::cout &lt;&lt; <span style="color: #9ccc65;">"Hello, world!"</span> &lt;&lt; <span style="color: #8bc34a;">std</span>::endl;
+  <span style="color: #fff59d;">return</span> 0;
+<span style="color: #e91e63;">}</span>
+</pre>
+</div></li>
+
+<li>Save the program with the file extention <code>.cpp</code></li>
+
+<li>Run the program on the command line using the <code>g++</code> compiler and the
+<code>-o</code> flag to rename the executable file to <code>hello++</code>.</li>
+
+<li>Upload your file directly to Canvas.</li>
+</ol>
+
+<p>
+What's different about this code compared to <code>hello.c</code>?
+</p>
+</div>
+
+<div id="outline-container-org3e11027" class="outline-4">
+<h4 id="org3e11027"><span class="section-number-4">13.0.1.</span> Solution:</h4>
+<div class="outline-text-4" id="text-13-0-1">
+<p>
+Process:
+</p>
+<ol class="org-ol">
+<li>Open the Windows command line</li>
+<li>Enter <code>notepad hello.cpp</code></li>
+<li>Enter the program text as shown</li>
+<li>Save the program in the editor</li>
+<li>On the command line, enter <code>g++ hello.cpp -o hello++</code></li>
+<li>On the command line, enter <code>hello++</code> (may not work for g++ 13.2)</li>
+<li>Open Canvas and upload the C++ file.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org28cc482" class="outline-2">
+<h2 id="org28cc482"><span class="section-number-2">14.</span> Practice: first "literate" C program!</h2>
+<div class="outline-text-2" id="text-14">
+
+<div id="org6cb03e8" class="figure">
+<p><img src="../img/0_books.png" alt="0_books.png" />
+</p>
+<p><span class="figure-number">Figure 11: </span>Books aren't the only way to be "literate" in programming!</p>
+</div>
+
+<p>
+Here is a <a href="https://github.com/birkenkrahe/cpp/blob/main/pdf/helloEmacs.pdf">PDF of this exercise</a> and a <a href="https://youtu.be/Oq83ZCu8FUI">YouTube video (30 min)</a>.
+</p>
+
+<p>
+Let's set Emacs up, write and run a first "literate" C program! it is
+very important that you enter everything <b>exactly as shown</b>. if you get
+something wrong just go back one step. Contact me if you need me after
+checking with your neighbor if he or she can help.
+</p>
+
+<ol class="org-ol">
+<li>Open the command line terminal with <code>cmd</code> in the search field</li>
+
+<li>At the prompt, type: <code>gcc --version</code></li>
+
+<li>At the prompt, type: <code>emacs --version</code></li>
+
+<li>If Emacs is available, enter: <code>emacs -q</code></li>
+
+<li>Enter: <code>ALT + x eww</code> to open a browser inside Emacs.</li>
+
+<li>At the prompt, enter: <code>tinyurl.com/EmacsLyon</code></li>
+
+<li>Save the downloaded file with <code>CTRL + x CTRL + w</code> as <code>~/.emacs</code></li>
+
+<li>Kill the current <code>*EWW*</code> buffer with <code>C-x k</code></li>
+
+<li>Shut Emacs down with <code>C-x C-w</code>.</li>
+
+<li>Restart Emacs. The file you just created, <code>.emacs</code>, is now loaded.</li>
+
+<li>Create a new file: <code>C-x C-f</code> - at the prompt, enter <code>firstLit.org</code>.</li>
+
+<li><p>
+Enter the following text (replace <code>yourname</code> with your own name):
+</p>
+
+<div id="orge20d49a" class="figure">
+<p><img src="../img/0_first.png" alt="0_first.png" />
+</p>
+</div></li>
+
+<li>'Run' the program by putting the cursor anywhere on the code block
+and typing <code>CTRL-c CTRL-c</code>. You should see the result on the screen.</li>
+
+<li>This is your first C program! Save the file with <code>CTRL + x CTRL + s</code>
+(in the minibuffer, you will see <code>C-x C-s</code>).</li>
+
+<li>'Tangle' the code with <code>CTRL + c CTRL + v t</code> (or, alternatively,
+with <code>ALT + x org-babel-tangle RET</code>): Emacs reports <code>"Tangled 1 code
+    block from first.org"</code> in the minibuffer.</li>
+
+<li><p>
+'Weave' the document from the literate file with <code>C-c C-e</code> followed
+by <code>h</code> <code>o</code> to open the document as HTML in a browser.
+</p>
+
+
+<div id="orgfb541fc" class="figure">
+<p><img src="../img/0_litprog1.png" alt="0_litprog1.png" />
+</p>
+<p><span class="figure-number">Figure 12: </span>What happens when you tangle or weave a literate program</p>
+</div></li>
+
+<li>Open a shell inside Emacs by entering: <code>ALT-x eshell</code></li>
+
+<li>At the <code>$</code> prompt, enter <code>ls -l first*</code> - you should see <code>first.c</code> listed</li>
+
+<li>Display <code>first.c</code> by entering <code>cat first.c</code></li>
+
+<li>Enter <code>gcc first.c -o hello</code> to compile the C program into an executable</li>
+
+<li>Enter <code>hello</code> to run the executable. You should see the output.</li>
+
+<li>Exit and close Emacs with <code>CTRL-x CTRL-c</code></li>
+
+<li>Exit and close the shell by entering <code>exit</code> after the prompt</li>
+
+<li><p>
+Save your file to a directory on your GDrive (you can do this from
+GDrive in a browser, with File Explorer, or directly in Emacs with
+the following commands (you don't have to worry about spaces
+etc. because you can auto-complete using the &lt;TAB&gt; key):
+</p>
+<pre class="example" id="org092da63">
+C-x C-w                   ;; write file
+w:/My Drive/              ;; target directory
+C-x d w:/My Drive/        ;; open target directory
+s                         ;; sort to see recent files at top
+</pre>
+<p>
+You can also do it in the Emacs eshell that you used earlier to
+compile and run the file on the shell (auto-complete with &lt;TAB&gt;):
+</p>
+<pre class="example" id="orga836013">
+cp first.org w:/My\ Drive/      # copy file to target directory
+cat w:/My\ Drive/first.org      # view copy of file at target location
+</pre></li>
+
+<li>Upload <code>first.org</code> as your first 'literate' in-class assignment:
+<ol class="org-ol">
+<li>Open a browser to GDrive and upload the file</li>
+<li>Open the <a href="https://lyon.instructure.com/courses/2107/assignments/22790">assignment in Canvas</a> at lyon.instructure.com</li>
+<li>Upload the file from GDrive (click on "<code>More</code>")</li>
+<li>When you see it attached, click on <code>Submit Assignment</code>.</li>
+</ol></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org25ed6a9" class="outline-2">
+<h2 id="org25ed6a9"><span class="section-number-2">15.</span> What did you just learn?</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+You learnt:
+</p>
+<ol class="org-ol">
+<li>How to open and close the GNU Emacs editor.</li>
+<li>How to create, save, and write an Emacs Org-mode file.</li>
+<li>How to create, compile, and run a C program inside Emacs.</li>
+<li>How to tangle a literate program into source code.</li>
+<li>How to save a file on your GDrive in three ways.</li>
+<li>How to submit a completed assignment to Canvas.</li>
+</ol>
+
+<p>
+It would be worth repeating these steps on your own without peeking in
+your notes to make sure that you understood what you did and that you
+can do it again - we'll do this hundreds of times in class!
+</p>
+
+<p>
+You can watch me complete this exercise <a href="https://youtu.be/zRgIaJzrbnY?si=NwOl0u9Nr06FkkoU">in this video</a> (30').
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeb31db9" class="outline-2">
+<h2 id="orgeb31db9"><span class="section-number-2">16.</span> Summary</h2>
+<div class="outline-text-2" id="text-16">
+<ol class="org-ol">
+<li>The C programming language was created 50 years ago</li>
+<li>C is small, simple, very fast, and close to the computer</li>
+<li>Linux (and Android) are largely written in C</li>
+<li>The object-oriented programming (OOP) language C++ contains C</li>
+<li>System programming is a powerful skill set</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org33627c1" class="outline-2">
+<h2 id="org33627c1"><span class="section-number-2">17.</span> Glossary</h2>
+<div class="outline-text-2" id="text-17">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">CONCEPT/TOPIC</th>
+<th scope="col" class="org-left">DEFINITION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">DEC PDP-11</td>
+<td class="org-left">1970s mainframe computer</td>
+</tr>
+
+<tr>
+<td class="org-left">UNIX</td>
+<td class="org-left">Operating system (ca. 1969)</td>
+</tr>
+
+<tr>
+<td class="org-left">ANSI</td>
+<td class="org-left">American National Standard Institute</td>
+</tr>
+
+<tr>
+<td class="org-left">String</td>
+<td class="org-left">A data type representing text</td>
+</tr>
+
+<tr>
+<td class="org-left">Assembler</td>
+<td class="org-left">Machine code (hard to write/read)</td>
+</tr>
+
+<tr>
+<td class="org-left">Algorithm</td>
+<td class="org-left">Fixed process or set of rules</td>
+</tr>
+
+<tr>
+<td class="org-left">Linux</td>
+<td class="org-left">Operating system (ca. 1991)</td>
+</tr>
+
+<tr>
+<td class="org-left">C</td>
+<td class="org-left">Imperative, procedural programming language</td>
+</tr>
+
+<tr>
+<td class="org-left">compiler</td>
+<td class="org-left">Software to translate source into machine code</td>
+</tr>
+
+<tr>
+<td class="org-left">C++</td>
+<td class="org-left">Object-oriented (OO) superset of C</td>
+</tr>
+
+<tr>
+<td class="org-left">Clang</td>
+<td class="org-left">C/C++ compiler</td>
+</tr>
+
+<tr>
+<td class="org-left">gcc</td>
+<td class="org-left">GNU compiler bundle (incl. C/C++)</td>
+</tr>
+
+<tr>
+<td class="org-left">Java,C#</td>
+<td class="org-left">OO programming language</td>
+</tr>
+
+<tr>
+<td class="org-left">Perl</td>
+<td class="org-left">Scripting language</td>
+</tr>
+
+<tr>
+<td class="org-left">Git</td>
+<td class="org-left">Software version control system</td>
+</tr>
+
+<tr>
+<td class="org-left">GitHub</td>
+<td class="org-left">Developer's platform (owned by Microsoft)</td>
+</tr>
+
+<tr>
+<td class="org-left">Library</td>
+<td class="org-left">Bundle of useful functions and routines</td>
+</tr>
+
+<tr>
+<td class="org-left">Portability</td>
+<td class="org-left">Ability of software to run on different hardwares</td>
+</tr>
+
+<tr>
+<td class="org-left">Efficiency</td>
+<td class="org-left">Software speed of execution and memory requirements</td>
+</tr>
+
+<tr>
+<td class="org-left">Permissiveness</td>
+<td class="org-left">Degree to which a language tolerates ambiguities</td>
+</tr>
+
+<tr>
+<td class="org-left">Object-orientation</td>
+<td class="org-left">Ability to define abstractions</td>
+</tr>
+
+<tr>
+<td class="org-left">System programming</td>
+<td class="org-left">Programming close to the machine</td>
+</tr>
+
+<tr>
+<td class="org-left">Application programming</td>
+<td class="org-left">Programming close to the user</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org2f9fb1c" class="outline-2">
+<h2 id="org2f9fb1c"><span class="section-number-2">18.</span> References</h2>
+<div class="outline-text-2" id="text-18">
+<ul class="org-ul">
+<li>Big Think (Jun 13, 2011). Bjarne Stroustrup: Why the Programming
+Language C Is Obsolete | Big Think
+[video]. <a href="https://youtu.be/KlPC3O1DVcg">URL:youtu.be/KlPC3O1DVcg</a>.</li>
+<li>Brock (October 17, 2019). The Earliest Unix Code: An Anniversary
+Source Code Release [Blog]. URL: <a href="https://computerhistory.org/blog/the-earliest-unix-code-an-anniversary-source-code-release/">computerhistory.org</a>.</li>
+<li>Cass (29 August 2023). The Top Programming Languages 2019 &gt; Python
+remains the big kahuna, but specialist languages hold their
+own. IEEE Spectrum. <a href="https://spectrum.ieee.org/the-top-programming-languages-2019">URL: spectrum.ieee.org</a>.</li>
+<li>Chatley R., Donaldson A., Mycroft A. (2019) The Next 7000
+Programming Languages. In: Steffen B., Woeginger G. (eds) Computing
+and Software Science. Lecture Notes in Computer Science,
+vol 10000. Springer,
+Cham. <a href="https://doi.org/10.1007/978-3-319-91908-9_15">https://doi.org/10.1007/978-3-319-91908-9_15</a></li>
+<li>Data Flair (n.d.). Applications of C Programming That Will Make You
+Fall In Love With C [Tutorial]. URL: d<a href="https://data-flair.training/blogs/applications-of-c/">ata-flair.training.</a></li>
+<li>DESY (Oct 25, 1995). The C++ Virtual Library. URL: <a href="https://www.desy.de/user/projects/C++.html">desy.de</a></li>
+<li>Gustedt (2019). Modern C. Manning.</li>
+<li>Hock-Chuan (2018). GCC and Make: Compiling, Linking and Building
+C/C++ Applications [website]. <a href="https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html">URL: ntu.edu.sg</a>.</li>
+<li>Kernighan/Ritchie (1978). The C Programming Language. Prentice
+Hall. <a href="https://en.wikipedia.org/wiki/The_C_Programming_Language">Online: wikipedia.org</a>.</li>
+<li>King (2008). C Programming - A Modern Approach. Norton. <a href="http://knking.com/books/c2/index.html">Online:knking.com</a>.</li>
+<li>Kirsh (September 13, 2021). Rust vs C++ and Is It Good for
+Enterprise? [blog]. <a href="https://www.incredibuild.com/blog/rust-vs-c-and-is-it-good-for-enterprise">URL: www.incredibuild.com</a>.</li>
+<li>Lemonaki, Dionysia (November 4, 2021). C vs. C++ - What's The
+Difference [blog]. URL: <a href="https://www.freecodecamp.org/news/c-vs-cpp-whats-the-difference/">freecodecamp.org.</a></li>
+<li>Neilsen (Aug 14, 2020). Quora. URL: <a href="https://qr.ae/pGzZ9z">qr.ae/pGzZ9z</a>.</li>
+<li>Steinhart (2019). The Secret Life of Programs. NoStarch
+Press. <a href="https://nostarch.com/foundationsofcomp">URL:nostarch.com.</a></li>
+<li>TIOBE (Jan 2022). TIOBE Index for January 2022
+[website]. <a href="https://www.tiobe.com/tiobe-index/">URL:tiobe.com</a>.</li>
+<li>Torvalds (6 Sep 2007). Linus Torvalds on C++
+[blog]. <a href="http://harmful.cat-v.org/software/c++/linus">URL:harmful.cat-v.org</a>.</li>
+<li>xkcd(n.d.) Purity [cartoon]. <a href="https://xkcd.com/435/">URL: xkcd.com/</a>.</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+All sources are referenced at the end of the script, followed by
+the footnotes, which do unfortunately not render as links <a href="https://github.com/birkenkrahe/cc100/tree/main/history_of_c">on
+GitHub</a>. The book by King (2008) does not cover a few recent updates to
+the ANSI standard for C, like C11, and the current standard C17. The
+next major C standard revision (C23) is expected for 2023. Gustedt
+(2019) is a good (but quite difficult) book on "modern C".
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Since 2000, C is one of the top two languages in the TIOBE index
+(based on searches), and one of the top three of the (more relevant)
+IEEE ranking.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+The motivation to create Unix, according to <a href="https://en.wikipedia.org/wiki/Space_Travel_(video_game)">Wikipedia</a>, was to
+port Thompson's space travel video game to the PDP-7 mainframe
+computer. So in a way we owe modern computing to gaming.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+How many bits can be stored in memory of 8K words depends on the
+bit length of a word (or byte). One byte holds 8 = 2<sup>3</sup> bits (binary
+digits, or memory locations capable of storing 2 states). For example,
+the binary "1111111" represents the decimal number 255 = 2<sup>8</sup> - 1. 8K
+byte correspond to 8 * 2<sup>10</sup> = 8 * 1,024 = 8,192 bits. By comparison,
+the main memory of my laptop has 16GB = 16 * 2<sup>30</sup> = 3.2E+31 bits. It
+follows from these memory restrictions that UNIX (and C) had to be
+designed to be very small, or space effective.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Marcus Birkenkrahe</p>
+<p class="date">Created: 2024-01-24 Wed 10:44</p>
+</div>
+</body>
+</html>

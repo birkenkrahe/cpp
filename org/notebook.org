@@ -67,14 +67,15 @@ someone else had written it, and also using AI to deliver a critique.
 - Bonus: GitHub Hello World exercise (upload screenshot).
 - Test 1 (by Thu 25 Jan) 
   
+
 * Week 2 - C Fundamentals
 #+ATTR_HTML: :WIDTH 400px:
 [[../img/first_test.png]]
 
 1. [ ] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]]) 
 2. [ ] *DYI content*: Installation issues / Emacs / GitHub ([[file:2_install.org][2_install.org]])
-3. [ ] *Practice*: Your first literate program ([[file:0_overview_practice.org][0_overview_practice.org]])
-4. [ ] *Practice*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
+3. [ ] *Practice*: Your first literate C program ([[file:1_introduction_practice.org][1_introduction_practice.org]])
+4. [ ] *Assignment*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
 5. [ ] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]])
 6. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
 
