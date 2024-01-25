@@ -4,11 +4,9 @@
 #+startup: overview hideblocks indent
 #+options: toc:nil num:nil ^:nil
 * Practice: first "literate" C program!
-#+attr_latex: :width 400px
-#+caption: Books aren't the only way to be "literate" in programming!
-[[../img/0_books.png]]
 
-Here is a [[https://github.com/birkenkrahe/cpp/blob/main/pdf/helloEmacs.pdf][PDF of this exercise]] and a [[https://youtu.be/Oq83ZCu8FUI][YouTube video (30 min)]].
+- Here are these instructions on GitHub: http://tinyurl.com/helloEmacs 
+- and a YouTube video (30 min): http://tinyurl.com/firstlitprog 
 
 Let's set Emacs up, write and run a first "literate" C program! it is
 very important that you enter everything *exactly as shown*. if you get
@@ -38,8 +36,21 @@ checking with your neighbor if he or she can help.
 11) Create a new file: ~C-x C-f~ - at the prompt, enter ~firstLit.org~.
 
 12) Enter the following text (replace ~yourname~ with your own name):
-    #+attr_latex: :width 400px
-    [[../img/0_first.png]]
+    #+begin_example
+    #+TITLE: First Literate C Program
+    #+AUTHOR: [yourname] (pledged)
+
+    * My first literate C program
+      This C program runs inside an Emacs Org-mode code block:
+      #+begin_src C :results output :tangle first.c
+        #include <stdio.h>
+        int main()
+        {
+            printf("Hello, Emacs!\n");
+            return 0;
+        }
+      #+end_src
+    #+end_example
 
 13) 'Run' the program by putting the cursor anywhere on the code block
     and typing ~CTRL-c CTRL-c~. You should see the result on the screen.
@@ -110,4 +121,3 @@ your notes to make sure that you understood what you did and that you
 can do it again - we'll do this hundreds of times in class!
 
 You can watch me complete this exercise [[https://youtu.be/zRgIaJzrbnY?si=NwOl0u9Nr06FkkoU][in this video]] (30').
-

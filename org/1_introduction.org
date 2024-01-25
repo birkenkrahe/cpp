@@ -35,7 +35,7 @@ Source:
 - C consistently ranks among the top 3 programming languages.
 - TIOBE Language of the year 2008, 2017, 2019
 - Highest position since 2001: #1 in Sep 2021
-- Lowest position sicne 2001: #2 in Jan 2024
+- Lowest position since 2001: #2 in Jan 2024
 #+caption: TIOBE Index for C, 2002-2023 (Source: TIOBE)
 #+attr_latex: :width 400px
 [[../img/1_tiobe.png]]
