@@ -29,11 +29,11 @@ checking with your neighbor if he or she can help.
 
 8) Kill the current ~*EWW*~ buffer with ~C-x k~
 
-9) Shut Emacs down with ~C-x C-w~.
+9) Shut Emacs down with ~C-x C-c~.
 
 10) Restart Emacs. The file you just created, ~.emacs~, is now loaded.
 
-11) Create a new file: ~C-x C-f~ - at the prompt, enter ~firstLit.org~.
+11) Create a new file: ~C-x C-f~ - at the prompt, enter ~~/firstLit.org~.
 
 12) Enter the following text (replace ~yourname~ with your own name):
     #+begin_example
@@ -65,7 +65,7 @@ checking with your neighbor if he or she can help.
 16) 'Weave' the document from the literate file with ~C-c C-e~ followed
     by ~h~ ~o~ to open the document as HTML in a browser.
     
-    #+attr_latex: :width 400px
+    #+attr_html: :width 400px
     #+caption: What happens when you tangle or weave a literate program
     [[../img/0_litprog1.png]]
 
@@ -84,22 +84,8 @@ checking with your neighbor if he or she can help.
 23) Exit and close the shell by entering ~exit~ after the prompt
 
 24) Save your file to a directory on your GDrive (you can do this from
-    GDrive in a browser, with File Explorer, or directly in Emacs with
-    the following commands (you don't have to worry about spaces
-    etc. because you can auto-complete using the <TAB> key):
-    #+begin_example elisp
-    C-x C-w                   ;; write file
-    w:/My Drive/              ;; target directory
-    C-x d w:/My Drive/        ;; open target directory
-    s                         ;; sort to see recent files at top
-    #+end_example
-    You can also do it in the Emacs eshell that you used earlier to
-    compile and run the file on the shell (auto-complete with <TAB>):
-    #+begin_example bash
-    cp first.org w:/My\ Drive/      # copy file to target directory
-    cat w:/My\ Drive/first.org      # view copy of file at target location
-    #+end_example
-
+    GDrive in a browser, with the File Explorer.
+    
 25) Upload ~first.org~ as your first 'literate' in-class assignment:
     1. Open a browser to GDrive and upload the file
     2. Open the [[https://lyon.instructure.com/courses/2107/assignments/22790][assignment in Canvas]] at lyon.instructure.com
