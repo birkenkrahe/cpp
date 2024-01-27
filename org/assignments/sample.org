@@ -1,0 +1,56 @@
+#+TITLE:Hello world program
+#+AUTHOR:[yourname] (pledged)
+#+SUBTITLE:Sample program - CSC 100 - Lyon College - Spring 2024
+#+STARTUP:overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+* README
+
+This is a sample Org-mode file demonstrating home assignment
+submission in the format:
+1. Problem definition
+2. Pseudocode algorithm
+3. Process diagram
+4. Program code block
+
+* PROBLEM
+
+Design an algorithm to write "Hello, World!" to the screen.
+
+In this case, the algorithm is very simple - it consists of a single
+print instruction. 
+
+* PROCESS (BPMN)
+
+The process diagram shows the program flow and explains the
+communication between the computer and the peripherals (User input via
+keyboard and screen output).
+#+ATTR_HTML: :WIDTH 400px:
+[[../../img/helloworld.svg]]
+
+* PROGRAM (C)
+
+The code is written in an Emacs Org-mode block that allows to tangle
+the source code into a C file ~helloworld.c~ (with ~C-c C-v t~), but it
+can also be run right here (with ~C-c C-c~).
+
+The code block should contain comments like this "Hello World"
+example program.
+
+#+begin_src C :tangle helloworld.c :results output
+  /* Hello world program
+     (C) Marcus Birkenkrahe */
+
+  // include input/output library
+  #include <stdio.h>
+
+  // main function
+  int main()
+  {
+    // print to screen
+    printf("Hello, world!\n");
+    return 0;
+  }
+#+end_src
+
+#+RESULTS:
+: Hello, world!
