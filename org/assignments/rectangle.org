@@ -3,6 +3,14 @@
 #+SUBTITLE:Home assignment - CSC 100 - Lyon College - Spring 2024
 #+STARTUP:overview hideblocks indent
 #+OPTIONS: toc:nil num:nil ^:nil
+* README
+1. Open Emacs and download ~rectangle.org~ from ~tinyurl.com/rectangleC~
+   (use the Emacs browser EWW as you did in class multiple times, then
+   write the file to ~rectangle.org~ with ~C-x C-w~, kill the ~*eww*~ buffer
+   and open the file to complete the assignment).
+2. Submit the completed Org-mode file here for grading and comments.
+3. Here is a complete submission [[https://github.com/birkenkrahe/cpp/blob/main/org/assignments/sample.org][sample Org file]] using "hello, world".
+4. You can resubmit as often as you like.
 * Problem
 
 Design an algorithm to find the perimeter and area of a
