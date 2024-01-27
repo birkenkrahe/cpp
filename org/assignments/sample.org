@@ -12,12 +12,23 @@ submission in the format:
 3. Process diagram
 4. Program code block
 
-* PROBLEM
+* PROBLEM (task)
 
 Design an algorithm to write "Hello, World!" to the screen.
 
+* Pseudocode (algorithm)
+
 In this case, the algorithm is very simple - it consists of a single
-print instruction. 
+print instruction. The pseudocode is a little overkill:
+#+begin_example
+Algorithm: Print hello world message on the screen
+Input: none
+Output: "Hello, World!" string literal
+
+Begin
+  // print string
+End
+#+end_example
 
 * PROCESS (BPMN)
 
