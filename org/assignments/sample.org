@@ -30,7 +30,7 @@ Begin
 End
 #+end_example
 
-* PROCESS (BPMN)
+* PROCESS (BPMN + UML)
 
 The process diagram shows the program flow and explains the
 communication between the computer and the peripherals (User input via
@@ -38,27 +38,52 @@ keyboard and screen output).
 #+ATTR_HTML: :WIDTH 400px:
 [[../../img/helloworld.svg]]
 
-* PROGRAM (C)
+The UML sequence diagram shows the interaction only, as a sequence of
+events between two actors:
+#+ATTR_HTML: :WIDTH 400px:
+[[../../img/helloworldsequence.png]]
+
+You can make BPMN diagrams yourself at [[https://bpmn.io][bpmn.io]], and UML diagrams at
+[[https://mermaid.live][mermaid.live]].
+
+* PROGRAM (C and C++)
 
 The code is written in an Emacs Org-mode block that allows to tangle
 the source code into a C file ~helloworld.c~ (with ~C-c C-v t~), but it
 can also be run right here (with ~C-c C-c~).
 
-The code block should contain comments like this "Hello World"
-example program.
+The code block should contain comments like this "Hello World" example
+program. You don't generally need lots of comments since your program
+is literate and you have documentation! However, the file should
+contain a minimal header saying what it does and who wrote it (and/or
+where you got the source from).
 
 #+begin_src C :tangle helloworld.c :results output
-  /* Hello world program
+  /* Hello world program in C
      (C) Marcus Birkenkrahe */
 
-  // include input/output library
   #include <stdio.h>
 
-  // main function
   int main()
   {
-    // print to screen
     printf("Hello, world!\n");
+    return 0;
+  }
+#+end_src
+
+#+RESULTS:
+: Hello, world!
+
+Just for comparison, here is the same program in C++:
+#+begin_src C++ :tangle helloworld.cpp :results output
+  /* Hello world program in C++
+     (C) Marcus Birkenkrahe */
+
+  #include <iostream>
+
+  int main()
+  {
+    std::cout << "Hello, world!" << std::endl;
     return 0;
   }
 #+end_src

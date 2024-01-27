@@ -18,6 +18,12 @@ rectangle. You find the algorithm as pseudocode and as a diagram
 already here. All you need to do is write and run the code inside the
 already prepared code block and upload the complete Org-mode file.
 
+The program should produce output like this (i.e. it should be clear
+what the input and what the output is):
+#+begin_example
+If length = 5 and width = 7 then area = 35 and perimeter = 24.
+#+end_example
+
 * Pseudocode
 
 The pseudocode algorithm abstracts away any syntax. It identifies
@@ -44,9 +50,12 @@ input and output variables.
 The BPMN process diagram shows the program flow and explains the
 communication between the computer and the peripherals (User input via
 keyboard and screen output).
-
 #+ATTR_HTML: :WIDTH 400px:
 [[../../img/rectangle.svg]]
+
+The UML diagram only shows the communication sequence:
+#+ATTR_HTML: :WIDTH 400px:
+[[../../img/rectangleSequence.png]]
 
 * Program
 
@@ -64,5 +73,3 @@ program ([[https://github.com/birkenkrahe/cpp/blob/main/org/assignments/sample.o
 #+end_src
 
 #+RESULTS:
-: A rectangle of length 5 and width 7 has
-: an area of 35 and a perimeter of 24
