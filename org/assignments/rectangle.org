@@ -1,0 +1,80 @@
+#+TITLE:Compute area and perimeter of a rectangle
+#+AUTHOR:[yourname] (pledged)
+#+SUBTITLE:Home assignment - CSC 100 - Lyon College - Spring 2024
+#+STARTUP:overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+* Problem
+
+Design an algorithm to find the perimeter and area of a
+rectangle. You find the algorithm as pseudocode and as a diagram
+already here. All you need to do is write and run the code inside the
+already prepared code block and upload the complete Org-mode file.
+
+* Algorithm (Pseudocode)
+
+The pseudocode abstracts away any syntax. It identifies input and
+output variables.
+#+begin_example
+   Algorithm: Calculate rectangle area and perimeter
+   Input: length, width (numbers)
+   Output: area, perimeter (numbers)
+
+   Begin
+      // Calculate the perimeter of the rectangle
+      perimeter = 2 * (length + width)
+
+      // Calculate the area of the rectangle
+      area = length * width
+
+      // Return or print the perimeter and area
+      return perimeter, area
+  End
+#+end_example
+
+* Diagram (BPMN)
+
+The process diagram shows the program flow and explains the
+communication between the computer and the peripherals (User input via
+keyboard and screen output).
+
+#+ATTR_HTML: :WIDTH 400px:
+[[../../img/rectangle.svg]]
+
+* Code (C)
+
+The code is written in an Emacs Org-mode block that allows to tangle
+the source code into a C file ~rectangle.c~, but it can also be run
+right here.
+
+The code block should contain comments like this "Hello World"
+example program.
+
+#+begin_src C :tangle rectangle.c :results output
+  /* Compute area and perimeter of a rectangle
+     (C) Marcus Birkenkrahe */
+
+  // include input/output library
+  #include <stdio.h>
+
+  // main function
+  int main()
+  {
+    // declare and define input variables
+    int length = 5, width = 7;
+    // declare output variables
+    int area, perimeter;
+    // compute area
+    area = length * width;
+    // compute perimeter
+    perimeter = 2 * (length + width);
+    // print result
+    printf("A rectangle of length %d and width %d has\n", length, width);
+    printf("an area of %d and a perimeter of %d\n", area, perimeter);
+
+    return 0;
+  }
+#+end_src
+
+#+RESULTS:
+: A rectangle of length 5 and width 7 has
+: an area of 35 and a perimeter of 24

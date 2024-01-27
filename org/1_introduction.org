@@ -289,8 +289,7 @@ Process:
 
 * Practice: first "literate" C program!
 #+attr_latex: :width 400px
-#+caption: Books aren't the only way to be "literate" in programming!
-[[../img/0_books.png]]
+[[../img/first_Literate_C_program.png]]
 
 Here is a [[https://github.com/birkenkrahe/cpp/blob/main/pdf/helloEmacs.pdf][PDF of this exercise]] and a [[https://youtu.be/Oq83ZCu8FUI][YouTube video (30 min)]].
 
