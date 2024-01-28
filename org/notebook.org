@@ -72,8 +72,8 @@ someone else had written it, and also using AI to deliver a critique.
 [[../img/first_test.png]]
 
 1. [X] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]]) 
-2. [ ] *DYI content*: Installation issues / Emacs / GitHub ([[file:2_install.org][2_install.org]])
-3. [ ] *Practice*: Your first literate C program ([[file:1_introduction_practice.org][1_introduction_practice.org]])
+2. [X] *DYI content*: Installation issues / Emacs / GitHub ([[file:2_install.org][2_install.org]])
+3. [X] *Practice*: Your first literate C program ([[file:1_introduction_practice.org][1_introduction_practice.org]])
 4. [ ] *Assignment*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
 5. [ ] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]])
 6. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
@@ -84,6 +84,17 @@ someone else had written it, and also using AI to deliver a critique.
 - Parts of the hello world basics are inspired by King, chapter 2 (9-18).
 
 * Week 3 - Input/output
+#+ATTR_HTML: :WIDTH 400px: 
+[[../img/adalovelace.png]]
+
+Victorian lady coding.
+
+This week:
+1. [X] *Practice*: Your first literate C program ([[file:1_introduction_practice.org][1_introduction_practice.org]])
+2. [ ] *Assignment*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
+3. [ ] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]])
+4. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
+
 * Week 4 - Expressions
 * Week 5 - Selection
 * Week 6 - Loops
