@@ -67,7 +67,7 @@ someone else had written it, and also using AI to deliver a critique.
 - Bonus: GitHub Hello World exercise (upload screenshot).
 - Test 1 (by Thu 25 Jan) 
   
-* DONE Week 2 - C Fundamentals
+* DONE Week 2 - C Fundamentals & first literate program 
 #+ATTR_HTML: :WIDTH 400px:
 [[../img/first_test.png]]
 
@@ -83,17 +83,101 @@ someone else had written it, and also using AI to deliver a critique.
 - Parts of the introduction are inspired by King, chapter 1 (pp. 1-8).
 - Parts of the hello world basics are inspired by King, chapter 2 (9-18).
 
-* Week 3 - Input/output
+
+* Week 3 - Input/output & Emacs tutorial
 #+ATTR_HTML: :WIDTH 400px: 
 [[../img/adalovelace.png]]
 
-Victorian lady coding.
+Victorian lady ([[https://www.computerhistory.org/babbage/adalovelace/][Ada Lovelace]]) coding for [[https://www.computerhistory.org/babbage/charlesbabbage/][Charles Babbage's]] machine.
 
 This week:
 1. [X] *Practice*: Your first literate C program ([[file:1_introduction_practice.org][1_introduction_practice.org]])
+   - Learn to read error messages.
+   - Finish the exercise: tangle, weave, run on CLI, upload to GDrive.
+   - Upload it if you haven't done so already.
 2. [ ] *Assignment*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
+   - Start Tutorial in class.
+   - Finish it at home.
+   - Upload result to Canvas.
 3. [ ] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]])
 4. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
+5. [ ] *Programming assignment:* Rectangle ([[https://lyon.instructure.com/courses/2107/assignments/24410][Canvas]]) 
+
+* TODO First literate C program (continued)
+#+ATTR_HTML: :WIDTH 400px: 
+[[../img/debugging.png]]
+
+- Error 1:
+  #+ATTR_HTML: :WIDTH 700px:
+  [[../img/1_introduction_practice_error.png]]
+  
+- Error 2: 
+  #+ATTR_HTML: :WIDTH 700px:
+  [[../img/1_introduction_practice_error2.png]]
+
+- Error 3:
+  #+ATTR_HTML: :WIDTH 700px:
+  [[../img/1_introduction_practice_error3.png]]
+
+- Error 4:
+  #+ATTR_HTML: :WIDTH 700px:
+  [[../img/1_introduction_practice_error4.png]]
+  
+- Error 5:
+  #+ATTR_HTML: :WIDTH 700px:
+  [[../img/1_introduction_practice_error5.png]]
+
+* TODO Emacs tutorial
+#+ATTR_HTML: :WIDTH 600px:
+[[../img/emacs_learning_curve.jpg]]
+
+- We're going to use Emacs to make our C programming life easier.
+
+- But before it gets easier, it gets a little harder.
+
+- This tutorial is meant to teach you Emacs as a text editor.
+
+- Open it in GitHub and then let's do it together.
+
+- You will have to finish it on your own and submit the result.
+
+- There are two videos by me covering the tutorial in 1 hour, and a
+  bonus video with an advanced tutorial by Derek Banas ([[https://www.youtube.com/playlist?list=PLwgb17bzeNyiUAM_PFME-IiNGvNIOficR][YouTube]]).
+
+
+* Hello world - again and again and again
+[[../img/helloworld.png]]
+
+- Dissecting "hello world".
+
+- See [[https://github.com/birkenkrahe/cpp/blob/main/org/3_hello.org][lecture]] and [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/org/3_hello_practice.org][practice]] file
+
+- Upload practice file with Emacs (M-x eww):
+  [[http://tinyurl.com/hello-practice][tinyurl.com/hello-practice]].
+
+- Upload completed practice file to [[https://lyon.instructure.com/courses/2107/assignments/23359][Canvas]].
+
+* TODO Program 1: rectangle properties
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/programming_is_planning.png]]
+
+- [[https://lyon.instructure.com/courses/2107/assignments/24410][See Canvas for the complete assignment]].
+
+- *When writing programs, the writing comes last.*
+
+- *Planning* the program comes first. This includes:
+  1. Understanding what exactly is required.
+  2. Designing an algorithm in pseudocode for input/output.
+  3. Making a process diagram to illustrate the flow.
+  4. Coding in one or more languages.
+
+- To illustrate this process see [[https://github.com/birkenkrahe/cpp/blob/main/org/assignments/sample.org][this "Hello, World!" sample]].
+
+- Steps 1-3 have already been done for you for the assignment.
+  
+* TODO Bonus program: F to C conversion
+
+
 
 * Week 4 - Expressions
 * Week 5 - Selection
