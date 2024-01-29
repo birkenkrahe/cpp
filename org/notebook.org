@@ -135,7 +135,8 @@ This week:
 
 - But before it gets easier, it gets a little harder.
 
-- This tutorial is meant to teach you Emacs as a text editor.
+- This tutorial is meant to teach you Emacs as a text editor:
+  [[http://tinyurl.com/EmacsTutorial][tinyurl.com/EmacsTutorial]]
 
 - Open it in GitHub and then let's do it together.
 
@@ -166,18 +167,35 @@ This week:
 - *When writing programs, the writing comes last.*
 
 - *Planning* the program comes first. This includes:
-  1. Understanding what exactly is required.
-  2. Designing an algorithm in pseudocode for input/output.
-  3. Making a process diagram to illustrate the flow.
-  4. Coding in one or more languages.
+  1. Plan: Understanding what exactly is required.
+  2. Pseudocode: Designing an algorithm with input/output.
+  3. Process: Making a process diagram to illustrate the flow.
+  4. Program: Coding in one or more languages.
 
 - To illustrate this process see [[https://github.com/birkenkrahe/cpp/blob/main/org/assignments/sample.org][this "Hello, World!" sample]].
 
-- Steps 1-3 have already been done for you for the assignment.
-  
-* TODO Bonus program: F to C conversion
+- I'll show you quickly how to create BPMN, flow and sequence diagrams
+  at bpmn.io and mermaid.live.
 
+* TODO Bonus program: Fahrenheit to Celsius conversion
 
+- Compute the temperature in degrees Celsius for a given temperature
+  in degrees Fahrenheit.
+
+- A complete solution (30 points) includes:
+  1. Plan
+  2. Pseudocode
+  3. Process
+  4. Program
+
+- Submit an Emacs Org-mode file with some or all of these aspects. Use
+  Hello World sample file as a template if you like (e.g. to include
+  images).
+
+- For this bonus exercise, independence and diligence of execution is
+  required and rewarded.
+
+- You'll get my sample solution when you submit your solution.
 
 * Week 4 - Expressions
 * Week 5 - Selection
