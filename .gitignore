@@ -8,7 +8,7 @@
 .~lock*#
 
 # ignore HTML files (exports)
-#*.html
+*.html
 
 # ignore javascript
 reveal.js
