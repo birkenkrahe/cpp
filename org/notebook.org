@@ -103,31 +103,32 @@ This week:
 4. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
 5. [ ] *Programming assignment:* Rectangle ([[https://lyon.instructure.com/courses/2107/assignments/24410][Canvas]]) 
 
-* TODO First literate C program (continued)
+
+** First literate C program (continued)
 #+ATTR_HTML: :WIDTH 400px: 
 [[../img/debugging.png]]
 
-- Error 1:
+- Error 1: The input/output header file is =stdio.h= 
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error.png]]
   
-- Error 2: 
+- Error 2: The header argument C is missing! Emacs Org-mode does not recognize the code
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error2.png]]
 
-- Error 3:
+- Error 3: The statement delimiter (=;=) is missing.
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error3.png]]
 
-- Error 4:
+- Error 4: You must tangle into a ~.c~ file.
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error4.png]]
   
-- Error 5:
+- Error 5: Closing quotation marks missing - string is not recognized.
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error5.png]]
 
-* TODO Emacs tutorial
+** TODO Emacs tutorial
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/emacs_learning_curve.jpg]]
 
@@ -144,7 +145,6 @@ This week:
 
 - There are two videos by me covering the tutorial in 1 hour, and a
   bonus video with an advanced tutorial by Derek Banas ([[https://www.youtube.com/playlist?list=PLwgb17bzeNyiUAM_PFME-IiNGvNIOficR][YouTube]]).
-
 
 * Hello world - again and again and again
 [[../img/helloworld.png]]
