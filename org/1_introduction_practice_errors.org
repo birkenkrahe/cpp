@@ -1,0 +1,64 @@
+#+TITLE: First literate C program - anatomy of errors
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: Lyon College, Spring 2024
+* Anatomy of errors
+
+  1) Error 1: The included header file ~studio.h~ does not exist.
+     #+begin_src  C :result output :tangle helloEmacs.c
+       #include <studio.h>
+
+       int main()
+	 {
+	   printf("Hello, Emacs!");
+	   return 0;
+	 }
+     #+end_src
+
+  2) Error 2: The header argument ~C~ is missing.
+     #+begin_src  :result output :tangle helloEmacs.c
+       #include <stdio.h>
+
+       int main()
+	 {
+	   printf("Hello, Emacs!")
+	   return 0;
+	 }
+     #+end_src
+     
+  3) Error 3: missing delimiter (=;=) at end of statement.
+     #+begin_src C :result output :tangle helloEmacs.c
+       #include <stdio.h>
+
+       int main()
+	 {
+	   printf("Hello, Emacs!")
+	   return 0;
+	 }
+     #+end_src
+
+     #+RESULTS:
+
+  4) Error 4: Missing file type of tangled source code.
+     #+begin_src C :result output :tangle helloEmacs
+       #include <stdio.h>
+
+       int main()
+	 {
+	   printf("Hello, Emacs!");
+	   return 0;
+	 }
+     #+end_src
+
+  5) Error 5: Missing quotation mark at end of string literal.
+     #+begin_src C :result output :tangle helloEmacs.c
+       #include <stdio.h>
+
+       int main()
+	 {
+	   printf("Hello, Emacs!);
+	   return 0;
+	 }
+     #+end_src
+
+     #+RESULTS:
+
