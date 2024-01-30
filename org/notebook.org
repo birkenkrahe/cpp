@@ -103,7 +103,6 @@ This week:
 4. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
 5. [ ] *Programming assignment:* Rectangle ([[https://lyon.instructure.com/courses/2107/assignments/24410][Canvas]]) 
 
-
 ** First literate C program (continued)
 #+ATTR_HTML: :WIDTH 400px: 
 [[../img/debugging.png]]
@@ -128,7 +127,7 @@ This week:
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error5.png]]
 
-** TODO Emacs tutorial
+** Emacs tutorial
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/emacs_learning_curve.jpg]]
 
@@ -146,7 +145,23 @@ This week:
 - There are two videos by me covering the tutorial in 1 hour, and a
   bonus video with an advanced tutorial by Derek Banas ([[https://www.youtube.com/playlist?list=PLwgb17bzeNyiUAM_PFME-IiNGvNIOficR][YouTube]]).
 
-* Hello world - again and again and again
+** Emacs and gcc home installation
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/emacs_gcc_installation.png]]
+
+Some of you've got problems installing Emacs/gcc. Emacs should work
+out of the box [[https://mirror.fcix.net/gnu/emacs/windows/emacs-27/emacs-27.2-x86_64-installer.exe][from this link]] - you only need to add the =bin/=
+directory to the =PATH=, and for gcc, if MSYS2 is too complex for you,
+just [[https://www.codeblocks.org/][download Code::Blocks]] - that's an IDE that comes with gcc and
+then you have it in the =PATH=. If you cannot make time to meet during
+office hours and are in despair, you can hop on a Zoom call with
+me. Or you can ask one of those who seem to have succeeded: @Cristian
+Del Gobbo @Austin Swaim @Karley Wilson all did this at home, I
+believe. I promise: By the end of the week, you'll have forgotten the
+nightmare and will be ready for more!
+
+
+** TODO Hello world - again and again and again
 [[../img/helloworld.png]]
 
 - Dissecting "hello world".
@@ -158,7 +173,7 @@ This week:
 
 - Upload completed practice file to [[https://lyon.instructure.com/courses/2107/assignments/23359][Canvas]].
 
-* TODO Program 1: rectangle properties
+** TODO Program 1: rectangle properties
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/programming_is_planning.png]]
 
@@ -177,7 +192,7 @@ This week:
 - I'll show you quickly how to create BPMN, flow and sequence diagrams
   at bpmn.io and mermaid.live.
 
-* TODO Bonus challenge: Fahrenheit to Celsius conversion (Canvas)
+** TODO Bonus challenge: Fahrenheit to Celsius conversion (Canvas)
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/programming_challenge.png]]
 
@@ -198,6 +213,7 @@ This week:
   required and rewarded.
 
 - You'll get my sample solution when you submit your solution.
+
 
 * Week 4 - Expressions
 * Week 5 - Selection
