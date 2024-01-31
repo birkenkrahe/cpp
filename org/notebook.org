@@ -5,7 +5,7 @@
 #+OPTIONS: toc:nil num:nil ^:nil
 #+property: header-args:C :main yes :includes <stdio.h> :results output :noweb yes
 #+property: header-args:R :results output :noweb yes :session *R* :exports both
-* DONE Week 1 - Overview & introduction to C/C++
+* DONE Week 1 - Overview & first C program
 #+attr_html: :width 400px
 [[../img/cover.png]]
 
@@ -67,7 +67,7 @@ someone else had written it, and also using AI to deliver a critique.
 - Bonus: GitHub Hello World exercise (upload screenshot).
 - Test 1 (by Thu 25 Jan) 
   
-* DONE Week 2 - C Fundamentals & first literate program 
+* DONE Week 2 - Introduction to C & first literate program 
 #+ATTR_HTML: :WIDTH 400px:
 [[../img/first_test.png]]
 
@@ -84,7 +84,7 @@ someone else had written it, and also using AI to deliver a critique.
 - Parts of the hello world basics are inspired by King, chapter 2 (9-18).
 
 
-* Week 3 - Input/output & Emacs tutorial
+* Week 3 - C fundamentals & Emacs tutorial
 #+ATTR_HTML: :WIDTH 400px: 
 [[../img/adalovelace.png]]
 
@@ -95,13 +95,19 @@ This week:
    - Learn to read error messages.
    - Finish the exercise: tangle, weave, run on CLI, upload to GDrive.
    - Upload it if you haven't done so already.
-2. [ ] *Assignment*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
+2. [X] *Assignment*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
    - Start Tutorial in class.
    - Finish it at home.
    - Upload result to Canvas.
-3. [ ] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]])
-4. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
-5. [ ] *Programming assignment:* Rectangle ([[https://lyon.instructure.com/courses/2107/assignments/24410][Canvas]]) 
+3. [ ] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]]) & handout
+4. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]]) - solution video!
+5. [ ] *Handout*: Emacs cheat sheet (1p - 20 commands) ([[https://github.com/birkenkrahe/cc/blob/piHome/pdf/emacs.pdf][GitHub]])
+6. [ ] *Programming assignment:* Rectangle ([[https://lyon.instructure.com/courses/2107/assignments/24410][Canvas]])
+7. [ ] *Handout*: next section "Variables in C" (GitHub).
+
+IMPORTANT: FINISH THE EMACS TUTORIAL (by Sunday night)
+
+ASK FOR MY HELP TO INSTALL EMACS + GCC ON YOUR PC
 
 ** First literate C program (continued)
 #+ATTR_HTML: :WIDTH 400px: 
@@ -160,7 +166,6 @@ Del Gobbo @Austin Swaim @Karley Wilson all did this at home, I
 believe. I promise: By the end of the week, you'll have forgotten the
 nightmare and will be ready for more!
 
-
 ** TODO Hello world - again and again and again
 [[../img/helloworld.png]]
 
@@ -168,11 +173,17 @@ nightmare and will be ready for more!
 
 - See [[https://github.com/birkenkrahe/cpp/blob/main/org/3_hello.org][lecture]] and [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/org/3_hello_practice.org][practice]] file
 
-- Upload practice file with Emacs (M-x eww):
-  [[http://tinyurl.com/hello-practice][tinyurl.com/hello-practice]].
+- Upload practice file with Emacs:
+  1) Open Emacs
+  2) Download [[http://tinyurl.com/hello-practice][tinyurl.com/hello-practice]] with ~M-x eww~
+  3) Save buffer to ~~/hello-practice.org~ with ~C-x C-w~
+  4) Kill current buffer with ~C-x k~
+  5) Find practice file with ~C-x C-f~
+  6) Open/close all sections with ~SHIFT TAB~.
 
 - Upload completed practice file to [[https://lyon.instructure.com/courses/2107/assignments/23359][Canvas]].
 
+** TODO C fundamentals: variables & planning a program
 ** TODO Program 1: rectangle properties
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/programming_is_planning.png]]

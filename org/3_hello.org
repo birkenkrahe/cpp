@@ -1,7 +1,7 @@
  #+TITLE:C Basics - Hello world program
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2024
-#+DATE: Time-stamp: <2024-01-20 14:43:17 Birkenkrahe>
+#+DATE: Time-stamp: <2024-01-31 08:03:05 Birkenkrahe>
 #+STARTUP: overview hideblocks indent inlineimages
 #+attr_latex: :width 400px
 [[../img/helloworld.png]]
@@ -232,6 +232,8 @@ Let's fix this:
 : My cat has no fleas
 
 * Let's practice!
+#+attr_latex: :width 400px
+[[../img/helloworld1.png]]
 
 - There is an Org-mode file available for practice. Upload the file to
   Emacs from [[https://tinyurl.com/y32yd3ax][tinyurl.com/y32yd3ax]].
