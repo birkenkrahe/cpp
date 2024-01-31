@@ -1,7 +1,7 @@
  #+TITLE:C Basics - Hello world program
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2024
-#+DATE: Time-stamp: <2024-01-31 08:03:05 Birkenkrahe>
+#+DATE: Time-stamp: <2024-01-31 09:34:21 birkenkrahe>
 #+STARTUP: overview hideblocks indent inlineimages
 #+attr_latex: :width 400px
 [[../img/helloworld.png]]
@@ -75,6 +75,9 @@ Org-mode - with a few new /literate programming/ features:
   }
 #+end_src
 
+#+RESULTS: hello1
+: Hello world
+
 What happens in this code block:
 - A /header/ file (~stdio.h~) is included for input/output
 - A /function/ (~main~) without arguments (~void~) is defined
@@ -97,6 +100,9 @@ The program could also have been written much simpler:
       printf("Hello world\n");
     }
   #+end_src
+
+  #+RESULTS: hello2
+  : Hello world
 
 - It is the job of the /compiler/, ~gcc~, which acts behind the scenes as
   it were, to resolve issues like "missing ~int~" or "missing ~return~"
@@ -122,7 +128,7 @@ The program could also have been written more complicated:
 #+begin_src C :exports both :tangle ../src/hello3.c :comments both
   #include <stdio.h>
 
-  int main(int argc, char **argv)
+  int main(int argc, char **argv) // number of arguments + pointer list
   {
     printf("hello world\n");
     return 0;
@@ -217,6 +223,7 @@ in the editor will tip you off:
 #+RESULTS:
 : My fleas
 
+
 Let's fix this:
 
 #+begin_src C :exports both :main yes :includes stdio.h
@@ -231,12 +238,13 @@ Let's fix this:
 #+RESULTS:
 : My cat has no fleas
 
+
 * Let's practice!
 #+attr_latex: :width 400px
 [[../img/helloworld1.png]]
 
 - There is an Org-mode file available for practice. Upload the file to
-  Emacs from [[https://tinyurl.com/y32yd3ax][tinyurl.com/y32yd3ax]].
+  Emacs from [[https://tinyurl.com/y32yd3ax][tinyurl.com/hello-practice]].
 
 - When you leave class without having completed the file, save a
   copy to GDrive as a backup and/or to work on it from home.

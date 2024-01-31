@@ -171,7 +171,7 @@ nightmare and will be ready for more!
 
 - Dissecting "hello world".
 
-- See [[https://github.com/birkenkrahe/cpp/blob/main/org/3_hello.org][lecture]] and [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/org/3_hello_practice.org][practice]] file
+- See [[https://github.com/birkenkrahe/cpp/blob/main/org/3_hello.org][lecture]] and [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/org/3_hello_practice.org][practice]] file (tinyurl.com/hello-practice)
 
 - Upload practice file with Emacs:
   1) Open Emacs
