@@ -42,7 +42,7 @@
   #+begin_src C :results silent
     int height, length, width, volume;
     float profit, loss;
-    char first_name, last_name;
+    char first_name, surname;
   #+end_src
 
 - Variable type declarations *must precede statements* that use the
@@ -79,7 +79,7 @@
   point and the letter ~f~ to indicate its "floatiness":
   #+begin_src C :results silent
     float profit;
-    profit = 2150.48f;
+    profit = 2150.48f;  // 'f' specifies the float format
   #+end_src
 
 - Assigning a ~float~ to an ~int~ and vice versa is possible (but not
@@ -115,6 +115,9 @@
     printf("Volume: %d", height * length * width);
   #+end_src
 
+  #+RESULTS:
+  : Volume: 960
+
 - To print these variables, we need to learn *formatting* identifiers,
   expressions like ~%d~ that you've seen before.
 
@@ -132,7 +135,12 @@
   #+begin_src C
     char c = 'A';
     putchar(c);
+    puts("\nwell done me");
   #+end_src
+
+  #+RESULTS: putchar
+  : A
+  : well done me
 
 * FORMATTING INTEGER NUMBERS WITH ~%d~
 
@@ -142,7 +150,12 @@
     height = 8;  // variable assignment
 
     printf("The height is: %d\n", height); // formatted printout
+    printf("%d",height);
   #+end_src
+
+  #+RESULTS:
+  : The height is: 8
+  : 8
   
 * FORMATTING FLOATING-POINT NUMBERS WITH ~%f~
 
@@ -153,6 +166,9 @@
 
     printf("The profit is: $%f\n", profit); // formatted printout
   #+end_src
+
+  #+RESULTS:
+  : The profit is: $2150.479980
 
 * CHANGE FLOATING POINT PRECISION
 
