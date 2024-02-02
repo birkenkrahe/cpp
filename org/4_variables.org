@@ -16,11 +16,11 @@
 
 - To *code along during the lecture* using Emacs and Org-mode, open the
   EWW browser inside Emacs (~M-x eww~) and download the file from
-  [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-codealong-org]], then save it (~C-x C-w~) as an
-  Org-mode (~.org~) file in your home directory ~~/~.
+  [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-org]], then save it (~C-x C-w~) as an Org-mode
+  (~.org~) file in your home directory ~~/~.
     
 - There is a separate Org-mode file available for *practice after the
-  lecture*, at [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-codealong-org]]. Download and
+  lecture*, at [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-practice-org]]. Download and
   complete it for bonus points.
 
 * VARIABLE TYPES AND DECLARATIONS
@@ -51,7 +51,7 @@
 
 * VARIABLE ASSIGNMENT
 
-- A variable gets its value through *assignment*
+- A variable gets its value through *assignment* with the ~=~ operator.
 
 - In the code block below, the variable ~height~ gets the value ~8~. ~8~
   is called a *"string literal"* because it cannot change.
@@ -59,17 +59,16 @@
     height = 8;
   #+end_example
 
-- [ ] If you would try to run the code above, you would get an
-  error. Can you see why?[fn:2]
+- If you would try to run the code above, you would get an error. Can
+  you see why?[fn:2]
 
-- [ ] The example below would throw another error. What's
-  wrong now?[fn:3]
+- The example below would throw another error. What's wrong now?[fn:3]
   #+begin_example C
     height = 8;
     int height;
   #+end_example
 
-- [ ] Phew! The next block finally works, that is, it compiles and
+- Phew! The next block finally works, that is, it compiles and
   runs. But what does the code actually do?[fn:4]
   #+begin_src C :results silent
     int height;
@@ -84,30 +83,30 @@
   #+end_src
 
 - Assigning a ~float~ to an ~int~ and vice versa is possible (but not
-  safe as we will see):
+  safe as we will see) - the compiler will not warn you:
   #+begin_src C :results silent
-    /* ASSIGNING A float TO AN int */
-    float profit;
-    int iProfit;
-    iProfit = 2150.48;  // Don't do this!
+    /* ASSIGNING A floating point value TO AN integer variable*/
+    int iProfit = 2150.48;  // Don't do this!
 
-    /* ASSIGNING AN int TO AN float */
-    float profit;
-    int iProfit;
-    profit = 2150;  // Don't do this!
+    /* ASSIGNING AN integer TO AN floating point variable */
+    float profit = 2150;  // Don't do this!
   #+end_src
 
-- [X] Variables with values can be used to compute other values:
+- Variables with values can be used to compute other values:
   #+begin_src C :results silent
+    // variable declarations
     int height, length, width, volume;
 
+    // variable assignments
     height = 8;
     length = 12;
     width = 10;
+
+    // variable evaluation
     volume = height * length * width;
   #+end_src
 
-- [X] How many things does this last little program have to do[fn:5]?
+- How many things does this last little program have to do[fn:5]?
 
 - You can also initiate and declare several variables at once. Here,
   the ~volume~ from before is computed inside ~printf~:
@@ -119,11 +118,11 @@
 - To print these variables, we need to learn *formatting* identifiers,
   expressions like ~%d~ that you've seen before.
 
-* FORMATTING WITH ~printf~ VS. ~puts~
+* FORMATTING WITH ~printf~ VS. ~puts~ vs. ~putchar~
 
 - We use the built-in (via ~stdio.h~) function ~printf~ to print.
 
-- We also used ~puts~ in the past, which includes the newline
+- You can also use ~puts~ ("put string"), which includes the newline
   character ~\n~ that we need to add for ~printf~[fn:6].
 
 - the standard input/output library ~stdio.h~ also contains
@@ -178,6 +177,9 @@
 
     printf("The profit is: $%.8f\n", profit); // formatted printout
   #+end_src
+
+  #+RESULTS:
+  : The profit is: $2150.47998047
 
 * FORMATTING ERRORS
 
