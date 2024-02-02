@@ -1,0 +1,199 @@
+#+TITLE:C Basics - Variables - Code along
+#+AUTHOR: [yourname]
+#+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2024
+#+DATE: Time-stamp: <2024-02-01 23:19:41 Birkenkrahe>
+#+STARTUP: overview hideblocks indent
+#+OPTIONS: toc:1 ^:nil
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :tangle yes
+* README
+
+This file contains code blocks and small exercises to code along
+during a lecture. Upload it to Canvas once you've completed it. If you
+missed a class session, you can work through this file on your own and
+submit it within a week for full points.
+
+* TODO Identify yourself
+
+  - replace ~[yourName]~ in the header of this file by your name
+  - add ~(pledged)~ next to your name (as in "I obey the honor code")
+  - Change the "TODO" in the headline to "DONE" (~S-<right>~)
+  - save the file (~C-x C-s~). 
+
+* VARIABLE TYPES AND DECLARATIONS
+
+- Variables must be *declared* before they can be used: define an
+  /integer/ variable ~height~, a /floating point/ variable ~profit~, and a
+  /character/ variable ~name~:
+  #+begin_src C :results silent
+    
+  #+end_src
+
+- Several variables of the same type can be declared *together*: run
+  this block. Add an integer ~height~, a floating point ~profit~, and a
+  character ~last_name~:
+  #+begin_src C :results silent
+    int length, width, volume;
+    float loss;
+    char first_name;
+  #+end_src
+
+* VARIABLE ASSIGNMENT
+
+- Assign the value ~8~ to the variable ~height~. Try to run the code.
+  #+begin_src C
+
+  #+end_src
+
+- The example below would throw another error. What's
+  wrong now? 
+  #+begin_src C
+    height = 8;
+    int height;
+  #+end_src
+
+- Phew! The next block finally works, that is, it compiles and
+  runs. But what does the code actually do?
+  #+begin_src C :results silent
+    int height;
+    height = 8;
+  #+end_src
+
+- Define a ~float~ variable named ~profit~, then assign the value ~2150.48~
+  to it, marking it as a ~float~.
+  #+begin_src C :results silent
+
+  #+end_src
+
+- Assigning a ~float~ to an ~int~ and vice versa is possible (but not
+  safe as we will see) - the compiler will not warn you:
+  #+begin_src C :results silent
+    /* ASSIGNING A floating point value TO AN integer variable*/
+    int iProfit = 2150.48;  // Don't do this!
+
+    /* ASSIGNING AN integer TO AN floating point variable */
+    float profit = 2150;  // Don't do this!
+  #+end_src
+
+- Add a line to compute ~volume~ as the product of ~height~, ~length~ and
+  ~width~:
+  #+begin_src C :results silent
+    // variable declarations
+    int height, length, width, volume;
+
+    // variable assignments
+    height = 8;
+    length = 12;
+    width = 10;
+
+    // variable evaluation
+
+  #+end_src
+
+- Put all definitions for the variables on one line before the ~printf~
+  and run the code block:
+  #+begin_src C
+
+    printf("Volume: %d", height * length * width);
+  #+end_src
+
+* FORMATTING WITH ~printf~ VS. ~puts~ vs. ~putchar~
+
+- Add ~putchar(c)~ after the type declaration and assignment & run the
+  block:
+  #+begin_src C
+    char c = 'A'; // declaration and assignment
+
+  #+end_src
+
+* FORMATTING INTEGER NUMBERS WITH ~%d~
+
+- Complete the ~printf~ statement!
+  #+begin_src C
+    int height;  // type declaration
+    height = 8;  // variable assignment
+
+    printf(...); // formatted printout
+  #+end_src
+  
+* FORMATTING FLOATING-POINT NUMBERS WITH ~%f~
+
+- Complete the ~printf~ statement and run the block!
+  #+begin_src C
+    float profit; // type declaration
+    profit = 2150.48f; // variable assignment
+
+    printf(...); // formatted printout
+  #+end_src
+
+* CHANGE FLOATING POINT PRECISION
+
+- Change the format to print 2 digits after the decimal point!
+  #+begin_src C
+    float profit;       // type declaration
+    profit = 2150.48f;  // variable assignment
+
+    // formatted printout: 2 digits after decimal point
+    printf("The profit is:...\n", profit);
+  #+end_src
+
+- Run the following code block!
+  #+begin_src C
+    float profit;       // type declaration
+    profit = 2150.48f;  // variable assignment
+
+    printf("The profit is: $%.8f\n", profit); // formatted printout
+  #+end_src
+
+* FORMATTING ERRORS
+
+- Format the variable printout!
+  #+begin_src C :results output
+    float foo;  // declare float
+    foo = 3.14f;   // assigned float
+
+    // formatting float as float
+    printf("float as float: ... \n", foo);
+
+    // formating float as int
+    printf("float as int: ... \n", foo);
+
+    int bar;  // defined int
+    bar = 314;   // assigned int
+
+    // formatting int as int
+    printf("int as int: ... \n", bar);
+
+    // formatting int as float
+    printf("int as float: ... \n", bar);  // int as float
+  #+end_src
+
+* PUTTING IT ALL TOGETHER (EXTENDED EXAMPLE)
+
+- Compute the ~volume~ by multiplying 12, 10 and 8
+- Compute the dimensional ~weight~ by dividing ~volume~ by 166
+- Print ~volume~, ~weight~ and the squared ~weight~, and run the code block
+  #+begin_src C
+    ...   // volume = height * width * length
+    ...  // dimensional weight
+  #+end_src
+
+- Now for the final program. I have set it up so that this can be
+  tangled as a file ~dweight.c~: create the C file and run it on the
+  command line shell.
+  #+begin_src C :results output :tangle dweight.c
+    // declare variable types
+    int height, length, width, volume, weight;
+
+    // variable assignments
+    height = 8;
+    length = 12;
+    width = 10;
+    volume = height * length * width;
+    weight = (volume + 165) / 166;
+
+    // print results
+    printf("Dimensions: %dx%dx%d\n", length, width, height);
+    printf("Volume (cubic inches): %d\n", volume);
+    printf("Dimensional weight (pounds): %d\n", weight);
+  #+end_src
+
