@@ -1,5 +1,5 @@
-#+TITLE:Hello world program
-#+AUTHOR:[yourname] (pledged)
+#+TITLE: Hello world program
+#+AUTHOR: [yourname] (pledged)
 #+SUBTITLE:Sample program - CSC 100 - Lyon College - Spring 2024
 #+STARTUP:overview hideblocks indent
 #+OPTIONS: toc:nil num:nil ^:nil
@@ -44,7 +44,7 @@ events between two actors:
 [[../../img/helloworldsequence.png]]
 
 You can make BPMN diagrams yourself at [[https://bpmn.io][bpmn.io]], and UML diagrams at
-[[https://mermaid.live][mermaid.live]].
+[[https://mermaid.live][nmermaid.live]].
 
 * PROGRAM (C and C++)
 
