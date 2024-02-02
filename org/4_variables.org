@@ -16,7 +16,7 @@
 
 - To *code along during the lecture* using Emacs and Org-mode, open the
   EWW browser inside Emacs (~M-x eww~) and download the file from
-  [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-org]], then save it (~C-x C-w~) as an Org-mode
+  [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-codealong-org]], then save it (~C-x C-w~) as an Org-mode
   (~.org~) file in your home directory ~~/~.
     
 - There is a separate Org-mode file available for *practice after the
