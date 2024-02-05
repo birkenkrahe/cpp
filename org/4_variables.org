@@ -197,7 +197,7 @@
   #+RESULTS:
   : The profit is: $2150.47998047
 
-* NEXT FORMATTING ERRORS
+* FORMATTING ERRORS
 
 - Bad things happen when you get the formatting wrong.
 
@@ -211,7 +211,7 @@
     printf("float as float: %.2f\n", foo);
 
     // formating float as int
-    printf("float as int: %d\n", foo);
+    printf("float as int: %d\n", foo); // needs %f 
 
     int bar;  // defined int
     bar = 314;   // assigned int
@@ -220,8 +220,14 @@
     printf("int as int: %d\n", bar);
 
     // formatting int as float
-    printf("int as float: %.2f\n", bar);  // int as float
+    printf("int as float: %.2f\n", bar);  // needs %d
   #+end_src
+
+  #+RESULTS:
+  : float as float: 3.14
+  : float as int: 1610612736
+  : int as int: 314
+  : int as float: 0.00
 
 - When you print an ~integer~ as a floating point number or vice
   versa, the results are in general unpredictable!
@@ -285,6 +291,8 @@
     height = 8;
     length = 12;
     width = 10;
+
+    // compute results
     volume = height * length * width;
     weight = (volume + 165) / 166;
 
@@ -293,6 +301,11 @@
     printf("Volume (cubic inches): %d\n", volume);
     printf("Dimensional weight (pounds): %d\n", weight);
   #+end_src
+
+  #+RESULTS:
+  : Dimensions: 12 times 10 times 8
+  : Volume (cubic inches): 960
+  : Dimensional weight (pounds): 6
 
 * LET'S PRACTICE!
 

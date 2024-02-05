@@ -192,8 +192,8 @@ nightmare and will be ready for more!
 /Image: burning the midnight oil trying to solve Dr. B's assignments./
 
 - Lecture: [[https://github.com/birkenkrahe/cpp/blob/main/org/4_variables.org][GitHub]] 
-- Codealong: 
-- Practice: 
+- Codealong: [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-codealong-org]]
+- Practice: [[http://tinyurl.com/4-variables-practice-org][tinyurl.com/4-variables-practice-org]]
 
 ** DONE Review: variables, assignment, print formatting , Emacs (chat)
 
