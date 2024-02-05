@@ -49,13 +49,9 @@ input and output variables.
 
 The BPMN process diagram shows the program flow and explains the
 communication between the computer and the peripherals (User input via
-keyboard and screen output).
-#+ATTR_HTML: :WIDTH 400px:
-[[../../img/rectangle.svg]]
+keyboard and screen output). [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/img/rectangle.svg][Open in browser]].
 
-The UML diagram only shows the communication sequence:
-#+ATTR_HTML: :WIDTH 400px:
-[[../../img/rectangleSequence.png]]
+The UML diagram only shows the communication sequence - [[https://github.com/birkenkrahe/cpp/blob/main/img/rectangleSequence.png][open in browser]].
 
 * Program
 
