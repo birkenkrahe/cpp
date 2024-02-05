@@ -184,13 +184,21 @@ nightmare and will be ready for more!
 
 ** C fundamentals: variables & planning a program
 
+
 * Week 4 - Variables & Constants
 #+ATTR_HTML: :WIDTH 400px:
 [[../img/midnight_oil.png]]
 
-/Image: burning the midnight oil./
+/Image: burning the midnight oil trying to solve Dr. B's assignments./
 
-** TODO Review: variables, assignment, print formatting
+- Lecture: [[https://github.com/birkenkrahe/cpp/blob/main/org/4_variables.org][GitHub]] 
+- Codealong: 
+- Practice: 
+
+** DONE Review: variables, assignment, print formatting , Emacs (chat)
+
+Check your understanding before or after class. Here are 11 questions
+on stuff of last week. Some of these may return in a test.
 
 - [ ] What must each variable in C have to specify the data it can hold?
   #+begin_notes
@@ -241,6 +249,14 @@ nightmare and will be ready for more!
   #+begin_notes
   With ~C-c C-c~ (CTRL + c CTRL +c)
   #+end_notes
+- [ ] How can you copy, cut and paste in Emacs?
+  #+begin_notes
+  You can either use the preset keybindings to copy (~M-w~), cut (~C-w~),
+  and paste (~C-y~), or you can switch to CUA-mode with (~M-x cua-mode~)
+  and use Windows keybindings to copy (~C-c~), cut (~C-x~), and paste
+  (~C-v~). In either case, you have to mark a region to work on (~C-SPC~).
+  #+end_notes
+  
 
 ** TODO Program 1: rectangle properties
 #+ATTR_HTML: :WIDTH 600px:
