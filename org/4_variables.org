@@ -197,7 +197,7 @@
   #+RESULTS:
   : The profit is: $2150.47998047
 
-* FORMATTING ERRORS
+* NEXT FORMATTING ERRORS
 
 - Bad things happen when you get the formatting wrong.
 
@@ -293,11 +293,6 @@
     printf("Volume (cubic inches): %d\n", volume);
     printf("Dimensional weight (pounds): %d\n", weight);
   #+end_src
-
-  #+RESULTS:
-  : Dimensions: 12 times 10 times 8
-  : Volume (cubic inches): 960
-  : Dimensional weight (pounds): 6
 
 * LET'S PRACTICE!
 
