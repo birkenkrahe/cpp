@@ -4,7 +4,8 @@
 * READ README
 
   - This file is a practice file for C fundamentals - based on the
-    lecture ~4_variables.org~. 
+    lecture ~4_variables.org~ ([[https://github.com/birkenkrahe/cpp/blob/main/org/4_variables.org][GitHub]]). You find this file at:
+    [[http://tinyurl.com/4-variables-practice-org][tinyurl.com/4-variables-practice-org]].
 
   - When you're done with a section move the cursor on the section
     heading and type ~S-<right>~ (or SHIFT+<right-arrow>).

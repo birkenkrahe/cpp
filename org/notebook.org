@@ -83,8 +83,7 @@ someone else had written it, and also using AI to deliver a critique.
 - Parts of the introduction are inspired by King, chapter 1 (pp. 1-8).
 - Parts of the hello world basics are inspired by King, chapter 2 (9-18).
 
-
-* Week 3 - C fundamentals & Emacs tutorial
+* DONE Week 3 - C fundamentals & Emacs tutorial
 #+ATTR_HTML: :WIDTH 400px: 
 [[../img/adalovelace.png]]
 
@@ -99,11 +98,11 @@ This week:
    - Start Tutorial in class.
    - Finish it at home.
    - Upload result to Canvas.
-3. [ ] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]]) & handout
-4. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]]) - solution video!
-5. [ ] *Handout*: Emacs cheat sheet (1p - 20 commands) ([[https://github.com/birkenkrahe/cc/blob/piHome/pdf/emacs.pdf][GitHub]])
+3. [X] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]]) & handout
+4. [X] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]]) - solution video!
+5. [X] *Handout*: Emacs cheat sheet (1p - 20 commands) ([[https://github.com/birkenkrahe/cc/blob/piHome/pdf/emacs.pdf][GitHub]])
 6. [ ] *Programming assignment:* Rectangle ([[https://lyon.instructure.com/courses/2107/assignments/24410][Canvas]])
-7. [ ] *Handout*: next section "Variables in C" (GitHub).
+7. [X] *Handout*: next section "Variables in C" (GitHub).
 
 IMPORTANT: FINISH THE EMACS TUTORIAL (by Sunday night)
 
@@ -166,7 +165,7 @@ Del Gobbo @Austin Swaim @Karley Wilson all did this at home, I
 believe. I promise: By the end of the week, you'll have forgotten the
 nightmare and will be ready for more!
 
-** TODO Hello world - again and again and again
+** Hello world - again and again and again
 [[../img/helloworld.png]]
 
 - Dissecting "hello world".
@@ -183,7 +182,14 @@ nightmare and will be ready for more!
 
 - Upload completed practice file to [[https://lyon.instructure.com/courses/2107/assignments/23359][Canvas]].
 
-** TODO C fundamentals: variables & planning a program
+** C fundamentals: variables & planning a program
+
+* Week 4 - Variables & Constants
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/midnight_oil.png]]
+
+/Image: burning the midnight oil./
+
 ** TODO Program 1: rectangle properties
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/programming_is_planning.png]]
@@ -226,7 +232,6 @@ nightmare and will be ready for more!
 - You'll get my sample solution when you submit your solution.
 
 
-* Week 4 - Expressions
 * Week 5 - Selection
 * Week 6 - Loops
 * Week 7 - Basic types
