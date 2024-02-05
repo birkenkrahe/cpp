@@ -190,6 +190,58 @@ nightmare and will be ready for more!
 
 /Image: burning the midnight oil./
 
+** TODO Review: variables, assignment, print formatting
+
+- [ ] What must each variable in C have to specify the data it can hold?
+  #+begin_notes
+  A type, e.g. =int= or =float= or =char=, so that the memory can be reserved.
+  #+end_notes
+- [ ] How can multiple variables of the same type be declared in C?
+  #+begin_notes
+  They can be declared together in one line separated by commas.
+  #+end_notes
+- [ ] What must happen to variable type declarations in relation to
+  statements that use the variables?
+  #+begin_notes
+  The variable type declarations must precede statements that use the
+  variables.
+  #+end_notes
+- [ ] What does the code block "int height; height = 8;" do?
+  #+begin_notes
+  Declares an integer variable named height and assigns it the value 8
+  #+end_notes
+- [ ] How is a floating point value indicated when assigned to a =float=
+  variable in C?
+  #+begin_notes
+  By including a decimal point and the letter f, e.g. ~profit = 200.f;~
+  #+end_notes
+- [ ] What is unsafe about assigning a =float= to an =int= variable directly?
+  #+begin_notes
+  Because it can lead to loss of precision, and the compiler won't warn you.
+  #+end_notes
+- [ ] What is the purpose of the =%d= format specifier in C?
+  #+begin_notes
+  To print an integer value.
+  #+end_notes
+- [ ] What is the minimal =printf= statement to print the number ~1~ as an integer?
+  #+begin_src C :results output :main yes :includes <stdio.h>
+    printf("%d",1); // printing 1 as an integer with %d formatter
+    printf("\n");
+    printf("%s","1"); // printing "1" as a string with %s formatter
+    printf("\n");
+    puts("1"); // printing "1" as a string with the puts() function
+  #+end_src
+- [ ] What do three dots =...= at the end of a line in Emacs Org-mode
+  usually mean?
+  #+begin_notes
+  If on a headline, bullet point or code block header, the section,
+  bullet item, or code block will open and close with TAB (toggle).
+  #+end_notes
+- [ ] How can you run an Emacs Org-mode code block?
+  #+begin_notes
+  With ~C-c C-c~ (CTRL + c CTRL +c)
+  #+end_notes
+
 ** TODO Program 1: rectangle properties
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/programming_is_planning.png]]
