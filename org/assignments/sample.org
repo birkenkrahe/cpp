@@ -36,7 +36,7 @@ The process diagram shows the program flow and explains the
 communication between the computer and the peripherals (User input via
 keyboard and screen output).
 #+ATTR_HTML: :WIDTH 400px:
-[[../../img/helloworld.svg]]
+[../../img/helloworld.svg]]
 
 The UML sequence diagram shows the interaction only, as a sequence of
 events between two actors:
