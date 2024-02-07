@@ -185,7 +185,7 @@ nightmare and will be ready for more!
 ** C fundamentals: variables & planning a program
 
 
-* Week 4 - Variables & Constants
+* IN PROGRESS Week 4 - Variables & Data types & Format specifiers
 #+ATTR_HTML: :WIDTH 400px:
 [[../img/midnight_oil.png]]
 
@@ -195,7 +195,7 @@ nightmare and will be ready for more!
 - Codealong: [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-codealong-org]]
 - Practice: [[http://tinyurl.com/4-variables-practice-org][tinyurl.com/4-variables-practice-org]]
 
-** DONE Review: variables, assignment, print formatting , Emacs (chat)
+** Review: variables, assignment, print formatting, Emacs (chat)
 
 Check your understanding before or after class. Here are 11 questions
 on stuff of last week. Some of these may return in a test.
@@ -257,8 +257,7 @@ on stuff of last week. Some of these may return in a test.
   (~C-v~). In either case, you have to mark a region to work on (~C-SPC~).
   #+end_notes
   
-
-** TODO Program 1: rectangle properties
+** Program 1: rectangle properties (Canvas)
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/programming_is_planning.png]]
 
@@ -277,7 +276,7 @@ on stuff of last week. Some of these may return in a test.
 - I'll show you quickly how to create BPMN, flow and sequence diagrams
   at bpmn.io and mermaid.live.
 
-** TODO Bonus challenge: Fahrenheit to Celsius conversion (Canvas)
+** Bonus challenge: Fahrenheit to Celsius conversion (Canvas)
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/programming_challenge.png]]
 
@@ -285,10 +284,10 @@ on stuff of last week. Some of these may return in a test.
   in degrees Fahrenheit.
 
 - A complete solution includes:
-  1. Plan (10 pt)
-  2. Pseudocode (10 pt)
-  3. Process (10 pt)
-  4. Program (10 pt)
+  1. Plan (5 pt)
+  2. Pseudocode (5 pt)
+  3. Process (5 pt)
+  4. Program (5 pt)
 
 - Submit an Emacs Org-mode file with some or all of these aspects. Use
   Hello World sample file as a template if you like (e.g. to include
