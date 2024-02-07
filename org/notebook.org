@@ -193,7 +193,7 @@ nightmare and will be ready for more!
 
 - Lecture: [[https://github.com/birkenkrahe/cpp/blob/main/org/4_variables.org][GitHub]] 
 - Codealong: [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-codealong-org]]
-- Practice: [[http://tinyurl.com/4-variables-practice-org][tinyurl.com/4-variables-practice-org]]
+- Practice: [[http://tinyurl.com/4-variables-practice-org][tinyurl.com/4-practice-org]]
 
 ** Review: variables, assignment, print formatting, Emacs (chat)
 

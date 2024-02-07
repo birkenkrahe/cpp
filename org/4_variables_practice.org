@@ -28,11 +28,9 @@
 
   2) Declare two /floating-point/ variables ~fahrenheit~ and ~celsius~.
 
-  3) Use two separate statements.
+  3) Use two separate statements: one declaration per line.
 
-  4) Put ~:results silent~ in the code block header[fn:1].
-
-  5) Run the code block (~C-c C-c~).
+  4) Run the code block (~C-c C-c~).
 
   ----- PUT CODE BLOCK BELOW THIS LINE -----
 
@@ -42,9 +40,10 @@
 
   2) You can check that yourself by running it (~C-c C-c~) and reading
      the compiler messages that open in another buffer. Type ~C-x 1~ to
-     delete the message buffer.
+     only see 1 buffer.
 
-  3) Find and fix the errors, and run the code block to make sure.
+  3) Find and fix the errors, and run the code block to make
+     sure. Notice how the syntax highlighting changes!
 
   #+name: pgm:declare1
   #+begin_src C :results silent
@@ -70,22 +69,21 @@
 
   2) Complete [[pgm:conversion]] with two statements:
      - assign the temperature 80 to ~fahrenheit~
-     - compute ~celsius~ using [[pgm:formula]]
+     - compute ~celsius~ using [[pgm:formula]] (which will not run - why?)
+       #+name: pgm:formula
+       #+begin_src C
+	 celsius = (fahrenheit - freezing) * factor
+       #+end_src
 
   3) Run the program to make sure that the answer is correct for 80
      degrees Fahrenheit (equivalent to 26.7 degrees Celsius).
-
-  #+name: pgm:formula
-  #+begin_src C
-    celsius = (fahrenheit - freezing) * factor
-  #+end_src
        
   #+name: pgm:conversion
   #+begin_src C :noweb yes
     <<pgm:declarations>>  // declares fahrenheit and celsius
     <<pgm:assignments>> // assigns values to freezing and factor
-    ...
-    ...
+    ... // assign 80 F to the variable fahrenheit
+    ... // add the pgm:formula codeblock here
     printf("Fahrenheit: %g\nCelsius equivalent: %.1f\n", 
 	   fahrenheit, celsius);
   #+end_src
@@ -116,7 +114,8 @@
      - a floating-point variable ~bar~ with value 100
      - a character variable ~baz~ with value A
 
-  2) Print the three variables so that the output looks like shown below.
+  2) Print the three variables so that the output looks like shown
+     below. Remember to add ~:results output~ to the code block header.
 
   3) Use 
      - ~puts~ for the headline "Three variables",
