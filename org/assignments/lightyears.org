@@ -1,0 +1,49 @@
+#+TITLE: Convert height to light-years
+#+AUTHOR:[yourname] (pledged)
+#+SUBTITLE:Home assignment - CSC 100 - Lyon College - Spring 2024
+#+STARTUP:overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+* README
+
+This program assumes that we covered the topic of constants in C, and
+of formatting floating-point numbers in scientific notation. However,
+you're welcome to try and complete it even before that!
+
+* Preamble
+
+The numerical value of many physical quantities depends on the unit
+one chooses to measure them. My height is 1.8 m or 180 cm, or 1.90e-16
+light-years.
+
+The use of light-years as a unit of distance is weird but common in
+physics: since 1983, the speed of light is defined to be exactly c =
+299,792,458 m/s, and this serves as a definition of the meter given
+the unit of time.
+
+* Problem
+
+Write a C program that computes three heights in light-years:
+
+| HEIGHT [m] | WHO                |
+|------------+--------------------|
+|        1.8 | Marcus Birkenkrahe |
+|       1.98 | Michael Jordan     |
+|       1.67 | Napoleon Bonaparte |
+
+Not considering leap years, a year is 31,536,000 seconds long.
+
+* Submission
+
+Submit your solution as an Emacs Org-mode file including the usual
+header information (title, author, pledged), here in Canvas.
+
+The solution should contain the output after the code block. The
+output should look like this:
+#+begin_example
+  : Marcus Birkenkrahe's height:  1.80 m = 1.90e-16 light-years
+  : Michael Jordan's height:	    1.98 m = 2.09e-16 light-years
+  : Napoleon Bonaparte's height:  1.67 m = 1.77e-16 light-years
+#+end_example
+
+Tip: just like ~\n~ adds a newline by escaping the `n`, you can add a
+tab with ~\t~ by escaping the `t`.
