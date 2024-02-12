@@ -184,8 +184,7 @@ nightmare and will be ready for more!
 
 ** C fundamentals: variables & planning a program
 
-
-* IN PROGRESS Week 4 - Variables & Data types & Format specifiers
+* DONE Week 4 - Variables & Data types & Format specifiers
 #+ATTR_HTML: :WIDTH 400px:
 [[../img/midnight_oil.png]]
 
@@ -299,7 +298,21 @@ on stuff of last week. Some of these may return in a test.
 - You'll get my sample solution when you submit your solution.
 
 
-* Week 5 - Selection
+
+
+* Week 5 - Constants
+
+** Solution video for variables lab session
+#+attr_html: :width 400px
+[[../img/solution_video.png]]
+
+For those who'd like to see the last exercise -
+[[http://tinyurl.com/4-practice-org][tinyurl.com/4-practice-org]] - [[https://youtu.be/9YsWCAa9GaQ][the video (37 min) is here]] - I added it
+to the playlist for this course. No sound, just hacking.
+
+- [ ] Lecture: Constants
+
+
 * Week 6 - Loops
 * Week 7 - Basic types
 * Week 8 - Arrays
