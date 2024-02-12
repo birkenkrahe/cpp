@@ -22,13 +22,15 @@ submit it within a week for full points.
 * Macro definition with ~#define~
 
 - This declarative constant definition for the pre-processor blindly
-  substitutes the defined value everywhere in the program.
-  #+begin_src C :main yes :includes <stdio.h>
-
+  substitutes the defined value everywhere in the program. Run the
+  code:
+  #+begin_src C
+    #define PI 3.141593
+    printf("PI is %f\n",PI);
   #+end_src
 
 - Can you see what mistake I made in the next code block? Fix it and
-  run the block.
+  run the code.
   #+begin_example C
     #define PI = 3.141593  
     printf("PI is %f\n", PI);
@@ -111,7 +113,7 @@ submit it within a week for full points.
 - Create a file ~input~ with ~C-x C-f~ and put the number ~5~ into it.
 
 - Feed the content of ~input~ to C using ~scanf~ and store it in ~i~:
-  #+begin_src C :tangle iscan.c :cmdline < ../data/input
+  #+begin_src C :tangle iscan.c :cmdline < input
 
   #+end_src
 
