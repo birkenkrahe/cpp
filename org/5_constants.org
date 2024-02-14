@@ -1,7 +1,7 @@
-#+TITLE:C FUNDAMENTALS - CONSTANTS / INPUT / NAMING / LAYOUT - LECTURE
+#+TITLE:C FUNDAMENTALS - CONSTANTS/INPUT/NAMES/LAYOUT
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:CSC100 Introduction to programming in C/C++ Spring 2024
-#+DATE: Time-stamp: <2024-02-11 23:08:15 marcus>
+#+DATE: Time-stamp: <2024-02-13 18:40:43 birkenkrahe>
 #+STARTUP: overview hideblocks indent inlineimages
 #+OPTIONS: toc:1 ^:nil
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output
