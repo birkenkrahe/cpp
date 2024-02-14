@@ -310,8 +310,8 @@ For those who'd like to see the last exercise -
 [[http://tinyurl.com/4-practice-org][tinyurl.com/4-practice-org]] - [[https://youtu.be/9YsWCAa9GaQ][the video (37 min) is here]] - I added it
 to the playlist for this course. No sound, just hacking.
 
-- [ ] Lecture: Constants
-
+- [ ] Lecture: Constants, naming, layout - tinyurl.com/5-codealong-org
+- [ ] Practice: tinyurl.com/5-practice-org
 
 * Week 6 - Loops
 * Week 7 - Basic types
