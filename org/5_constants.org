@@ -376,8 +376,9 @@
 
 * Let's practice!
 
-Download the raw Org-mode practice file, complete the second batch
-of exercises, then upload the completed file to Canvas:
+Download the raw Org-mode practice file ([[http://tinyurl.com/5-practice-org][tinyurl.com/5-practice-org]]),
+complete the second batch of exercises, then upload the completed file
+to Canvas:
 
 1) Defining constants
 2) Standard math library
