@@ -313,6 +313,10 @@ to the playlist for this course. No sound, just hacking.
 - [ ] Lecture: Constants, naming, layout - tinyurl.com/5-codealong-org
 - [ ] Practice: tinyurl.com/5-practice-org
 
+** Quick review
+
+
+
 * Week 6 - Loops
 * Week 7 - Basic types
 * Week 8 - Arrays
