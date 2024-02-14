@@ -128,7 +128,7 @@ submit it within a week for full points.
 
 - Use upper case letters for CONSTANTS
   #+begin_src C :results silent
-
+    
   #+end_src
 
 - Use lower case letters for variables

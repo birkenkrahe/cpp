@@ -315,7 +315,9 @@ to the playlist for this course. No sound, just hacking.
 
 ** Quick review
 
-
+- ~#define~ constants
+- constants with ~const~
+- math library ~math.h~p
 
 * Week 6 - Loops
 * Week 7 - Basic types
