@@ -301,8 +301,6 @@ on stuff of last week. Some of these may return in a test.
 
 
 * Week 5 - Constants
-
-** Solution video for variables lab session
 #+attr_html: :width 400px
 [[../img/solution_video.png]]
 
@@ -310,17 +308,31 @@ For those who'd like to see the last exercise -
 [[http://tinyurl.com/4-practice-org][tinyurl.com/4-practice-org]] - [[https://youtu.be/9YsWCAa9GaQ][the video (37 min) is here]] - I added it
 to the playlist for this course. No sound, just hacking.
 
-- [ ] Lecture: Constants, naming, layout - tinyurl.com/5-codealong-org
+Plan:
+- [X] Lecture: Constants, naming, layout - tinyurl.com/5-codealong-org
 - [ ] Practice: tinyurl.com/5-practice-org
 
-** Quick review
+All lecture materials are in GitHub - you also received a paper copy
+of the script.
+
+Submit completed codealong and practice files by 23rd February in
+Canvas.
+
+I will post next week's programming assignment (regular and bonus)
+over the long weekend.
+  
+** Quick review of the week
 
 - ~#define~ constants
 - constants with ~const~
-- math library ~math.h~p
+- math library ~math.h~
+- naming conventions
+- program layout
 
-* Week 6 - Loops
-* Week 7 - Basic types
+
+* Week 6 - =printf= and =scanf= reloaded
+
+* Week 7 - Loops
 * Week 8 - Arrays
 * Week 9 - Functions
 * Week 10 - Pointers

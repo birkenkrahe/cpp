@@ -55,8 +55,8 @@
 
   - Answer:
 
-  - Can you also print it using ~math.h~? Write a quick 2-line program
-    (in a C code block) to print this value!
+  - Can you also print it *without* including ~math.h~? Write a quick
+    2-line program (in a C code block) to print this value!
   
   
 * TODO Reading input
