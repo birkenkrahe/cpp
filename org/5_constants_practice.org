@@ -1,9 +1,12 @@
 #+TITLE: C FUNDAMENTALS PRACTICE - CONSTANTS
 #+AUTHOR: [yourName] (pledged)
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both :comments both
-* READ README
+* README
 
   - This file is a practice file for C fundamentals.
+
+  - If you've got difficulties with one exercise, move on to the
+    next - they're not connected.
 
   - When you're done with a section move the cursor on the section
     heading and type ~S-<right>~ (or SHIFT+<right-arrow>).
@@ -50,14 +53,14 @@
 
 * TODO Standard math library
 
-  - Open the file [[https://github.com/birkenkrahe/cc/blob/piHome/data/math.h][math.h]] (from GitHub) and search for the definition
-    of ~M_PI~. What is the last non-zero digit? What's the precision?
+  - Open the file [[https://github.com/birkenkrahe/cc/blob/piHome/data/math.h][math.h]] (from GitHub - type ~C-c C-o~ with the cursor
+    on the link) and search for the definition of ~M_PI~. What is the
+    last non-zero digit? What's the precision?
 
   - Answer:
 
   - Can you also print it *without* including ~math.h~? Write a quick
     2-line program (in a C code block) to print this value!
-  
   
 * TODO Reading input
 
