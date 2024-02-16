@@ -40,7 +40,10 @@
       The speed of light is: 299792458 m/s
      #+end_example
 
-  ----- PUT CODE BLOCK HERE -----
+  6) Tip: the ~%~ character is reserved for format specification. To
+     escape it (i.e. to print `%`, use ~%%~ in the ~printf~ statement).
+     
+  ----- PUT CODE BLOCK BELOW THIS LINE -----
 
 * TODO Standard math library
 
