@@ -114,7 +114,7 @@
     char ...
 
     // function that adds two integers i and j
-    int ... (i,j) {
+    int ... (int i,int j) {
       return i + j;
     }
 
@@ -124,9 +124,10 @@
 
 * TODO Fix the program
 
-  The program statements in [[pgm:wrongNames]] contain multiple errors. Find
-  them all and fix them if you can so that the program compiles and
-  runs without errors - without simply commenting out erroneous code.
+  The program statements in [[pgm:wrongNames]] below contain multiple
+  errors. Find them all and fix them if you can so that the program
+  compiles and runs without errors - without simply commenting out
+  erroneous code.
 
   #+name: pgm:wrongNames
   #+begin_src C :flags -Wall :results silent
@@ -145,13 +146,15 @@
 
 * TODO Program layout
  
-  The program [[pgm:layout1]] does not accommodate program layout
+  The program [[pgm:layout1]] below does not accommodate program layout
   conventions (though it will compile and run). Fix that.
 
   /Tip:/ sort the different parts of the program first. The comments
   might be helpful for that.
 
-  The output looks liks this:
+  Remember that <TAB> will correct indentation in the code block.
+
+  The output looks like this:
   #+begin_example
     I'm gonna print a number now.
     The number is 100
@@ -160,7 +163,7 @@
 
   #+name: pgm:layout1
   #+begin_src C
-    const X=100.;puts("I'm gonna print a number now.");printf("The number is %d\n", X);
+    const int X=100.;puts("I'm gonna print a number now.");printf("The number is %d\n", X);
 
     // declarations
 

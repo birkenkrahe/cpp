@@ -304,7 +304,7 @@ on stuff of last week. Some of these may return in a test.
 #+attr_html: :width 400px
 [[../img/solution_video.png]]
 
-For those who'd like to see the last exercise -
+*Pure hack*: For those who'd like to see exercise 4 solved online:
 [[http://tinyurl.com/4-practice-org][tinyurl.com/4-practice-org]] - [[https://youtu.be/9YsWCAa9GaQ][the video (37 min) is here]] - I added it
 to the playlist for this course. No sound, just hacking.
 
@@ -312,23 +312,30 @@ Plan:
 - [X] Lecture: Constants, naming, layout - tinyurl.com/5-codealong-org
 - [ ] Practice: tinyurl.com/5-practice-org
 
-All lecture materials are in GitHub - you also received a paper copy
-of the script.
+** Housekeeping
 
-Submit completed codealong and practice files by 23rd February in
-Canvas.
-
-I will post next week's programming assignment (regular and bonus)
-over the long weekend.
+- All lecture materials are in GitHub - you also received a paper copy
+  of the script.
+- Submit completed codealong and practice files by 23rd February in
+  Canvas.
+- I will post next week's programming assignment (regular and
+  bonus) over the long weekend.
+- I will also grade all outstanding submissions & submit early alerts!
+- I will create and post solution videos for practice 5 (constants)
+  and for the programming exercises.
   
 ** Quick review of the week
 
-- ~#define~ constants
-- constants with ~const~
-- math library ~math.h~
-- naming conventions
-- program layout
-
+| *Concept/Code*        | *Example/Comment*          |
+|---------------------+--------------------------|
+| ~#define~ constants   | #define PI 3.14f         |
+| ~const~ constants     | const float PI=3.14f;    |
+| math library ~math.h~ | #include <math.h>        |
+| naming conventions  | +10_times super-man+       |
+|                     | times10  super_man       |
+| program layout      | whitespace doesn't count |
+|                     | except after keywords &  |
+|                     | strings across lines     |
 
 * Week 6 - =printf= and =scanf= reloaded
 
