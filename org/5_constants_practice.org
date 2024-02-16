@@ -42,6 +42,9 @@
 
   6) Tip: the ~%~ character is reserved for format specification. To
      escape it (i.e. to print `%`, use ~%%~ in the ~printf~ statement).
+
+  7) Tip: You only need to include extra libraries - ~stdio.h~ is
+     already included, and ~main~ will be added automatically.
      
   ----- PUT CODE BLOCK BELOW THIS LINE -----
 
@@ -53,7 +56,7 @@
   - Answer:
 
   - Can you also print it using ~math.h~? Write a quick 2-line program
-    to print this value!
+    (in a C code block) to print this value!
   
   
 * TODO Reading input
