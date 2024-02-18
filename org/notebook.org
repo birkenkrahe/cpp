@@ -298,7 +298,6 @@ on stuff of last week. Some of these may return in a test.
 - You'll get my sample solution when you submit your solution.
 
 
-
 * DONE Week 5 - Constants
 #+attr_html: :width 400px
 [[../img/solution_video.png]]
@@ -339,6 +338,9 @@ Plan:
 
 * Week 6 - =printf= and =scanf= reloaded
 
+#+attr_html: :width 400px:
+[[../img/week_6.png]]
+
 * First month of course: stats
 
 Tests:
@@ -355,11 +357,13 @@ Tests:
   [[../img/test_3.png]]
   #participants = 15
 
-- Summary as boxplot for each test (R code: tinyurl.com/cpp-tests-sp24):
+- Summary as boxplot for each test (R code:
+  [[http://tinyurl.com/cpp-tests-sp24][tinyurl.com/cpp-tests-sp24]]):
   #+attr_html: :width 400px: 
   [[../img/test_1-3_box.png]]
   
 - What do you need to improve your test performance?
+
 
 * Week 7 - Loops
 * Week 8 - Arrays
