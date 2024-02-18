@@ -341,6 +341,9 @@ Plan:
 #+attr_html: :width 400px:
 [[../img/week_6.png]]
 
+- Review test stats (data visualization)
+- Review programming assignments (feedback)
+
 * First month of course: stats
 
 Tests:

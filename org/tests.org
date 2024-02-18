@@ -1,105 +1,105 @@
 #+property: header-args:R :session *R* :results output :exports both
-#+STARTUP: hideblocks overview indent : 
-* Data
+#+STARTUP: hideblocks overview indent :
+* Import data from CSV file
 
-- Imported from CSV:
-  #+begin_src R :session *R* :results output :exports both :noweb yes
-    df <- read.csv('../data/test_1-3.csv',header=TRUE)
-    df <- df[,c(2,3,4)] # remove first column (ID)
-    names(df) <- c('t1','t2','t3') # change column names
-    str(df)
-  #+end_src
+#+begin_src R :session *R* :results output :exports both :noweb yes
+  df <- read.csv('../data/test_1-3.csv',header=TRUE)
+  df <- df[,c(2,3,4)] # remove first column (ID)
+  names(df) <- c('t1','t2','t3') # change column names
+  str(df)
+#+end_src
 
-  #+RESULTS:
-  : 'data.frame':	21 obs. of  3 variables:
-  :  $ t1: num  4.83 13 16.33 19.07 16.83 ...
-  :  $ t2: num  10 11 8.5 14.5 12 ...
-  :  $ t3: num  NA 24.3 20.9 24 22 ...
+#+RESULTS:
+: 'data.frame': 21 obs. of  3 variables:
+:  $ t1: num  4.83 13 16.33 19.07 16.83 ...
+:  $ t2: num  10 11 8.5 14.5 12 ...
+:  $ t3: num  NA 24.3 20.9 24 22 ...
 
-- Statistical summary:
-  #+begin_src R :session *R* :results output :exports both :noweb yes
-    summary(df)
-  #+end_src
+* Statistical summary:
 
-  #+RESULTS:
-  :        t1              t2              t3       
-  :  Min.   : 4.83   Min.   : 3.50   Min.   :16.83  
-  :  1st Qu.:15.50   1st Qu.: 9.50   1st Qu.:20.02  
-  :  Median :16.74   Median :10.33   Median :20.92  
-  :  Mean   :15.28   Mean   :10.35   Mean   :21.25  
-  :  3rd Qu.:17.33   3rd Qu.:11.33   3rd Qu.:22.92  
-  :  Max.   :19.07   Max.   :14.50   Max.   :24.31  
-  :                                  NA's   :4
+#+begin_src R :session *R* :results output :exports both :noweb yes
+  summary(df)
+#+end_src
 
-- Scale to percentages:
-  #+begin_src R
-    df$t1 <- (df$t1 / 20) * 100
-    df$t2 <- (df$t2 / 15) * 100
-    df$t3 <- (df$t3 / 25) * 100
-    df
-  #+end_src
+#+RESULTS:
+:        t1              t2              t3
+:  Min.   : 4.83   Min.   : 3.50   Min.   :16.83
+:  1st Qu.:15.50   1st Qu.: 9.50   1st Qu.:20.02
+:  Median :16.74   Median :10.33   Median :20.92
+:  Mean   :15.28   Mean   :10.35   Mean   :21.25
+:  3rd Qu.:17.33   3rd Qu.:11.33   3rd Qu.:22.92
+:  Max.   :19.07   Max.   :14.50   Max.   :24.31
+:                                  NA's   :4
 
-  #+RESULTS:
-  #+begin_example
-        t1       t2    t3
-  1  24.15 66.66667    NA
-  2  65.00 73.33333 97.24
-  3  81.65 56.66667 83.68
-  4  95.35 96.66667 96.00
-  5  84.15 80.00000 88.12
-  6  50.00 63.33333    NA
-  7  90.00 68.86667 82.40
-  8  77.50 71.13333 96.04
-  9  84.15 86.66667 91.68
-  10 87.50 64.46667    NA
-  11 57.50 71.13333 79.04
-  12 79.15 68.86667 77.68
-  13 85.00 70.00000 92.68
-  14 54.15 23.33333 67.32
-  15 81.65 67.80000 80.08
-  16 87.50 63.33333 89.16
-  17 87.50 83.33333 83.88
-  18 83.70 80.00000 81.84
-  19 86.65 54.46667 75.72
-  20 84.15 75.53333 82.28
-  21 77.50 63.33333    NA
-  #+end_example
-  
-- Boxplots:
-  #+begin_src R :results output graphics file :file ../img/test_1-3_box.png :exports both
-    par(mfrow=c(3,1))
-    ## test 1
-    boxplot(df$t1,
-            main="Test 1 - Orientation and programming",
-            horizontal=TRUE,
-            col="lightgreen",
-            ylim=c(20,100),            
-            xaxt='n')
-    axis(side=1,
-         at=seq(0,100,by=10),
-         labels=paste(seq(0, 100, by=10), "%")) 
-    ## test 2
-    boxplot(df$t2,
-            main="Test 2 - Introduction to C/C++ and first literate program",
-            horizontal=TRUE,
-            col="lightblue",
-            ylim=c(20,100),            
-            xaxt='n')
-    axis(side=1,
-         at=seq(0,100,by=10),
-         labels=paste(seq(0, 100, by=10), "%"))
-    ## test 3
-    boxplot(df$t3,
-            main="Test 3 - C variables, Emacs, and literate programming",
-            horizontal=TRUE,
-            col="peachpuff",
-            ylim=c(20,100),
-            xaxt='n')
-    axis(side=1,
-         at=seq(0,100,by=10),
-         labels=paste(seq(0, 100, by=10), "%")) 
-  #+end_src  
+* Scale to percentages:
 
-  #+RESULTS:
-  [[file:../img/test_1-3_box.png]]
+#+begin_src R
+  df$t1 <- (df$t1 / 20) * 100
+  df$t2 <- (df$t2 / 15) * 100
+  df$t3 <- (df$t3 / 25) * 100
+  df
+#+end_src
 
+#+RESULTS:
+#+begin_example
+      t1       t2    t3
+1  24.15 66.66667    NA
+2  65.00 73.33333 97.24
+3  81.65 56.66667 83.68
+4  95.35 96.66667 96.00
+5  84.15 80.00000 88.12
+6  50.00 63.33333    NA
+7  90.00 68.86667 82.40
+8  77.50 71.13333 96.04
+9  84.15 86.66667 91.68
+10 87.50 64.46667    NA
+11 57.50 71.13333 79.04
+12 79.15 68.86667 77.68
+13 85.00 70.00000 92.68
+14 54.15 23.33333 67.32
+15 81.65 67.80000 80.08
+16 87.50 63.33333 89.16
+17 87.50 83.33333 83.88
+18 83.70 80.00000 81.84
+19 86.65 54.46667 75.72
+20 84.15 75.53333 82.28
+21 77.50 63.33333    NA
+#+end_example
+
+* Create boxplots:
+#+begin_src R :results output graphics file :file ../img/test_1-3_box.png :exports both
+  par(mfrow=c(3,1))
+  ## test 1
+  boxplot(df$t1,
+          main="Test 1 - Orientation and programming",
+          horizontal=TRUE,
+          col="lightgreen",
+          ylim=c(20,100),
+          xaxt='n')
+  axis(side=1,
+       at=seq(0,100,by=10),
+       labels=paste(seq(0, 100, by=10), "%"))
+  ## test 2
+  boxplot(df$t2,
+          main="Test 2 - Introduction to C/C++ and first literate program",
+          horizontal=TRUE,
+          col="lightblue",
+          ylim=c(20,100),
+          xaxt='n')
+  axis(side=1,
+       at=seq(0,100,by=10),
+       labels=paste(seq(0, 100, by=10), "%"))
+  ## test 3
+  boxplot(df$t3,
+          main="Test 3 - C variables, Emacs, and literate programming",
+          horizontal=TRUE,
+          col="peachpuff",
+          ylim=c(20,100),
+          xaxt='n')
+  axis(side=1,
+       at=seq(0,100,by=10),
+       labels=paste(seq(0, 100, by=10), "%"))
+#+end_src
+
+#+RESULTS:
+[[file:../img/test_1-3_box.png]]
