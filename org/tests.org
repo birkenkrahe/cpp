@@ -66,7 +66,7 @@
   #+end_example
   
 - Boxplots:
-  #+begin_src R :results output graphics file :file ../img/test_1-3_box.png
+  #+begin_src R :results output graphics file :file ../img/test_1-3_box.png :exports both
     par(mfrow=c(3,1))
     ## test 1
     boxplot(df$t1,

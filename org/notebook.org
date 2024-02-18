@@ -355,7 +355,7 @@ Tests:
   [[../img/test_3.png]]
   #participants = 15
 
-- Summary as boxplot for each test (R code: tinyurl.com/cpp-test-1-3):
+- Summary as boxplot for each test (R code: tinyurl.com/cpp-tests-sp24):
   #+attr_html: :width 400px: 
   [[../img/test_1-3_box.png]]
   
