@@ -65,7 +65,7 @@ end:
 #+attr_html: :width 400px: 
 [[../../img/conversion_bpmn.svg]]
 
-Here is the .bpmn file that you can load into bpmn.io to edit the
+[[https://github.com/birkenkrahe/cpp/blob/main/img/conversion.bpmn][Here is the .bpmn file]] that you can load into bpmn.io to edit the
 diagram.
 
 *** UML = Unified Modeling Language (sequence diagram)
@@ -93,7 +93,7 @@ sequenceDiagram
 
 The code is a straightforward translation of the pseudocode into C. 
    #+name: pgm2
-   #+begin_src C
+   #+begin_src C :exports both
        // declare input and output variables
        float fahrenheit, celsius;
 
