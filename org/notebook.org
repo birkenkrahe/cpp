@@ -12,7 +12,7 @@
 1. [X] *Review:* [[https://forms.gle/pAJgAXjgBzCAqcqY7][Entry Survey]] ([[https://docs.google.com/forms/d/1mXocjlwiBrzM9wQS819rQYttRWoSNIt5eN0OSDUMdJc/edit#settings][Google forms]])
 2. [X] *Lecture:* Introduction to the course ([[file:0_overview.org][0_overview.org]])
 3. [X] *Practice:* Your first C program.
-4. [ ] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]]) 
+4. [ ] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]])
 
 TEST YOURSELF (Google Chat)
 
@@ -20,7 +20,7 @@ TEST YOURSELF (Google Chat)
 1) one word related to this course
 2) your major (if you already know)
 3) your name (so that I can remember it)
-   
+
 ** You're not the only one
 #+ATTR_HTML: :WIDTH 400px:
 #+CAPTION: Source: DALL-E 3
@@ -65,13 +65,13 @@ someone else had written it, and also using AI to deliver a critique.
 - Complete the Emacs tutorial.
 - Upload the Org-mode files.
 - Bonus: GitHub Hello World exercise (upload screenshot).
-- Test 1 (by Thu 25 Jan) 
-  
-* DONE Week 2 - Introduction to C & first literate program 
+- Test 1 (by Thu 25 Jan)
+
+* DONE Week 2 - Introduction to C & first literate program
 #+ATTR_HTML: :WIDTH 400px:
 [[../img/first_test.png]]
 
-1. [X] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]]) 
+1. [X] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]])
 2. [X] *DYI content*: Installation issues / Emacs / GitHub ([[file:2_install.org][2_install.org]])
 3. [X] *Practice*: Your first literate C program ([[file:1_introduction_practice.org][1_introduction_practice.org]])
 4. [ ] *Assignment*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
@@ -84,7 +84,7 @@ someone else had written it, and also using AI to deliver a critique.
 - Parts of the hello world basics are inspired by King, chapter 2 (9-18).
 
 * DONE Week 3 - C fundamentals & Emacs tutorial
-#+ATTR_HTML: :WIDTH 400px: 
+#+ATTR_HTML: :WIDTH 400px:
 [[../img/adalovelace.png]]
 
 Victorian lady ([[https://www.computerhistory.org/babbage/adalovelace/][Ada Lovelace]]) coding for [[https://www.computerhistory.org/babbage/charlesbabbage/][Charles Babbage's]] machine.
@@ -109,13 +109,13 @@ IMPORTANT: FINISH THE EMACS TUTORIAL (by Sunday night)
 ASK FOR MY HELP TO INSTALL EMACS + GCC ON YOUR PC
 
 ** First literate C program (continued)
-#+ATTR_HTML: :WIDTH 400px: 
+#+ATTR_HTML: :WIDTH 400px:
 [[../img/debugging.png]]
 
-- Error 1: The input/output header file is =stdio.h= 
+- Error 1: The input/output header file is =stdio.h=
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error.png]]
-  
+
 - Error 2: The header argument C is missing! Emacs Org-mode does not recognize the code
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error2.png]]
@@ -127,7 +127,7 @@ ASK FOR MY HELP TO INSTALL EMACS + GCC ON YOUR PC
 - Error 4: You must tangle into a ~.c~ file.
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error4.png]]
-  
+
 - Error 5: Closing quotation marks missing - string is not recognized.
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error5.png]]
@@ -190,7 +190,7 @@ nightmare and will be ready for more!
 
 /Image: burning the midnight oil trying to solve Dr. B's assignments./
 
-- Lecture: [[https://github.com/birkenkrahe/cpp/blob/main/org/4_variables.org][GitHub]] 
+- Lecture: [[https://github.com/birkenkrahe/cpp/blob/main/org/4_variables.org][GitHub]]
 - Codealong: [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-codealong-org]]
 - Practice: [[http://tinyurl.com/4-variables-practice-org][tinyurl.com/4-practice-org]]
 
@@ -255,7 +255,7 @@ on stuff of last week. Some of these may return in a test.
   and use Windows keybindings to copy (~C-c~), cut (~C-x~), and paste
   (~C-v~). In either case, you have to mark a region to work on (~C-SPC~).
   #+end_notes
-  
+
 ** Program 1: rectangle properties (Canvas)
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/programming_is_planning.png]]
@@ -297,7 +297,6 @@ on stuff of last week. Some of these may return in a test.
 
 - You'll get my sample solution when you submit your solution.
 
-
 * DONE Week 5 - Constants
 #+attr_html: :width 400px
 [[../img/solution_video.png]]
@@ -312,16 +311,17 @@ Plan:
 
 ** Housekeeping
 
-- All lecture materials are in GitHub - you also received a paper copy
-  of the script.
+- [X] All lecture materials are in GitHub - you also received a paper
+  copy of the script.
 - Submit completed codealong and practice files by 23rd February in
   Canvas.
-- I will post next week's programming assignment (regular and
-  bonus) over the long weekend.
-- I will also grade all outstanding submissions & submit early alerts!
-- I will create and post solution videos for practice 5 (constants)
+- [X] I will also grade all outstanding submissions & submit early
+  alerts!
+- [X] I will create and post solution videos for practice 5 (constants)
   and for the programming exercises.
-  
+- [ ] I will post next week's programming assignment (regular and
+  bonus) over the long weekend.
+
 ** Quick review of the week
 
 | *Concept/Code*        | *Example/Comment*          |
@@ -341,32 +341,32 @@ Plan:
 #+attr_html: :width 400px:
 [[../img/week_6.png]]
 
+- Pop quiz! (ungraded & anonymous)
 - Review test stats (data visualization)
 - Review programming assignments (feedback)
+- Review in-class practice files (feedback)
 
 * First month of course: stats
 
-Tests:
 - Test 1: overview of computers and programming
   #+attr_html: :width 400px:
   [[../img/test_1.png]]
   #participants = 21
-- Test 2: introduction to C/C++ and first literate program
+  - Test 2: introduction to C/C++ and first literate program
   #+attr_html: :width 400px:
   [[../img/test_2.png]]
   #participants = 21
-- Test 3: Emacs, literate programming, and variables
+  - Test 3: Emacs, literate programming, and variables
   #+attr_html: :width 400px:
   [[../img/test_3.png]]
   #participants = 15
 
 - Summary as boxplot for each test (R code:
   [[http://tinyurl.com/cpp-tests-sp24][tinyurl.com/cpp-tests-sp24]]):
-  #+attr_html: :width 400px: 
+  #+attr_html: :width 400px:
   [[../img/test_1-3_box.png]]
-  
-- What do you need to improve your test performance?
 
+- What do you need to improve your test performance?
 
 * Week 7 - Loops
 * Week 8 - Arrays
