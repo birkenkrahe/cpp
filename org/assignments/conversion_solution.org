@@ -1,0 +1,132 @@
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both :noweb yes
+#+STARTUP: hideblocks overview indent :
+Time-stamp: <2024-02-19 09:41:59 marcus>
+* Fahrenheit to Celsius conversion (9 Feb)
+
+- Compute the temperature in degrees Celsius for a given temperature
+  in degrees Fahrenheit.
+
+- A complete solution includes:
+  1. Plan (10 pt)
+  2. Pseudocode (10 pt)
+  3. Process (10 pt)
+  4. Program (10 pt)
+
+- Sample output:
+  #+begin_example
+  72 degrees Fahrenheit = 22.22 degrees Celsius
+  #+end_example
+- Submit an Emacs Org-mode file with some or all of these aspects. Use
+  the [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/org/assignments/sample.org][Hello World sample file]] as a template if you like (e.g. to
+  include images).
+
+- For this bonus exercise, independence and diligence of execution is
+  required and rewarded.
+
+- You'll get my sample solution when you submit your solution.
+
+* Sample solution (19 Feb)
+
+** Problem
+
+Compute the temperature in degrees Celsius for a given temperature in
+degrees Fahrenheit. The two temperature scales are related by the
+relationship (32°F − 32) 5/9 = 0°C, or f(x) = (x - 32) 5/9 where x is
+the Fahrenheit value.
+
+** Plan
+#+begin_quote
+Design an algorithm to convert a Fahrenheit input value x into a
+Celsius output value using the formula f(x) = (x - 32) 5/9.
+#+end_quote
+
+** Pseudocode (algorithm)
+#+begin_example
+Algorithm: convert x Fahrenheit to Celsius using f(x)=)(x-32) * 5/9
+Input: float value `fahrenheit`
+Output: float value `celsius`
+
+Begin
+  // declare input and output variables
+  // get fahrenheit input
+  // compute celsius value
+  // print fahrenheit and celsius value
+End
+#+end_example
+
+** Process
+
+[[https://github.com/birkenkrahe/cpp/blob/main/img/conversion_bpmn.svg][This BPMN process diagram]] (view as "Raw" file) was created with the
+free online editor bpmn.io. It shows the different steps as a
+so-called "happy path" (without decisions or gateways) from start to
+end.
+
+[[https://github.com/birkenkrahe/cpp/blob/main/img/conversion_mermaid.png][This UML sequence diagram]] was created with the free online editor
+mermaid.live. It shows the interaction between the User and the System
+(though in this case, we don't feed input to the computer).
+
+Here is the code used to created the sequence diagram (using the
+sample provided at mermaid.live):
+#+begin_example
+sequenceDiagram
+    participant User
+    participant System
+
+    Note over User,System: declare input and output variables
+    User->>System: Input Fahrenheit value
+              Note over System: compute celsius value
+    System->>User: Output Fahrenheit and Celsius value
+#+end_example
+
+** Program
+
+The code is a straightforward translation of the pseudocode into C. I
+two versions here:
+1) [[pgm:conversion_1]] is the complete program with =#include= directive and
+   =main= function.
+
+   #+name: pgm:conversion_1
+   #+begin_src C
+     #include <stdio.h>
+
+     int main()
+     {
+       // declare input and output variables
+       float fahrenheit, celsius;
+
+       // get fahrenheit input
+       fahrenheit = 72.f;
+
+       // compute celsius value
+       celsius = (fahrenheit - 32.f) * 5.f/9.f;
+
+       // print fahrenheit and celsius value
+       printf("%.2f°F = %.2f°C\n", fahrenheit, celsius);
+
+       return 0;
+     }
+   #+end_src
+
+   #+RESULTS: pgm:conversion_1
+   : 72.00°F = 22.22°C
+
+2) [[pgm:conversion_2]] uses the Org-mode header arguments defined in the
+   =#+PROPERTY= metadata at the top of this file.
+
+   #+name: pgm:conversion_2
+   #+begin_src C
+       // declare input and output variables
+       float fahrenheit, celsius;
+
+       // get fahrenheit input
+       fahrenheit = 72.f;
+
+       // compute celsius value
+       celsius = (fahrenheit - 32.f) * 5.f/9.f;
+
+       // print fahrenheit and celsius value
+       printf("%.2f°F = %.2f°C\n", fahrenheit, celsius);
+   #+end_src
+
+   #+RESULTS: pgm:conversion_2
+   : 72.00°F = 22.22°C
