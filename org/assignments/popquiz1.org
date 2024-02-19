@@ -1,0 +1,57 @@
+#+TITLE: Pop Quiz 1: variables and constants
+#+AUTHOR: Marcus Birkenkrahe (pledged)
+#+SUBTITLE: Introduction to programming in C++ (CSC 100) SP 24
+#+STARTUP: hideblocks overview indent :
+#+PROPERTY: header-args:C :results output :exports both :noweb yes :tangle yes: 
+
+Write a C program that:
+1. declares $\pi$ as a permanent constant with the value $3.14159$.
+   #+begin_example C
+     const float PI=3.14159f; // define permanent constant float 
+   #+end_example
+2. computes the circumference of a circle with radius 10.
+   #+begin_example C
+     float circumference, radius; // declare float variables
+     radius = 10.f;  // assign value to radius
+     circumference = 2 * PI * radius; // compute circumference
+   #+end_example
+3. prints the input and output values (including the constant value of
+   $\pi$) on a line each with 5 digits after the decimal point.
+   #+name: popprint
+   #+begin_example C
+     printf("Pi: %.5f\n", PI);
+     printf("Radius: %.5f\n", radius);
+     printf("Circumference: %.5f\n", circumference);
+        #+end_example
+4. When you've written the code by hand, open Emacs, open a new
+   Org-mode file, enter and run your code to check if it is
+   correct. Remember that, in Org-mode, you can run one line at a
+   time!
+   #+begin_src C
+     #include <stdio.h>
+     const float PI=3.14159f; // define permanent constant float 
+
+     int main()
+     {
+       // declare variables
+       float circumference, radius;
+
+       // assign value to radius
+       radius = 10.f;  
+
+       // compute circumference
+       circumference = 2 * PI * radius; // compute circumference
+
+       // print results - precision p=5
+       printf("Pi: %.5f\n", PI);
+       printf("Radius: %.5f\n", radius);
+       printf("Circumference: %.5f\n", circumference);
+
+       return 0;
+     }
+   #+end_src
+
+   #+RESULTS:
+   : Pi: 3.14159
+   : Radius: 10.00000
+   : Circumference: 62.83180
