@@ -56,14 +56,25 @@ End
 
 ** Process
 
+*** BPMN = Business Process Model and Notation
+
 [[https://github.com/birkenkrahe/cpp/blob/main/img/conversion_bpmn.svg][This BPMN process diagram]] (view as "Raw" file) was created with the
 free online editor bpmn.io. It shows the different steps as a
 so-called "happy path" (without decisions or gateways) from start to
-end.
+end:
+#+attr_html: :width 400px: 
+[[../../img/conversion_bpmn.svg]]
 
-[[https://github.com/birkenkrahe/cpp/blob/main/img/conversion_mermaid.png][This UML sequence diagram]] was created with the free online editor
+Here is the .bpmn file that you can load into bpmn.io to edit the
+diagram.
+
+*** UML = Unified Modeling Language (sequence diagram)
+[[https://github.com/birkenkrahe/cpp/blob/main/img/conversion_mermaid.png][
+This UML sequence diagram]] was created with the free online editor
 mermaid.live. It shows the interaction between the User and the System
-(though in this case, we don't feed input to the computer).
+(though in this case, we don't feed input to the computer):
+#+attr_html: :width 400px: 
+[[../../img/conversion_mermaid.png]]
 
 Here is the code used to created the sequence diagram (using the
 sample provided at mermaid.live):
@@ -80,40 +91,8 @@ sequenceDiagram
 
 ** Program
 
-The code is a straightforward translation of the pseudocode into C. I
-two versions here:
-1) [[pgm:conversion_1]] is the complete program with =#include= directive and
-   =main= function.
-
-   #+name: pgm:conversion_1
-   #+begin_src C
-     #include <stdio.h>
-
-     int main()
-     {
-       // declare input and output variables
-       float fahrenheit, celsius;
-
-       // get fahrenheit input
-       fahrenheit = 72.f;
-
-       // compute celsius value
-       celsius = (fahrenheit - 32.f) * 5.f/9.f;
-
-       // print fahrenheit and celsius value
-       printf("%.2f°F = %.2f°C\n", fahrenheit, celsius);
-
-       return 0;
-     }
-   #+end_src
-
-   #+RESULTS: pgm:conversion_1
-   : 72.00°F = 22.22°C
-
-2) [[pgm:conversion_2]] uses the Org-mode header arguments defined in the
-   =#+PROPERTY= metadata at the top of this file.
-
-   #+name: pgm:conversion_2
+The code is a straightforward translation of the pseudocode into C. 
+   #+name: pgm2
    #+begin_src C
        // declare input and output variables
        float fahrenheit, celsius;
@@ -128,5 +107,6 @@ two versions here:
        printf("%.2f°F = %.2f°C\n", fahrenheit, celsius);
    #+end_src
 
-   #+RESULTS: pgm:conversion_2
+   #+RESULTS: pgm2
    : 72.00°F = 22.22°C
+
