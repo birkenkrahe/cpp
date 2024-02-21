@@ -147,4 +147,3 @@ precision p is defined as for ~e~. Trailing zeroes are shown.
     : 1450
     : 8000
 
-
