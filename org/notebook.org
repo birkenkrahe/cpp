@@ -378,6 +378,11 @@ Plan:
 - Please read and consider my comments for improvement.
 - Let me know early on if you're worried about your progress.
 
+I apply the following evaluation criteria:
+- Correctness and completeness of the code and the output.
+- Clarity and organization of code comments and documentation within
+  the Org-mode file.
+
 * Week 7 - Loops
 * Week 8 - Arrays
 * Week 9 - Functions
