@@ -1,0 +1,74 @@
+#+STARTUP: hideblocks overview indent : 
+* Programming Assignment: Mastering printf in C
+
+** Objective
+To deepen understanding of formatted output in C programming through
+the practical use of the printf function and its conversion
+specifications.
+
+** Assignment Overview
+This assignment requires you to write a C program that demonstrates
+various uses of the printf function, specifically focusing on its
+conversion specifications, alignment, precision, and formatting
+options.
+
+** Tasks
+
+1. /Format and Print Integers/
+   - Write a program that declares an integer variable.
+   - Print this integer in four different ways using printf:
+     + With a minimum field width of 10 characters.
+     + Right-aligned and left-aligned within a field width of 10
+       characters.
+     + With a minimum of 4 digits, padding with zeros if necessary.
+   - Include your code in an Org-mode code block and run it.
+
+2. /Floating Point Numbers/
+   - Declare a floating-point variable.
+   - Print this variable in three different formats:
+     + As a floating-point number with 2 decimal places.
+     + In exponential format with 3 digits after the decimal point.
+     + Using the 'g' conversion specifier with a precision of 5
+       significant digits.
+   - Include your code in an Org-mode code block and run it.
+
+3. /Challenging Formatting/
+   - Using a single printf statement, print a sequence that includes:
+     + An integer with left alignment in a 15-character wide field.
+     + A floating-point number in fixed decimal format with 3 decimal
+       places.
+     + A floating-point number in exponential format with the width of
+       20 characters, ensuring the exponent is always displayed.
+   - Include your code in an Org-mode code block and run it.
+
+** Instructions
+- Ensure your program includes comments explaining each section of the
+  code. You need to be able to explain every bit of code.
+- Test your program with various values to demonstrate the different
+  formatting options of printf.
+- Document your testing process and results within the Org-mode file,
+  using appropriate sections and descriptive text.
+- Submit your assignment as an Org-mode file (.org), which includes
+  your source code in code blocks and any additional documentation.
+
+** Submission
+ Upload your Org-mode file to Canvas before the deadline.
+
+** Evaluation Criteria
+- Correctness and completeness of the code.
+- Proper use of printf conversion specifications and formatting
+  options.
+- Clarity and organization of code comments and documentation within
+  the Org-mode file.
+
+** Resources
+- Lecture notes and example code from the sessions (lecture with code
+  along and practice) on printf.
+- Online C documentation for additional examples and explanations of
+  printf conversion specifications.
+
+** Notes
+- Experiment with different values and observe how printf behaves with
+  various conversion specifications and formatting options.
+- Pay attention to how the output changes with different minimum field
+  widths, precisions, and alignment options.
