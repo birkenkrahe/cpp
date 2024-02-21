@@ -390,7 +390,7 @@ I apply the following *evaluation criteria*:
 
 - Lecture script [[https://github.com/birkenkrahe/cpp/blob/main/org/6_printf.org][on GitHub]]
 - Practice file: [[http://tinyurl.com/6-printf-org][tinyurl.com/6-printf-org]]
-- Practice solution (PDF)
+- Practice solution for both =printf= and =scanf= ([[https://github.com/birkenkrahe/cpp/blob/main/pdf/6_printf_scanf_practice_solutions.pdf][PDF]])
 - Practice solution video (YouTube)
 
 * Week 7 - Loops
