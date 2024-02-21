@@ -127,6 +127,10 @@ precision p is defined as for ~e~. Trailing zeroes are shown.
   printf("%10.3f\n", 100.1);
 #+end_src
 
+#+RESULTS: floatexample
+: ....|....|
+:    100.100
+
 * Variable floating point "g"
 
   - ~g~ displays a floating point number in either exponential format or

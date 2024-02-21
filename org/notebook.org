@@ -340,22 +340,25 @@ Plan:
 #+attr_html: :width 400px:
 [[../img/week_6.png]]
 
-- [ ] Pop quiz! (ungraded & anonymous)
-- [ ] Review test stats (data visualization)
-- [ ] Review programming assignments (feedback)
-- [ ] Review in-class practice files (feedback)
-- [ ] Code along lecture: =printf=
+- [X] Pop quiz! (ungraded & anonymous)
+- [X] Review test stats (data visualization)
+- [X] Review programming assignments (feedback)
+- [X] Review in-class practice files (feedback)
+- [ ] Code along lecture & practice: =printf=
+- [ ] Code along lecture & practice: =scanf=
 
-* First month of course: stats
+** First month of course: stats
 
 - Test 1: overview of computers and programming
   #+attr_html: :width 400px:
   [[../img/test_1.png]]
   #participants = 21
+  
   - Test 2: introduction to C/C++ and first literate program
   #+attr_html: :width 400px:
   [[../img/test_2.png]]
   #participants = 21
+  
   - Test 3: Emacs, literate programming, and variables
   #+attr_html: :width 400px:
   [[../img/test_3.png]]
@@ -370,7 +373,7 @@ Plan:
 
 - Missed a deadline for a test? Complete it for 50% of the points.
 
-* Assignments feedback
+** Assignments feedback
 #+attr_html: :width 400px: 
 [[../img/feedback.png]]
 
@@ -378,10 +381,17 @@ Plan:
 - Please read and consider my comments for improvement.
 - Let me know early on if you're worried about your progress.
 
-I apply the following evaluation criteria:
+I apply the following *evaluation criteria*:
 - Correctness and completeness of the code and the output.
 - Clarity and organization of code comments and documentation within
   the Org-mode file.
+
+** =printf= Practice
+
+- Lecture script [[https://github.com/birkenkrahe/cpp/blob/main/org/6_printf.org][on GitHub]]
+- Practice file: [[http://tinyurl.com/6-printf-org][tinyurl.com/6-printf-org]]
+- Practice solution (PDF)
+- Practice solution video (YouTube)
 
 * Week 7 - Loops
 * Week 8 - Arrays
