@@ -337,14 +337,14 @@ Plan:
 
 
 * Week 6 - =printf= and =scanf= reloaded
-
 #+attr_html: :width 400px:
 [[../img/week_6.png]]
 
-- Pop quiz! (ungraded & anonymous)
-- Review test stats (data visualization)
-- Review programming assignments (feedback)
-- Review in-class practice files (feedback)
+- [ ] Pop quiz! (ungraded & anonymous)
+- [ ] Review test stats (data visualization)
+- [ ] Review programming assignments (feedback)
+- [ ] Review in-class practice files (feedback)
+- [ ] Code along lecture: =printf=
 
 * First month of course: stats
 
@@ -359,7 +359,7 @@ Plan:
   - Test 3: Emacs, literate programming, and variables
   #+attr_html: :width 400px:
   [[../img/test_3.png]]
-  #participants = 15
+  #participants = 20
 
 - Summary as boxplot for each test (R code:
   [[http://tinyurl.com/cpp-tests-sp24][tinyurl.com/cpp-tests-sp24]]):
@@ -367,6 +367,16 @@ Plan:
   [[../img/test_1-3_box.png]]
 
 - What do you need to improve your test performance?
+
+- Missed a deadline for a test? Complete it for 50% of the points.
+
+* Assignments feedback
+#+attr_html: :width 400px: 
+[[../img/feedback.png]]
+
+- Overall, I'm impressed with your submissions and performance.
+- Please read and consider my comments for improvement.
+- Let me know early on if you're worried about your progress.
 
 * Week 7 - Loops
 * Week 8 - Arrays
