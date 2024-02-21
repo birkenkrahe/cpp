@@ -1,14 +1,15 @@
 #+STARTUP: hideblocks overview indent : 
-* Programming Assignment: Mastering printf in C
+#+OPTIONS: toc:nil num:nil ^:nil : 
+* Programming Assignment: Mastering =printf= in C
 
 ** Objective
 To deepen understanding of formatted output in C programming through
-the practical use of the printf function and its conversion
+the practical use of the =printf= function and its conversion
 specifications.
 
 ** Assignment Overview
-This assignment requires you to write a C program that demonstrates
-various uses of the printf function, specifically focusing on its
+This assignment requires you to write C programs that demonstrate
+various uses of the =printf= function, specifically focusing on its
 conversion specifications, alignment, precision, and formatting
 options.
 
@@ -16,7 +17,7 @@ options.
 
 1. /Format and Print Integers/
    - Write a program that declares an integer variable.
-   - Print this integer in four different ways using printf:
+   - Print this integer in four different ways using =printf=:
      + With a minimum field width of 10 characters.
      + Right-aligned and left-aligned within a field width of 10
        characters.
@@ -33,7 +34,7 @@ options.
    - Include your code in an Org-mode code block and run it.
 
 3. /Challenging Formatting/
-   - Using a single printf statement, print a sequence that includes:
+   - Using a single =printf= statement, print a sequence that includes:
      + An integer with left alignment in a 15-character wide field.
      + A floating-point number in fixed decimal format with 3 decimal
        places.
@@ -45,7 +46,7 @@ options.
 - Ensure your program includes comments explaining each section of the
   code. You need to be able to explain every bit of code.
 - Test your program with various values to demonstrate the different
-  formatting options of printf.
+  formatting options of =printf=.
 - Document your testing process and results within the Org-mode file,
   using appropriate sections and descriptive text.
 - Submit your assignment as an Org-mode file (.org), which includes
@@ -56,19 +57,19 @@ options.
 
 ** Evaluation Criteria
 - Correctness and completeness of the code.
-- Proper use of printf conversion specifications and formatting
+- Proper use of =printf= conversion specifications and formatting
   options.
 - Clarity and organization of code comments and documentation within
   the Org-mode file.
 
 ** Resources
 - Lecture notes and example code from the sessions (lecture with code
-  along and practice) on printf.
+  along and practice) on =printf=.
 - Online C documentation for additional examples and explanations of
-  printf conversion specifications.
+  =printf= conversion specifications.
 
 ** Notes
-- Experiment with different values and observe how printf behaves with
+- Experiment with different values and observe how =printf= behaves with
   various conversion specifications and formatting options.
 - Pay attention to how the output changes with different minimum field
   widths, precisions, and alignment options.
