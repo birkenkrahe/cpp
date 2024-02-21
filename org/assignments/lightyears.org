@@ -47,3 +47,6 @@ output should look like this:
 
 Tip: just like ~\n~ adds a newline by escaping the `n`, you can add a
 tab with ~\t~ by escaping the `t`.
+
+* Solution
+
