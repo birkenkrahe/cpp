@@ -347,7 +347,7 @@ Plan:
 - [ ] Code along lecture & practice: =printf=
 - [ ] Code along lecture & practice: =scanf=
 
-** First month of course: stats
+** DONE First month of course: stats
 
 - Test 1: overview of computers and programming
   #+attr_html: :width 400px:
@@ -373,7 +373,7 @@ Plan:
 
 - Missed a deadline for a test? Complete it for 50% of the points.
 
-** Assignments feedback
+** DONE Assignments feedback
 #+attr_html: :width 400px: 
 [[../img/feedback.png]]
 
@@ -391,7 +391,8 @@ I apply the following *evaluation criteria*:
 - Lecture script [[https://github.com/birkenkrahe/cpp/blob/main/org/6_printf.org][on GitHub]]
 - Practice file: [[http://tinyurl.com/6-printf-org][tinyurl.com/6-printf-org]]
 - Practice solution for both =printf= and =scanf= ([[https://github.com/birkenkrahe/cpp/blob/main/pdf/6_printf_scanf_practice_solutions.pdf][PDF]])
-- Practice solution video (YouTube)
+- Practice solution video ([[https://youtu.be/BTfTfoaUqVQ?si=B8hEkLOcTqQ05wgh][YouTube]])
+- If you are done early, start the [[https://lyon.instructure.com/courses/2107/assignments/25268][programming assignment]]!
 
 * Week 7 - Loops
 * Week 8 - Arrays

@@ -1,7 +1,6 @@
 #+STARTUP: hideblocks overview indent : 
 #+OPTIONS: toc:nil num:nil ^:nil : 
 * Programming Assignment: Mastering =printf= in C
-
 ** Objective
 To deepen understanding of formatted output in C programming through
 the practical use of the =printf= function and its conversion
@@ -49,7 +48,7 @@ options.
   formatting options of =printf=.
 - Document your testing process and results within the Org-mode file,
   using appropriate sections and descriptive text.
-- Submit your assignment as an Org-mode file (.org), which includes
+- Submit your assignment as an Org-mode file (~.org~), which includes
   your source code in code blocks and any additional documentation.
 
 ** Submission
@@ -63,8 +62,8 @@ options.
   the Org-mode file.
 
 ** Resources
-- Lecture notes and example code from the sessions (lecture with code
-  along and practice) on =printf=.
+- Lecture notes and example code from the sessions ([[https://github.com/birkenkrahe/cpp/blob/main/org/6_printf.org][lecture]] and
+  [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/org/6_printf_practice.org][practice]]) on =printf=.
 - Online C documentation for additional examples and explanations of
   =printf= conversion specifications.
 
