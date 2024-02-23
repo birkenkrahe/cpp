@@ -1,0 +1,104 @@
+#+TITLE: C FUNDAMENTALS PRACTICE - PRINTF
+#+AUTHOR: [yourName] (pledged)
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both
+#+STARTUP: hideblocks overview indent
+* README
+
+- This file is a practice file for C input function ~printf~
+
+- Time: approx. 30-45 min.
+
+- When you're done with a section move the cursor on the section
+  heading and type ~S-<right>~ (or SHIFT+<right-arrow>).
+
+* TODO Identify yourself
+
+- Replace the placeholder ~[yourName]~ in the header of this file by
+  your name, add ~(pledged)~, and save the file (~C-x C-s~).
+
+* TODO Conversion specification
+
+Recreate the output below exactly, using only format specifiers (no
+extra white space). The ruler is already prepared for you.
+
+#+begin_example
+: ....|....|....|
+:   100100
+: 200200
+:        3.1416
+: 3.141593
+#+end_example
+
+Code:
+#+begin_src C
+  printf("....|....|....|\n");
+  
+  #+end_src
+
+* TODO Integer decimal ~d~
+
+Show that the default for ~d~ is p=1. Print the numbers 1, 1, 100 and
+10000 with the specifiers ~%d~, ~%.1d~, ~%.5d~, ~%.2d~. Print each expression
+on its own line, but use only ONE ~printf~ statement.
+
+#+begin_src C :results output
+  printf("....|....|....|\n");
+  printf("%d\n%.1d",1,1);
+#+end_src
+
+#+RESULTS:
+: ....|....|....|
+: 1
+: 1
+
+* TODO Integer decimal precision ~p~
+
+Print the number 42 on a space of 10 characters with precision 5.
+
+The result should look like this:
+#+begin_example
+: ....|....|....|
+:      00042
+#+end_example
+
+Code:
+#+begin_src C :results output
+  printf("....|....|....|\n");
+
+#+end_src
+
+* TODO Scientific notation ~e~
+
+- Print 1, 1000.100, and 1,000,000,000,000,000 using ~%e~.
+- Provide for the required number of decimal positions (but not more)
+- Print each expression on its own line with its own ~printf~ function.
+
+Desired output:
+#+begin_example
+    : 1e+00
+    : 1.0001e+03
+    : 1e+15
+#+end_example
+
+Code:
+#+begin_src C
+
+#+end_src
+
+* TODO Variable floating point ~g~
+
+- Use the format specifier ~g~ to display the following numbers: ~200~,
+  ~3.142574654~ with ~p=8~, ~2.71~, and ~!5~.
+
+- Print each on a line of its own, but use only *one* ~printf~
+  statement to do it!
+
+- ~!N~ is defined as the factorial of ~N~.
+
+Code:
+#+begin_src C :results output
+  printf("....|....|....|\n");
+
+#+end_src
+
+* TODO Upload the completed file to Canvas now!
