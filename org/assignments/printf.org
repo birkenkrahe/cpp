@@ -15,16 +15,20 @@ options.
 ** Tasks
 
 1. /Format and Print Integers/
-   - Write a program that declares an integer variable.
+   - Write a program that declares an integer variable and assigns the
+     value 2 to it. (What happens if you only declare but not define
+     the value of the variable?)
    - Print this integer in four different ways using =printf=:
      + With a minimum field width of 8 characters.
      + Right-aligned and left-aligned within a field width of 10
        characters.
-     + With a minimum of 4 digits, padding with zeros if necessary.
+     + With a field length of 10 and at least 4 digits, padding with
+       zeros if necessary.
    - Include your code in an Org-mode code block and run it.
 
 2. /Floating Point Numbers/
-   - Declare a floating-point variable.
+   - Declare a floating-point variable and assign the value 3.141593
+     to it. What happens if you don't assign a value?
    - Print this variable in three different formats:
      + As a floating-point number with 2 decimal places.
      + In exponential format with 3 digits after the decimal point.
