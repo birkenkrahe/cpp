@@ -17,7 +17,7 @@ options.
 1. /Format and Print Integers/
    - Write a program that declares an integer variable.
    - Print this integer in four different ways using =printf=:
-     + With a minimum field width of 10 characters.
+     + With a minimum field width of 8 characters.
      + Right-aligned and left-aligned within a field width of 10
        characters.
      + With a minimum of 4 digits, padding with zeros if necessary.
