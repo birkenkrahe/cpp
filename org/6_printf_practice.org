@@ -2,24 +2,24 @@
 #+AUTHOR: [yourName] (pledged)
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both
 #+STARTUP: hideblocks overview indent
-* READ README
+* README
 
 - This file is a practice file for C input function ~printf~
 
-- Time: approx. 30 min.
+- Time: approx. 30-45 min.
 
 - When you're done with a section move the cursor on the section
   heading and type ~S-<right>~ (or SHIFT+<right-arrow>).
 
 * TODO Identify yourself
 
-- replace the placeholder ~[yourName]~ in the header of this file by
+- Replace the placeholder ~[yourName]~ in the header of this file by
   your name, add ~(pledged)~, and save the file (~C-x C-s~).
 
 * TODO Conversion specification
 
 Recreate the output below exactly, using only format specifiers (no
-extra white space).
+extra white space). The ruler is already prepared for you.
 
 #+begin_example
 : ....|....|....|
@@ -29,10 +29,11 @@ extra white space).
 : 3.141593
 #+end_example
 
+Code:
 #+begin_src C
   printf("....|....|....|\n");
-  printf(...)
-#+end_src
+  
+  #+end_src
 
 * TODO Integer decimal ~d~
 
@@ -40,10 +41,9 @@ Show that the default for ~d~ is p=1. Print the numbers 1, 1, 100 and
 10000 with the specifiers ~%d~, ~%.1d~, ~%.5d~, ~%.2d~. Print each expression
 on its own line, but use only ONE ~printf~ statement.
 
-#+name: spec
 #+begin_src C :results output
   printf("....|....|....|\n");
-  printf(...)
+  
 #+end_src
 
 * TODO Integer decimal precision ~p~
@@ -56,10 +56,10 @@ The result should look like this:
 :      00042
 #+end_example
 
-#+name spec1
+Code:
 #+begin_src C :results output
   printf("....|....|....|\n");
-  printf(...);
+
 #+end_src
 
 * TODO Scientific notation ~e~
@@ -67,7 +67,6 @@ The result should look like this:
 - Print 1, 1000.100, and 1,000,000,000,000,000 using ~%e~.
 - Provide for the required number of decimal positions (but not more)
 - Print each expression on its own line with its own ~printf~ function.
-- Add the header-argument ~:results output~ to the code block
 
 Desired output:
 #+begin_example
@@ -76,8 +75,8 @@ Desired output:
     : 1e+15
 #+end_example
 
-#+name: scientific
-#+begin_src C :results output
+Code:
+#+begin_src C
 
 #+end_src
 
@@ -86,16 +85,15 @@ Desired output:
 - Use the format specifier ~g~ to display the following numbers: ~200~,
   ~3.142574654~ with ~p=8~, ~2.71~, and ~!5~.
 
-- print each on a line of its own, but use only *one* ~printf~
+- Print each on a line of its own, but use only *one* ~printf~
   statement to do it!
 
 - ~!N~ is defined as the factorial of ~N~.
 
------ USE THIS CODE BLOCK -----
-
-#+name: gfactor
+Code:
 #+begin_src C :results output
   printf("....|....|....|\n");
-  ...
+
 #+end_src
+
 * TODO Upload the completed file to Canvas now!
