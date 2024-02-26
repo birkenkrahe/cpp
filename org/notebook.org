@@ -335,8 +335,7 @@ Plan:
 |                     | except after keywords &  |
 |                     | strings across lines     |
 
-
-* Week 6 - =printf= and =scanf= reloaded
+* DONE Week 6 - =printf= and =scanf= reloaded
 #+attr_html: :width 400px:
 [[../img/week_6.png]]
 
@@ -344,10 +343,10 @@ Plan:
 - [X] Review test stats (data visualization)
 - [X] Review programming assignments (feedback)
 - [X] Review in-class practice files (feedback)
-- [ ] Code along lecture & practice: =printf=
+- [X] Code along lecture & practice: =printf=
 - [ ] Code along lecture & practice: =scanf=
 
-** DONE First month of course: stats
+** First month of course: stats
 
 - Test 1: overview of computers and programming
   #+attr_html: :width 400px:
@@ -373,7 +372,7 @@ Plan:
 
 - Missed a deadline for a test? Complete it for 50% of the points.
 
-** DONE Assignments feedback
+** Assignments feedback
 #+attr_html: :width 400px: 
 [[../img/feedback.png]]
 
@@ -394,7 +393,15 @@ I apply the following *evaluation criteria*:
 - Practice solution video ([[https://youtu.be/BTfTfoaUqVQ?si=B8hEkLOcTqQ05wgh][YouTube]])
 - If you are done early, start the [[https://lyon.instructure.com/courses/2107/assignments/25268][programming assignment]]!
 
-* Week 7 - Loops
+* Week 7 - scanf and C operators
+#+attr_html: :width 400px:
+[[../img/week_7.webp]]
+
+- [ ] Code along lecture & practice: =scanf=
+- [ ] =scanf= practice
+- [ ] Code along lecture & practice: C operators
+- [ ] Practice C operators
+  
 * Week 8 - Arrays
 * Week 9 - Functions
 * Week 10 - Pointers

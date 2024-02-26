@@ -32,29 +32,34 @@
   1  -20  .3   -4.0e3
   #+end_example
 
-- Put the input into a file:
+- Put the input into a file (if this does not work in Windows, create
+  the file manually with ~C-x C-f~) or try the Emacs shell (~M-x eshell~):
   #+name: pgm:io_scanf_input
-  #+begin_src bash
-    echo "1  -20 .3 -4.0e+3" > io_scanf_input 
+  #+begin_src bash 
+    echo "1  -20 .3 -4.0e+3" > input
+    cat input
   #+end_src
+
+  #+RESULTS: pgm:io_scanf_input
+  : 1  -20 .3 -4.0e+3
 
 - Example program to read this input:
   #+name: pgm:tscanf
-  #+begin_src C :cmdline < ../data/io_scanf_input :results output :tangle io.c
-    int i, j;
+  #+begin_src C :cmdline < input :results output :tangle io.c
+    int i, j; 
     float x, y;
 
-    scanf("%d%d%f%f", &i, &j, &x, &y);
+    scanf("%d%d%f%e", &i, &j, &x, &y);
 
-    printf("|%5d|%5d|%5.1f|%10.1f|\n", i, j, x, y);
+    printf("|%5d|%5d|%5.1f|%10.1e|\n", i, j, x, y);
   #+end_src
 
   #+RESULTS: pgm:tscanf
-  : |    1|  -20|  0.3|   -4000.0|
+  : |    1|  -20|  0.3|  -4.0e+03|
 
 - Can you tell from the code block header where the input file is?
   #+begin_example org
-    C :cmdline < ../data/io_scanf_input :results output :tangle io.c
+    C :cmdline < io_scanf_input :results output :tangle io.c
   #+end_example
 
 - Practice creating input on the shell yourself now:
@@ -71,11 +76,12 @@
 
 * Main traps
 
-- The compiler will not check that specs and variable input match up
+- The compiler will not check that specs and variable input match up.
 
-- The ~&~ pointer symbol must not miss in front of the input variable
+- The ~&~ pointer symbol must not miss in front of the input variable.
 
-- ~scanf~ works in mysterious ways (we'll see why in a mo')
+- ~scanf~ works in mysterious ways (we'll see why in a moment)
+
 * How scanf works
 
 - ~scanf~ is a pattern-matching function: it tries to math input groups
@@ -142,7 +148,7 @@ This example has the same spec as our earlier example:
 - It now either continues processing or aborts
 
 - Example: input contains "1. 3.56 100 5 .1" - how to scan?
-  #+begin_src C :cmdline < ../data/input
+  #+begin_src C :cmdline < input2
     float x=2.,y=8.,z; int i=10, j=20;
 
     scanf("%f%f%d%d%f", &x, &y, &i, &j, &z);
@@ -150,17 +156,18 @@ This example has the same spec as our earlier example:
   #+end_src
 
   #+RESULTS:
-  : 1 3.56 5 20 0.0
+  : 1 3.56 100 5 0.1
 
 - To create the input file on the shell[fn:1]:
-  #+begin_example bash
-    echo "1. 3.56 100 5 .1" > input
-    cat ./input*
-  #+end_example
+  #+begin_src bash
+    echo "1. 3.56 100 5 .1" > input2
+    cat ./input2
+  #+end_src
+
+  #+RESULTS:
+  : 1. 3.56 100 5 .1
   
 * Example with ordinary characters
-
-- Open the practice file at /"Scanning ordinary characters"/.
 
 - If the format string is ~"%d/%d"~ and the input is ~•5/•96~, ~scanf~
   succeeds.
@@ -189,7 +196,7 @@ This example has the same spec as our earlier example:
    - After storing ~i~, ~scanf~ will try to match a comma with the
      next input character. If it's a space, it will abort.
 
-   - Only this input will work: ~100, 100~ but not ~100 100~
+   - For this example, only the input ~100, 100~ works, but not ~100 100~
 
 3. putting a ~\n~ character at the end of ~scanf~ string
    #+begin_example C
