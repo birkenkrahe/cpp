@@ -400,10 +400,9 @@ I apply the following *evaluation criteria*:
 - [ ] Deadline: Mastering =printf= is [[https://lyon.instructure.com/courses/2107/assignments/25268][due Wednesday]]!
 - [ ] Test 4 (=printf= and =scanf= coming this week)!
 - [ ] Code along lecture & practice: =scanf=
-- [ ] =scanf= practice
 - [ ] Code along lecture & practice: C operators
 
-* TODO Fast Fun Review: =printf=
+** Fast Fun Review: =printf=
 
 1) What's the general format of the =printf= function?
    #+begin_example C
@@ -416,6 +415,9 @@ I apply the following *evaluation criteria*:
      printf("I've got %d", i); printf(" dogs\n");
    #+end_src
 
+   #+RESULTS:
+   : I've got 3 dogs
+
 2) What's the general format of the format specifier?
    #+begin_example C
      printf ( " %m.pX ", {Variable} );
@@ -427,18 +429,28 @@ I apply the following *evaluation criteria*:
      printf (".%10.5f ", 10. ); // float, 10 fields right, precision 5
    #+end_src
 
+   #+RESULTS:
+   : ....|....|....|
+   : 00010     .
+   : .  10.00000 
+
 3) How can you display ~10,000~ in scientific format (E-notation)?
    #+begin_src C :main yes :includes <stdio.h> :results output :exports both :noweb yes
      printf("10,000 in E-notation: %e\n", 10000); // warning! 0 output
-     printf("10,000 in E-notation: %e\n", 10000.); // precision issue
-     printf("10,000 in E-notation: %.e\n", 10000.); // picture perfect!
+     printf("10,000 in E-notation: %e\n", 10000.f); // precision issue
+     printf("10,000 in E-notation: %.e\n", 10000.f); // picture perfect!
    #+end_src
+
+   #+RESULTS:
+   : 10,000 in E-notation: 0.000000e+00
+   : 10,000 in E-notation: 1.000000e+04
+   : 10,000 in E-notation: 1e+04
    
 4) What's the specialty of the =%g= format specifier?
    #+begin_quote
    - =%g= handles floating-point numbers
    - =%g= automatically selects =%d= or =%f=
-   - the case affects the symbol used
+   - the case affects the symbol used (=%G= leads to ~E)~
    #+end_quote
 
    #+begin_src C :main yes :includes <stdio.h> :results output :exports both :noweb yes
@@ -447,15 +459,31 @@ I apply the following *evaluation criteria*:
      printf("Integer: %g\n", 1000000.); // %g picks floating-point format
    #+end_src   
 
+   #+RESULTS:
+   : Integer: 0
+   : Integer: 1000
+   : Integer: 1e+06
+
 5) How many numbers can you print in one single =printf= statement?
    #+begin_quote
    As many as you like.
    #+end_quote
 
    #+begin_src C :main yes :includes <stdio.h> :results output :exports both :noweb yes
-     printf("%d\n%f-%f\n%g\n%e\n%G\n(etc.)\n",
+     printf("%d\n%f-%.3f\n%g\n%.2e\n%G\n(etc.)\n",
              100,10.,100.,1000.,1000.,1000000.);
    #+end_src
+
+   #+RESULTS:
+   : 100
+   : 10.000000-100.000
+   : 1000
+   : 1.00e+03
+   : 1E+06
+   : (etc.)
+
+** Fast Fun Review: =scanf=
+
 
 
 * Week 8 - Arrays
