@@ -43,8 +43,13 @@ on its own line, but use only ONE ~printf~ statement.
 
 #+begin_src C :results output
   printf("....|....|....|\n");
-  
+  printf("%d\n%.1d",1,1);
 #+end_src
+
+#+RESULTS:
+: ....|....|....|
+: 1
+: 1
 
 * TODO Integer decimal precision ~p~
 

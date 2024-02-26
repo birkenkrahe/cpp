@@ -67,7 +67,7 @@ When it is called, ~printf~ must be supplied with:
 - ~d~ displays an integer in decimal (= base 10) form. ~p~ is the minimum
   number of digits to display the integer. Default is ~p=1~.
 
-- For example, the code below [[spec]] prints numbers with different
+- For example, the code below prints numbers with different
   precision values:
   - ~%d~ displays ~int~ in decimal form (minimum amount of space)
   - ~%5d~ displays ~int~ in decimal form using 5 characters
