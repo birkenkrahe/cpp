@@ -82,6 +82,33 @@
      | ~cat hello~                         | print content of file ~hello~      |
      #+end_example
 
+- If you entered the code block and tangled it, you now have a file
+  ~io.c~ in the same directory as your Org-mode file: compile and run it.
+  #+begin_src bash :results output
+    ls -l io.c  # check the file is there
+    gcc io.c -o io  # compile it and name the executable file io
+    ls -l io  # check that the executable was created
+    ./io < input  # run file with input file
+  #+end_src
+
+  #+RESULTS:
+  : -rw-rw-r-- 1 marcus marcus 158 Feb 26 09:45 io.c
+  : -rwxrwxr-x 1 marcus marcus 16056 Feb 26 13:04 io
+  : |    1|  -20|  0.3|  -4.0e+03|
+
+- The last command ~io < input~ will not work in =eshell= because
+  /redirection/ (with =<=) is not supported. There may be a workaround:
+  #+begin_src bash
+    cat input | ./io  # directs output to stdout and pipes it into the file io
+  #+end_src
+
+  #+RESULTS:
+  |   | 1 | -20 | 0.3 | -4000.0 |
+
+- Note: the file ~io~ has to be run ~./io~ on Unix-type shells to let the
+  computer know that the file is in the current (~.~) directory. On the
+  Windows CMD line, ~io~ is sufficient.
+
 * Main traps
 
 - The compiler will not check that specs and variable input match up.
