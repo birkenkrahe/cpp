@@ -25,7 +25,7 @@
 
 - The ~scanf~ format string tends to contain *only* conversion specs
 
-* First example
+* TODO First example
 
 - Example input:
   #+begin_example
@@ -36,8 +36,8 @@
   the file manually with ~C-x C-f~) or try the Emacs shell (~M-x eshell~):
   #+name: pgm:io_scanf_input
   #+begin_src bash 
-    echo "1  -20 .3 -4.0e+3" > input
-    cat input
+    echo "1  -20 .3 -4.0e+3" > input  # store string in file`input`
+    cat input  # view the file `input`
   #+end_src
 
   #+RESULTS: pgm:io_scanf_input
@@ -59,9 +59,17 @@
 
 - Can you tell from the code block header where the input file is?
   #+begin_example org
-    C :cmdline < io_scanf_input :results output :tangle io.c
+    C :cmdline < input :results output :tangle io.c
   #+end_example
 
+- To run the code block above in a /new/ file, you need to add a couple
+  of header arguments:
+  #+begin_example
+  :main yes :includes <stdio.h>
+  #+end_example
+  1) The first one wraps the code block into a =main= function
+  2) The second one includes the input/output header file =stdio.h=
+  
 - Practice creating input on the shell yourself now:
   1) In Emacs, open a shell with ~M-x eshell~
   2) Put a string into a file on the shell, list it and print it:
