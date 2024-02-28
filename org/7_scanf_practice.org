@@ -2,7 +2,7 @@
 #+AUTHOR: [yourName] (pledged)
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both
 #+STARTUP: hideblocks overview indent
-* READ README
+* README
 
 - This file is a practice file for C input functions ~printf~.
 
