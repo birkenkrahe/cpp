@@ -29,24 +29,23 @@
 4) Create an input file ~scanf_input~ with the following numbers using
    the Emacs shell: ~100~, ~-1000~, ~.456~, ~-9.34e2~
 
-5) Run the code block [[pgm:scanf]] to get the output:
-
+5) Replace all `...` in the code block [[pgm:scanf]] to get the output:
    #+name: pgm:scanf_out
    #+begin_example
    : |  100|-1000|0.456| -934|
    #+end_example
 
-#+name: pgm:scanf
-#+begin_src C :cmdline < scanf_input
-  // declare variables
-  ...
+   #+name: pgm:scanf
+   #+begin_src C :cmdline < scanf_input
+     // declare variables
+     ...
 
-  // scan input
-  scanf("...", ...);
+     // scan input
+     scanf("...", ...);
 
-  // print scanned input
-  printf("|...|...|...|...|\n", ...);
-#+end_src
+     // print scanned input
+     printf("|...|...|...|...|\n", ...);
+   #+end_src
 
 * TODO Scanning ordinary characters
 
@@ -56,16 +55,18 @@
    - the input file ~ord1~ contains ~•5/•96~ and should succeed
    - the input file ~ord2~ contains ~•5 /•96~ and should fail
 
-   Create input file ~ord1~:
+   Create input file ~ord1~ and show it - replace `...` with the correct code:
    #+name: ord1
-   #+begin_src bash :results silent
+   #+begin_src bash :results output
      echo "..." > ord1
+     ... ord1
    #+end_src
 
-   Create input file ~ord2~:
+   Create input file ~ord2~ and show it - replace `...` with the correct code:
    #+name: ord2
-   #+begin_src bash :results silent
+   #+begin_src bash :results output
      echo "..." > ord2
+     ... ord2 
    #+end_src
 
 3) Run the program twice with:
@@ -90,11 +91,11 @@
 This is useful for the programming exercise "phone numbers":
 
 1) Create an input file ~numbers~ that contains: ~444==++//555~ by running
-   on the shell:
-   #+begin_example sh
-     echo "444==++//555" > numbers
-     cat numbers
-   #+end_example
+   =echo= on the shell, and then show the contents with =cat:=
+   #+begin_src bash :results output
+     ...
+     ...
+   #+end_src
 
 2) Complete the code [[pgm:scanf1]] below to pick up only the numbers in
    the input file.
@@ -124,7 +125,15 @@ This is useful for the programming exercise "phone numbers":
      echo "5/6•" > addFrac_input
      echo "3/4" >> addFrac_inputp
      cat addFrac_input
+     cat addFrac_inputp
    #+end_example
+   Use this code block to run these commands:
+   #+begin_src bash :results output
+     ...
+     ...
+     ...
+     ...
+   #+end_src
 
 3) Complete the format strings below so that the program runs as
    intended! The output should be: ~5/6 + 3/4 = 38/24~
