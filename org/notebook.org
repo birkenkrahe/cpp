@@ -393,16 +393,17 @@ I apply the following *evaluation criteria*:
 - Practice solution video ([[https://youtu.be/BTfTfoaUqVQ?si=B8hEkLOcTqQ05wgh][YouTube]])
 - If you are done early, start the [[https://lyon.instructure.com/courses/2107/assignments/25268][programming assignment]]!
 
+
 * Week 7 - scanf and C operators
 #+attr_html: :width 400px:
 [[../img/week_7.webp]]
 
-- [ ] Deadline: Mastering =printf= is [[https://lyon.instructure.com/courses/2107/assignments/25268][due Wednesday]]!
-- [ ] Test 4 (=printf= and =scanf= coming this week)!
-- [ ] Code along lecture & practice: =scanf=
+- [X] Deadline: Mastering =printf= is [[https://lyon.instructure.com/courses/2107/assignments/25268][due Wednesday]]!
+- [X] Test 4 (=printf= and =scanf= coming end of this week)!
+- [X] Code along lecture & practice: =scanf=
 - [ ] Code along lecture & practice: C operators
 
-** Fast Fun Review: =printf=
+** DONE Fast Fun Review: =printf=
 
 1) What's the general format of the =printf= function?
    #+begin_example C
@@ -482,10 +483,52 @@ I apply the following *evaluation criteria*:
    : 1E+06
    : (etc.)
 
-** Fast Fun Review: =scanf=
+** TODO Fast Fun Review: =scanf=
 
+1) What is the general format of the =scanf= argument if the input is just numbers?
+   #+begin_example C
+     scanf( "{format specifiers}", {reference variables} );
+   #+end_example
+   #+begin_example
+     scanf("%d%f", &i, &x);  // i is integer, x is floating-point variable
+   #+end_example
+2) What if the input has another form? E.g. a phone number: (870) 307-754
+   #+begin_src bash
+     echo "(870) 307-754" > input   # create a file called `input`
+     cat input  # checks content of file
+   #+end_src
+   #+begin_src C :cmdline < input
+     int i,j,k;  // declare variables
+     scanf("(%d)%d-%d", &i, &j, &k);  // scan exactly in input format
+     printf("%d/%d/%d\n", i, j, k);   // print in any format you like
+   #+end_src
+3) How can you get input into a code block?
+   #+begin_quote
+   With the header argument `cmdline` and the input file `input`:
 
+   #+begin_src C :cmdline < input
+   #+end_quote
+4) How can you create an input file with numbers from a code block?
+   #+begin_quote
+   To insert numbers into a file ~input~, enter in a =bash= block:
 
+   #+begin_src bash
+     =echo= "1 2 3" > ~input~
+   #+end_src 
+   #+end_quote
+5) What do these commands mean: ~ls -l~ and ~cat~ and where do they
+   come from?
+   #+begin_quote
+   They are Linux shell commands that manipulate the file system:
+   - ~ls -l~ prints a long listing of all files in the current directory
+   - ~echo~ prints anything that follows to the screen
+   - ~echo [stuff] > file~ writes [stuff] to ~file~
+   #+end_quote
+6) How can you open a =bash= shell inside Emacs?
+   #+begin_quote
+   With ~M-x eshell~ - the Emacs shell simulates a Linux shell.
+   #+end_quote
+   
 * Week 8 - Arrays
 * Week 9 - Functions
 * Week 10 - Pointers
