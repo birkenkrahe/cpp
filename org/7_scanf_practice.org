@@ -123,7 +123,7 @@ This is useful for the programming exercise "phone numbers":
    overwriting it (~•~ stands for an empty space):
    #+begin_example sh
      echo "5/6•" > addFrac_input
-     echo "3/4" >> addFrac_inputp
+     echo "3/4" >> addFrac_input
      cat addFrac_input
      cat addFrac_inputp
    #+end_example

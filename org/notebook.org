@@ -335,7 +335,7 @@ Plan:
 |                     | except after keywords &  |
 |                     | strings across lines     |
 
-* DONE Week 6 - =printf= and =scanf= reloaded
+* DONE Week 6 - Printing with printf 
 #+attr_html: :width 400px:
 [[../img/week_6.png]]
 
@@ -394,7 +394,7 @@ I apply the following *evaluation criteria*:
 - If you are done early, start the [[https://lyon.instructure.com/courses/2107/assignments/25268][programming assignment]]!
 
 
-* Week 7 - scanf and C operators
+* Week 7 - Scanning with scanf
 #+attr_html: :width 400px:
 [[../img/week_7.webp]]
 
@@ -483,7 +483,7 @@ I apply the following *evaluation criteria*:
    : 1E+06
    : (etc.)
 
-** TODO Fast Fun Review: =scanf=
+** DONE Fast Fun Review: =scanf=
 
 1) What is the general format of the =scanf= argument if the input is just numbers?
    #+begin_example C
@@ -577,7 +577,46 @@ I apply the following *evaluation criteria*:
    -rw-rw-r-- 1 marcus marcus  2847 Feb 20 21:42 tests.org
    #+end_example
 
-* Week 8 - Arrays
+
+** TODO How does =scanf= work?
+
+1) If the format string for =scanf= is ="%d/%d"=, what input is expected?
+   #+begin_quote
+   - Two variable references, ~&i~ and ~&j~.
+   - Input in the format ~i/j~.
+   #+end_quote
+
+2) If the format string for =scanf= is ="%d/%d"=, which of these two input
+   versions works and why: ~•5•/•96~ and ~•5/•96~ ? 
+   #+begin_src bash :results silent
+     echo " 5 / 96 " > input1   # put string into file input1
+     echo " 5/96 "   > input2   # put string into file input2
+   #+end_src
+
+   #+begin_src C :cmdline <input1
+     int i=10, j=20;                // declare
+
+     scanf("%d/%d", &i, &j);        // scan - overwrite i, j
+
+     printf("Input: %d/%d\n",i,j);  // print
+   #+end_src
+   
+   #+begin_src C :cmdline <input2
+     int i=10, j=20;                // declare
+
+     scanf("%d/%d", &i, &j);        // scan - overwrite i, j
+
+     printf("Input: %d/%d\n",i,j);  // print
+   #+end_src
+
+   #+begin_quote
+   ~•5•/•96~ - =scanf= reads ~5~ and ~/~ then expects an integer or a +/-, and
+   when it does not get it, it aborts, and never overwrites ~j~.
+
+   ~•5•/96~ - =scanf= reads ~5~ and ~/~ then ~96~ as expected, and finishes.
+   #+end_quote
+
+* Week 8 - C operators / Arrays
 * Week 9 - Functions
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays
