@@ -205,16 +205,14 @@ This example has the same spec as our earlier example:
 * Example with ordinary characters
 
 - If the format string is ~"%d/%d"~ and the input is ~•5/•96~, ~scanf~
-  succeeds.
+  succeeds: once the ~/~ is scanned, any number of white spaces are
+  ignored.
 
 - If the input is ~•5•/•96~ , ~scanf~ fails, because the ~/~ in the format
-  string doesn’t match the space in the input.
-
-- Upon encountering the ~/~ in ~•5•/•96~, ~scanf~ will abort, since it
-  expects a digit or a +/- sign. The resulting value in the second
-  variable is not ~96~ but some other random number or memory address.
-
-- To allow spaces after the first number, use ~"%d/•%d"~ instead.
+  string doesn’t match the space in the input: an ~/~ is expected
+  immediately[fn:2].
+  
+- To allow spaces after the first number, use ~"%d•/%d"~ instead.
 
 * Common mistakes:
 
@@ -242,10 +240,15 @@ This example has the same spec as our earlier example:
      next white-space character and not finding one will hang forever
 
 * Footnotes
+[fn:2]After reading the first integer, =scanf= expects to find a ~/~
+character immediately. It encounters a whitespace character instead,
+which is not skipped because the whitespace is not leading (from
+scanf's perspective at this point; it's looking for a specific
+non-whitespace character, ~"/"~, and aborts.
 
 [fn:1]This should really work inside Emacs, too - in a ~bash~ or ~sh~ code
 block provided that you have one of these programs installed (e.g. via
 Cygwin or MSYS2). But Windows puts a weird symbol at the end of the
 filename so that it cannot be read. The ~cat~ command works with ~input*~
 but the ~:cmdline < input~ command in the Org-mode code block header
-does not, alas. 
+does not, alas.

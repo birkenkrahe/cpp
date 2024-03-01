@@ -590,7 +590,7 @@ I apply the following *evaluation criteria*:
    versions works and why: ~•5•/•96~ and ~•5/•96~ ? 
    #+begin_src bash :results silent
      echo " 5 / 96 " > input1   # put string into file input1
-     echo " 5/96 "   > input2   # put string into file input2
+     echo " 5/ 96 "  > input2   # put string into file input2
    #+end_src
 
    #+begin_src C :cmdline <input1
@@ -600,6 +600,9 @@ I apply the following *evaluation criteria*:
 
      printf("Input: %d/%d\n",i,j);  // print
    #+end_src
+
+   #+RESULTS:
+   : Input: 5/20
    
    #+begin_src C :cmdline <input2
      int i=10, j=20;                // declare
@@ -609,11 +612,15 @@ I apply the following *evaluation criteria*:
      printf("Input: %d/%d\n",i,j);  // print
    #+end_src
 
-   #+begin_quote
-   ~•5•/•96~ - =scanf= reads ~5~ and ~/~ then expects an integer or a +/-, and
-   when it does not get it, it aborts, and never overwrites ~j~.
+   #+RESULTS:
+   : Input: 5/96
 
-   ~•5•/96~ - =scanf= reads ~5~ and ~/~ then ~96~ as expected, and finishes.
+   #+begin_quote
+   ~•5•/•96~ - =scanf= reads ~5~ and expects ~/~ immediately but it gets a
+   white space instead. It aborts, and never overwrites ~j~.
+
+   ~•5/•96~ - =scanf= reads ~5~ and ~/~ then ~96~ as expected (any number of
+   whitespaces after the ~/~ are ignored, and finishes.
    #+end_quote
 
 * Week 8 - C operators / Arrays
