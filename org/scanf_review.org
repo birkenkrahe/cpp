@@ -1,4 +1,4 @@
-#+PROPERTY: header-args:C :tangle scanf.c :main yes :includes <stdio.h>
+#+PROPERTY: header-args:C :tangle scanf.c :main yes :includes stdio.h
 
 #+begin_src C
   // declare variables
