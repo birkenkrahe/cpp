@@ -626,8 +626,42 @@ I apply the following *evaluation criteria*:
 #+attr_html: :width 400px:
 [[../img/week_8.webp]]
 
-- [ ] Review: =scanf=
+- [ ] Test 4 available / assignments / grading
+- [ ] Review: =scanf= (bonus exercise in class)
 - [ ] Code along lecture & practice: C operators
+
+** Test 4 available (deadline Tuesday!) / assignments / grading
+
+- There's a new [[https://lyon.instructure.com/courses/2107/assignments/22433][test available]] for you to complete by Tuesday 5th
+  March. You've got 45 minutes for 15 questions, which should be
+  plenty: take your time with it! I'll open the correct answers after
+  the deadline.
+- I have extended the deadline for the [[https://lyon.instructure.com/courses/2107/assignments/25363][`Mastering scanf]]` programming
+  assignment to Friday, 8th March. See my remarks on submission below.
+- The upload of the in-class [[https://lyon.instructure.com/courses/2107/assignments/25543][scanf practice file]] is also due Friday
+  8th March. There are new videos available in the course [[https://www.youtube.com/playlist?list=PLwgb17bzeNyg7P7LCIpKxBun95Eb_PK4O][playlist]] on
+  YouTube.
+- Your grade does currently not reflect the bonuses. To do this will
+  require some Canvas adjustments behind the scenes. I will do that on
+  Wednesday by 12 pm.
+- Quite a few of you got messages from me (check them!) to submit
+  corrected files for full or for half points. Do it!
+
+Org-mode Submissions: I wasn't too impressed with what most of you
+submitted for the `[[https://lyon.instructure.com/courses/2107/assignments/25268][Mastering printf]]` assignment. Please check out my
+sample solution file to see how it should've looked like: you can look
+at the GitHub [[https://github.com/birkenkrahe/cpp/blob/main/org/assignments/mastering_printf_solution.org][Markdown version]], the [[https://github.com/birkenkrahe/cpp/blob/main/pdf/Mastering%20printf%20in%20C%20-%20Sample%20Solution.pdf][PDF version]], or the [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/org/assignments/mastering_printf_solution.org][Emacs Org-mode
+version]] (with visible metadata). You can also look at any of the
+practice files to see how it's done.
+
+Here's the rub: coding as such is simple, these programs are almost
+trivial. They're only a challenge to you (and to the AI) if you submit
+yourself to the discipline of literate programming. This means taking
+documentation, planning and reflection seriously and using Org-mode as
+an interactive notebook. While in the world of Python and R everyone
+does that, it's rare in the world of C and C++ (though this is where
+it was born - the first literate program was an [[http://www.literateprogramming.com/adventure.pdf][adventure game]] written
+in C).
 
 ** A little practical review of =scanf=
 
@@ -666,6 +700,7 @@ Canvas for bonus points.
 - [[https://youtu.be/hGwIz5symtg][Here is a video]] showing the whole exercise.
 #+end_quote    
    
+
 * Week 9 - Arrays / Functions
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays
