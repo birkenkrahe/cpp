@@ -626,11 +626,13 @@ I apply the following *evaluation criteria*:
 #+attr_html: :width 400px:
 [[../img/week_8.webp]]
 
-- [ ] Test 4 available / assignments / grading
-- [ ] Review: =scanf= (bonus exercise in class)
+- [X] Test 4 available / assignments / grading
+- [X] Review: =scanf= (bonus exercise in class)
 - [ ] Code along lecture & practice: C operators
 
-** Test 4 available (deadline Tuesday!) / assignments / grading
+** DONE Test 4 available (deadline Tuesday!)/assignments/grading
+
+/[This was an announcement on [[https://lyon.instructure.com/courses/2107/discussion_topics/10013][Canvas]] and in the [[https://chat.google.com/room/AAAAIk8SqZE/WnkvTa3IkD0/WnkvTa3IkD0?cls=10][chat]]]/
 
 - There's a new [[https://lyon.instructure.com/courses/2107/assignments/22433][test available]] for you to complete by Tuesday 5th
   March. You've got 45 minutes for 15 questions, which should be
@@ -663,7 +665,7 @@ does that, it's rare in the world of C and C++ (though this is where
 it was born - the first literate program was an [[http://www.literateprogramming.com/adventure.pdf][adventure game]] written
 in C).
 
-** A little practical review of =scanf=
+** DONE A little practical review of =scanf=
 
 1) Open Emacs
 
@@ -696,8 +698,8 @@ You can upload a screenshot of your ~scanf_review.org~ and ~*eshell*~
 buffers including the compilation, the execution and the result to
 Canvas for bonus points.
 
-- The result should look [[http://tinyurl.com/scanf-review][like this]]
-- [[https://youtu.be/hGwIz5symtg][Here is a video]] showing the whole exercise.
+- The result should look [[http://tinyurl.com/scanf-review][like this]] (screenshot).
+- [[https://youtu.be/hGwIz5symtg][Here is a (silent) video]] showing the whole exercise.
 #+end_quote    
    
 

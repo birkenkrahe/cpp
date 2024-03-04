@@ -53,6 +53,9 @@
   | Assignment          | change                | =         | i = j      |
   | Increment/decrement | change stepwise       | ++, +-    | ++i        |
 
+- Note: there is no exponential operator (though there is a power
+  function =pow= in =math.h= - [[https://www.programiz.com/c-programming/library-function/math.h/pow][see here for more information]]).
+  
 - Conditional operators used in C are important for program flow:
 
   | OPERATOR | DESCRIPTION              | EXPRESSION | BOOLEAN VALUE |
@@ -272,6 +275,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
   : i was 10 and is now 0 = 10 % 5
 
 * Compound if structures and input validation
+
 ** TODO Booleans in C
 
 - C evaluates all non-zero values as ~TRUE~ (~1~), and all zero values as
