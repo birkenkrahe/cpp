@@ -393,8 +393,7 @@ I apply the following *evaluation criteria*:
 - Practice solution video ([[https://youtu.be/BTfTfoaUqVQ?si=B8hEkLOcTqQ05wgh][YouTube]])
 - If you are done early, start the [[https://lyon.instructure.com/courses/2107/assignments/25268][programming assignment]]!
 
-
-* Week 7 - Scanning with scanf
+* DONE Week 7 - Scanning with scanf
 #+attr_html: :width 400px:
 [[../img/week_7.webp]]
 
@@ -577,7 +576,6 @@ I apply the following *evaluation criteria*:
    -rw-rw-r-- 1 marcus marcus  2847 Feb 20 21:42 tests.org
    #+end_example
 
-
 ** TODO How does =scanf= work?
 
 1) If the format string for =scanf= is ="%d/%d"=, what input is expected?
@@ -623,8 +621,48 @@ I apply the following *evaluation criteria*:
    whitespaces after the ~/~ are ignored, and finishes.
    #+end_quote
 
-* Week 8 - C operators / Arrays
-* Week 9 - Functions
+
+* Week 8 - C operators
+#+attr_html: :width 400px:
+[[../img/week_8.webp]]
+
+- [ ] Review: =scanf=
+- [ ] Code along lecture & practice: C operators
+
+** A little practical review of =scanf=
+
+1) Open Emacs
+
+2) Create a new file ~scanf_review.org~
+
+3) Add metadata at the top of your file:
+   #+begin_example
+   #+PROPERTY: header-args:C :tangle scanf.c :main yes :includes <stdio.h>
+   #+end_example
+
+4) Refresh local setup: run ~#+PROPERTY~ line with ~C-c C-c~
+
+5) Create C code block with ~<s~
+
+6) In the block, write the following code:
+   1. ask to input an integer with =puts=
+   2. scan an integer value ~i~
+   3. print the scanned value
+
+7) Tangle the code block to a source code file ~scanf.c~ with ~C-c C-v t~
+
+8) Open an Emacs shell with ~M-x eshell~
+
+9) Compile ~scanf.c~ into an executable file ~scanf~
+
+10) Run ~scanf~ with the input ~100~.
+
+You can upload a screenshot of your ~scanf_review.org~ and ~*eshell*~
+buffers including the compilation, the execution and the result to
+Canvas for bonus points. The result should look like this.
+Here is a video showing the whole exercise. 
+   
+* Week 9 - Arrays / Functions
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays
 * Week 12 - Strings

@@ -1,0 +1,16 @@
+#+PROPERTY: header-args:C :tangle scanf.c :main yes :includes <stdio.h>
+
+#+begin_src C
+  // declare variables
+  int i;
+
+  // ask for input
+  puts("Enter an integer: ");
+
+  // scan integer value i
+  scanf("%d", &i);
+
+  // print scanned value
+  printf("Your input was: %d\n", i);
+  
+#+end_src
