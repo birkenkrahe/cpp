@@ -651,16 +651,20 @@ I apply the following *evaluation criteria*:
 
 7) Tangle the code block to a source code file ~scanf.c~ with ~C-c C-v t~
 
-8) Open an Emacs shell with ~M-x eshell~
+p8) Open an Emacs shell with ~M-x eshell~
 
 9) Compile ~scanf.c~ into an executable file ~scanf~
 
 10) Run ~scanf~ with the input ~100~.
 
+#+begin_quote
 You can upload a screenshot of your ~scanf_review.org~ and ~*eshell*~
 buffers including the compilation, the execution and the result to
-Canvas for bonus points. The result should look like this.
-Here is a video showing the whole exercise. 
+Canvas for bonus points.
+
+- The result should look [[http://tinyurl.com/scanf-review][like this]]
+- [[https://youtu.be/hGwIz5symtg][Here is a video]] showing the whole exercise.
+#+end_quote    
    
 * Week 9 - Arrays / Functions
 * Week 10 - Pointers
