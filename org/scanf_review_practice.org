@@ -1,0 +1,37 @@
+#+STARTUP: hideblocks overview indent : 
+* A little practical review of =scanf=
+
+1) Open Emacs
+
+2) Create a new file ~scanf_review.org~
+
+3) Add metadata at the top of your file:
+   #+begin_example
+   #+PROPERTY: header-args:C :tangle scanf.c :main yes :includes <stdio.h>
+   #+end_example
+
+4) Refresh local setup: run ~#+PROPERTY~ line with ~C-c C-c~
+
+5) Create C code block with ~<s~
+
+6) In the block, write the following code:
+   1. ask to input an integer with =puts=
+   2. scan an integer value ~i~
+   3. print the scanned value
+
+7) Tangle the code block to a source code file ~scanf.c~ with ~C-c C-v t~
+
+8) Open an Emacs shell with ~M-x eshell~
+
+9) Compile ~scanf.c~ into an executable file ~scanf~
+
+10) Run ~scanf~ with the input ~100~.
+
+#+begin_quote
+You can upload a screenshot of your ~scanf_review.org~ and ~*eshell*~
+buffers including the compilation, the execution and the result to
+Canvas for bonus points.
+
+- The result should look [[http://tinyurl.com/scanf-review][like this]]
+- [[https://youtu.be/hGwIz5symtg][Here is a video]] showing the whole exercise.
+#+end_quote

@@ -651,7 +651,7 @@ I apply the following *evaluation criteria*:
 
 7) Tangle the code block to a source code file ~scanf.c~ with ~C-c C-v t~
 
-p8) Open an Emacs shell with ~M-x eshell~
+8) Open an Emacs shell with ~M-x eshell~
 
 9) Compile ~scanf.c~ into an executable file ~scanf~
 
