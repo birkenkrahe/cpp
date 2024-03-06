@@ -703,6 +703,48 @@ Canvas for bonus points.
 #+end_quote    
    
 
+** Review of test 4
+#+attr_html: :width 700px:
+[[../img/test_4.png]]
+
+/Figure: Canvas report for test 4 (Mar 5, 11:30 pm)/
+
+** Review: C operators
+
+1) "You're the man": heuristic or algorithm or neither?
+   #+begin_quote
+   Neither - statement that could be part of an algorithm but only
+   after quantifying "the man".
+   #+end_quote
+2) "Type twice CTRL + c": heuristic or algorithm or neither?
+   #+begin_quote
+   Algorithm - input instruction that a machine could carry out.
+   #+end_quote
+3) "To print a number, use the =print= function"
+   #+begin_quote
+   Heuristic - instruction that requires additional information
+   (e.g. which language?)
+   #+end_quote
+4) Useful tools when designing an algorithm?
+   #+begin_quote
+   - Pseudocode (algorithm without syntax, includes input and output)
+   - Visual modeling with diagrams (UML, BPMN, flow chart diagram)
+   #+end_quote
+5) Can you name at least one operator in each category?
+   1) Arithmetic
+   2) Relational
+   3) Equality
+   4) Logical
+   5) Assignment
+   6) Increment/decrement
+   #+begin_quote
+   1) Arithmetic: =1+1=
+   2) Conditional: =a==b=
+   3) Logical: =a && b=
+   4) Assignment: =i = 1=
+   5) Increment/decrement: =++i=
+   #+end_quote
+      
 * Week 9 - Arrays / Functions
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays
