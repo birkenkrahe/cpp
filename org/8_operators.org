@@ -185,11 +185,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
     printf("i is %d\n", i);  // prints "i is 2"
   #+end_src
 
-  #+RESULTS: prefix
-  : i is 2
-  : i is 2
-
-
 - The /postfix/ operator ~++j~ also means ~j = j + 1~ but here, the value of
   ~j~ is fetched, and then incremented.
 
@@ -200,10 +195,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
     printf("j is %d\n", j);  // prints "j is 2"
   #+end_src
 
-  #+RESULTS: postfix
-  : j is 1
-  : j is 2
-
 - Here is another illustration with an assignment of post and prefix
   increment operators:
 
@@ -212,11 +203,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
     int num1 = 10, num2 = 0;
     puts("start: num1 = 10, num2 =0");
 
-    num2 = num1++;
+    num2 = num1++; // assign num1 to num2 and then add 1 to num1
     printf("num2 = num1++, so num2 = %d, num1 = %d\n", num2, num1);
 
-    num1 = 10;
-    num2 = ++num1;
+    num1 = 10;     // reset num1 to 10
+    num2 = ++num1; // add 1 to num1 and then assign it to num2
     printf("num2 = ++num1, so num2 = %d, num1 = %d\n", num2, num1);
   #+end_src
 
@@ -271,12 +262,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
     printf("i was 10 and is now %d = 10 %% 5\n", i);
   #+end_src
 
-  #+RESULTS: %=
-  : i was 10 and is now 0 = 10 % 5
-
-* Compound if structures and input validation
-
-** TODO Booleans in C
+* Booleans in C
 
 - C evaluates all non-zero values as ~TRUE~ (~1~), and all zero values as
   ~FALSE~ (~0~):
@@ -289,13 +275,10 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
     if (!!0) puts("0 is FALSE"); // !0 is literally non-zero
   #+end_src
 
-  #+RESULTS: boolean
-  : 3 is TRUE
-
 - The Boolean operators AND, OR and NOT are represented in C by
   the logical operators ~&&~, ~||~ and ~!~, respectively
 
-** TODO ! operator (logical NOT)
+* ! operator (logical NOT)
 
 - The ! operator is a "unary" operator that is evaluated from the
   left. It is ~TRUE~ when its argument is ~FALSE~ (~0~), and it is ~FALSE~
@@ -326,7 +309,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
   : !100 is 0 because 100 is non-zero!
   : !(1.0e-015) is 0 because 1.0e-015 is non-zero!
 
-** TODO && operator (logical AND)
+* && operator (logical AND)
 
 - Evaluates a Boolean expression from left to right
 
@@ -358,7 +341,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
   #+RESULTS: &&_op_false
   : The expression is TRUE.
 
-** TODO || operator (logical OR)
+* || operator (logical OR)
 
 - Evaluates a Boolean expression from left to right
 
@@ -392,7 +375,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
   #+RESULTS: ||_op_false
   : The expression is FALSE.
 
-** TODO Checking for upper and lower case
+* Checking for upper and lower case
 
 - Characters are represented by ASCII[fn:4] character sets
 
@@ -430,7 +413,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
   if (response == 'A' || response == 'a')
   #+end_example
 
-** TODO Checking for a range of values
+* Checking for a range of values
 
 - To validate input, you often need to check a range of values
 
@@ -475,7 +458,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
 - This is more conveniently written as ~x < 1 || 10 < x~.
 
-** TODO Let's practice
+* Let's practice
 
 Open and complete the ~operators.org~ practice file.
 
