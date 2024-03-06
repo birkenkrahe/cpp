@@ -70,7 +70,7 @@
 - The value of an evaluated conditional operator is *Boolean*
   (logical) - e.g. ~2==2~ evaluates as ~TRUE~ or ~1~.
 
-* Operators in other languages
+* NEXT Operators in other languages
 #+attr_latex: :width 400px
 #+caption: Photo: Jack Delano, Sawmill (1939). Source: Library of Congress
 [[../img/8_pipeline.jpg]]
@@ -108,16 +108,16 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
 - What is algebra about?[fn:2]
 
-- Algebra allows you to form small worlds with fixed laws so that
-  you know exactly what's going on - what the output must be for a
-  given input. This certainty is what is responsible for much of the
-  magic of mathematics.
+- Why algebra? Algebra allows you to form small worlds with fixed laws
+  so that you know exactly what's going on - what the output must be
+  for a given input. This certainty is what is responsible for much of
+  the magic of mathematics.
 
 - Boole's (or Boolean) algebra, or the algebra of logic, uses the
-  values of TRUE (or 1) and FALSE (or 0) and the operators AND (or
-  "conjunction"), OR (or "disjunction"), and NOT (or "negation").
+  values of =TRUE= (or =1=) and =FALSE= (or =0=) and the operators =AND= (or
+  "conjunction"), =OR= (or "disjunction"), and =NOT= (or "negation").
 
-- Truth tables are the traditional way of showing Boolean scenarios:
+- *Truth tables* are the traditional way of showing Boolean scenarios:
 
   #+name: AND
   | p     | q     | p AND q   |
@@ -143,7 +143,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
 - Using the three basic operators, other operators can be built. In
   electronics, and modeling, the "exclusive OR" operator or "XOR",
-  is e.g. equivalent to (p AND NOT q) OR (NOT p AND q)
+  is e.g. equivalent to ~(p AND NOT q) OR (NOT p AND q)~
 
   #+name: XOR
   | p     | q     | p XOR q | P = p AND (NOT q) | Q = (NOT p) AND q | P OR Q |
@@ -284,17 +284,18 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
   left. It is ~TRUE~ when its argument is ~FALSE~ (~0~), and it is ~FALSE~
   when its argument is ~TRUE~ (non-zero).
 
-- [X] If ~i = 100~, what is ~!i~?
+- If ~i = 100~, what is ~!i~?
+  #+begin_quote
+  The Boolean value of ~100~ is TRUE. Therefore, ~!100~ = ~!TRUE~ = ~FALSE~.
+  #+end_quote
 
-  The Boolean value of ~100~ is TRUE. Therefore, ~!100~ = ~!TRUE~ = ~FALSE~
-
-- [X] If ~j = 1.0e-15~, what is ~!j~?
-
+- If ~j = 1.0e-15~, what is ~!j~?
+  #+begin_quote
   The Boolean value of ~1.0e-15~ is TRUE. Therefore, ~!1.0e-15~ = ~!TRUE~ =
-  ~FALSE~
+  ~FALSE~.
+  #+end_quote
 
-- [ ] Let's check!
-
+- Let's check! You can validate these arguments computationally:
   #+name: negation
   #+begin_src C :results output :exports both
     // declare and assign variables
@@ -305,18 +306,13 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
     printf("!(%.1e) is %d because %.1e is non-zero!\n", j, !j, j);
   #+end_src
 
-  #+RESULTS: negation
-  : !100 is 0 because 100 is non-zero!
-  : !(1.0e-015) is 0 because 1.0e-015 is non-zero!
-
 * && operator (logical AND)
 
 - Evaluates a Boolean expression from left to right
 
 - Its value is ~TRUE~ if and only if *both* sides of the operator are ~TRUE~
 
-- [X] Example: guess the outcome first
-
+- Example: guess the outcome first
   #+name: &&_op_true
   #+begin_src C :exports both
     if ( 3 > 1 && 5 == 10 )
@@ -324,11 +320,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
      else
        printf("The expression is FALSE.\n");
   #+end_src
-
-  #+RESULTS: &&_op_true
-  : The expression is FALSE.
-
-- [ ] Example: guess the outcome first
+- Example: guess the outcome first
   #+name: &&_op_false
   #+begin_src C :exports both
     if (3 < 5 && 5 == 5 )
@@ -338,9 +330,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
          ("The expression is FALSE.\n");
   #+end_src
 
-  #+RESULTS: &&_op_false
-  : The expression is TRUE.
-
 * || operator (logical OR)
 
 - Evaluates a Boolean expression from left to right
@@ -349,8 +338,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
 - It is ~TRUE~ if either side of the operator is ~TRUE~
 
-- [X] Example: guess the outcome first
-
+- Example: guess the outcome first
   #+name: ||_op_true
   #+begin_src C :exports both
     if ( 3 > 5 || 5 == 5 )
@@ -358,12 +346,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
      else
        printf("The expression is FALSE.\n");
   #+end_src
-
-  #+RESULTS: ||_op_true
-  : The expression is TRUE.
-
-- [X] Example: guess the outcome first
-
+- Example: guess the outcome first
   #+name: ||_op_false
   #+begin_src C :exports both
     if ( 3 > 5 || 6 < 5 )
@@ -371,9 +354,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
      else
        printf("The expression is FALSE.\n");
   #+end_src
-
-  #+RESULTS: ||_op_false
-  : The expression is FALSE.
 
 * Checking for upper and lower case
 
@@ -383,7 +363,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
   resp.
 
 - Let's check that.
-
   #+name: ascii_input
   #+begin_src bash :results silent
     echo "a A" > ./src/ascii
@@ -392,7 +371,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
   In [[ascii]], two characters are scanned and then printed as characters
   and as integers:
-
   #+name: ascii
   #+begin_src C :cmdline < ./src/ascii :results output :export both
     char c1, c2;
@@ -401,13 +379,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
     printf("The ASCII value of %c is %d\n", c2, c2);
   #+end_src
 
-  #+RESULTS: ascii
-  : The ASCII value of a is 97
-  : The ASCII value of A is 65
-
 - User-friendly programs should use compound conditions to check for
   both lower and upper case letters:
-
   #+name: ascii_both
   #+begin_example C
   if (response == 'A' || response == 'a')
@@ -428,9 +401,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
     cat ./src/num
   #+end_src
 
-- [ ] What does the code in [[validate]] do? Will it run? What will the
+- What does the code in [[validate]] do? Will it run? What will the
   output be for our choice of input?
-
   #+name: validate
   #+begin_src C :cmdline < ./src/num :exports both
 
@@ -446,9 +418,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
      }
   #+end_src
 
-  #+RESULTS: validate
-  : Number in range.
-
 - How can you translate a range like ~![1,10]~ into a conditional
   expression? It means that we want to test if a number is outside of
   the closed interval ~[1,10]~.
@@ -457,10 +426,6 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
   than 10, hence the condition is ~x < 1 || x > 10~.
 
 - This is more conveniently written as ~x < 1 || 10 < x~.
-
-* Let's practice
-
-Open and complete the ~operators.org~ practice file.
 
 * Let's practice!
 #+attr_latex: :width 400px

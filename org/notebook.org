@@ -703,11 +703,18 @@ Canvas for bonus points.
 #+end_quote    
    
 
-** Review of test 4
+** Review of test 4 - and an appeal to reason
 #+attr_html: :width 700px:
 [[../img/test_4.png]]
 
 /Figure: Canvas report for test 4 (Mar 5, 11:30 pm)/
+
+- You're still not using the available time: *45 min for 15* questions!
+- Improve your mastery of C by *repeating* the tests until you have 100%.
+- If your test scores could have been better, write the *final exam*.
+- All final exam questions are *known* to you from the tests!
+
+Let's go through the test questions!
 
 ** Review: C operators
 
@@ -732,11 +739,10 @@ Canvas for bonus points.
    #+end_quote
 5) Can you name at least one operator in each category?
    1) Arithmetic
-   2) Relational
-   3) Equality
-   4) Logical
-   5) Assignment
-   6) Increment/decrement
+   2) Conditional (Relational/Equality)
+   3) Logical
+   4) Assignment
+   5) Increment/decrement
    #+begin_quote
    1) Arithmetic: =1+1=
    2) Conditional: =a==b=
@@ -744,7 +750,73 @@ Canvas for bonus points.
    4) Assignment: =i = 1=
    5) Increment/decrement: =++i=
    #+end_quote
-      
+
+** Remedial logic
+
+*** What is an argument?
+
+Let's watch Monty Python's "[[https://youtu.be/KwsGuZg9EP4?si=uTfoSjsx-YO9E149][Argument Clinic]]" for an example of what's
+an argument and what's not.
+
+- So what's an argument?
+  #+begin_quote
+  An argument is a sequence of *statements* aimed at demonstrating the
+  *truth* of an *assertion*.
+  #+end_quote
+- Example:
+  #+begin_quote
+  "IF the bell rings, OR the flag drops, THEN the race is over."
+  #+end_quote
+  #+begin_example
+           P          OR         Q       =>        R
+  #+end_example
+  #+begin_src C
+    int P = 1; // 1: bell has rung, 0: bell has not rung
+    int Q = 0; // 0: flag has dropped, 0: flag has not dropped
+    if (P || Q) {
+      printf("The race is over! (R = %d)\n", P||Q);
+     } else {
+      printf("The race is not over! (R = %d)\n", P||Q);
+     }
+  #+end_src
+- Therefore:
+  #+begin_quote
+  "IF the race is NOT over, THEN the bell has NOT rung, and the flag has NOT dropped.
+  #+end_quote
+#+begin_example
+              NOT R          =>         NOT P           AND           NOT Q
+#+end_example
+- Mathematical notation:
+  $ P \vee Q \Rightarrow R$ and  $\not R \Rightarrow \not P \land \not Q $
+- Another example
+  #+attr_html: :width 400px:
+  [[../img/argument2.png]]
+
+*** What is a statement?
+- Definition
+  #+begin_quote
+  A statement (or proposition) is a sentence that is true or false but
+  not both.
+  #+end_quote
+- Examples: statement or not?
+  #+begin_quote
+  x + 2 = 4
+  #+end_quote
+  #+begin_quote
+  2 + 2 = 4
+  #+end_quote
+  #+begin_quote
+  "I feel blue."
+  #+end_quote
+  #+begin_quote
+  "It is raining right now."
+  #+end_quote
+
+*** Coming bonus assignments: prove De Morgan's Laws in C
+#+attr_html: :width 300px:
+[[../img/demorgan1.png]]
+#+attr_html: :width 300px:
+[[../img/demorgan2.png]]
 * Week 9 - Arrays / Functions
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays
