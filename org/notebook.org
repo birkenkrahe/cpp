@@ -842,6 +842,13 @@ an argument and what's not.
 ** Practice C operators: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
 
 * Week 9 - Arrays / Functions
+
+** Practice C operators: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
+
+** Arrays
+
+** Functions
+
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays
 * Week 12 - Strings
