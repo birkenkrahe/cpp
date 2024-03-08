@@ -1,0 +1,858 @@
+#+TITLE: Notebook - Introduction to programming in C++
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: Lyon College, Spring 2024
+#+STARTUP:overview hideblocks indent inlineimages
+#+OPTIONS: toc:nil num:nil ^:nil
+#+property: header-args:C :main yes :includes <stdio.h> :results output :noweb yes
+#+property: header-args:R :results output :noweb yes :session *R* :exports both
+* DONE Week 1 - Overview & first C program
+#+attr_html: :width 400px
+[[../img/cover.png]]
+
+1. [X] *Review:* [[https://forms.gle/pAJgAXjgBzCAqcqY7][Entry Survey]] ([[https://docs.google.com/forms/d/1mXocjlwiBrzM9wQS819rQYttRWoSNIt5eN0OSDUMdJc/edit#settings][Google forms]])
+2. [X] *Lecture:* Introduction to the course ([[file:0_overview.org][0_overview.org]])
+3. [X] *Practice:* Your first C program.
+4. [ ] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]])
+
+TEST YOURSELF (Google Chat)
+
+*Please check in with:*
+1) one word related to this course
+2) your major (if you already know)
+3) your name (so that I can remember it)
+
+** You're not the only one
+#+ATTR_HTML: :WIDTH 400px:
+#+CAPTION: Source: DALL-E 3
+[[../img/no_idea_what_is_going_on.png]]
+
+A student after the last class:
+#+begin_quote
+*"I think I was the only one who had no idea what was going on"*
+#+end_quote
+
+Yeah, right. In your dreams. I saw the blank stares of (almost)
+everyone else. The truth: you weren't supposed to understand
+anything - the learning doesn't happen when I'm talking but when
+you're typing - when you're doing stuff either alongside me in class,
+or (better) on your own.
+
+** Announcement: Journal club!
+
+Data science enthusiasts: there will be a "journal club" on Wednesday
+12-12:45 pm in Derby room 209. We'll put the papers in a GDrive.
+
+For the first journal club on Januar 31, I'd like to submit my last
+non-technical paper, "The role of AI coding assistants: revisiting the
+need for literate programming in computer and data science education."
+([[https://drive.google.com/file/d/1OonJ1pesK2iRP3JDf4MoBRgg4NKk91yU/view?usp=sharing][Link]]) This paper will be presented at INTED'24, the 18th annual
+International Technology, Education and Development Conference in
+Valencia (Spain), March 4-6.
+
+You can get some background on this topic from the wall poster in
+front of my office, about the paper that I wrote before this one.
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/MDPI_2023_BIRKENKRAHE_poster.pptx.png]]
+
+*Caveat:* in a journal club, you discuss other people's papers and not
+your own - I will try to simulate that by discussing my paper as if
+someone else had written it, and also using AI to deliver a critique.
+
+** Coming assignments and tests (by 25/26 January)
+
+- Complete your first C program (in Emacs)
+- Complete your first 'literate' program
+- Complete the Emacs tutorial.
+- Upload the Org-mode files.
+- Bonus: GitHub Hello World exercise (upload screenshot).
+- Test 1 (by Thu 25 Jan)
+
+* DONE Week 2 - Introduction to C & first literate program
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/first_test.png]]
+
+1. [X] *Lecture*: Introduction to C/C++ ([[file:1_introduction.org][1_introduction.org]])
+2. [X] *DYI content*: Installation issues / Emacs / GitHub ([[file:2_install.org][2_install.org]])
+3. [X] *Practice*: Your first literate C program ([[file:1_introduction_practice.org][1_introduction_practice.org]])
+4. [ ] *Assignment*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
+5. [ ] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]])
+6. [ ] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]])
+
+** Sources
+
+- Parts of the introduction are inspired by King, chapter 1 (pp. 1-8).
+- Parts of the hello world basics are inspired by King, chapter 2 (9-18).
+
+* DONE Week 3 - C fundamentals & Emacs tutorial
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/adalovelace.png]]
+
+Victorian lady ([[https://www.computerhistory.org/babbage/adalovelace/][Ada Lovelace]]) coding for [[https://www.computerhistory.org/babbage/charlesbabbage/][Charles Babbage's]] machine.
+
+This week:
+1. [X] *Practice*: Your first literate C program ([[file:1_introduction_practice.org][1_introduction_practice.org]])
+   - Learn to read error messages.
+   - Finish the exercise: tangle, weave, run on CLI, upload to GDrive.
+   - Upload it if you haven't done so already.
+2. [X] *Assignment*: Emacs tutorial ([[https://github.com/birkenkrahe/org/blob/master/emacs/tutorial.md][tutorial.md]])
+   - Start Tutorial in class.
+   - Finish it at home.
+   - Upload result to Canvas.
+3. [X] *Lecture*: C basics with "hello world" ([[file:3_hello.org][3_hello.org]]) & handout
+4. [X] *Practice*: C basics with "hello world" ([[file:3_hello_practice.org][3_hello_practice.org]]) - solution video!
+5. [X] *Handout*: Emacs cheat sheet (1p - 20 commands) ([[https://github.com/birkenkrahe/cc/blob/piHome/pdf/emacs.pdf][GitHub]])
+6. [ ] *Programming assignment:* Rectangle ([[https://lyon.instructure.com/courses/2107/assignments/24410][Canvas]])
+7. [X] *Handout*: next section "Variables in C" (GitHub).
+
+IMPORTANT: FINISH THE EMACS TUTORIAL (by Sunday night)
+
+ASK FOR MY HELP TO INSTALL EMACS + GCC ON YOUR PC
+
+** First literate C program (continued)
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/debugging.png]]
+
+- Error 1: The input/output header file is =stdio.h=
+  #+ATTR_HTML: :WIDTH 700px:
+  [[../img/1_introduction_practice_error.png]]
+
+- Error 2: The header argument C is missing! Emacs Org-mode does not recognize the code
+  #+ATTR_HTML: :WIDTH 700px:
+  [[../img/1_introduction_practice_error2.png]]
+
+- Error 3: The statement delimiter (=;=) is missing.
+  #+ATTR_HTML: :WIDTH 700px:
+  [[../img/1_introduction_practice_error3.png]]
+
+- Error 4: You must tangle into a ~.c~ file.
+  #+ATTR_HTML: :WIDTH 700px:
+  [[../img/1_introduction_practice_error4.png]]
+
+- Error 5: Closing quotation marks missing - string is not recognized.
+  #+ATTR_HTML: :WIDTH 700px:
+  [[../img/1_introduction_practice_error5.png]]
+
+** Emacs tutorial
+#+ATTR_HTML: :WIDTH 600px:
+[[../img/emacs_learning_curve.jpg]]
+
+- We're going to use Emacs to make our C programming life easier.
+
+- But before it gets easier, it gets a little harder.
+
+- This tutorial is meant to teach you Emacs as a text editor:
+  [[http://tinyurl.com/EmacsTutorial][tinyurl.com/EmacsTutorial]]
+
+- Open it in GitHub and then let's do it together.
+
+- You will have to finish it on your own and submit the result.
+
+- There are two videos by me covering the tutorial in 1 hour, and a
+  bonus video with an advanced tutorial by Derek Banas ([[https://www.youtube.com/playlist?list=PLwgb17bzeNyiUAM_PFME-IiNGvNIOficR][YouTube]]).
+
+** Emacs and gcc home installation
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/emacs_gcc_installation.png]]
+
+Some of you've got problems installing Emacs/gcc. Emacs should work
+out of the box [[https://mirror.fcix.net/gnu/emacs/windows/emacs-27/emacs-27.2-x86_64-installer.exe][from this link]] - you only need to add the =bin/=
+directory to the =PATH=, and for gcc, if MSYS2 is too complex for you,
+just [[https://www.codeblocks.org/][download Code::Blocks]] - that's an IDE that comes with gcc and
+then you have it in the =PATH=. If you cannot make time to meet during
+office hours and are in despair, you can hop on a Zoom call with
+me. Or you can ask one of those who seem to have succeeded: @Cristian
+Del Gobbo @Austin Swaim @Karley Wilson all did this at home, I
+believe. I promise: By the end of the week, you'll have forgotten the
+nightmare and will be ready for more!
+
+** Hello world - again and again and again
+[[../img/helloworld.png]]
+
+- Dissecting "hello world".
+
+- See [[https://github.com/birkenkrahe/cpp/blob/main/org/3_hello.org][lecture]] and [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/org/3_hello_practice.org][practice]] file (tinyurl.com/hello-practice)
+
+- Upload practice file with Emacs:
+  1) Open Emacs
+  2) Download [[http://tinyurl.com/hello-practice][tinyurl.com/hello-practice]] with ~M-x eww~
+  3) Save buffer to ~~/hello-practice.org~ with ~C-x C-w~
+  4) Kill current buffer with ~C-x k~
+  5) Find practice file with ~C-x C-f~
+  6) Open/close all sections with ~SHIFT TAB~.
+
+- Upload completed practice file to [[https://lyon.instructure.com/courses/2107/assignments/23359][Canvas]].
+
+** C fundamentals: variables & planning a program
+
+* DONE Week 4 - Variables & Data types & Format specifiers
+#+ATTR_HTML: :WIDTH 400px:
+[[../img/midnight_oil.png]]
+
+/Image: burning the midnight oil trying to solve Dr. B's assignments./
+
+- Lecture: [[https://github.com/birkenkrahe/cpp/blob/main/org/4_variables.org][GitHub]]
+- Codealong: [[http://tinyurl.com/4-variables-codealong-org][tinyurl.com/4-variables-codealong-org]]
+- Practice: [[http://tinyurl.com/4-variables-practice-org][tinyurl.com/4-practice-org]]
+
+** Review: variables, assignment, print formatting, Emacs (chat)
+
+Check your understanding before or after class. Here are 11 questions
+on stuff of last week. Some of these may return in a test.
+
+- [ ] What must each variable in C have to specify the data it can hold?
+  #+begin_notes
+  A type, e.g. =int= or =float= or =char=, so that the memory can be reserved.
+  #+end_notes
+- [ ] How can multiple variables of the same type be declared in C?
+  #+begin_notes
+  They can be declared together in one line separated by commas.
+  #+end_notes
+- [ ] What must happen to variable type declarations in relation to
+  statements that use the variables?
+  #+begin_notes
+  The variable type declarations must precede statements that use the
+  variables.
+  #+end_notes
+- [ ] What does the code block "int height; height = 8;" do?
+  #+begin_notes
+  Declares an integer variable named height and assigns it the value 8
+  #+end_notes
+- [ ] How is a floating point value indicated when assigned to a =float=
+  variable in C?
+  #+begin_notes
+  By including a decimal point and the letter f, e.g. ~profit = 200.f;~
+  #+end_notes
+- [ ] What is unsafe about assigning a =float= to an =int= variable directly?
+  #+begin_notes
+  Because it can lead to loss of precision, and the compiler won't warn you.
+  #+end_notes
+- [ ] What is the purpose of the =%d= format specifier in C?
+  #+begin_notes
+  To print an integer value.
+  #+end_notes
+- [ ] What is the minimal =printf= statement to print the number ~1~ as an integer?
+  #+begin_src C :results output :main yes :includes <stdio.h>
+    printf("%d",1); // printing 1 as an integer with %d formatter
+    printf("\n");
+    printf("%s","1"); // printing "1" as a string with %s formatter
+    printf("\n");
+    puts("1"); // printing "1" as a string with the puts() function
+  #+end_src
+- [ ] What do three dots =...= at the end of a line in Emacs Org-mode
+  usually mean?
+  #+begin_notes
+  If on a headline, bullet point or code block header, the section,
+  bullet item, or code block will open and close with TAB (toggle).
+  #+end_notes
+- [ ] How can you run an Emacs Org-mode code block?
+  #+begin_notes
+  With ~C-c C-c~ (CTRL + c CTRL +c)
+  #+end_notes
+- [ ] How can you copy, cut and paste in Emacs?
+  #+begin_notes
+  You can either use the preset keybindings to copy (~M-w~), cut (~C-w~),
+  and paste (~C-y~), or you can switch to CUA-mode with (~M-x cua-mode~)
+  and use Windows keybindings to copy (~C-c~), cut (~C-x~), and paste
+  (~C-v~). In either case, you have to mark a region to work on (~C-SPC~).
+  #+end_notes
+
+** Program 1: rectangle properties (Canvas)
+#+ATTR_HTML: :WIDTH 600px:
+[[../img/programming_is_planning.png]]
+
+- [[https://lyon.instructure.com/courses/2107/assignments/24410][See Canvas for the complete assignment]].
+
+- *When writing programs, the writing comes last.*
+
+- *Planning* the program comes first. This includes:
+  1. Plan: Understanding what exactly is required.
+  2. Pseudocode: Designing an algorithm with input/output.
+  3. Process: Making a process diagram to illustrate the flow.
+  4. Program: Coding in one or more languages.
+
+- To illustrate this process see [[https://github.com/birkenkrahe/cpp/blob/main/org/assignments/sample.org][this "Hello, World!" sample]].
+
+- I'll show you quickly how to create BPMN, flow and sequence diagrams
+  at bpmn.io and mermaid.live.
+
+** Bonus challenge: Fahrenheit to Celsius conversion (Canvas)
+#+ATTR_HTML: :WIDTH 600px:
+[[../img/programming_challenge.png]]
+
+- Compute the temperature in degrees Celsius for a given temperature
+  in degrees Fahrenheit.
+
+- A complete solution includes:
+  1. Plan (5 pt)
+  2. Pseudocode (5 pt)
+  3. Process (5 pt)
+  4. Program (5 pt)
+
+- Submit an Emacs Org-mode file with some or all of these aspects. Use
+  Hello World sample file as a template if you like (e.g. to include
+  images).
+
+- For this bonus exercise, independence and diligence of execution is
+  required and rewarded.
+
+- You'll get my sample solution when you submit your solution.
+
+* DONE Week 5 - Constants
+#+attr_html: :width 400px
+[[../img/solution_video.png]]
+
+*Pure hack*: For those who'd like to see exercise 4 solved online:
+[[http://tinyurl.com/4-practice-org][tinyurl.com/4-practice-org]] - [[https://youtu.be/9YsWCAa9GaQ][the video (37 min) is here]] - I added it
+to the playlist for this course. No sound, just hacking.
+
+Plan:
+- [X] Lecture: Constants, naming, layout - tinyurl.com/5-codealong-org
+- [X] Practice: tinyurl.com/5-practice-org
+
+** Housekeeping
+
+- [X] All lecture materials are in GitHub - you also received a paper
+  copy of the script.
+- Submit completed codealong and practice files by 23rd February in
+  Canvas.
+- [X] I will also grade all outstanding submissions & submit early
+  alerts!
+- [X] I will create and post solution videos for practice 5 (constants)
+  and for the programming exercises.
+- [ ] I will post next week's programming assignment (regular and
+  bonus) over the long weekend.
+
+** Quick review of the week
+
+| *Concept/Code*        | *Example/Comment*          |
+|---------------------+--------------------------|
+| ~#define~ constants   | #define PI 3.14f         |
+| ~const~ constants     | const float PI=3.14f;    |
+| math library ~math.h~ | #include <math.h>        |
+| naming conventions  | +10_times super-man+       |
+|                     | times10  super_man       |
+| program layout      | whitespace doesn't count |
+|                     | except after keywords &  |
+|                     | strings across lines     |
+
+* DONE Week 6 - Printing with printf 
+#+attr_html: :width 400px:
+[[../img/week_6.png]]
+
+- [X] Pop quiz! (ungraded & anonymous)
+- [X] Review test stats (data visualization)
+- [X] Review programming assignments (feedback)
+- [X] Review in-class practice files (feedback)
+- [X] Code along lecture & practice: =printf=
+- [ ] Code along lecture & practice: =scanf=
+
+** First month of course: stats
+
+- Test 1: overview of computers and programming
+  #+attr_html: :width 400px:
+  [[../img/test_1.png]]
+  #participants = 21
+  
+  - Test 2: introduction to C/C++ and first literate program
+  #+attr_html: :width 400px:
+  [[../img/test_2.png]]
+  #participants = 21
+  
+  - Test 3: Emacs, literate programming, and variables
+  #+attr_html: :width 400px:
+  [[../img/test_3.png]]
+  #participants = 20
+
+- Summary as boxplot for each test (R code:
+  [[http://tinyurl.com/cpp-tests-sp24][tinyurl.com/cpp-tests-sp24]]):
+  #+attr_html: :width 400px:
+  [[../img/test_1-3_box.png]]
+
+- What do you need to improve your test performance?
+
+- Missed a deadline for a test? Complete it for 50% of the points.
+
+** Assignments feedback
+#+attr_html: :width 400px: 
+[[../img/feedback.png]]
+
+- Overall, I'm impressed with your submissions and performance.
+- Please read and consider my comments for improvement.
+- Let me know early on if you're worried about your progress.
+
+I apply the following *evaluation criteria*:
+- Correctness and completeness of the code and the output.
+- Clarity and organization of code comments and documentation within
+  the Org-mode file.
+
+** =printf= Practice
+
+- Lecture script [[https://github.com/birkenkrahe/cpp/blob/main/org/6_printf.org][on GitHub]]
+- Practice file: [[http://tinyurl.com/6-printf-org][tinyurl.com/6-printf-org]]
+- Practice solution for both =printf= and =scanf= ([[https://github.com/birkenkrahe/cpp/blob/main/pdf/6_printf_scanf_practice_solutions.pdf][PDF]])
+- Practice solution video ([[https://youtu.be/BTfTfoaUqVQ?si=B8hEkLOcTqQ05wgh][YouTube]])
+- If you are done early, start the [[https://lyon.instructure.com/courses/2107/assignments/25268][programming assignment]]!
+
+* DONE Week 7 - Scanning with scanf
+#+attr_html: :width 400px:
+[[../img/week_7.webp]]
+
+- [X] Deadline: Mastering =printf= is [[https://lyon.instructure.com/courses/2107/assignments/25268][due Wednesday]]!
+- [X] Test 4 (=printf= and =scanf= coming end of this week)!
+- [X] Code along lecture & practice: =scanf=
+- [ ] Code along lecture & practice: C operators
+
+** DONE Fast Fun Review: =printf=
+
+1) What's the general format of the =printf= function?
+   #+begin_example C
+     printf ( {String} , {Variables} ) ; // String with format specifiers
+   #+end_example
+
+   #+begin_src C :main yes :includes <stdio.h> :results output :exports both :noweb yes
+     int i = 3;
+     //printf("I've got %d", i, "dogs\n");
+     printf("I've got %d", i); printf(" dogs\n");
+   #+end_src
+
+   #+RESULTS:
+   : I've got 3 dogs
+
+2) What's the general format of the format specifier?
+   #+begin_example C
+     printf ( " %m.pX ", {Variable} );
+   #+end_example
+
+   #+begin_src C
+     printf ("....|....|....|\n");
+     printf ("%-10.5d.\n", 10 ); // integer, 10 fields left, precision 5
+     printf (".%10.5f ", 10. ); // float, 10 fields right, precision 5
+   #+end_src
+
+   #+RESULTS:
+   : ....|....|....|
+   : 00010     .
+   : .  10.00000 
+
+3) How can you display ~10,000~ in scientific format (E-notation)?
+   #+begin_src C :main yes :includes <stdio.h> :results output :exports both :noweb yes
+     printf("10,000 in E-notation: %e\n", 10000); // warning! 0 output
+     printf("10,000 in E-notation: %e\n", 10000.f); // precision issue
+     printf("10,000 in E-notation: %.e\n", 10000.f); // picture perfect!
+   #+end_src
+
+   #+RESULTS:
+   : 10,000 in E-notation: 0.000000e+00
+   : 10,000 in E-notation: 1.000000e+04
+   : 10,000 in E-notation: 1e+04
+   
+4) What's the specialty of the =%g= format specifier?
+   #+begin_quote
+   - =%g= handles floating-point numbers
+   - =%g= automatically selects =%d= or =%f=
+   - the case affects the symbol used (=%G= leads to ~E)~
+   #+end_quote
+
+   #+begin_src C :main yes :includes <stdio.h> :results output :exports both :noweb yes
+     printf("Integer: %g\n", 1000); // %g needs a floating-point number
+     printf("Integer: %g\n", 1000.); // %g picks integer format
+     printf("Integer: %g\n", 1000000.); // %g picks floating-point format
+   #+end_src   
+
+   #+RESULTS:
+   : Integer: 0
+   : Integer: 1000
+   : Integer: 1e+06
+
+5) How many numbers can you print in one single =printf= statement?
+   #+begin_quote
+   As many as you like.
+   #+end_quote
+
+   #+begin_src C :main yes :includes <stdio.h> :results output :exports both :noweb yes
+     printf("%d\n%f-%.3f\n%g\n%.2e\n%G\n(etc.)\n",
+             100,10.,100.,1000.,1000.,1000000.);
+   #+end_src
+
+   #+RESULTS:
+   : 100
+   : 10.000000-100.000
+   : 1000
+   : 1.00e+03
+   : 1E+06
+   : (etc.)
+
+** DONE Fast Fun Review: =scanf=
+
+1) What is the general format of the =scanf= argument if the input is just numbers?
+   #+begin_example C
+     scanf( "{format specifiers}", {reference variables} );
+   #+end_example
+   #+begin_example
+     scanf("%d%f", &i, &x);  // i is integer, x is floating-point variable
+   #+end_example
+2) What if the input has another form? E.g. a phone number: (870) 307-754
+   #+begin_src bash
+     echo "(870) 307-7254" > input   # create a file called `input`
+     cat input  # checks content of file
+   #+end_src
+
+   #+RESULTS:
+   : (870) 307-7254
+
+   #+begin_src C :cmdline < input
+     int i,j,k;  // declare variables
+     scanf("(%d)%d-%d", &i, &j, &k);  // scan exactly in input format
+     printf("%d/%d/%d\n", i, j, k);   // print in any format you like
+   #+end_src
+
+   #+RESULTS:
+   : 870/307/7254
+3) How can you get input into a code block?
+   #+begin_quote
+   With the header argument `cmdline` and the input file `input`:
+
+   #+begin_src C :cmdline < input
+   #+end_quote
+4) How can you create an input file with numbers from a code block?
+   #+begin_quote
+   To insert numbers into a file ~input~, enter in a =bash= block:
+
+   #+begin_src bash
+     =echo= "1 2 3" > ~input~  # redirect intput into file `input`
+   #+end_src 
+   #+end_quote
+5) What do these commands mean: ~ls -l~ and ~cat~ and where do they
+   come from?
+   #+begin_quote
+   They are Linux shell commands that manipulate the file system:
+   - ~ls -l~ prints a long listing of all files in the current directory
+   - ~echo~ prints anything that follows to the screen
+   - ~echo [stuff] > file~ writes `[stuff]` to ~file~
+   #+end_quote
+6) How can you open a =bash= shell inside Emacs?
+   #+begin_quote
+   With ~M-x eshell~ - the Emacs shell simulates a Linux shell.
+   #+end_quote
+   Alternatively, create a `bash` code block:
+   #+begin_src bash :results output
+     ls -l
+   #+end_src
+
+   #+RESULTS:
+   #+begin_example
+   total 308
+   -rw-rw-r-- 1 marcus marcus 16077 Feb  9 07:12 0_overview.org
+   -rw-rw-r-- 1 marcus marcus  2775 Feb  9 07:12 0_overview_practice.org
+   -rw-rw-r-- 1 marcus marcus 22333 Feb  9 07:12 1_introduction.org
+   -rw-rw-r-- 1 marcus marcus  1306 Feb  9 07:12 1_introduction_practice_errors.org
+   -rw-rw-r-- 1 marcus marcus  4111 Feb  9 07:12 1_introduction_practice.org
+   -rw-rw-r-- 1 marcus marcus 24084 Feb  9 07:12 2_install.org
+   -rw-rw-r-- 1 marcus marcus 12007 Feb  9 07:12 3_hello.org
+   -rw-rw-r-- 1 marcus marcus  3901 Feb  9 07:12 3_hello_practice.org
+   -rw-rw-r-- 1 marcus marcus  3050 Feb  9 07:12 4_variables.C
+   -rw-rw-r-- 1 marcus marcus  5605 Feb  9 07:12 4_variables_codealong.org
+   -rw-rw-r-- 1 marcus marcus 18194 Feb  9 07:12 4_variables.org
+   -rw-rw-r-- 1 marcus marcus  5499 Feb  9 07:12 4_variables_practice.org
+   -rw-rw-r-- 1 marcus marcus  6998 Feb 14 10:41 5_constants_codealong.org
+   -rw-rw-r-- 1 marcus marcus 22309 Feb 13 22:44 5_constants.org
+   -rw-rw-r-- 1 marcus marcus  6016 Feb 16 09:33 5_constants_practice.org
+   -rw-rw-r-- 1 marcus marcus  4374 Feb 25 16:59 6_printf.org
+   -rw-rw-r-- 1 marcus marcus  2314 Feb 25 11:11 6_printf_practice.org
+   -rw-rw-r-- 1 marcus marcus  8180 Feb 26 13:07 7_scanf.org
+   -rw-rw-r-- 1 marcus marcus  4525 Feb 28 08:17 7_scanf_practice.org
+   drwxrwxr-x 2 marcus marcus  4096 Feb 22 22:52 assignments
+   -rw-rw-r-- 1 marcus marcus     1 Feb 27 22:54 empty
+   -rw-rw-r-- 1 marcus marcus  3689 Feb  9 07:12 helloEmacs.org
+   -rw-rw-r-- 1 marcus marcus    15 Feb 28 09:04 input
+   -rw-rw-r-- 1 marcus marcus    17 Feb 25 23:37 input2
+   -rwxrwxr-x 1 marcus marcus 16056 Feb 26 13:04 io
+   -rw-rw-r-- 1 marcus marcus   158 Feb 26 09:45 io.c
+   -rw-rw-r-- 1 marcus marcus    18 Feb 25 23:23 io_scanf_input
+   -rw-rw-r-- 1 marcus marcus 23393 Feb 28 09:08 notebook.org
+   -rw-rw-r-- 1 marcus marcus   547 Feb  9 15:18 officehours.org
+   -rwxrwxr-x 1 marcus marcus 16056 Feb 26 09:47 scanf
+   -rw-rw-r-- 1 marcus marcus  8695 Feb  9 07:12 syllabus.org
+   -rw-rw-r-- 1 marcus marcus  2847 Feb 20 21:42 tests.org
+   #+end_example
+
+** TODO How does =scanf= work?
+
+1) If the format string for =scanf= is ="%d/%d"=, what input is expected?
+   #+begin_quote
+   - Two variable references, ~&i~ and ~&j~.
+   - Input in the format ~i/j~.
+   #+end_quote
+
+2) If the format string for =scanf= is ="%d/%d"=, which of these two input
+   versions works and why: ~•5•/•96~ and ~•5/•96~ ? 
+   #+begin_src bash :results silent
+     echo " 5 / 96 " > input1   # put string into file input1
+     echo " 5/ 96 "  > input2   # put string into file input2
+   #+end_src
+
+   #+begin_src C :cmdline <input1
+     int i=10, j=20;                // declare
+
+     scanf("%d/%d", &i, &j);        // scan - overwrite i, j
+
+     printf("Input: %d/%d\n",i,j);  // print
+   #+end_src
+
+   #+RESULTS:
+   : Input: 5/20
+   
+   #+begin_src C :cmdline <input2
+     int i=10, j=20;                // declare
+
+     scanf("%d/%d", &i, &j);        // scan - overwrite i, j
+
+     printf("Input: %d/%d\n",i,j);  // print
+   #+end_src
+
+   #+RESULTS:
+   : Input: 5/96
+
+   #+begin_quote
+   ~•5•/•96~ - =scanf= reads ~5~ and expects ~/~ immediately but it gets a
+   white space instead. It aborts, and never overwrites ~j~.
+
+   ~•5/•96~ - =scanf= reads ~5~ and ~/~ then ~96~ as expected (any number of
+   whitespaces after the ~/~ are ignored, and finishes.
+   #+end_quote
+
+
+* Week 8 - C operators
+#+attr_html: :width 400px:
+[[../img/week_8.webp]]
+
+- [X] Test 4 available / assignments / grading
+- [X] Review: =scanf= (bonus exercise in class)
+- [ ] Code along lecture & practice: C operators
+
+** DONE Test 4 available (deadline Tuesday!)/assignments/grading
+
+/[This was an announcement on [[https://lyon.instructure.com/courses/2107/discussion_topics/10013][Canvas]] and in the [[https://chat.google.com/room/AAAAIk8SqZE/WnkvTa3IkD0/WnkvTa3IkD0?cls=10][chat]]]/
+
+- There's a new [[https://lyon.instructure.com/courses/2107/assignments/22433][test available]] for you to complete by Tuesday 5th
+  March. You've got 45 minutes for 15 questions, which should be
+  plenty: take your time with it! I'll open the correct answers after
+  the deadline.
+- I have extended the deadline for the [[https://lyon.instructure.com/courses/2107/assignments/25363][`Mastering scanf]]` programming
+  assignment to Friday, 8th March. See my remarks on submission below.
+- The upload of the in-class [[https://lyon.instructure.com/courses/2107/assignments/25543][scanf practice file]] is also due Friday
+  8th March. There are new videos available in the course [[https://www.youtube.com/playlist?list=PLwgb17bzeNyg7P7LCIpKxBun95Eb_PK4O][playlist]] on
+  YouTube.
+- Your grade does currently not reflect the bonuses. To do this will
+  require some Canvas adjustments behind the scenes. I will do that on
+  Wednesday by 12 pm.
+- Quite a few of you got messages from me (check them!) to submit
+  corrected files for full or for half points. Do it!
+
+Org-mode Submissions: I wasn't too impressed with what most of you
+submitted for the `[[https://lyon.instructure.com/courses/2107/assignments/25268][Mastering printf]]` assignment. Please check out my
+sample solution file to see how it should've looked like: you can look
+at the GitHub [[https://github.com/birkenkrahe/cpp/blob/main/org/assignments/mastering_printf_solution.org][Markdown version]], the [[https://github.com/birkenkrahe/cpp/blob/main/pdf/Mastering%20printf%20in%20C%20-%20Sample%20Solution.pdf][PDF version]], or the [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/org/assignments/mastering_printf_solution.org][Emacs Org-mode
+version]] (with visible metadata). You can also look at any of the
+practice files to see how it's done.
+
+Here's the rub: coding as such is simple, these programs are almost
+trivial. They're only a challenge to you (and to the AI) if you submit
+yourself to the discipline of literate programming. This means taking
+documentation, planning and reflection seriously and using Org-mode as
+an interactive notebook. While in the world of Python and R everyone
+does that, it's rare in the world of C and C++ (though this is where
+it was born - the first literate program was an [[http://www.literateprogramming.com/adventure.pdf][adventure game]] written
+in C).
+
+** DONE A little practical review of =scanf=
+
+1) Open Emacs
+
+2) Create a new file ~scanf_review.org~
+
+3) Add metadata at the top of your file:
+   #+begin_example
+   #+PROPERTY: header-args:C :tangle scanf.c :main yes :includes <stdio.h>
+   #+end_example
+
+4) Refresh local setup: run ~#+PROPERTY~ line with ~C-c C-c~
+
+5) Create C code block with ~<s~
+
+6) In the block, write the following code:
+   1. ask to input an integer with =puts=
+   2. scan an integer value ~i~
+   3. print the scanned value
+
+7) Tangle the code block to a source code file ~scanf.c~ with ~C-c C-v t~
+
+8) Open an Emacs shell with ~M-x eshell~
+
+9) Compile ~scanf.c~ into an executable file ~scanf~
+
+10) Run ~scanf~ with the input ~100~.
+
+#+begin_quote
+You can upload a screenshot of your ~scanf_review.org~ and ~*eshell*~
+buffers including the compilation, the execution and the result to
+Canvas for bonus points.
+
+- The result should look [[http://tinyurl.com/scanf-review][like this]] (screenshot).
+- [[https://youtu.be/hGwIz5symtg][Here is a (silent) video]] showing the whole exercise.
+#+end_quote    
+   
+** DONE Review of test 4 - and an appeal to reason
+#+attr_html: :width 700px:
+[[../img/test_4.png]]
+
+/Figure: Canvas report for test 4 (Mar 5, 11:30 pm)/
+
+- You're still not using the available time: *45 min for 15* questions!
+- Improve your mastery of C by *repeating* the tests until you have 100%.
+- If your test scores could have been better, write the *final exam*.
+- All final exam questions are *known* to you from the tests!
+
+Let's go through the test questions!
+
+Demo for one of the questions:
+#+begin_src C
+  printf("\"Hello there\" \n");
+  printf("Hello there\    \n");
+  printf("\\Hello there\\ \n");
+   printf("Hello there    \n");
+     printf("\"");
+#+end_src
+
+#+RESULTS:
+: "Hello there" 
+: Hello there    
+: \Hello there\ 
+: Hello there    
+: "
+
+** DONE Remedial logic
+*** What is an argument?
+
+Let's watch Monty Python's "[[https://youtu.be/KwsGuZg9EP4?si=uTfoSjsx-YO9E149][Argument Clinic]]" for an example of what's
+an argument and what's not.
+
+- So what's an argument?
+  #+begin_quote
+  An argument is a sequence of *statements* aimed at demonstrating the
+  *truth* of an *assertion*.
+  #+end_quote
+- Example:
+  #+begin_quote
+  "IF the bell rings, OR the flag drops, THEN the race is over."
+  #+end_quote
+  #+begin_example
+           P          OR         Q       =>        R
+  #+end_example
+  #+begin_src C
+    int P = 0; // 1: bell has rung, 0: bell has not rung
+    int Q = 0; // 0: flag has dropped, 0: flag has not dropped
+    if (P || Q) {  // check condition P OR Q
+      printf("The race is over! (R = %d)\n", P||Q);
+     } else {
+      printf("The race is not over! (R = %d)\n", P||Q);
+     }
+  #+end_src
+
+  #+RESULTS:
+  : The race is not over! (R = 0)
+
+- Therefore:
+  #+begin_quote
+  "IF the race is NOT over, THEN the bell has NOT rung, and the flag has NOT dropped.
+  #+end_quote
+#+begin_example
+              NOT R          =>         NOT P           AND           NOT Q
+#+end_example
+- Mathematical notation:
+  $ P \vee Q \Rightarrow R$ and  $\not R \Rightarrow \not P \land \not Q $
+- Another example
+  #+attr_html: :width 400px:
+  [[../img/argument2.png]]
+
+*** What is a statement?
+- Definition
+  #+begin_quote
+  A statement (or proposition) is a sentence that is true or false but
+  not both.
+  #+end_quote
+- Examples: statement or not?
+  #+begin_quote
+  x + 2 = 4
+  #+end_quote
+
+
+  #+begin_quote
+  2 + 2 = 4
+  #+end_quote
+  #+begin_quote
+  "I feel blue."
+  #+end_quote
+  #+begin_quote
+  "It is raining right now."
+  #+end_quote
+
+*** Coming bonus assignments: prove De Morgan's Laws in C
+#+attr_html: :width 300px:
+[[../img/demorgan1.png]]
+#+attr_html: :width 300px:
+[[../img/demorgan2.png]]
+
+** DONE Review: C operators
+
+1) "You're the man": heuristic or algorithm or neither?
+   #+begin_quote
+   Neither - statement that could be part of an algorithm but only
+   after quantifying "the man".
+   #+end_quote
+2) "Type twice CTRL + c": heuristic or algorithm or neither?
+   #+begin_quote
+   Algorithm - input instruction that a machine could carry out.
+   #+end_quote
+3) "To print a number, use the =print= function"
+   #+begin_quote
+   Heuristic - instruction that requires additional information
+   (e.g. which language?)
+   #+end_quote
+4) Useful tools when designing an algorithm?
+   #+begin_quote
+   - Pseudocode (algorithm without syntax, includes input and output)
+   - Visual modeling with diagrams (UML, BPMN, flow chart diagram)
+   #+end_quote
+5) Can you name at least one operator in each category?
+   1) Arithmetic
+   2) Conditional (Relational/Equality)
+   3) Logical
+   4) Assignment
+   5) Increment/decrement
+   #+begin_quote
+   1) Arithmetic: =1+1=
+   2) Conditional: =a==b=
+   3) Logical: =a && b=
+   4) Assignment: =i = 1=
+   5) Increment/decrement: =++i=
+   #+end_quote
+
+
+** Practice C operators: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
+
+* Week 9 - Arrays / Functions
+
+s** Practice C operators: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
+
+** Arrays
+
+** Functions
+
+* Week 10 - Pointers
+* Week 11 - Pointers and arrays
+* Week 12 - Strings
+* Week 13 - The preprocessor
+* Week 14 - Structs, Unions and Enum
+* Week 15 - Advanced Pointers
+* Week 16 - From C to C++
