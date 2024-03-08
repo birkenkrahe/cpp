@@ -70,7 +70,7 @@
 - The value of an evaluated conditional operator is *Boolean*
   (logical) - e.g. ~2==2~ evaluates as ~TRUE~ or ~1~.
 
-* NEXT Operators in other languages
+* Operators in other languages
 #+attr_latex: :width 400px
 #+caption: Photo: Jack Delano, Sawmill (1939). Source: Library of Congress
 [[../img/8_pipeline.jpg]]
@@ -81,17 +81,24 @@
 
   #+begin_src R :results output
   ## pipe data set into function
-  mtcars |> head()  ## same as head(mtcars)
+  mtcars |> head(n=2)  ## same as head(mtcars)
   #+end_src
+
+  #+RESULTS:
+  :               mpg cyl disp  hp drat    wt  qsec vs am gear carb
+  : Mazda RX4      21   6  160 110  3.9 2.620 16.46  0  1    4    4
+  : Mazda RX4 Wag  21   6  160 110  3.9 2.875 17.02  0  1    4    4
 
 - You already met the ~>~ and ~>>~ operators of the ~bash~ shell language
   that redirects standard output to a file:
 
   #+begin_src bash
-    ## create empty file called "empty"
-    > empty
-    ls -l empty
+    > empty  # create empty file called "empty"
+    ls -l empty  # shows the result
   #+end_src
+
+  #+RESULTS:
+  : -rw-rw-r-- 1 marcus marcus 0 Mar  8 09:04 empty
 
 * Boolean algebra
 
@@ -178,6 +185,10 @@
     printf("i is %d\n", i);  // prints "i is 2"
   #+end_src
 
+  #+RESULTS: prefix
+  : i is 2
+  : i is 2
+
 - The /postfix/ operator ~++j~ also means ~j = j + 1~ but here, the value of
   ~j~ is fetched, and then incremented.
 
@@ -187,6 +198,10 @@
     printf("j is %d\n", j++);  // prints "j is 1"
     printf("j is %d\n", j);  // prints "j is 2"
   #+end_src
+
+  #+RESULTS: postfix
+  : j is 1
+  : j is 2
 
 - Here is another illustration with an assignment of post and prefix
   increment operators:
@@ -255,6 +270,9 @@
     printf("i was 10 and is now %d = 10 %% 5\n", i);
   #+end_src
 
+  #+RESULTS: %=
+  : i was 10 and is now 0 = 10 % 5
+
 * Booleans in C
 
 - C evaluates all non-zero values as ~TRUE~ (~1~), and all zero values as
@@ -265,8 +283,12 @@
     if (3) {
       puts("3 is TRUE"); // non-zero expression
      }
-    if (!!0) puts("0 is FALSE"); // !0 is literally non-zero
+    if (!0) puts("0 is FALSE"); // !0 is literally non-zero
   #+end_src
+
+  #+RESULTS: boolean
+  : 3 is TRUE
+  : 0 is FALSE
 
 - The Boolean operators AND, OR and NOT are represented in C by
   the logical operators ~&&~, ~||~ and ~!~, respectively
@@ -299,6 +321,10 @@
     printf("!(%.1e) is %d because %.1e is non-zero!\n", j, !j, j);
   #+end_src
 
+  #+RESULTS: negation
+  : !100 is 0 because 100 is non-zero!
+  : !(1.0e-15) is 0 because 1.0e-15 is non-zero!
+
 * && operator (logical AND)
 
 - Evaluates a Boolean expression from left to right
@@ -313,6 +339,10 @@
      else
        printf("The expression is FALSE.\n");
   #+end_src
+
+  #+RESULTS: &&_op_true
+  : The expression is FALSE.
+
 - Example: guess the outcome first
   #+name: &&_op_false
   #+begin_src C :exports both
@@ -322,6 +352,9 @@
        printf
          ("The expression is FALSE.\n");
   #+end_src
+
+  #+RESULTS: &&_op_false
+  : The expression is TRUE.
 
 * || operator (logical OR)
 
@@ -339,6 +372,10 @@
      else
        printf("The expression is FALSE.\n");
   #+end_src
+
+  #+RESULTS: ||_op_true
+  : The expression is TRUE.
+
 - Example: guess the outcome first
   #+name: ||_op_false
   #+begin_src C :exports both
@@ -348,6 +385,9 @@
        printf("The expression is FALSE.\n");
   #+end_src
 
+  #+RESULTS: ||_op_false
+  : The expression is FALSE.
+
 * Proving Boolean equivalence with code
 
 - Problem: show that ~p XOR q~ and ~(p AND NOT q) OR (NOT p AND q)~ are
@@ -356,7 +396,7 @@
 - Pseudocode:
   #+begin_example
   ALGORITHM: compute the expressions:
-             A. (p XOR q a)
+             A. (p XOR q)
              B. ((p AND NOT q) OR (NOT p AND q))
   Input: all truth values of p and q (stored in a file)
          |p0=0|q0=0|
@@ -385,11 +425,16 @@
     cat ../data/demorgan
   #+end_src
 
+  #+RESULTS:
+  | 0 | 0 |
+  | 0 | 1 |
+  | 1 | 0 |
+  | 1 | 1 |
+
 - C code (without loops or arrays) 
   #+begin_src C :cmdline < ../data/demorgan :main yes :includes <stdio.h> :results output :exports both :noweb yes
     // Declare values to Boolean variables
     int p0,p1,p2,p3,q0,q1,q2,q3;
-    int r0,r1,r2,r3;
 
     // Read in values from input file
     scanf("%d%d%d%d%d%d%d%d",&p0,&q0,&p1,&q1,&p2,&q2,&p3,&q3);
@@ -418,7 +463,6 @@
   : 0 1 1 0 
   : .........Q.E.D.
 
-  
 * Checking for upper and lower case
 
 - Characters are represented by ASCII[fn:4] character sets
@@ -428,26 +472,33 @@
 
 - Let's check that.
   #+name: ascii_input
-  #+begin_src bash :results silent
-    echo "a A" > ./src/ascii
-    cat ./src/ascii
+  #+begin_src bash :results output
+    echo "a A" > ascii
+    cat ascii
   #+end_src
+
+  #+RESULTS: ascii_input
+  : a A
 
   In [[ascii]], two characters are scanned and then printed as characters
   and as integers:
   #+name: ascii
-  #+begin_src C :cmdline < ./src/ascii :results output :export both
+  #+begin_src C :cmdline < ascii :results output :export both
     char c1, c2;
     scanf("%c %c", &c1, &c2);
     printf("The ASCII value of %c is %d\n", c1, c1);
     printf("The ASCII value of %c is %d\n", c2, c2);
   #+end_src
 
+  #+RESULTS: ascii
+  : The ASCII value of a is 97
+  : The ASCII value of A is 65
+
 - User-friendly programs should use compound conditions to check for
   both lower and upper case letters:
   #+name: ascii_both
   #+begin_example C
-  if (response == 'A' || response == 'a')
+  if (response == 'A' || response == 'a') // accept if either a or A is response
   #+end_example
 
 * Checking for a range of values
@@ -460,15 +511,18 @@
 - We first create an input file ~num~ with a number in it.
 
   #+name: valid_input
-  #+begin_src bash :results silent
-    echo 5 > ./src/num
-    cat ./src/num
+  #+begin_src bash :results output
+    echo 11 > num
+    cat num
   #+end_src
+
+  #+RESULTS: valid_input
+  : 11
 
 - What does the code in [[validate]] do? Will it run? What will the
   output be for our choice of input?
   #+name: validate
-  #+begin_src C :cmdline < ./src/num :exports both
+  #+begin_src C :cmdline < num :exports both
 
     int response = 0; // declare and initialize integer
 
@@ -481,6 +535,9 @@
       puts("Number in range.");
      }
   #+end_src
+
+  #+RESULTS: validate
+  : Number not in range.
 
 - How can you translate a range like ~![1,10]~ into a conditional
   expression? It means that we want to test if a number is outside of
