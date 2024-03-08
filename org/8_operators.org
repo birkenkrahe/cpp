@@ -79,30 +79,19 @@
   example, in the language R, the ~|>~ operator ("pipe") passes a data
   set to a function[fn:1].
 
-  #+begin_example R
+  #+begin_src R :results output
   ## pipe data set into function
   mtcars |> head()  ## same as head(mtcars)
-  #+end_example
-
-  Output:
-  #+begin_example
-             mpg cyl disp  hp drat    wt  qsec vs am gear carb
-Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
-
-  #+end_example
+  #+end_src
 
 - You already met the ~>~ and ~>>~ operators of the ~bash~ shell language
   that redirects standard output to a file:
 
-  #+begin_example bash
+  #+begin_src bash
     ## create empty file called "empty"
     > empty
-  #+end_example
+    ls -l empty
+  #+end_src
 
 * Boolean algebra
 
@@ -143,7 +132,7 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
 - Using the three basic operators, other operators can be built. In
   electronics, and modeling, the "exclusive OR" operator or "XOR",
-  is e.g. equivalent to ~(p AND NOT q) OR (NOT p AND q)~
+  is e.g. equivalent to ~(p AND NOT q) OR (NOT p AND q)~.
 
   #+name: XOR
   | p     | q     | p XOR q | P = p AND (NOT q) | Q = (NOT p) AND q | P OR Q |
@@ -153,11 +142,15 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
   | FALSE | TRUE  | TRUE    | FALSE             | TRUE              | TRUE   |
   | FALSE | FALSE | FALSE   | FALSE             | FALSE             | FALSE  |
 
-- XOR is the operator that we've used in our BPMN models for
+- XOR is the operator that I've used in BPMN models for
   pseudocode as a gateway operator - only one of its outcomes can be
-  true but never both of them
+  true but never both of them:
+  #+attr_html: :width 700px:
+  [[../img/problem_solving.svg]]
 
-- Algebraic operations are more elegant and insightful than truth
+- Can you show the truth of the equivalence of ~p XOR q~ and ~(p AND NOT q) OR (NOT p AND q)~?
+
+- Algebraic operations are way more elegant and insightful than truth
   tables. Watch "Proving Logical Equivalences without Truth Tables"
   [[logic][(2012)]] as an example.
 
@@ -355,6 +348,77 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
        printf("The expression is FALSE.\n");
   #+end_src
 
+* Proving Boolean equivalence with code
+
+- Problem: show that ~p XOR q~ and ~(p AND NOT q) OR (NOT p AND q)~ are
+  equivalent.
+
+- Pseudocode:
+  #+begin_example
+  ALGORITHM: compute the expressions:
+             A. (p XOR q a)
+             B. ((p AND NOT q) OR (NOT p AND q))
+  Input: all truth values of p and q (stored in a file)
+         |p0=0|q0=0|
+         |p0=0|q0=1|
+         |p0=1|q0=0|
+         |p0=1|q0=1|                           
+  Output: evaluation of A and B
+
+  Begin:
+     // Declare values to Boolean variables
+
+     // Read in values from input file
+
+     // Print A = p XOR q for all values of p and q
+
+     // Print B = (p AND NOT q) OR (NOT p AND q) for all values of p and q
+  End
+  #+end_example
+
+- Create the input file ~../data/demorgan~ (or generate it manually on Windoze):
+  #+begin_src bash
+    echo "0 0" >  ../data/demorgan
+    echo "0 1" >> ../data/demorgan
+    echo "1 0" >> ../data/demorgan
+    echo "1 1" >> ../data/demorgan
+    cat ../data/demorgan
+  #+end_src
+
+- C code (without loops or arrays) 
+  #+begin_src C :cmdline < ../data/demorgan :main yes :includes <stdio.h> :results output :exports both :noweb yes
+    // Declare values to Boolean variables
+    int p0,p1,p2,p3,q0,q1,q2,q3;
+    int r0,r1,r2,r3;
+
+    // Read in values from input file
+    scanf("%d%d%d%d%d%d%d%d",&p0,&q0,&p1,&q1,&p2,&q2,&p3,&q3);
+
+    // Check that input was correctly read
+    printf("%d%d\n%d%d\n%d%d\n%d%d\n",p0,q0,p1,q1,p2,q2,p3,q3);
+
+    // Print A = p XOR q for all values of p and q
+    printf("%d %d %d %d\n",0,1,1,0);
+
+    // Print B = (p AND NOT q) OR (NOT p AND q) for all values of p and q
+    printf("%-2d",(p0 && !q0) || (!p0 && q0));
+    printf("%-2d",(p1 && !q1) || (!p1 && q1));
+    printf("%-2d",(p2 && !q2) || (!p2 && q2));
+    printf("%-2d",(p3 && !q3) || (!p3 && q3));
+
+    printf("\n.........Q.E.D.\n");
+  #+end_src
+
+  #+RESULTS:
+  : 00
+  : 01
+  : 10
+  : 11
+  : 0 1 1 0
+  : 0 1 1 0 
+  : .........Q.E.D.
+
+  
 * Checking for upper and lower case
 
 - Characters are represented by ASCII[fn:4] character sets
