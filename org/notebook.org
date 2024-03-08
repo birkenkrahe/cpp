@@ -838,7 +838,8 @@ an argument and what's not.
    5) Increment/decrement: =++i=
    #+end_quote
 
-** Practice C operators: tinyurl.com/8-operators-org
+
+** Practice C operators: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
 
 * Week 9 - Arrays / Functions
 * Week 10 - Pointers

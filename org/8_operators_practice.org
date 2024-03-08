@@ -23,6 +23,12 @@
 
 1) Complete the ~printf~ statement in each of the following code blocks.
 
+   Example: check if ~i~ is equal ~j~ for ~i=1~ and ~j=0~:
+   #+begin_src C
+     int i=1, j=0; // declare and initialize variables
+     printf("%d\n", i == j);  // check identity with logical operator ==
+   #+end_src
+   
 2) Before you run the code block, guess what the output will be.
 
    - Check if (NOT ~i)~ is smaller than ~j~, for ~i=10~ and ~j=5~.
