@@ -702,8 +702,7 @@ Canvas for bonus points.
 - [[https://youtu.be/hGwIz5symtg][Here is a (silent) video]] showing the whole exercise.
 #+end_quote    
    
-
-** Review of test 4 - and an appeal to reason
+** DONE Review of test 4 - and an appeal to reason
 #+attr_html: :width 700px:
 [[../img/test_4.png]]
 
@@ -716,7 +715,7 @@ Canvas for bonus points.
 
 Let's go through the test questions!
 
-
+Demo for one of the questions:
 #+begin_src C
   printf("\"Hello there\" \n");
   printf("Hello there\    \n");
@@ -732,9 +731,7 @@ Let's go through the test questions!
 : Hello there    
 : "
 
-
-
-** Remedial logic
+** DONE Remedial logic
 *** What is an argument?
 
 Let's watch Monty Python's "[[https://youtu.be/KwsGuZg9EP4?si=uTfoSjsx-YO9E149][Argument Clinic]]" for an example of what's
@@ -805,7 +802,8 @@ an argument and what's not.
 [[../img/demorgan1.png]]
 #+attr_html: :width 300px:
 [[../img/demorgan2.png]]
-** Review: C operators
+
+** DONE Review: C operators
 
 1) "You're the man": heuristic or algorithm or neither?
    #+begin_quote
@@ -839,6 +837,8 @@ an argument and what's not.
    4) Assignment: =i = 1=
    5) Increment/decrement: =++i=
    #+end_quote
+
+** Practice C operators: tinyurl.com/8-operators-org
 
 * Week 9 - Arrays / Functions
 * Week 10 - Pointers
