@@ -433,7 +433,7 @@
 
 - C code (without loops or arrays) 
   #+begin_src C :cmdline < ../data/demorgan :main yes :includes <stdio.h> :results output :exports both :noweb yes
-    // Declare values to Boolean variables
+    // Declare Boolean variables
     int p0,p1,p2,p3,q0,q1,q2,q3;
 
     // Read in values from input file
@@ -463,6 +463,37 @@
   : 0 1 1 0 
   : .........Q.E.D.
 
+- You could also dispense with reading the values (since they're
+  constant) and set the values in the code - this makes it shorter:
+  #+begin_src C :main yes :includes <stdio.h> :results output :exports both
+    // Declare and assign values to Boolean variables
+    int p0=0,q0=0,p1=0,q1=1,p2=1,q2=0,p3=1,q3=1;
+
+    // Check that input was correctly read
+    printf("%d%d\n%d%d\n%d%d\n%d%d\n",p0,q0,p1,q1,p2,q2,p3,q3);
+
+    // Print A = p XOR q for all values of p and q
+    printf("%d %d %d %d\n",0,1,1,0);
+
+    // Print B = (p AND NOT q) OR (NOT p AND q) for all values of p and q
+    printf("%-2d",(p0 && !q0) || (!p0 && q0));
+    printf("%-2d",(p1 && !q1) || (!p1 && q1));
+    printf("%-2d",(p2 && !q2) || (!p2 && q2));
+    printf("%-2d",(p3 && !q3) || (!p3 && q3));
+
+    printf("\n.........Q.E.D.\n");
+  #+end_src
+
+  #+RESULTS:
+  : 00
+  : 01
+  : 10
+  : 11
+  : 0 1 1 0
+  : 0 1 1 0 
+  : .........Q.E.D.
+
+  
 * Checking for upper and lower case
 
 - Characters are represented by ASCII[fn:4] character sets
