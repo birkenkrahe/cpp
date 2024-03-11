@@ -335,7 +335,7 @@ Plan:
 |                     | except after keywords &  |
 |                     | strings across lines     |
 
-* DONE Week 6 - Printing with printf 
+* DONE Week 6 - Printing with printf
 #+attr_html: :width 400px:
 [[../img/week_6.png]]
 
@@ -352,12 +352,12 @@ Plan:
   #+attr_html: :width 400px:
   [[../img/test_1.png]]
   #participants = 21
-  
+
   - Test 2: introduction to C/C++ and first literate program
   #+attr_html: :width 400px:
   [[../img/test_2.png]]
   #participants = 21
-  
+
   - Test 3: Emacs, literate programming, and variables
   #+attr_html: :width 400px:
   [[../img/test_3.png]]
@@ -373,7 +373,7 @@ Plan:
 - Missed a deadline for a test? Complete it for 50% of the points.
 
 ** Assignments feedback
-#+attr_html: :width 400px: 
+#+attr_html: :width 400px:
 [[../img/feedback.png]]
 
 - Overall, I'm impressed with your submissions and performance.
@@ -432,7 +432,7 @@ I apply the following *evaluation criteria*:
    #+RESULTS:
    : ....|....|....|
    : 00010     .
-   : .  10.00000 
+   : .  10.00000
 
 3) How can you display ~10,000~ in scientific format (E-notation)?
    #+begin_src C :main yes :includes <stdio.h> :results output :exports both :noweb yes
@@ -445,7 +445,7 @@ I apply the following *evaluation criteria*:
    : 10,000 in E-notation: 0.000000e+00
    : 10,000 in E-notation: 1.000000e+04
    : 10,000 in E-notation: 1e+04
-   
+
 4) What's the specialty of the =%g= format specifier?
    #+begin_quote
    - =%g= handles floating-point numbers
@@ -457,7 +457,7 @@ I apply the following *evaluation criteria*:
      printf("Integer: %g\n", 1000); // %g needs a floating-point number
      printf("Integer: %g\n", 1000.); // %g picks integer format
      printf("Integer: %g\n", 1000000.); // %g picks floating-point format
-   #+end_src   
+   #+end_src
 
    #+RESULTS:
    : Integer: 0
@@ -471,7 +471,7 @@ I apply the following *evaluation criteria*:
 
    #+begin_src C :main yes :includes <stdio.h> :results output :exports both :noweb yes
      printf("%d\n%f-%.3f\n%g\n%.2e\n%G\n(etc.)\n",
-             100,10.,100.,1000.,1000.,1000000.);
+            100,10.,100.,1000.,1000.,1000000.);
    #+end_src
 
    #+RESULTS:
@@ -520,7 +520,7 @@ I apply the following *evaluation criteria*:
 
    #+begin_src bash
      =echo= "1 2 3" > ~input~  # redirect intput into file `input`
-   #+end_src 
+   #+end_src
    #+end_quote
 5) What do these commands mean: ~ls -l~ and ~cat~ and where do they
    come from?
@@ -585,7 +585,7 @@ I apply the following *evaluation criteria*:
    #+end_quote
 
 2) If the format string for =scanf= is ="%d/%d"=, which of these two input
-   versions works and why: ~•5•/•96~ and ~•5/•96~ ? 
+   versions works and why: ~•5•/•96~ and ~•5/•96~ ?
    #+begin_src bash :results silent
      echo " 5 / 96 " > input1   # put string into file input1
      echo " 5/ 96 "  > input2   # put string into file input2
@@ -601,7 +601,7 @@ I apply the following *evaluation criteria*:
 
    #+RESULTS:
    : Input: 5/20
-   
+
    #+begin_src C :cmdline <input2
      int i=10, j=20;                // declare
 
@@ -699,8 +699,8 @@ Canvas for bonus points.
 
 - The result should look [[http://tinyurl.com/scanf-review][like this]] (screenshot).
 - [[https://youtu.be/hGwIz5symtg][Here is a (silent) video]] showing the whole exercise.
-#+end_quote    
-   
+#+end_quote
+
 ** Review of test 4 - and an appeal to reason
 #+attr_html: :width 700px:
 [[../img/test_4.png]]
@@ -719,15 +719,15 @@ Demo for one of the questions:
   printf("\"Hello there\" \n");
   printf("Hello there\    \n");
   printf("\\Hello there\\ \n");
-   printf("Hello there    \n");
-     printf("\"");
+  printf("Hello there    \n");
+  printf("\"");
 #+end_src
 
 #+RESULTS:
-: "Hello there" 
-: Hello there    
-: \Hello there\ 
-: Hello there    
+: "Hello there"
+: Hello there
+: \Hello there\
+: Hello there
 : "
 
 ** Remedial logic
@@ -786,15 +786,15 @@ an argument and what's not.
   #+end_quote
 
 
-  #+begin_quote
-  2 + 2 = 4
-  #+end_quote
-  #+begin_quote
-  "I feel blue."
-  #+end_quote
-  #+begin_quote
-  "It is raining right now."
-  #+end_quote
+#+begin_quote
+2 + 2 = 4
+#+end_quote
+#+begin_quote
+"I feel blue."
+#+end_quote
+#+begin_quote
+"It is raining right now."
+#+end_quote
 
 *** Coming bonus assignments: prove De Morgan's Laws in C
 #+attr_html: :width 300px:
@@ -842,33 +842,68 @@ an argument and what's not.
 #+attr_html: :width 400px:
 [[../img/collaboration.png]]
 
-- ~#+HONOR:~ is not a thing - metadata aren't arbitrary: Write ~(pledged)~
-  next to your name in the ~#+AUTHOR:~ line
+*** What are Org-mode metadata?
 
-- *No documentation* in a literate program is not a thing: if you use
-  advanced concepts like arrays[fn:1], decaying pointers[fn:2], or
-  pointer arithmetic[fn:3]. I need to be reassured that you know what
-  you're doing (and not just the AI).
+Org-mode metadata like: =#AUTHOR:= at the top of the file, or
+=#+BEGIN_SRC C= at the start of a code block, or =#+PROPERTY:= are
+interpreted by Emacs. Therefore: 
 
-- You can only use advanced concepts like these if you can explain
-  them to me!
+- ~#+HONOR:~ is not a thing - metadata aren't arbitrary:
 
-- Documentation is not source code (// ???)
+- Do write ~(pledged)~ next to your name in the ~#+AUTHOR:~ line
 
-- Do append your solutions as a *new section* ~* Solution~
+*** What's a literate program?
 
-- You can *resubmit* after fixing your errors for full points. I will
-  not *remind* you individually anymore - just resubmit!
+It's an Org-mode file that reads like a notebook, with: metadata,
+process documentation, code, output, references etc.
 
-- If you're clueless how to solve a problem, *ask for hints*! To begin
-  with: There are *examples* for all assignments in the practice files.
+It's not an arbitrary, unnecessarily complicated file format for
+(uncommented) C source files.
 
-- Working on assignments together is fine but make sure that you can
-  solve these simple problems on your own, too. Example phone
-  conversion: you can arrive at one solution, but then run and test
-  your personal submission with different phone numbers.
+Literate programs tangle into (compilable) source code and (printable)
+documentation.
 
-- You'll get my sample solutions after all is done.
+*No documentation* in a literate program is not a thing: if you use
+advanced concepts like arrays[fn:1], decaying pointers[fn:2], or
+pointer arithmetic[fn:3]. I need to be reassured that you know what
+you're doing (and not just the AI). You can only use advanced concepts
+like these if you can explain them to me!
+
+*** What is ~//~?
+
+Documentation is not source code: ~//~ is for inline comments in C or
+C++ source code, and has no meaning in normal text.
+
+*** What should you submit?
+
+Do append your solutions as a *new section* ~* Solution~ to the problem
+file. If you don't have a problem file, create one and put a short
+version of the problem in there - for your own reference!
+
+*** Once you've got 0 points on an assignment, is all lost?
+
+No! You can *resubmit* after fixing your errors for full points. I will
+not *remind* you individually anymore - just resubmit! If you did not
+even submit in the first place, you can resubmit for 50% of the points.
+
+*** If you have no idea what to do - should you give up?
+
+If you're clueless how to solve a problem, *ask for hints*! To begin
+with: There are *examples* for all assignments in the practice files.
+
+*** Can you work on assignments together?
+
+Working on assignments together is fine but make sure that you can
+solve these simple problems on your own, too. Example phone
+conversion: you can arrive at one solution, but then run and test your
+personal submission with different phone numbers.
+
+*** How will you know what the correct solution is?
+
+You'll get my sample solutions after all is done. In fact, for past
+problems, the solutions for past problems are already in GitHub (as
+PDF files, so you still have to get the literate programs right).
+
 
 ** Review & practice C operators: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
 
@@ -911,11 +946,11 @@ that many elements of the type the pointer points to. Example: ~phone+2~
   int phone[3]={870,424,5678};
 
   // pointer values = addresses of phone[0] and phone[1]
-  printf("%p %p\n", phone, phone + 1 ); 
+  printf("%p %p\n", phone, phone + 1 );
   // dereferenced values of phone[0]1 and phone[1]
   printf("%d %d\n", *phone, *(phone + 1));
   // addresses = references to phone[0] and phone[1]
-  printf("%p %p\n", &phone[0], &phone[1]);  
+  printf("%p %p\n", &phone[0], &phone[1]);
 #+end_src
 
 #+RESULTS:
