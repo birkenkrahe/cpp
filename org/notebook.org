@@ -905,9 +905,45 @@ problems, the solutions for past problems are already in GitHub (as
 PDF files, so you still have to get the literate programs right).
 
 
-** Review & practice C operators: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
+** Review C operators
 
+1) What are the basic Boolean operators in C?
+   #+begin_example
+    NOT  AND  OR 
+    \not     \land    \lor   (math)
+    !     &&   ||  (C)
+   #+end_example
+2) What's a postfix operator in C?
+   #+begin_quote
+   Example: i-- stands for i = i - 1
+   #+end_quote
+3) What's the difference between =++k= and =k++= if k = 2?
+   #+begin_src C
+     int k = 2; 
+     printf("%d\n",++k); // k = k + 1 then print k
+     k = 2;
+     printf("%d\n",k++); // print k then k = k + 1
+   #+end_src
+4) In which order are =++k=, =k--= and =k+== executed?
+   #+begin_src C
+     int k = 2, l = 2, m = 2;
+     printf("%d\n", ++k); // add 1 from left then print result
+     printf("%d\n", l--); // evaluate from left (don't print result)
+     printf("%d\n", m+=2); // add two from right: m = m + 2 then print
+   #+end_src
+5) What is =!(!1)= and how could you show that?
+   #+begin_src C
+     if(!(!1)) {
+       puts("!(!1) is TRUE");
+      } else {
+       puts("!(!1) is FALSE");
+      }
+   #+end_src
+   
+Now, let's practice: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]] - finish at home.
 
+** New bonus exercise: prove De Morgan's laws using C ([[https://lyon.instructure.com/courses/2107/assignments/26177][Canvas]])
+** Test 4 (C operators) will be available later this week.
 
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays

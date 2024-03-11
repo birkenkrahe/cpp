@@ -469,9 +469,6 @@
     // Declare and assign values to Boolean variables
     int p0=0,q0=0,p1=0,q1=1,p2=1,q2=0,p3=1,q3=1;
 
-    // Check that input was correctly read
-    printf("%d%d\n%d%d\n%d%d\n%d%d\n",p0,q0,p1,q1,p2,q2,p3,q3);
-
     // Print A = p XOR q for all values of p and q
     printf("%d %d %d %d\n",0,1,1,0);
 
@@ -485,10 +482,6 @@
   #+end_src
 
   #+RESULTS:
-  : 00
-  : 01
-  : 10
-  : 11
   : 0 1 1 0
   : 0 1 1 0 
   : .........Q.E.D.
