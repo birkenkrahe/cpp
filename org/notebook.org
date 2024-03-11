@@ -922,7 +922,6 @@ You'll get my sample solutions after all is done. In fact, for past
 problems, the solutions for past problems are already in GitHub (as
 PDF files, so you still have to get the literate programs right).
 
-
 ** Review C operators
 
 1) What are the basic Boolean operators in C?
@@ -933,7 +932,7 @@ PDF files, so you still have to get the literate programs right).
    #+end_example
 2) What's a postfix operator in C?
    #+begin_quote
-   Example: i-- stands for i = i - 1
+   Example: =i--= stands for i = i - 1
    #+end_quote
 3) What's the difference between =++k= and =k++= if k = 2?
    #+begin_src C
@@ -942,6 +941,10 @@ PDF files, so you still have to get the literate programs right).
      k = 2;
      printf("%d\n",k++); // print k then k = k + 1
    #+end_src
+
+   #+RESULTS:
+   : 3
+   : 2
 4) In which order are =++k=, =k--= and =k+== executed?
    #+begin_src C
      int k = 2, l = 2, m = 2;
@@ -949,6 +952,11 @@ PDF files, so you still have to get the literate programs right).
      printf("%d\n", l--); // evaluate from left (don't print result)
      printf("%d\n", m+=2); // add two from right: m = m + 2 then print
    #+end_src
+
+   #+RESULTS:
+   : 3
+   : 2
+   : 4
 5) What is =!(!1)=?
    #+begin_src C
      if(!(!1)) {
@@ -957,6 +965,9 @@ PDF files, so you still have to get the literate programs right).
        puts("!(!1) is FALSE");
       }
    #+end_src
+
+   #+RESULTS:
+   : !(!1) is TRUE
 6) How can you check if ~NOT i~ is equal to ~j~ for ~i=10~ and ~j=0~?
    #+begin_src C
      int i=10, j=0;
@@ -966,9 +977,12 @@ PDF files, so you still have to get the literate programs right).
      // j = 0 = FALSE => i == j <=> FALSE == FALSE => TRUE = 1
    #+end_src
 
-   
+   #+RESULTS:
+   : 1
+
 - Let's practice: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
 - Finish at home and submit completed file to [[https://lyon.instructure.com/courses/2107/assignments/26094][Canvas]] (by 3/25)
+
 
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays
@@ -987,6 +1001,9 @@ number or character, e.g. ~int phone[9]~ can hole 10 integers. Example:
   printf("(%d) %d-%d\n",phone[0],phone[1],phone[2]);
 #+end_src
 
+#+RESULTS:
+: (870) 424-5678
+
 [fn:2]In C, an array "decays" to a pointer to its first element.
 E.g. ~phone~ is equivalent to ~&phone[0]~: both represent the address of
 the first element in the ~phone[]~ array:
@@ -994,6 +1011,9 @@ the first element in the ~phone[]~ array:
   int phone[3]={870,424,5678};
   printf("%p references %d\n",&phone[0], *phone);
 #+end_src
+
+#+RESULTS:
+: 0x7ffecb90ec4c references 870
 
 [fn:3]When you perform "pointer arithmetic" you adjust the pointer by
 that many elements of the type the pointer points to. Example: ~phone+2~
@@ -1007,3 +1027,8 @@ that many elements of the type the pointer points to. Example: ~phone+2~
   // addresses = references to phone[0] and phone[1]
   printf("%p %p\n", &phone[0], &phone[1]);
 #+end_src
+
+#+RESULTS:
+: 0x7ffe8741495c 0x7ffe87414960
+: 870 424
+: 0x7ffe8741495c 0x7ffe87414960

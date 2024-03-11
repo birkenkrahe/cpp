@@ -486,7 +486,6 @@
   : 0 1 1 0 
   : .........Q.E.D.
 
-  
 * Checking for upper and lower case
 
 - Characters are represented by ASCII[fn:4] character sets
