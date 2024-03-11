@@ -21,17 +21,19 @@
 
 * TODO Logical operators &&, ||, !
 
-1) Complete the ~printf~ statement in each of the following code blocks.
++ Complete the ~printf~ statement in each of the following code blocks.
 
-   Example: check if ~i~ is equal ~j~ for ~i=1~ and ~j=0~:
-   #+begin_src C
-     int i=1, j=0; // declare and initialize variables
-     printf("%d\n", i == j);  // check identity with logical operator ==
-   #+end_src
+  Example: check if ~i~ is equal ~j~ for ~i=1~ and ~j=0~:
+
+  Solution:
+  #+begin_src C
+    int i=1, j=0; // declare and initialize variables
+    printf("%d\n", i == j);  // check identity with logical operator ==
+  #+end_src
    
-2) Before you run the code block, guess what the output will be.
++ Before you run the code block, guess what the output will be.
 
-   - Check if (NOT ~i)~ is smaller than ~j~, for ~i=10~ and ~j=5~.
+  1) Check if (NOT ~i)~ is smaller than ~j~, for ~i=10~ and ~j=5~.
 
      #+name: logical1
      #+begin_src C :exports both
@@ -41,7 +43,7 @@
 
      #+RESULTS: logical1
 
-   - Check the value of NOT(NOT (i)) + NOT(j), for ~i=2~ and ~j=1~.
+  2) Check the value of NOT(NOT (i)) + NOT(j), for ~i=2~ and ~j=1~.
 
      #+name: logical2
      #+begin_src C :exports both
@@ -49,7 +51,7 @@
        printf("%d\n", ??? );
      #+end_src
 
-   - Using the previous code block [[logical2]], check if the following
+  3) Using the previous code block [[logical2]], check if the following
      assertion holds: NOT(x + y) = NOT(x) + NOT(y).
 
      #+name: logical21
@@ -58,7 +60,7 @@
        printf("%d\n", ??? );
      #+end_src
 
-   - Compute ~i~ AND ~j~ OR ~k~, for ~i=5~, ~j=0~, ~k=-5~.
+  4) Compute ~i~ AND ~j~ OR ~k~, for ~i=5~, ~j=0~, ~k=-5~.
 
      #+name: logical3
      #+begin_src C :exports both
@@ -66,7 +68,7 @@
        printf("%d\n",  ??? ); 
      #+end_src
 
-   - Compute ~i < j~ OR  ~k~, for ~i=1~, ~j=2~, ~k=3~.
+  5) Compute ~i < j~ OR  ~k~, for ~i=1~, ~j=2~, ~k=3~.
 
      #+name: logical4
      #+begin_src C :exports both
