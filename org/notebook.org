@@ -621,16 +621,15 @@ I apply the following *evaluation criteria*:
    whitespaces after the ~/~ are ignored, and finishes.
    #+end_quote
 
-
-* Week 8 - C operators
+* DONE Week 8 - C operators
 #+attr_html: :width 400px:
 [[../img/week_8.webp]]
 
 - [X] Test 4 available / assignments / grading
 - [X] Review: =scanf= (bonus exercise in class)
-- [ ] Code along lecture & practice: C operators
+- [X] Code along lecture: C operators
 
-** DONE Test 4 available (deadline Tuesday!)/assignments/grading
+** Test 4 available (deadline Tuesday!)/assignments/grading
 
 /[This was an announcement on [[https://lyon.instructure.com/courses/2107/discussion_topics/10013][Canvas]] and in the [[https://chat.google.com/room/AAAAIk8SqZE/WnkvTa3IkD0/WnkvTa3IkD0?cls=10][chat]]]/
 
@@ -665,7 +664,7 @@ does that, it's rare in the world of C and C++ (though this is where
 it was born - the first literate program was an [[http://www.literateprogramming.com/adventure.pdf][adventure game]] written
 in C).
 
-** DONE A little practical review of =scanf=
+** A little practical review of =scanf=
 
 1) Open Emacs
 
@@ -702,7 +701,7 @@ Canvas for bonus points.
 - [[https://youtu.be/hGwIz5symtg][Here is a (silent) video]] showing the whole exercise.
 #+end_quote    
    
-** DONE Review of test 4 - and an appeal to reason
+** Review of test 4 - and an appeal to reason
 #+attr_html: :width 700px:
 [[../img/test_4.png]]
 
@@ -731,7 +730,7 @@ Demo for one of the questions:
 : Hello there    
 : "
 
-** DONE Remedial logic
+** Remedial logic
 *** What is an argument?
 
 Let's watch Monty Python's "[[https://youtu.be/KwsGuZg9EP4?si=uTfoSjsx-YO9E149][Argument Clinic]]" for an example of what's
@@ -803,7 +802,7 @@ an argument and what's not.
 #+attr_html: :width 300px:
 [[../img/demorgan2.png]]
 
-** DONE Review: C operators
+** Review: C operators
 
 1) "You're the man": heuristic or algorithm or neither?
    #+begin_quote
@@ -839,15 +838,41 @@ an argument and what's not.
    #+end_quote
 
 
-** Practice C operators: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
-
 * Week 9 - Arrays / Functions
+#+attr_html: :width 400px:
+[[../img/collaboration.png]]
 
-** Practice C operators: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
+- ~#+HONOR:~ is not a thing - metadata aren't arbitrary: Write ~(pledged)~
+  next to your name in the ~#+AUTHOR:~ line
 
-** Arrays
+- *No documentation* in a literate program is not a thing: if you use
+  advanced concepts like arrays[fn:1], decaying pointers[fn:2], or
+  pointer arithmetic[fn:3]. I need to be reassured that you know what
+  you're doing (and not just the AI).
 
-** Functions
+- You can only use advanced concepts like these if you can explain
+  them to me!
+
+- Documentation is not source code (// ???)
+
+- Do append your solutions as a *new section* ~* Solution~
+
+- You can *resubmit* after fixing your errors for full points. I will
+  not *remind* you individually anymore - just resubmit!
+
+- If you're clueless how to solve a problem, *ask for hints*! To begin
+  with: There are *examples* for all assignments in the practice files.
+
+- Working on assignments together is fine but make sure that you can
+  solve these simple problems on your own, too. Example phone
+  conversion: you can arrive at one solution, but then run and test
+  your personal submission with different phone numbers.
+
+- You'll get my sample solutions after all is done.
+
+** Review & practice C operators: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
+
+
 
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays
@@ -856,3 +881,44 @@ an argument and what's not.
 * Week 14 - Structs, Unions and Enum
 * Week 15 - Advanced Pointers
 * Week 16 - From C to C++
+
+* Footnotes
+
+[fn:1]An "array" is a C data structure that can hold more than one
+number or character, e.g. ~int phone[9]~ can hole 10 integers. Example:
+#+begin_src C
+  int phone[3]={870,424,5678};
+  printf("(%d) %d-%d\n",phone[0],phone[1],phone[2]);
+#+end_src
+
+#+RESULTS:
+: (870) 424-5678
+
+[fn:2]In C, an array "decays" to a pointer to its first element.
+E.g. ~phone~ is equivalent to ~&phone[0]~: both represent the address of
+the first element in the ~phone[]~ array:
+#+begin_src C
+  int phone[3]={870,424,5678};
+  printf("%p references %d\n",&phone[0], *phone);
+#+end_src
+
+#+RESULTS:
+: 0x7ffe52634a2c references 870
+
+[fn:3]When you perform "pointer arithmetic" you adjust the pointer by
+that many elements of the type the pointer points to. Example: ~phone+2~
+#+begin_src C
+  int phone[3]={870,424,5678};
+
+  // pointer values = addresses of phone[0] and phone[1]
+  printf("%p %p\n", phone, phone + 1 ); 
+  // dereferenced values of phone[0]1 and phone[1]
+  printf("%d %d\n", *phone, *(phone + 1));
+  // addresses = references to phone[0] and phone[1]
+  printf("%p %p\n", &phone[0], &phone[1]);  
+#+end_src
+
+#+RESULTS:
+: 0x7ffcfb00f89c 0x7ffcfb00f8a0
+: 870 424
+: 0x7ffcfb00f89c 0x7ffcfb00f8a0
