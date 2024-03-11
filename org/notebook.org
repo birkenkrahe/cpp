@@ -842,6 +842,18 @@ an argument and what's not.
 #+attr_html: :width 400px:
 [[../img/collaboration.png]]
 
+** New bonus exercise: prove De Morgan's laws using C ([[https://lyon.instructure.com/courses/2107/assignments/26177][Canvas]])
+** Test 4 (C operators) will be available later this week - Tips
+
+- Use the review sessions in this file ([[https://github.com/birkenkrahe/cpp/blob/main/org/notebook.org][notebook.org]])
+- Check out the [[https://github.com/birkenkrahe/cpp/tree/main/org][practice files]] (do you still understand them?)
+- Everything is in [[https://github.com/birkenkrahe/cpp][GitHub]], rendered beautifully for you!
+- If you test code, use the graphical Emacs rather than ~-nw~
+
+** Housekeeping
+
+Alas, most of you need to resubmit your last assignments!
+
 *** What are Org-mode metadata?
 
 Org-mode metadata like: =#AUTHOR:= at the top of the file, or
@@ -861,13 +873,19 @@ It's not an arbitrary, unnecessarily complicated file format for
 (uncommented) C source files.
 
 Literate programs tangle into (compilable) source code and (printable)
-documentation.
+documentation because programs should be for humans not machines.
 
 *No documentation* in a literate program is not a thing: if you use
 advanced concepts like arrays[fn:1], decaying pointers[fn:2], or
 pointer arithmetic[fn:3]. I need to be reassured that you know what
 you're doing (and not just the AI). You can only use advanced concepts
-like these if you can explain them to me!
+like these if you can explain them to me (and in your submission)!
+
+If you forgot (or never knew) what I mean by "documentation", check
+out my video "Your first literate C program with Emacs and Org-mode":
+screenshot from 17'33'':
+#+attr_html: :width 600px:
+[[../img/litprog.png]]
 
 *** What is ~//~?
 
@@ -931,7 +949,7 @@ PDF files, so you still have to get the literate programs right).
      printf("%d\n", l--); // evaluate from left (don't print result)
      printf("%d\n", m+=2); // add two from right: m = m + 2 then print
    #+end_src
-5) What is =!(!1)= and how could you show that?
+5) What is =!(!1)=?
    #+begin_src C
      if(!(!1)) {
        puts("!(!1) is TRUE");
@@ -939,11 +957,18 @@ PDF files, so you still have to get the literate programs right).
        puts("!(!1) is FALSE");
       }
    #+end_src
-   
-Now, let's practice: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]] - finish at home.
+6) How can you check if ~NOT i~ is equal to ~j~ for ~i=10~ and ~j=0~?
+   #+begin_src C
+     int i=10, j=0;
+     printf("%d\n", !i == j); // Check if NOT i is equal to j
 
-** New bonus exercise: prove De Morgan's laws using C ([[https://lyon.instructure.com/courses/2107/assignments/26177][Canvas]])
-** Test 4 (C operators) will be available later this week.
+     // i = 10 = TRUE => !i = !10 = !TRUE = FALSE
+     // j = 0 = FALSE => i == j <=> FALSE == FALSE => TRUE = 1
+   #+end_src
+
+   
+- Let's practice: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
+- Finish at home and submit completed file to [[https://lyon.instructure.com/courses/2107/assignments/26094][Canvas]] (by 3/25)
 
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays
@@ -962,9 +987,6 @@ number or character, e.g. ~int phone[9]~ can hole 10 integers. Example:
   printf("(%d) %d-%d\n",phone[0],phone[1],phone[2]);
 #+end_src
 
-#+RESULTS:
-: (870) 424-5678
-
 [fn:2]In C, an array "decays" to a pointer to its first element.
 E.g. ~phone~ is equivalent to ~&phone[0]~: both represent the address of
 the first element in the ~phone[]~ array:
@@ -972,9 +994,6 @@ the first element in the ~phone[]~ array:
   int phone[3]={870,424,5678};
   printf("%p references %d\n",&phone[0], *phone);
 #+end_src
-
-#+RESULTS:
-: 0x7ffe52634a2c references 870
 
 [fn:3]When you perform "pointer arithmetic" you adjust the pointer by
 that many elements of the type the pointer points to. Example: ~phone+2~
@@ -988,8 +1007,3 @@ that many elements of the type the pointer points to. Example: ~phone+2~
   // addresses = references to phone[0] and phone[1]
   printf("%p %p\n", &phone[0], &phone[1]);
 #+end_src
-
-#+RESULTS:
-: 0x7ffcfb00f89c 0x7ffcfb00f8a0
-: 870 424
-: 0x7ffcfb00f89c 0x7ffcfb00f8a0

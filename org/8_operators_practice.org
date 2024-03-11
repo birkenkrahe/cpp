@@ -25,10 +25,16 @@
 
   Example: check if ~i~ is equal ~j~ for ~i=1~ and ~j=0~:
 
+  Problem:
+  #+begin_example C 
+    int i=1, j=0; // declare and initialize variables
+    printf("%d\n", ???);  // check identity with logical operator ==
+  #+end_example
+
   Solution:
   #+begin_src C
     int i=1, j=0; // declare and initialize variables
-    printf("%d\n", i == j);  // check identity with logical operator ==
+    printf("%d\n", i == j); // 1 = TRUE == FALSE = 0 => FALSE = 0
   #+end_src
    
 + Before you run the code block, guess what the output will be.
@@ -78,18 +84,20 @@
 
 * TODO Checking input for upper and lower case
 
-1) In the shell, create an input file named ~ascii~ with the letter ~b~ in
-   it, and check that the file contains the letter.
+1) In the shell (~M-x eshell)~ or in the code block below, create an
+   input file named ~ascii~ with the letter ~b~ in it, and check that the
+   file contains the letter.
 
    #+name: ascii_input
-   #+begin_example bash
+   #+begin_src bash
      echo 'b' > ascii
      cat ascii
-   #+end_example
+   #+end_src
 
 2) Run the code block [[ascii]] below. Complete the condition for the ~IF~
-   statement to check if the input character ~letter~ is an ~B~. When you
-   run the program, you should see that the input is not recognized.
+   statement to check if the input character ~letter~ is an ~B~ (upper
+   caps!). When you run the program, you should see that the input is
+   not recognized.
 
    #+name: ascii
    #+begin_src C :cmdline < ascii :results output :exports both
@@ -124,11 +132,11 @@
    *Important:* when using ~%c~ with ~scanf~, the empty space is accepted as
    a character with the ASCII value 32.
 
-   Inputfile:
-   #+begin_example bash
+   Inputfile (or create this on the shell):
+   #+begin_src bash
      echo 'b B' > ascii2
      cat ascii2
-   #+end_example
+   #+end_src
 
    #+name: ascii_check
    #+begin_src C :cmdline < ascii2
@@ -142,10 +150,10 @@
 
 1) On the shell, create a file ~num~ that contains the number 5.
 
-   #+begin_example bash
+   #+begin_src bash
      echo "5 0 10" > num
      cat num
-   #+end_example
+   #+end_src
 
 2) Define the condition in the code block [[range]] below to check if the
    input value 5 for ~i~ is in the interval ~[m,n) = [0,10)~.
