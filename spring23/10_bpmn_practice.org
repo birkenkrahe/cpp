@@ -39,7 +39,7 @@ Objective: learn to create, debug and save a process model.
    #+name: fig:battle
    #+attr_html: :width 500px
    #+caption: Health potion algorithm (battle problem) as BPMN diagram
-   [[./battle.png]]
+   [[../img/battle.png]]
 
 3) In the next models, change "Insufficient funds" to "Do not withdraw
    gold" (tasks need to be articulated as active).
