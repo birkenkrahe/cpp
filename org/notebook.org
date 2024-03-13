@@ -847,7 +847,7 @@ an argument and what's not.
 #+attr_html: :width 600px: 
 [[../img/test_1-4_box.png]]
 
-/Figure: test results lately haven't been exactly stellar (R code)./
+/Figure: test results lately haven't been exactly stellar ([[https://github.com/birkenkrahe/cpp/blob/main/org/tests.org][R code]])./
 
 - Use the review sessions in this file ([[https://github.com/birkenkrahe/cpp/blob/main/org/notebook.org][notebook.org]])
 - Check out the [[https://github.com/birkenkrahe/cpp/tree/main/org][practice files]] (do you still understand them?)
