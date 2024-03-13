@@ -838,12 +838,16 @@ an argument and what's not.
    #+end_quote
 
 
-* Week 9 - Arrays / Functions
+* Week 9 - C Operators practice / selection statements
 #+attr_html: :width 400px:
 [[../img/collaboration.png]]
 
 ** New bonus exercise: prove De Morgan's laws using C ([[https://lyon.instructure.com/courses/2107/assignments/26177][Canvas]])
 ** Test 4 (C operators) will be available later this week - Tips
+#+attr_html: :width 600px: 
+[[../img/test_1-4_box.png]]
+
+/Figure: test results lately haven't been exactly stellar (R code)./
 
 - Use the review sessions in this file ([[https://github.com/birkenkrahe/cpp/blob/main/org/notebook.org][notebook.org]])
 - Check out the [[https://github.com/birkenkrahe/cpp/tree/main/org][practice files]] (do you still understand them?)
