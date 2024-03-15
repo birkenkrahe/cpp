@@ -121,9 +121,9 @@ See also "How To Solve It" [[https://chat.google.com/room/AAAAIk8SqZE/FgWGE4AC1M
   #+name: pseudocode12
   #+begin_example C
   if health >= 100
-    Resume battle
+     Resume battle
   else
-    Drink health potion
+     Drink health potion
   end if
   #+end_example
 

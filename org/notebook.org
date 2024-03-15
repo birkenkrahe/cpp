@@ -987,7 +987,6 @@ PDF files, so you still have to get the literate programs right).
 - Let's practice: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
 - Finish at home and submit completed file to [[https://lyon.instructure.com/courses/2107/assignments/26094][Canvas]] (by 3/25)
 
-
 ** Monthly review:
 
 - Printing and scanning in C [same in all high level languages]
