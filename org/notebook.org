@@ -838,7 +838,7 @@ an argument and what's not.
    #+end_quote
 
 
-* Week 9 - C Operators practice / selection statements
+* Week 9 - C Operators practice / pseudocode
 #+attr_html: :width 400px:
 [[../img/collaboration.png]]
 
@@ -987,6 +987,32 @@ PDF files, so you still have to get the literate programs right).
 - Let's practice: [[http://tinyurl.com/8-operators-org][tinyurl.com/8-operators-org]]
 - Finish at home and submit completed file to [[https://lyon.instructure.com/courses/2107/assignments/26094][Canvas]] (by 3/25)
 
+
+** Monthly review:
+
+- Printing and scanning in C [same in all high level languages]
+
+- Using operators in C [ same in all high level languages]
+
+- If you know another language (like Python): recreate an assignment!
+
+- Assignments: foundational - arithmetic, printing, scanning, logic
+
+- Tests: up, down, up, down, ...?
+  #+attr_html: :width 400px:
+  [[../img/test_1-3_box.png]]
+
+  [Check out the code in R: [[http://tinyurl.com/cpp-tests-sp24][tinyurl.com/cpp-tests-sp24]]]
+  
+- Bonus content (Chat):
+  + [[https://chat.google.com/room/AAAAIk8SqZE/jOmKaX-joqE/jOmKaX-joqE?cls=10][Emacs and literate programming (interactive computing)]]
+  + [[https://chat.google.com/room/AAAAIk8SqZE/o1y4mRt3pzM/o1y4mRt3pzM?cls=10][Reasons to memorize rules and code when learning how to code]]
+  + [[https://chat.google.com/room/AAAAIk8SqZE/B2JovZaYTic/B2JovZaYTic?cls=10][Advice from the creator of the Python language (written in C)]]
+  + [[https://chat.google.com/room/AAAAIk8SqZE/qTNZ171uFqo/qTNZ171uFqo?cls=10][Opinion: can older people learn math? Can younger people?]]
+  + [[https://chat.google.com/room/AAAAIk8SqZE/x9cfkOCBJpw/x9cfkOCBJpw?cls=10][Best screencast recorder "simplescreenrecorder" on Linux]]
+  + [[https://www.youtube.com/playlist?list=PLwgb17bzeNygGtpZE_8gaWELZPbxfbUiO][Tutorial videos for all (in-class) practice assignments]]
+  + [[https://chat.google.com/room/AAAAIk8SqZE/fp53pnK30xs/fp53pnK30xs?cls=10][How to get started with Linux on Windows (WSL)]]
+  + [[https://chat.google.com/room/AAAAIk8SqZE/FgWGE4AC1MQ/FgWGE4AC1MQ?cls=10][How to solve it - heuristic problem solving with Pólya.]]
 
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays
