@@ -1,0 +1,69 @@
+#+title: C PSEUDOCODE - PRACTICE
+#+AUTHOR: [yourName] (pledged)
+#+startup: overview hideblocks indent
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both :comments both
+* READ README
+
+- This file is a practice file for pseudocode
+
+- Time: approx. 30 min.
+
+- When you're done with a section move the cursor on the section
+  heading and type ~S-<right>~ (or SHIFT+<right-arrow>).
+
+* TODO Identify yourself
+
+- replace the placeholder ~[yourName]~ in the header of this file by
+  your name and save the file (~C-x C-s~).
+
+* TODO Turn a problem into pseudocode
+
+1) Turn the following problem [[gold1]] into pseudocode.
+
+   #+name: gold1
+   #+begin_quote
+   "Allow a player to deposit or withdraw gold from a game bank
+   account."
+   #+end_quote
+
+2) Write your code below into a *named* Org-mode C example block that
+   you can create with ~<e TAB~.
+
+3) Make sure that you have a testable logical condition. Such a
+   condition involves a conditional operator (like ~==~ or ~<~).
+
+   ----- PUT YOUR CODE HERE -----
+
+   #+name: ex:pseudogold1
+   #+begin_example C
+     // pseudocode here
+   #+end_example
+
+* TODO Refine problem and  pseudocode
+
+1) The problem from [[gold1]] is refined in [[gold2]]:
+
+   #+name: gold2
+   #+begin_quote
+   "Allow a player to deposit or withdraw gold from a game bank
+   account. If a player elects to withdraw gold, ensure that
+   sufficient funds exist."
+   #+end_quote
+
+2) Turn the problem [[gold2]] into pseudocode (use the ~example~ block
+   below).
+
+3) List the variables and the conditional operators used.
+
+   ----- PUT YOUR CODE HERE -----
+
+   Pseudocode:
+   #+name: ex:pseudogold2
+   #+begin_example C
+     // pseudocode here
+   #+end_example
+
+
+Variables and operators used: (make a list)
+1) ...
+2) ...
