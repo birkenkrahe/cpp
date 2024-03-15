@@ -92,7 +92,7 @@ The heuristic method à la George Pólya in four steps:
 
 * Let's practice!
 
-Get the practice file ~bit.ly/pseudo_practice~
+Get the practice file [[http://tinyurl.com/pseudo-cpp][tinyurl.com/pseudo-cpp]].
 
 * Footnotes
 

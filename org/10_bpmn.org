@@ -1,0 +1,89 @@
+#+TITLE: BPMN - BUSINESS PROCESS MODEL AND NOTATION
+#+AUTHOR:Marcus Birkenkrahe
+#+SUBTITLE:CSC100 Introduction to programming in C/C++ (Spring 2024)
+#+STARTUP: overview hideblocks indent inlineimages
+#+OPTIONS: toc:1 ^:nil
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :noweb yes :tangle yes
+* README
+
+- In this section of the course, we go beyond simple statements and
+  turn to program flow and evaluation of logical conditions
+
+- This section follows chapter 3 in Davenport/Vine (2015) and
+  chapters 4 and 5 in King (2008)
+
+- Practice workbooks, input files and PDF solution files in GitHub
+
+* Process models
+
+- Understand what a process manager (software) is and does
+- Learn the basics of Business Process Model and Notation (BPMN)
+- Learn how to create simple models in BPMN
+- Apply modeling skills to creating pseudocode models
+- Adding Pseudocode/BPMN models to future programming assignments will
+  give you bonus points (5 extra points per assignment)
+
+* Overview
+
+- Flowcharts are popular among computing analysts and programmers
+
+- Flowcharts are a special case of *process models*
+
+- Process modeling is a key 21st century skill, because *process* is the
+  central paradigm of modern work organization
+
+- Rather than use flowcharts, we use BPMN - Business Process Model and
+  Notation - see figure [[bpmnfig]] below for an overview of the whole
+  language (you can get this poster at [[https://www.signavio.com/downloads/short-reads/free-bpmn-2-0-poster/][SAP Signavio]]).
+
+  #+name: bpmnfig
+  #+attr_html: :width 700px
+  #+caption: (Free) BPMN 2.0 poster from SAP Signavio
+  [[../img/bpmn.png]]
+
+* BPMN platform
+
+We use ~bpmn.io~ for free process modeling.
+
+* Points to remember
+
+- Every model needs a pool = process owner
+- Conditions become gateways
+- Use active sentences for tasks
+- When the flow is split, it must be rejoined
+- All elements must be named
+- Do not change the size of elements
+- All elements can be "overloaded"
+
+* BPMN elements
+
+- Roles (pools, lanes, participants)
+- Tasks (things to do)
+- Events (status)
+- Flow (between tasks or events)
+- Gateways (decision points, condition check)
+
+* Let's practice
+
+- Download the practice file in the GitHub repo:
+  tinyurl.com/pseudo-practice
+
+- Download the [raw] image file battle.png from GitHub:
+  tinyurl.com/pseudo-battle
+
+* References
+
+- Davenport/Vine (2015) C Programming for the Absolute Beginner
+  (3ed). Cengage Learning.
+
+- <<logic>> GVSUmath (Aug 10, 2012). Proving Logical Equivalences
+  without Truth Tables [video]. [[https://youtu.be/iPbLzl2kMHA][URL: youtu.be/iPbLzl2kMHA]].
+
+- Kernighan/Ritchie (1978). The C Programming Language
+  (1st). Prentice Hall.
+
+- King (2008). C Programming - A modern approach (2e). W A Norton.
+
+- Orgmode.org (n.d.). 16 Working with Source Code
+  [website]. [[https://orgmode.org/manual/Working-with-Source-Code.html][URL: orgmode.org]]
+
