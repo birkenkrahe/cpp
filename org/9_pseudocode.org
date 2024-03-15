@@ -30,11 +30,55 @@
 - *Always start with pseudocode* before coding, and when you're stuck
   (not because of syntax ignorance) go back to pseudocode.
 
-* Algorithms vs. heuristic
+* Algorithms vs. heuristic - Pólya's problem solving method
 
 The heuristic method à la George Pólya in four steps:
 #+attr_latex: :width 400px
 [[../img/polya.png]]
+
+See also "How To Solve It" [[https://chat.google.com/room/AAAAIk8SqZE/FgWGE4AC1MQ/FgWGE4AC1MQ?cls=10][in Chat]] for more details:
+#+begin_quote
+1. *Understanding the problem:*
+   - What is the unknown? What are the data?  What is the condition?
+     Is it possible to satisfy the condition? Is the condition
+     sufficient to determine the unknown? Or is it insufficient? Or
+     redundant? Or contradictory?
+   - Draw a figure. Introduce suitable notation
+   - Separate the various parts of the condition. Can you write them
+     down?
+2. *Devising a plan:*
+   - Have you seen it before? Have you seen the same problem in a
+     slightly different form? Do you know a related problem? Do you
+     know a theorem or a law or a formula that could be useful?
+   - Look at the unknown: Try to think of a familiar problem having
+     the same or a similar unknown.
+   - If you have a problem related to yours and solved before: could
+     you use it? Could you use its result? Could you use its method?
+     Should you introduce some auxiliary element in order to make its
+     use possible?
+   - Could you restate the problem? Could you restate it still
+     differently? Go back to the definitions.
+   - If you cannot solve the proposed problem try to solve first some
+     related problem. Could you imagine a more accessible related
+     problem? A more general problem? A more special problem? An
+     analogous problem? Could you solve a part of the problem? Keep
+     only part of the condition, drop the other part: how far is the
+     unknown then determined, how can it vary? Could you derive
+     something useful from the data? Could you think of other data
+     appropriate to determine the unknown? Could you change the
+     unknown or the data, or both if necessary, so that the new
+     unknown and the new data are nearer to each other?
+   - Did you use all the data? Did you use the whole condition? Have
+     you taken into account all essential notions involved in the
+     problem?
+3. *Carrying out the plan:* Carrying out your plan of the solution,
+   check each step. Make sure that you understand each step and its
+   consequences. Can you see clearly that the step is correct? Can you
+   prove that it is correct?
+4. *Looking back:* Can you check the result? Can you check the argument?
+   Can you derive the result differently? Can you see it at a glance?
+   Can you use the result, or the method, for some other problem?
+#+end_quote
 
 * Pseudocode example
 
@@ -85,7 +129,7 @@ The heuristic method à la George Pólya in four steps:
 
 - *Rule:* when making models (via *abstraction*), always stay as close to
   the *problem* description as possible - in terms of *language*, *logic*,
-  *tone*, etc  If you're unsure, *ask* (your client/professor/colleague).
+  *tone*, etc If you're unsure, *ask* (your client/professor/colleague).
 
 - In the pseudocode example above, what relates to 1) language, 2)
   logic, and 3) tone? And 4) are there other specifications?[fn:3]
@@ -104,7 +148,7 @@ course not work perfectly, since most syntax elements are not in C.
 the statements, functions ~Drink~ and ~Resume~ not known, and more.
 
 [fn:3] 1) Language: words used like ~health~, ~drink~ or ~resume~. 2) Logic:
-[[https://ifttt.com/][IFTTT]] (If This Then That). 3) Tone: game language 'drink health
-potion' as function ~drink_health_potion~. 4) The indentation and the
-use of ~if else end if~ instead of, e.g. "WHEN health < 100 THEN drink
-health potion OTHERWISE resume battle".
+[[https://ifttt.com/][IFTTT]] (If This Then That) Else That. 3) Tone: game language 'drink
+health potion' as function ~drink_health_potion~. 4) The indentation and
+the use of ~if else end if~ instead of, e.g. "WHEN health < 100 THEN
+drink health potion OTHERWISE resume battle".
