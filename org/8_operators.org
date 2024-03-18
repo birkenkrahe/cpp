@@ -517,6 +517,13 @@
   : The ASCII value of a is 97
   : The ASCII value of A is 65
 
+- What happens if you use the format specifier ~%c%c~ for =scanf=? Try it.
+  #+begin_quote
+  Answer: Instead of the ASCII value for 'A' you get the ASCII value
+  for the space, because after picking up the ~a~, =scanf= finds the space
+  (it only expects a string literal, and the space is one of those).
+  #+end_quote
+
 - User-friendly programs should use compound conditions to check for
   both lower and upper case letters:
   #+name: ascii_both
