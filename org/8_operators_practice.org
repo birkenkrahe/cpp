@@ -140,7 +140,7 @@
 
    #+name: ascii_check
    #+begin_src C :cmdline < ascii2
-     char b, B;
+     char c1, c2;
      scanf( ??? );   // accept b and B as input
     printf( ??? );   // print ASCII value of b
     printf( ??? );   // print ASCII value of B
