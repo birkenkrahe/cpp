@@ -1,0 +1,63 @@
+#+startup: overview hideblocks indent entitiespretty:
+#+options: toc:nil num:nil ^:nil: 
+#+property: header-args:C :main yes :includes <stdio.h> :results output :exports both :noweb yes :tangle yes: 
+* C operators - practice
+
+- Lecture: tinyurl.com/cpp-operators
+
+- Practice file: tinyurl.com/c-operators-org
+
+- We download and save the practice file with the
+  eww browser as a file ~~/operators.org~
+
+- Now we follow the instructions to the letter.
+
+- I'll come back to this document when needed.
+
+* Logical operators
+
+For this exercise, remember two rules:
+
+1) In C, the Boolean operators NOT, AND, and OR are
+   expressed as !, &&, and ||
+
+2) In C, the Boolean value of a non-zero number is
+   TRUE (or 1) and the Boolean value of 0 is FALSE.
+
+Let's go through these:
+
+You're supposed to convert the NOT, AND and OR notation
+to C, and run the code block. 
+
+You should also check what the answer is before doing
+that.
+
+1) (NOT i) is smaller than j: !i < j for i=10,j=5:
+   !10 is NOT(TRUE) or FALSE or 0
+   !10 < 5 is therefore the same as 0 < 5, which is
+   TRUE or 1.
+   
+2) (NOT(NOT(i)) + NOT(j) is !!i + !j
+   The parentheses are not required here, because
+   ! is executed before +
+   !!2 = !0 = 1 and !1 = 0, so the result is 1+0=1
+
+3) To check if the left side is equal to the right side
+   you must use == (logical comparision)
+   and not = (assignment):
+   !(2+1) = !3 = 0 == !2 + !1 = 0 + 0 = 0 => TRUE (1)
+
+4) This expression is also evaluated from the left, so
+   i && j || k is (i && j) || k - with values:
+   (5 && 0) is FALSE and 0 || -5 is TRUE because the
+   expression a || b is TRUE if either a or b are TRUE
+   and -5 is TRUE.
+
+5) This expression mixes relational and Boolean operator:
+   i < j || k is evaluated from the left, and the <
+   operator has precedence:
+   (1 < 2) is TRUE (1) and 1 || 3 is TRUE (1) also.
+
+
+* Checking input for upper and lower case
+
