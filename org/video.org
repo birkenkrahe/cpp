@@ -58,6 +58,5 @@ that.
    operator has precedence:
    (1 < 2) is TRUE (1) and 1 || 3 is TRUE (1) also.
 
-
 * Checking input for upper and lower case
 
