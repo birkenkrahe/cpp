@@ -60,3 +60,123 @@ that.
 
 * Checking input for upper and lower case
 
+- We want to create a conditional statement that allows
+  us to check if a user input conforms to lower or upper
+  case.
+  
+- We need an input file: use the shell code block to do
+  this or if you're on Windoze (poor sod!) then open an
+  Emacs shell (M-x eshell) to create the input file as
+  shown.
+
+- Or, if you cannot or do not want to do that, create a
+  file manually and put the letter b into it.
+
+- Next, we scan ~letter~ from the input file ~ascii~ (see
+  code block header argument).
+
+- Next, write the conditional statement:
+  ~letter == 'B'~ - we pick 'B' to show that a lower cap
+  input letter 'b' will be FALSE and therefore the input
+  would not be recognized.
+
+- To fix this, we need a compound statement that checks
+  for equality of ~letter~ with both b and B.
+
+- Test it by changing the input to B.
+
+- Alright!
+
+- Next stop: which ASCII codes are behind 'b' and 'B'?
+
+- The input file contains THREE, and not two characters:
+  'b', an empty space, and 'B'. We know that we need to
+  match this input structure in the =scanf= format.
+
+- What's happening here? We print the character in two
+  formats: as a character ~%c~, and as an integer ~%i~.
+  The integer printout will automatically print the
+  ASCII code that the computer uses to handle characters.
+
+- Do you see the mistake I made when coding blindly?
+
+- My =scanf= format specifier is ~%c1 %c2~ - which means that
+  =scanf= expects the following input:
+  1. a character
+  2. a number 1 followed by whitespace
+  3. another character
+  4. a number 2.
+
+- This would work for input of the form 'b1 B2'. Let's
+  test that assumption!
+
+- Good. Let's correct the exercise though.
+
+- Done!
+ 
+* Checking for a range of values
+
+- To check a whole range of values in an interval, let's
+  build a compound condition.
+  
+- For example, to check if i \in [m,n) (the right-open
+  interval between m and n), you need to check if
+  i >= m \land i < n, or in C: (m <= i) && (i <n).
+
+- If both of the subclauses are TRUE then the conjunction
+  is TRUE.
+
+- We put the data for i, m and n in an input file.
+
+- The input data are scanned in the same order.
+
+- That is correct! Now, we're going to test this for a
+  whole range of values for i.
+
+- Of course, this would be much easier if we already knew
+  how to loop over a variable i, but alas, we're not there
+  yet :-(
+
+- I simply replaced the input parameter in the shell
+  command at the top and re-ran the code block multiple
+  times.
+
+- Now, to check if i is OUTSIDE of the interval [m,n),
+  we need to alter the condition: i is not in [m,n) if
+  it is EITHER on the left of m OR on the right of n (or
+  equal n).
+
+- So we need to change the condition to:
+  (i < m) || (i >= n)
+
+- Let's try some of the other values.
+
+- So the algorithm works with the altered condition,
+  which is fully (logically) equivalent to the first.
+
+* Caveat: i < j < k
+
+- This is a short one. The expression i < j < k will not
+  work in C.
+  
+- The example shows how this does not work.
+
+- We're looking at the interval (5,100). The test is
+  for j to be in between the boundaries.
+
+- As explained in the exercise, the expression i < j < k
+  is evaluated from the left, and all operators have the
+  same precedence:
+  5 < 1 is FALSE (or 0)
+  0 < 100 is TRUE (or 1)
+  so the algorithm decides that the whole expression is
+  TRUE (1), though 5 < 1 < 100 is clearly FALSE (0).
+
+- The task is to fix this.
+
+- Since there are two statements to be checked
+  independently, we need a compound operator:
+  i < j < k in C becomes (i < j) && (j < k) - this is
+  the same problem as before.
+
+- Done! Well done! See you soon!
