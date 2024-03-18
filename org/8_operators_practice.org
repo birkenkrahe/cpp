@@ -134,7 +134,7 @@
 
    Inputfile (or create this on the shell):
    #+begin_src bash
-     echo 'bB' > ascii2
+     echo 'b B' > ascii2
      cat ascii2
    #+end_src
 
