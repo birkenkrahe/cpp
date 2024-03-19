@@ -837,13 +837,12 @@ an argument and what's not.
    5) Increment/decrement: =++i=
    #+end_quote
 
-
-* Week 9 - C Operators practice / pseudocode
+* DONE Week 9 - C Operators practice / pseudocode
 #+attr_html: :width 400px:
 [[../img/collaboration.png]]
 
 ** New bonus exercise: prove De Morgan's laws using C ([[https://lyon.instructure.com/courses/2107/assignments/26177][Canvas]])
-** Test 4 (C operators) will be available later this week - Tips
+** Test 4 (C operators) will be available soon - Tips
 #+attr_html: :width 600px: 
 [[../img/test_1-4_box.png]]
 
@@ -925,6 +924,7 @@ personal submission with different phone numbers.
 You'll get my sample solutions after all is done. In fact, for past
 problems, the solutions for past problems are already in GitHub (as
 PDF files, so you still have to get the literate programs right).
+
 
 ** Review C operators
 
@@ -1012,6 +1012,7 @@ PDF files, so you still have to get the literate programs right).
   + [[https://www.youtube.com/playlist?list=PLwgb17bzeNygGtpZE_8gaWELZPbxfbUiO][Tutorial videos for all (in-class) practice assignments]]
   + [[https://chat.google.com/room/AAAAIk8SqZE/fp53pnK30xs/fp53pnK30xs?cls=10][How to get started with Linux on Windows (WSL)]]
   + [[https://chat.google.com/room/AAAAIk8SqZE/FgWGE4AC1MQ/FgWGE4AC1MQ?cls=10][How to solve it - heuristic problem solving with Pólya.]]
+
 
 * Week 10 - Pointers
 * Week 11 - Pointers and arrays

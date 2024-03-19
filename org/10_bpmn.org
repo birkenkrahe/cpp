@@ -43,7 +43,10 @@
 
 * BPMN platform
 
-We use ~bpmn.io~ for free process modeling.
+- We use ~bpmn.io~ for free process modeling.
+- Example process: 
+  
+  
 
 * Points to remember
 
