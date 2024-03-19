@@ -1,9 +1,0 @@
-This is my first file. It works like this...
-
-#+begin_src C :main yes :includes <stdio.h> :tangle yes 
-  print("Hello, Jacob");
-#+end_src
-
-- What is interesting...
-
-* Head  

@@ -66,10 +66,10 @@ We use ~bpmn.io~ for free process modeling.
 * Let's practice
 
 - Download the practice file in the GitHub repo:
-  tinyurl.com/pseudo-practice
+  [[http://tinyurl.com/pseudo-practice][tinyurl.com/pseudo-practice]]
 
 - Download the [raw] image file battle.png from GitHub:
-  tinyurl.com/pseudo-battle
+  [[http://tinyurl.com/pseudo-battle][tinyurl.com/pseudo-battle]]
 
 * References
 
