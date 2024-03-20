@@ -925,7 +925,6 @@ You'll get my sample solutions after all is done. In fact, for past
 problems, the solutions for past problems are already in GitHub (as
 PDF files, so you still have to get the literate programs right).
 
-
 ** Review C operators
 
 1) What are the basic Boolean operators in C?
@@ -1014,9 +1013,7 @@ PDF files, so you still have to get the literate programs right).
   + [[https://chat.google.com/room/AAAAIk8SqZE/FgWGE4AC1MQ/FgWGE4AC1MQ?cls=10][How to solve it - heuristic problem solving with Pólya.]]
 
 
-* Week 10 - Selection statements
-
-
+* Week 10 - Process models / Selection statements (ifelse)
 
 * Week 11 - Arrays
 * Week 12 - Pointers
