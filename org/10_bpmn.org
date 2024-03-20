@@ -33,26 +33,60 @@
   central paradigm of modern work organization
 
 - Rather than use flowcharts, we use BPMN - Business Process Model and
-  Notation - see figure [[bpmnfig]] below for an overview of the whole
-  language (you can get this poster at [[https://www.signavio.com/downloads/short-reads/free-bpmn-2-0-poster/][SAP Signavio]]).
+  Notation - see figure below for an overview of the whole language
+  (you can get this poster at [[https://www.signavio.com/downloads/short-reads/free-bpmn-2-0-poster/][SAP Signavio]]).
 
   #+name: bpmnfig
-  #+attr_html: :width 700px
+  #+attr_html: :width 400px
   #+caption: (Free) BPMN 2.0 poster from SAP Signavio
   [[../img/bpmn.png]]
 
-* BPMN platform
+* BPMN platform - extended example
 
 - We use ~bpmn.io~ for free process modeling.
-- Example process: 
   
-  
+- Example process:
+  1) start with a (named) *pool.*
+  2) *name* the pool according to the process owner (e.g. "Programmer").
+  3) begin the pool with a *start* event, e.g. *Start*.
+  4) append a *task* or an *event* (e.g. an *end* event)
+  5) *name* all elements of the process (including flow and gateways)
+  6) model decisions as *gateway* (and rejoin the flow)
+  7) model *external* participants as (empty) pools
+  8) connect pools with *message* flow
+  9) connect elements inside a pool with *sequence* flow
+     
+- Example diagram for the following process:
+  #+begin_example
+    // Process model for the creation/storing of a process model
+    
+    Begin
+       - Create process model -- note: use bpmn.io
+       - Decide to save model as SVG image or as XML file
+       - Store model as .svg or as .bpmn file on PC
+    End
+  #+end_example
+
+- Implementation: 
+  1) Process owner = "Programmer"
+  2) Start process
+  3) First task = "Create process model"
+  4) Gateway = "Save process model as image?"
+     - YES: "Save model as image file"
+     - NO:  "Save model as BPMN file"
+  5) Store model as SVG image or as BPMN model file
+  6) End process
+
+- Final result:
+  #+attr_html: :width 600px:
+  [[../img/bpmn_model.svg]]
 
 * Points to remember
 
 - Every model needs a pool = process owner
-- Conditions become gateways
-- Use active sentences for tasks
+- Conditions/decisions become gateways
+- Use active sentences for tasks ("Make model")
+- Use status description for events ("Process starts")
 - When the flow is split, it must be rejoined
 - All elements must be named
 - Do not change the size of elements
@@ -69,24 +103,23 @@
 * Let's practice
 
 - Download the practice file in the GitHub repo:
-  [[http://tinyurl.com/pseudo-practice][tinyurl.com/pseudo-practice]]
-
-- Download the [raw] image file battle.png from GitHub:
-  [[http://tinyurl.com/pseudo-battle][tinyurl.com/pseudo-battle]]
+  [[http://tinyurl.com/pseudo-practice][tinyurl.com/bpmn-org]]
 
 * References
 
-- Davenport/Vine (2015) C Programming for the Absolute Beginner
-  (3ed). Cengage Learning.
+- Camunda (2023). Web-based tooling for BPMN, DMN and Forms. URL:
+  bpmn.io.
 
-- <<logic>> GVSUmath (Aug 10, 2012). Proving Logical Equivalences
-  without Truth Tables [video]. [[https://youtu.be/iPbLzl2kMHA][URL: youtu.be/iPbLzl2kMHA]].
+- Davenport/Vine (2015) C Programming for the Absolute Beginner
+  (3e). Cengage Learning.
+
+- GVSUmath (Aug 10, 2012). Proving Logical Equivalences without Truth
+  Tables. [[https://youtu.be/iPbLzl2kMHA][URL: youtu.be/iPbLzl2kMHA]].
 
 - Kernighan/Ritchie (1978). The C Programming Language
   (1st). Prentice Hall.
 
 - King (2008). C Programming - A modern approach (2e). W A Norton.
 
-- Orgmode.org (n.d.). 16 Working with Source Code
-  [website]. [[https://orgmode.org/manual/Working-with-Source-Code.html][URL: orgmode.org]]
+- Orgmode.org (n.d.). 16 Working with Source Code. [[https://orgmode.org/manual/Working-with-Source-Code.html][URL: orgmode.org]]
 
