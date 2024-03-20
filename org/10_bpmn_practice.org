@@ -22,8 +22,8 @@ Objective: learn to create, debug and save a process model.
 
 1) Open bpmn.io and go to the free model editor.
 
-2) Create a simple BPMN based on the pseudocode [[pgm:pseudobattle]] for
-   the battle problem. The model should look like figure [[fig:battle]].
+2) Create a simple BPMN based on the pseudocode below for the 'battle'
+   problem. The model should look like figure [[fig:battle]].
 
    Pseudocode:
    #+name: pgm:pseudobattle
