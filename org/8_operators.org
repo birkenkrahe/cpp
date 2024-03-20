@@ -155,8 +155,40 @@
   #+attr_html: :width 700px:
   [[../img/problem_solving.svg]]
 
-- Can you show the truth of the equivalence of ~p XOR q~ and ~(p AND NOT q) OR (NOT p AND q)~?
+- Can you show the truth of the equivalence of ~p XOR q~ and ~(p AND NOT
+  q) OR (NOT p AND q)~?
 
+- You can show this computationally by going through all p,q \in {0,1} -
+  we're using a =for= loop here but we could also do it manually with
+  values ~p0=0~, ~q0=0~, ~p1=0~, ~q1=1~ or as array values etc.
+  #+begin_src C :main yes :includes <stdio.h> :results output :exports both :comments both :tangle yes :noweb yes
+    // print p XOR q - the answer should be 0 1 1 0
+    for (int i=0;i<2;++i) { // 00 01 10 11
+      for (int j=0;j<2;++j) { 
+        printf("%d ", (i && !j) || (!i && j));
+      }
+     }
+    // non-loop approach (1) without arrays
+    int p0=0,q0=0,p1=0,q1=1,p2=1,q2=0,p3=1,q3=1;
+    printf("\n%d %d %d %d\n",
+           (p0 && !q0) || (!p0 && q0),
+           (p1 && !q1) || (!p1 && q1),
+           (p2 && !q2) || (!p2 && q2),
+           (p3 && !q3) || (!p3 && q3));
+    // declare truth values p,q as array
+    int a[] = {0,1};
+    printf("%d %d %d %d\n",
+           (a[0] && !a[0]) || (!a[0] && a[0]),
+           (a[0] && !a[1]) || (!a[0] && a[1]),
+           (a[1] && !a[0]) || (!a[1] && a[0]),
+           (a[1] && !a[1]) || (!a[1] && a[1]));
+  #+end_src
+
+  #+RESULTS:
+  : 0 1 1 0 
+  : 0 1 1 0
+  : 0 1 1 0
+  
 - Algebraic operations are way more elegant and insightful than truth
   tables. Watch "Proving Logical Equivalences without Truth Tables"
   [[logic][(2012)]] as an example.
