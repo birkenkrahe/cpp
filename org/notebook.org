@@ -1014,10 +1014,13 @@ PDF files, so you still have to get the literate programs right).
   + [[https://chat.google.com/room/AAAAIk8SqZE/FgWGE4AC1MQ/FgWGE4AC1MQ?cls=10][How to solve it - heuristic problem solving with Pólya.]]
 
 
-* Week 10 - Pointers
-* Week 11 - Pointers and arrays
-* Week 12 - Strings
-* Week 13 - The preprocessor
+* Week 10 - Selection statements
+
+
+
+* Week 11 - Arrays
+* Week 12 - Pointers
+* Week 13 - Strings
 * Week 14 - Structs, Unions and Enum
 * Week 15 - Advanced Pointers
 * Week 16 - From C to C++
