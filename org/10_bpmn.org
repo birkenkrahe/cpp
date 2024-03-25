@@ -14,7 +14,7 @@
 
 * Process models
 
-Objectives:
+*Objectives:*
 - Understand what a process manager (software) is and does
 - Learn the basics of Business Process Model and Notation (BPMN)
 - Learn how to create simple models in BPMN
@@ -80,7 +80,7 @@ Objectives:
   #+attr_html: :width 600px:
   [[../img/bpmn_model.svg]]
 
-* Points to remember
+* Points to remember (BPMN modeling rules)
 
 - Every model needs a pool = process owner
 - Conditions/decisions become gateways
