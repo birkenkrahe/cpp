@@ -12,16 +12,15 @@
 - This section follows chapter 3 in Davenport/Vine (2015) and
   chapters 4 and 5 in King (2008)
 
-- Practice workbooks, input files and PDF solution files in GitHub
-
 * Process models
 
+Objectives:
 - Understand what a process manager (software) is and does
 - Learn the basics of Business Process Model and Notation (BPMN)
 - Learn how to create simple models in BPMN
 - Apply modeling skills to creating pseudocode models
-- Adding Pseudocode/BPMN models to future programming assignments will
-  give you bonus points (5 extra points per assignment)
+- Adding accurate Pseudocode/BPMN models to future programming
+  assignments will give you bonus points.
 
 * Overview
 
@@ -34,10 +33,10 @@
 
 - Rather than use flowcharts, we use BPMN - Business Process Model and
   Notation - see figure below for an overview of the whole language
-  (you can get this poster at [[https://www.signavio.com/downloads/short-reads/free-bpmn-2-0-poster/][SAP Signavio]]).
+  (you can get this poster at [[https://www.signavio.com/downloads/short-reads/free-bpmn-2-0-poster/][SAP Signavio]]) - see [[https://raw.githubusercontent.com/birkenkrahe/cpp/main/img/bpmn.png][copy in GitHub]].
 
   #+name: bpmnfig
-  #+attr_html: :width 400px
+  #+attr_html: :width 600px
   #+caption: (Free) BPMN 2.0 poster from SAP Signavio
   [[../img/bpmn.png]]
 
@@ -103,7 +102,7 @@
 * Let's practice
 
 - Download the practice file in the GitHub repo:
-  [[http://tinyurl.com/pseudo-practice][tinyurl.com/bpmn-org]]
+  [[http://tinyurl.com/bpmn-org][tinyurl.com/bpmn-org]] and save it as ~bpmn.org~.
 
 * References
 
