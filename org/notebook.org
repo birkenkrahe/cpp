@@ -1018,12 +1018,14 @@ PDF files, so you still have to get the literate programs right).
 [[../img/week_10.png]]
 
 - Don't forget to upload missing files and bonus assignments.
-- This week: BPMN process diagrams from pseudocode, =if= and =switch=
 - There is no class on Friday because of Easter.
 - April 5-8 is probably also going to be a long weekend.
 - I will record a couple of sessions for you to watch and code along.
-- Test 5 is due next Sunday.
+- Test 5 is due next Sunday - topic: C operators.
 - Home assignments and bonus assignments will be available.
+- This week: BPMN process diagrams from pseudocode, =if= and =switch=
+
+
 
 * Week 11 - Arrays
 * Week 12 - Pointers
