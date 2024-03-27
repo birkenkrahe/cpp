@@ -107,10 +107,8 @@
 
 * Let's practice!
 
-- Download the practice Org-mode file from GitHub and check its file
-  type: [[https://bit.ly/cc_battle][bit.ly/cc_battle]]
-
 - Open the Emacs browser with ~M-x eww~ and enter the URL
+  [[https://tinyurl.com/ifelse-org][tinyurl.com/ifelse-org]]
 
 - Save the file with ~C-x C-w~ as ~ifelse.org~
 
@@ -118,6 +116,9 @@
 
 - Add your own name at the top and pledge
 
+- Complete the file
+
+- Submit the completed file to Canvas
 
 * References
 

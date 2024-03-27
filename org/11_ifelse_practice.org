@@ -56,6 +56,11 @@
      cat battle_input
    #+end_src
 
+3) Put your solution code here:
+   #+begin_src C
+
+   #+end_src
+
 * TODO Nested if statement with character input
 
 *Objective: modify the program to take character input*.
@@ -79,4 +84,9 @@
    #+begin_src bash
      echo "..." ... battle_input_char
      cat battle_input_char
+   #+end_src
+
+3) Put your solution code here:
+   #+begin_src C
+
    #+end_src
