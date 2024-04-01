@@ -1,5 +1,5 @@
 #+title: C BPMN Process Modeling - PRACTICE
-#+AUTHOR: [yourName] (pledged)
+#+AUTHOR: your Name (pledged)
 #+startup: overview hideblocks indent
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both :comments both
 * READ README
