@@ -104,10 +104,11 @@
 - Download the practice file in the GitHub repo:
   [[http://tinyurl.com/bpmn-org][tinyurl.com/bpmn-org]] and save it as ~bpmn.org~.
 
-- The solutions are available as PDF: tinyurl.com/bpmn-solutions-org
+- The solutions are available as PDF on GitHub:
+  [[https://github.com/birkenkrahe/cpp/blob/main/pdf/10_bpmn_practice.pdf][tinyurl.com/bpmn-solutions-org]]
 
-- There are also solution videos on my channel.
-
+- There are also solution videos on my [[https://www.youtube.com/channel/UC0cesCrWxB7jV11v5NgwLVw][channel]].
+  
 * References
 
 - Camunda (2023). Web-based tooling for BPMN, DMN and Forms. URL:
