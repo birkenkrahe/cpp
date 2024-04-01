@@ -1012,8 +1012,7 @@ PDF files, so you still have to get the literate programs right).
   + [[https://chat.google.com/room/AAAAIk8SqZE/fp53pnK30xs/fp53pnK30xs?cls=10][How to get started with Linux on Windows (WSL)]]
   + [[https://chat.google.com/room/AAAAIk8SqZE/FgWGE4AC1MQ/FgWGE4AC1MQ?cls=10][How to solve it - heuristic problem solving with Pólya.]]
 
-
-* Week 10 - Process models / Selection statements (ifelse)
+* DONE Week 10 - Process models / Selection statements (ifelse)
 #+attr_html: :width 400px:
 [[../img/week_10.png]]
 
@@ -1025,13 +1024,19 @@ PDF files, so you still have to get the literate programs right).
 - Home assignments and bonus assignments will be available.
 - This week: BPMN process diagrams from pseudocode, =if= and =switch=
 
+* Week 11 - Conditional statements (if...else,switch)
+#+attr_html: :width 400px:
+[[../img/he_is_risen.png]]
 
-
-* Week 11 - Arrays
-* Week 12 - Pointers
-* Week 13 - Strings
-* Week 14 - Structs, Unions and Enum
-* Week 15 - Advanced Pointers
+- Many of you lost points for lacking documentation
+- For full points, resubmit your files with documentation
+- Documentation not in the code blocks but outside of them
+- Made videos for the BPMN exercises (models from pseudocode)
+  
+* Week 12 - Loops (while,for,do...while)
+* Week 13 - Arrays
+* Week 14 - Functions
+* Week 15 - Pointers
 * Week 16 - From C to C++
 
 * Footnotes

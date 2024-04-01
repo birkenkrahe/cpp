@@ -1,0 +1,110 @@
+#+title: SWITCH - PRACTICE FILE
+#+AUTHOR: [yourName] (pledged)
+#+startup: overview hideblocks indent
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output :exports both :comments both
+* READ README
+
+- This file is a practice file for the ~SWITCH...CASE~ selection
+
+- Time: approx. 30 min.
+
+- When you're done with a section move the cursor on the section
+  heading and type ~S-<right>~ (or SHIFT+<right-arrow>).
+
+- This section follows chapter 3 in Davenport/Vine (2015) and chapters
+  4 and 5 in King (2008).
+
+* TODO Identify yourself
+
+- replace the placeholder ~[yourName]~ in the header of this file by
+  your name and save the file (~C-x C-s~).
+
+* TODO Switch output example
+
+1) What output does the program [[switch1]] produce if ~i=1~?
+
+   Tip: ~%~ is the modulo operator - ~i % j~ returns the remainder of
+   ~i/j~. E.g. ~5 % 4 = 4/4 + 1 = 1~, and ~3 % 4 = 3~ [fn:1].
+
+   Guess the answer first, then replace the ~???~ by 1 and run the block.
+
+   #+name: switch1
+   #+begin_src C
+     int i = ???;
+     switch ( i % 3 ) {
+      case 0: printf("zero");
+      case 1: printf("one");
+      case 2: printf("two");
+      }
+   #+end_src
+
+2) Fix the code in [[switch2]] below so that the output for i=1,2, or 3
+   is only one of "one", "two", or "three". Test your result.
+
+   #+name: switch2
+   #+begin_src C
+     int i = 3;
+     switch ( i % 3 ) {
+      case 0: printf("zero");
+      case 1: printf("one");
+      case 2: printf("two");
+      }
+   #+end_src
+
+* TODO Write a switch statement
+
+1) The following table shows a few of the telephone area codes in GA
+   along with the largest city in the area.
+
+   | AREA CODE | MAJOR CITY |
+   |-----------+------------|
+   |       229 | Albany     |
+   |       404 | Atlanta    |
+   |       470 | Atlanta    |
+   |       478 | Macon      |
+   |       678 | Atlanta    |
+   |       912 | Savannah   |
+
+2) Write a ~switch~ statement whose controlling expression is the
+   variable ~area_code~ - if the value of ~area_code~ is in the
+   table, the ~switch~ statement should print the corresponding city
+   name. Otherwise, it should print the message "Area code not
+   recognized".
+
+   In the code block [[area_code]], the variables and input statements
+   have already been written for you, and the switch statement has
+   been started - all you need to do is complete the ~switch~
+   statement.
+
+   /Tip: to save space, you can place ~case~ labels leading to the
+   same statement on one line./
+
+   #+name: area_code
+   #+begin_src C :cmdline < areacode
+     int area_code;
+
+     scanf("%d", &area_code);
+
+     switch (...) {
+       ...
+         }
+   #+end_src
+
+   3) To test your solution, create an input file ~areacode~ with an
+      area code number in it - e.g. ~229~, which should return ~Albany~.
+
+* References
+
+- Davenport/Vine (2015) C Programming for the Absolute Beginner
+  (3ed). Cengage Learning.
+- Kernighan/Ritchie (1978). The C Programming Language
+  (1st). Prentice Hall.
+- King (2008). C Programming - A modern approach (2e). W A Norton.
+- Orgmode.org (n.d.). 16 Working with Source Code [website]. [[https://orgmode.org/manual/Working-with-Source-Code.html][URL:
+  orgmode.org]]
+* Footnotes
+
+[fn:1] If this puzzles you: to find ~3%4~, we first find the highest
+multiple of the divisor (~4~) that is equal or less than the dividend
+(~3~) - this is ~0~. Then we subtract the highest multiple from the
+dividend to get the answer: ~3 - 0 = 3~.

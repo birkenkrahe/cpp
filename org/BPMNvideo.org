@@ -1,0 +1,118 @@
+#+startup: overview hideblocks indent entitiespretty: 
+* BPMN models
+
+- A BPMN model needs a pool and a participant
+- In bpmn.io, all elements can be created from
+  within the previous element
+- Our first element is a gateway to model the
+  decision point: drink or resume battle?
+- However, the gateway needs to be an XOR or
+  exclusive gateway. So a better question is:
+  "is the health below 100?"
+- If it is, we drink health potion
+- If it is not, we resume battle
+- The logic ("sequence") flow, once split,
+  needs to be rejoined.
+- The model cannot have any "hanging" tasks but
+  must end with an end event.
+
+* Saving a model as an XML or image file
+
+- The option "download as BPMN 2.0 file" really
+  creates an XML file. I'll show you. This file
+  can be uploaded to a BPMN editor.
+- The image file can be added in an Emacs org-mode
+  file - we'll do that next. This is an .svg or
+  vector graphics file. Emacs can show it.
+
+* Add image file to an Org-mode file
+
+- This requires some meta data if we want to
+  control the size of the file. We're going to add
+  it in the practice file.
+- This tells Org-mode that we wish to render the
+  file in HTML with width 500 pixels. For different
+  formats, see the Orgmode documentation.
+- To add the link/image, use double square brackets
+  markdown language.
+- But wait, we need the exact path to the file,
+  or else Emacs cannot find it.
+- You can either show the file in the Org-mode file
+  or open it in a separate buffer with C-c C-o.
+- If you have my init file tinyurl.com/EmacsLyon
+  then F6 will open, and F7 will close the file.
+
+* Modifying the original BPMN model
+
+- So what's different for the "Gold Withdrawal 1"?
+- Not much. See for yourself.
+- You can copy the whole model with C-c and paste
+  it with C-v
+- You saw that the right gateway question is not
+  necessarily straightforward. A model should be
+  readable and reflect the pseudocode.
+- There is a potential addition here: another
+  "participant", namely the account.
+- To recap: I added an empty pool (because we don't
+  know what's going on inside "account"), and now
+  the withdrawal/deposit is modeled by incoming/
+  outgoing message flow (dashed arrow).
+- I'm going to save this as requested, as
+  ~gold.bpmn~ for the XML, and ~gold.svg~ for the image
+  file.
+- And now I'm going to add them in the same way
+  to my literate .org file. This time though I am
+  going to use a relative, and not an absolute
+  path for the link.
+- To do this, I need to know the relative position
+  of the image and XML files to my .org file.
+- Done! To recap, the ~/Downloads directory was
+  three directories up from where I was:
+  /home/marcus/Downloads/gold.svg and
+  /home/marcus/GitHub/cpp/org/10_bpmn_practice.org
+  To get from the 2nd location to the file, use
+  ../../../Downloads/gold.svg
+
+* Nested selection statements
+
+- For this problem extension, we need to modify
+  the lower branch of the gateway, the "no" choice.
+- Instead of a task, we need another decision here:
+  "Is account balance below requested amount?"
+- You see how the BPMN editor helps you to align
+  the model elements for better readability.
+- This is a mouthful of a question. Shorter will
+  also do.
+- I have shown here, after a few false starts, how
+  to create a correct diagram with all open flows
+  closed. Note that the second gateway does not
+  make any decisions but just closes the flow again.
+- I think we're done here.
+- I'll leave the saving and inserting of the image
+  to you. There's no difference to the gold 1 and
+  the battle diagrams.
+
+* A closer look
+
+- Lastly, we're going to look at the gateways
+  a little more closely.
+- Remove some ambiguities in the condition - this
+  usually means using actual operators.
+- In the gold 2 problem, the second decision was
+  based on the condition "balance < amount"?
+- The (intermediate) event "Insufficient funds"
+  can be qualified further. As with all the other
+  elements, open the wrench symbol to see how.
+- It may be difficult to find the right qualifier.
+  In this case, I picked "escalation throw event",
+  which means that the event generates an exception
+- Now, what about the pseudocode.
+- Compare the two pseudocode blocks.
+- You can see that inverting the condition means
+  that we have to invert the order of actions.
+- One more thing: it may be better to replace the
+  event by a task.
+- We're done. In the practice exercise, don't forget
+  to add the SVG image, and download both files
+  and zip it all up, and upload it to Canvas.
+  
