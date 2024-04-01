@@ -1026,14 +1026,15 @@ PDF files, so you still have to get the literate programs right).
 
 * Week 11 - Conditional statements (if...else,switch)
 #+attr_html: :width 400px:
-[[../img/he_is_risen.png]]
+#+caption: Easter picture with hackers
+[[../img/he_is_risen.jpg]]
 
-- Many of you lost points for lacking documentation
-- For full points, resubmit your files with documentation
-- Documentation not in the code blocks but outside of them
+- Many of you lost points for lacking documentation:
+  1) For full points, resubmit your files with documentation
+  2) Documentation not in the code blocks but outside of them
 - Made videos for the BPMN exercises (models from pseudocode)
   
-* Week 12 - Loops (while,for,do...while)
+* Week 12 - Loops 
 * Week 13 - Arrays
 * Week 14 - Functions
 * Week 15 - Pointers
@@ -1079,3 +1080,4 @@ that many elements of the type the pointer points to. Example: ~phone+2~
 : 0x7ffe8741495c 0x7ffe87414960
 : 870 424
 : 0x7ffe8741495c 0x7ffe87414960
+

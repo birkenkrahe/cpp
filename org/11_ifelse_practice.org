@@ -57,7 +57,7 @@
    #+end_src
 
 3) Put your solution code here:
-   #+begin_src C
+   #+begin_src C :cmdline < battle_input
 
    #+end_src
 
@@ -70,11 +70,12 @@
    - When ~c_response~ has the value ~y~, print its value and ~"Drink health
      potion"~.
    - When ~c_response~ has the value ~n~, print its value and ~Resume battle~.
-   - Use the conversion specifier ~%c~ to convert character input
+   - Use the conversion specifier ~%c~ to convert character input.
+   - Make sure both upper and lower case answers are accepted.
    - The output should look like this (only one of them):
      #+begin_example
-     : 'y' => Drinking health potion!
-     : 'n' => Resuming battle!
+     : y => Drinking health potion!
+     : n => Resuming battle!
      #+end_example
 
 2) To create an input file, complete the missing parts in the code
@@ -87,6 +88,6 @@
    #+end_src
 
 3) Put your solution code here:
-   #+begin_src C
+   #+begin_src C :cmdline < battle_input_char
 
    #+end_src
