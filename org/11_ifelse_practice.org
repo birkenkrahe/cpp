@@ -25,7 +25,7 @@
    - When ~response~ has the value ~1~, print its value and ~"Drink health
      potion"~.
    - When ~response~ has the value ~2~, print its value and ~Resume battle~.
-   - Parallelize: use only *one* ~if...else if~ statement.
+   - Serialize the =if= statements: use two =if= instead of one =if= ... =else=
    - The output should look like this (only one of them):
      #+begin_example
      : 1 => Drinking health potion!
