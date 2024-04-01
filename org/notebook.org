@@ -1032,8 +1032,10 @@ PDF files, so you still have to get the literate programs right).
 - Many of you lost points for lacking documentation:
   1) For full points, resubmit your files with documentation
   2) Documentation not in the code blocks but outside of them
+
 - Made videos for the BPMN exercises (models from pseudocode)
-  
+
+- This week: =if=, =else=, =switch=, and loops  
 * Week 12 - Loops 
 * Week 13 - Arrays
 * Week 14 - Functions
