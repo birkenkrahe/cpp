@@ -42,7 +42,7 @@
   and initialized:
   #+name: battle2
   #+begin_src C :main yes :includes <stdio.h> :results output
-    int health = 99;
+    int health = 101;
 
     if (health <= 100) {
       // drink health potion
@@ -55,6 +55,10 @@
        printf("Resuming battle!\n");
      }
   #+end_src
+
+  #+RESULTS: battle2
+  : This is what you do:
+  : Resuming battle!
 
 * Stacked vs. nested IF structures
 
