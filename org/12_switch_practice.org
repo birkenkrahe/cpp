@@ -21,7 +21,7 @@
 
 * TODO Switch output example
 
-1) What output does the program [[switch1]] produce if ~i=1~?
+1) What output does the program below produce if ~i=1~?
 
    Tip: ~%~ is the modulo operator - ~i % j~ returns the remainder of
    ~i/j~. E.g. ~5 % 4 = 4/4 + 1 = 1~, and ~3 % 4 = 3~ [fn:1].
@@ -38,8 +38,8 @@
       }
    #+end_src
 
-2) Fix the code in [[switch2]] below so that the output for i=1,2, or 3
-   is only one of "one", "two", or "three". Test your result.
+2) Fix the code below so that the output for i=1,2, or 3 is only one
+   of "one", "two", or "three". Test your result.
 
    #+name: switch2
    #+begin_src C
@@ -71,10 +71,9 @@
    name. Otherwise, it should print the message "Area code not
    recognized".
 
-   In the code block [[area_code]], the variables and input statements
-   have already been written for you, and the switch statement has
-   been started - all you need to do is complete the ~switch~
-   statement.
+   In the code block below, the variables and input statements have
+   already been written for you, and the switch statement has been
+   started - all you need to do is complete the ~switch~ statement.
 
    /Tip: to save space, you can place ~case~ labels leading to the
    same statement on one line./
@@ -92,6 +91,11 @@
 
    3) To test your solution, create an input file ~areacode~ with an
       area code number in it - e.g. ~229~, which should return ~Albany~.
+
+      #+begin_src bash
+        echo ... > areacode
+        ... areacode
+      #+end_src
 
 * References
 

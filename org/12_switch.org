@@ -13,13 +13,6 @@
   chapters 4 and 5 in King (2008)
 
 - Practice workbooks, input files and PDF solution files in GitHub
-
-* Download the practice file
-
-- Open the Emacs browser with ~M-x eww~ on ~bit.ly/cc_switch~
-- Write file with ~C-x C-w~ to ~switch.org~
-- Kill buffer with ~C-x k~
-- Re-open file with ~C-x C-f~
   
 * Overview
 
@@ -35,25 +28,25 @@
   }
   #+end_example
 
-- *Controlling expression:* an integer expression in parentheses,
+- Controlling =expression=: an integer expression in parentheses,
   like ~(5)~. Characters are treated as integers in C and cannot be
   tested, so ~('a')~ is not allowed.
 
-- *Case labels:* each case begins with a constant expression, like
+- =Case= labels: each case begins with a constant expression, like
   ~Case 5:~ - this is like any other expression except that it
   cannot contain variables or function calls.
 
 - *Statements:* any number of statements. No braces required around
-  the statements. The last statement is usually ~break~ to close
+  the statements. The last statement is usually =break= to close
   the case.
 
 * Simple example
 
-- In the example code [[switch]], the ~grade~ is set in the variable
-  declaration. Depending on the value, a ~case~ is triggered and
-  the corresponding statements are executed.
+- In the example program below, the ~grade~ is set in the variable
+  declaration. Depending on the value, a =case= is triggered and the
+  corresponding statements are executed.
 
-- [X] What is the output of [[switch]] for 5,3,0,-1,0.5?
+- What is the output of the code below for ~grade =~ 5,3,0,-1,0.5?
   #+begin_quote
   | VALUE | OUTPUT        |
   |-------+---------------|
@@ -67,7 +60,7 @@
 - The code:
   #+name: switch
   #+begin_src C :results output :exports both
-    int grade = 0.5;
+    int grade = 5;
     switch (grade) {
      case 4:
      case 3:
@@ -85,18 +78,15 @@
      }
   #+end_src
 
-  #+RESULTS: switch
-  : Illegal grade
-
-- [X] Which problem/solution set does the program implement?
+- What does this program do? Which problem/solution is implemented?
   #+begin_quote
   Answer: The program reflects "passing" grades 4,3,2,1, and "failing"
   grade 0. Any other grade value is not allowed. (This happens to be
   the European grade scale, which is A = 1 to D = 4, and F = 5 or 6.)
   #+end_quote
-
-- You can also put several case labels on the same line as in
-  [[switch1]], which is otherwise identical to [[switch]].
+  
+- You can also put several case labels on the same line as shown
+  below - the code is otherwise identical to the previous one:
 
   #+name: switch1
   #+begin_src C :results output :exports both
@@ -125,7 +115,7 @@
 - The ~switch~ statement is a /controlled jump/. The ~case~ label is a
   marker indicating a position within the switch.
 
-- [ ] Let's run the previous program again, without the ~break~
+- Let's run the previous program again, without the ~break~
   statements. What do you think the output will be?
   #+name: switch2
   #+begin_src C :results output :exports both
@@ -146,10 +136,7 @@
        }
   #+end_src
 
-  #+RESULTS: switch2
-  : FailingIllegal grade
-
-- [ ] What happens without the ~break~ statements?
+- What happens without the ~break~ statements?
   #+begin_quote
   Answer: When the last statement in a case has been executed,
   control falls through to the first statement in the following
@@ -163,7 +150,11 @@
 
 * Let's practice!
 
-- Open and complete the ~switch.org~ practice file that you downloaded
+- Open the Emacs browser with ~M-x eww~ on [[http://tinyurl.com/switch-org][tinyurl.com/switch-org]]
+- Write file with ~C-x C-w~ to ~switch.org~
+- Kill buffer with ~C-x k~
+- Re-open file with ~C-x C-f~
+- Complete the ~switch.org~ practice file
 - Upload the completed file as an assignment to Canvas
 
 * References
