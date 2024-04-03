@@ -89,6 +89,10 @@
          }
    #+end_src
 
+   Alternatively, remove ~:cmdline < areacode~, comment the =scanf=
+   statement out (~//~) and define the ~area_code~ at the top, e.g.
+   ~area_code = 220~.
+
    3) To test your solution, create an input file ~areacode~ with an
       area code number in it - e.g. ~229~, which should return ~Albany~.
 
