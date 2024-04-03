@@ -139,6 +139,9 @@
        }
   #+end_src
 
+  #+RESULTS: switch2
+  : FailingIllegal grade
+
 - What happens without the ~break~ statements?
   #+begin_quote
   Answer: When the last statement in a case has been executed,
