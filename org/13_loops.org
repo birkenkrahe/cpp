@@ -67,6 +67,12 @@
      }
   #+end_src
 
+  #+RESULTS: trace
+  : 2 < 10 ?
+  : 4 < 10 ?
+  : 8 < 10 ?
+  : 16 < 10 ?
+
 - What would the pseudocode look like?
   #+begin_example
   While i is smaller than n
@@ -95,13 +101,28 @@
 - What does the following statement do? What is printed out at the very end?
   #+name: counting
   #+begin_src C :tangle counting.c
-    int i = 10;
-    while ( i > 0 ) {
-      printf("T minus %d and counting\n", i);
+    int i = 10;  // declaration and definition
+    while ( i > 0 ) {   // tests if i is positive
+      printf("T minus %d and counting\n", i);  // print i
       i--;  // same as i = i - 1; (executed from the right)
      }
     printf("i = %d\n", i);
   #+end_src
+
+  #+RESULTS: counting
+  #+begin_example
+  T minus 10 and counting
+  T minus 9 and counting
+  T minus 8 and counting
+  T minus 7 and counting
+  T minus 6 and counting
+  T minus 5 and counting
+  T minus 4 and counting
+  T minus 3 and counting
+  T minus 2 and counting
+  T minus 1 and counting
+  i = 0
+  #+end_example
 
 - Why are we using ~i--~ and not ~--i~ ?[fn:1]
 
@@ -120,6 +141,20 @@
      }
   #+end_src
 
+  #+RESULTS: concise_counting
+  #+begin_example
+  T minus 10 and counting
+  T minus 9 and counting
+  T minus 8 and counting
+  T minus 7 and counting
+  T minus 6 and counting
+  T minus 5 and counting
+  T minus 4 and counting
+  T minus 3 and counting
+  T minus 2 and counting
+  T minus 1 and counting
+  #+end_example
+
 - Note that in the concise version [[concise_counting]], it makes a
   difference if we use ~i--~ or ~--i~. Try it!
 
@@ -131,12 +166,15 @@
 - If the controlling expression always has a non-zero value, the
   ~while~ statement will not terminate.
 
+- For example in a game a loop would have a statement like ~while(1~) because
+  this condition is always true - until the player enters 'quit`
+
 - The compiler does not check this. The program [[inf]] has to be
   stopped manually (~C-c C-c~ in the e-shell, or ~C-c~ on the terminal).
   #+name: inf
   #+begin_src C :tangle inf.c
-  //  while (1)
-  //     puts("Still running...\n");
+    while (1)
+       puts("Still running...\n");
   #+end_src
 
 - You can tangle the code block compile and run ~inf.c~ on the CMD line.
@@ -212,7 +250,7 @@ Enter number of rows:
            9        81
           10       100
   #+end_example
-
+  
 ** Summing numbers
 *** Problem
 
@@ -239,13 +277,13 @@ Enter number of rows:
 
 - Pseudocode:
   #+begin_example
-  // Sum a series of integers
+  // Purpose: Sum a series of integers
   Input: series of integers
   Output: sum of all integers
 
   Begin:  
-     declare and initialize variables
-     scan first integer
+     // declare and initialize variables
+     // scan first integer
 
      while integer non-zero
        sum integer
@@ -268,12 +306,16 @@ Enter number of rows:
 - Code:
   #+name: sum
   #+begin_src C :cmdline < ../data/sum_input :tangle ../src/sum.c
+    // declaration and definition
     int n, sum = 0;
+    // get user input and first number
     puts("Enter integers (0 to terminate): ");
     scanf("%d", &n);  printf("%d ", n); // need non-0 number to start
 
+    // test if number entered is non-zero
     while ( n != 0 ) {
-      sum += n;         // sum = sum + n
+      // sum = sum + n
+      sum += n;         
       scanf("%d", &n); printf("%d ", n);
      }
 
