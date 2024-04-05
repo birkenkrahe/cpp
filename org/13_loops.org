@@ -3,7 +3,7 @@
 #+SUBTITLE:CSC100 / Introduction to programming in C/C++ - Spring 2023
 #+STARTUP: overview hideblocks indent
 #+OPTIONS: toc:1 ^:nil num:1
-#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments none
 * README
 
 - This script introduces C looping structures.
@@ -51,7 +51,7 @@
       }
   #+end_example
 
-- Parentheses ~(...)~ are mandatory
+- Parentheses ~(...)~ around the /expression/ are mandatory
 
 - Braces ~{ }~ are used for multi-line statements
 
@@ -71,6 +71,7 @@
   #+begin_example
   While i is smaller than n
     double the value of i
+    show i and n
   end when i is greater than n
   #+end_example
 
@@ -79,16 +80,19 @@
   #+caption: Simple while example
   [[../img/13_double.png]]
 
-- Here, the task (C statement) is overloaded with a *loop* attribute.
-  #+attr_html: :width 500px
+- Here, the task (C statement) is overloaded with a *loop*
+  attribute. You cannot do this
+  #+attr_html: :width 600px
   #+caption: Simple while example
-  [[../img/13_signavio.png]]
+  [[../img/while.png]]
 
-- Your turn! Complete a simple practice exercise.
-
+- Your turn! Complete a simple practice exercise. Open the practice
+  file from tinyurl.com/cc-while-loop, complete and run the code under
+  the headline "Simple example".x
+  
 ** Countdown example
 
-- What does the following statement do?
+- What does the following statement do? What is printed out at the very end?
   #+name: counting
   #+begin_src C :tangle counting.c
     int i = 10;
@@ -99,26 +103,15 @@
     printf("i = %d\n", i);
   #+end_src
 
-  #+RESULTS: counting
-  #+begin_example
-  T minus 10 and counting
-  T minus 9 and counting
-  T minus 8 and counting
-  T minus 7 and counting
-  T minus 6 and counting
-  T minus 5 and counting
-  T minus 4 and counting
-  T minus 3 and counting
-  T minus 2 and counting
-  T minus 1 and counting
-  i = 0
-  #+end_example
-
 - Why are we using ~i--~ and not ~--i~ ?[fn:1]
+
+- What would change if we would swap the two statements inside the
+  ~while~ loop?
 
 - When would the ~while~ statements be bypassed completely?[fn:2]
 
-- The code in [[counting]] could be made more concise - can you guess how?
+- The code in [[counting]] could be made more concise (shortened by one
+  line) - can you guess how?  Remember what you know about =printf=?
   #+name: concise_counting
   #+begin_src C
     int i = 10;
@@ -127,24 +120,11 @@
      }
   #+end_src
 
-  #+RESULTS: concise_counting
-  #+begin_example
-  T minus 10 and counting
-  T minus 9 and counting
-  T minus 8 and counting
-  T minus 7 and counting
-  T minus 6 and counting
-  T minus 5 and counting
-  T minus 4 and counting
-  T minus 3 and counting
-  T minus 2 and counting
-  T minus 1 and counting
-  #+end_example
-
 - Note that in the concise version [[concise_counting]], it makes a
   difference if we use ~i--~ or ~--i~. Try it!
 
-- Your turn! Complete a simple practice exercise.
+- Your turn! Complete a simple practice exercise in the practice file,
+  under the headline "Countdown example".
 
 ** Infinite loops
 
@@ -152,32 +132,31 @@
   ~while~ statement will not terminate.
 
 - The compiler does not check this. The program [[inf]] has to be
-  stopped manually (~C-g~).
+  stopped manually (~C-c C-c~ in the e-shell, or ~C-c~ on the terminal).
   #+name: inf
-  #+begin_src C :tangle ../src/inf.c
-//    while (1)
-  //    puts("Still running...\n");
+  #+begin_src C :tangle inf.c
+  //  while (1)
+  //     puts("Still running...\n");
   #+end_src
 
-- Tangle it, compile and run ~inf.c~ on the CMD line.
+- You can tangle the code block compile and run ~inf.c~ on the CMD line.
 
 - Why don't you see any output in Emacs? [fn:3]
 
 - To stop infinite loops from within, you need to provide ~break~,
-  ~goto~ or ~return~ statements.
+  ~goto~ or ~return~ statements ("controlled jump").
 
-- Your turn! Complete a simple practice exercise.
+- Your turn! Complete a simple practice exercise under "Infinite
+  loops" in the practice file.
 
 ** Printing a table of squares
 *** Problem
-
-- Prompt the users to enter a number ~n~
 
 - Compute the squares of all integers from ~1~ to ~n~.
 
 - Print ~n~ and its square as a table of ~n~ rows
 
-- Sample output:
+- Sample output for ~n=10~.
   #+name: square_output
   #+begin_example
 Enter number of rows:
@@ -201,13 +180,13 @@ Enter number of rows:
 
   #+name: square_input
   #+begin_src bash :results silent
-    echo 10 > ../data/square_input
-    cat ../data/square_input
+    echo 10 > input
+    cat input
   #+end_src
 
   #+name: square
-  #+begin_src C :cmdline < ../data/square_input
-    int i, n;
+  #+begin_src C :cmdline < input
+    int i, n=10;
 
     printf("Enter number of rows: ");
     scanf("%d", &n); printf("%d\n", n);
@@ -260,14 +239,20 @@ Enter number of rows:
 
 - Pseudocode:
   #+begin_example
-  declare and initialize variables
-  scan first integer
+  // Sum a series of integers
+  Input: series of integers
+  Output: sum of all integers
 
-  while integer non-zero
-    sum integer
-    scan next integer
+  Begin:  
+     declare and initialize variables
+     scan first integer
 
-  print the sum
+     while integer non-zero
+       sum integer
+       scan next integer
+
+     print the sum
+  End     
   #+end_example
 
 - Generate test input file:
@@ -296,8 +281,8 @@ Enter number of rows:
   #+end_src
 
   #+RESULTS: sum
-  : Enter integers (0 to terminate):
-  : 8 23 71 5 0
+  : Enter integers (0 to terminate): 
+  : 8 23 71 5 0 
   : The sum is 107
 
   - There are two identical calls to ~scanf~, because we need a non-zero
@@ -351,7 +336,7 @@ Enter number of rows:
    #+end_example
 
 - Sample input:
-  #+name in:dowhile
+  #+name: in:dowhile
   #+begin_src bash :results output
     echo 656 > ../data/dowhile
     cat ../data/dowhile
@@ -996,7 +981,6 @@ accordingly, from: ~tinyurl.com/475m5x4n~
 
 3) Summing numbers (convert ~do while~ to ~for~):
 
-
 * References
 
 - Davenport/Vine (2015) C Programming for the Absolute Beginner
@@ -1009,15 +993,15 @@ accordingly, from: ~tinyurl.com/475m5x4n~
 
 * Footnotes
 
-[fn:3]Because the program never reaches the end, it never gets to
-~return 0;~
-
-[fn:2]The loop body will not be entered if the expression tests out as
-false, i.e. if ~i~ is zero or negative.
-
 [fn:1] ~i--~ is evaluated from the left, while ~--i~ is evaluated from the
 right. Both stand for ~i = i - 1~ , but ~i--~ assigns the current value of
 ~i~ and then subtracts ~1~, while ~--i~ subtracts ~1~ and then assigns the
 result to ~i~. In this case, the result is the same because we don't
 have any more statements that use ~i~ but if there were, it would make a
 difference.
+
+[fn:2]The loop body will not be entered if the expression tests out as
+false, i.e. if ~i~ is zero or negative.
+
+[fn:3]Because the program never reaches the end, it never gets to
+~return 0;~
