@@ -1,6 +1,5 @@
 #+title: C practice - while loops
-#+AUTHOR: [YOURNAME]
-#+HONOR:
+#+AUTHOR: [YOURNAME] 
 #+STARTUP: overview hideblocks indent
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
 * README
@@ -12,7 +11,9 @@
 - replace the placeholder ~[yourName]~ in the header of this file by
   your name
 
-- Add ~pledged~ in the ~#+HONOR:~ line
+- Add ~(pledged)~ next to your name.
+
+- Change the =TODO= to a =DONE=.
 
 - Save the file (~C-x C-s~).
 
@@ -78,20 +79,17 @@ of ~i~ and ~n~, then run the program for different values of ~n~.
 
 * Printing table of square
 
-1) Declare integer variables ~i~ and ~n~
-2) Scan ~n~ from an input file ~square_input~
-3) Initialize ~i~ to ~1~
+Compute the squares of all integers from 1 to ~n~.
+1) Declare integer variables ~i~ and ~n~ and initialize ~n~.
+3) Initialize ~i~ to ~1~.
 4) Write a ~while~ statement that
    - prints ~i~ and ~i * i~ on 10 spaces each
    - increments ~i~ by one
 5) Run the program.
+   
 #+begin_src C :tangle square.c
   /* declarations of integer variables i and n*/
   ...
-
-  /* get input n (end of loop) */
-  puts("Enter number of rows: ");
-  scanf("%d", &n); printf("%d\n", n);
 
   /* initialize i and loop from i to n */
   ...
@@ -112,7 +110,7 @@ of ~i~ and ~n~, then run the program for different values of ~n~.
   3) Run the code block with an input file that contains integers
      ending in 0, e.g.  ~5 10 15 0~. When the last element of the list
      is reached, the loop ends.
-  4) Tangle the file, compile and run it on the CMD line
+  4) Tangle the file as ~sum.c~, compile and run it on the CMD line
 
   #+name: sum
   #+begin_src C :cmdline < sum_input :tangle sum.c

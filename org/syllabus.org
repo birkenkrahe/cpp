@@ -171,3 +171,4 @@ break). Last day of classes: Wednesday, 8 May. Final exams: 10-15 May.
 3. Programming assignments: 15 * 1 = 15 hrs (approx)
 4. Reading assignments (not graded): 15 * 1 = 15 hrs (approx)
 
+   
