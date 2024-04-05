@@ -1,0 +1,95 @@
+#+title: C practice - for loops
+#+AUTHOR: [YOURNAME]
+#+HONOR: 
+#+STARTUP: overview hideblocks indent
+#+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
+* README
+
+- Practice workbook for ~for~ loops in C.
+
+* TODO Identify yourself
+
+- replace the placeholder ~[yourName]~ in the header of this file by
+  your name
+
+- Add ~pledged~ in the ~#+HONOR:~ line
+
+- Save the file (~C-x C-s~).  
+  
+* TODO Counting example
+
+- Using a ~for~ loop, count *up* from ~1~ to ~n = 5~. The output looks
+  like this:
+
+  #+begin_example
+  1 and counting
+  2 and counting
+  3 and counting
+  4 and counting
+  5 and counting
+  #+end_example
+
+- Complete the code to get this output:
+  #+begin_src C
+    int i;  
+    for ( ... ) ...
+  #+end_src
+
+* TODO Convert ~for~ loop into ~while~ loop
+
+Run and then convert the program below into a while loop using the
+code block below.
+#+begin_src C
+  for ( int i = 3; i > 0 ; )
+    printf("T minus %d and counting\n", i--);
+#+end_src
+
+Converted to ~while~ loop:
+#+begin_src C
+  ...
+#+end_src
+
+* TODO Omitting controlling expressions
+
+1) You can omit some or all of the expressions in a ~for~ loop.
+
+2) I've omitted the third expression in the code block below.
+
+3) When you run the block you will realize that it does not end.
+
+4) Fix the error *without* changing the controlling expressions
+   so that you can see the countdown from 10 to 1 as output!
+
+5) Put the correct code into the *SOLUTION* code block below this one
+   so as not to lose the example code.
+
+   #+begin_example C
+     for ( int i = 10 ; i > 0 ; )
+       printf("T minus %d and counting\n");
+   #+end_example
+
+   *SOLUTION*:
+   #+name: omit2_solution
+   #+begin_src C
+     ...
+   #+end_src
+
+* TODO Summing numbers
+
+Rewrite the summing numbers code [[sum]] below with ~for~ instead of
+~do...while~. The input file ~sum_input~ should contain a few integers to
+be added, and a 0 as the last number.
+
+#+name: sum
+#+begin_src C :cmdline < sum_input :tangle src/sum.c
+  int n = 0, sum = 0;
+
+  printf("Enter integers (0 to terminate).\n");
+
+  do {
+    sum += n;         // sum = sum + n
+    scanf("%d", &n);
+   } while ( n != 0 );
+
+  printf("The sum is %d\n", sum);
+#+end_src
