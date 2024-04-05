@@ -1035,7 +1035,7 @@ PDF files, so you still have to get the literate programs right).
 
 - [X] Made videos for the BPMN exercises (models from pseudocode)
 
-- This week: =if=, =else=, =switch=, and loops
+- This week: =if=, =else=, =switch=, and loops (=while=, =do while=, =for=)
   
 * Week 12 - Loops 
 * Week 13 - Arrays
