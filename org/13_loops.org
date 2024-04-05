@@ -14,9 +14,9 @@
 - Practice workbooks, input files and PDF solution files in GitHub
 
 - Get the practice file in Emacs, write file and re-open as ~.org~:
-  1) ~13_loops_practice.org~ with ~M-x eww~ at [[https://bit.ly/cc_while][bit.ly/cc_while]] tinyurl.com/cpp-while-loop
-  2) ~13_loops_do.org~ with ~M-x eww~ at [[https://bit.ly/cc_do_while][bit.ly/cc_do_while]] tinyurl.com/cpp-do-loop
-  3) ~13_loops_for.org~ with ~M-x eww~ at [[https://bit.ly/cc_for][bit.ly/cc_for]] tinyurl.com/cpp-for-loop
+  1) ~13_loops_practice.org~ with ~M-x eww~ at: [[https://tinyurl.com/cc-while-loop][tinyurl.com/cc-while-loop]]
+  2) ~13_loops_do.org~ with ~M-x eww~ at: [[https://tinyurl.com/cc-do-loop][tinyurl.com/cc-do-loop]]
+  3) ~13_loops_for.org~ with ~M-x eww~ at: [[https://tinyurl.com/cc-for-loop][tinyurl.com/cc-for-loop]]
 
 * Loops
 
