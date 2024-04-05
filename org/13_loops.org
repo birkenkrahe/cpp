@@ -4,7 +4,7 @@
 #+STARTUP: overview hideblocks indent
 #+OPTIONS: toc:1 ^:nil num:1
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments none
-* README
+* DONE README
 
 - This script introduces C looping structures.
 
@@ -14,11 +14,11 @@
 - Practice workbooks, input files and PDF solution files in GitHub
 
 - Get the practice file in Emacs, write file and re-open as ~.org~:
-  1) ~13_loops_practice.org~ with ~M-x eww~ at: [[https://tinyurl.com/cc-while-loop][tinyurl.com/cc-while-loop]]
-  2) ~13_loops_do.org~ with ~M-x eww~ at: [[https://tinyurl.com/cc-do-loop][tinyurl.com/cc-do-loop]]
-  3) ~13_loops_for.org~ with ~M-x eww~ at: [[https://tinyurl.com/cc-for-loop][tinyurl.com/cc-for-loop]]
+  1) ~while.org~ with ~M-x eww~ at: [[https://tinyurl.com/cc-while-loop][tinyurl.com/cc-while-loop]]
+  2) ~do.org~ with ~M-x eww~ at: [[https://tinyurl.com/cc-do-loop][tinyurl.com/cc-do-loop]]
+  3) ~for.org~ with ~M-x eww~ at: [[https://tinyurl.com/cc-for-loop][tinyurl.com/cc-for-loop]]
 
-* Loops
+* DONE Loops
 
 - A *loop* is a statement whose job is to repeatedly execute over
   some other statement (the *loop body*).
@@ -33,7 +33,7 @@
 
 - C provides three iteration statements: ~while~, ~do~, and ~for~
 
-* The ~while~ statement
+* DONE The ~while~ statement
 ** Overview
 - The ~while~ statement has the general form
 
