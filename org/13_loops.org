@@ -380,12 +380,12 @@ Enter number of rows:
 - Sample input:
   #+name: in:dowhile
   #+begin_src bash :results output
-    echo 656 > ../data/dowhile
+    echo 6566668888888888888 > ../data/dowhile
     cat ../data/dowhile
   #+end_src
 
   #+RESULTS: in:dowhile
-  : 656
+  : 6566668888888888888
 
 - Pseudocode:
   #+name: pseudo:dowhile
@@ -393,9 +393,9 @@ Enter number of rows:
   // Input: non-negative integer n
   // Output: number of digits of n
   do
-    divide input n by 10
-    add result to digits
-  while n is greater than 0
+    divide input `n` by 10
+    add result to `digits`
+  while `n` is greater than 0
   #+end_example
 
 - Code:
@@ -416,8 +416,8 @@ Enter number of rows:
   #+end_src
 
   #+RESULTS: pgm:dowhile
-  : Enter a non-negative integer: 656
-  : The number has 3 digit(s).
+  : Enter a non-negative integer: 265604664
+  : The number has 9 digit(s).
 
 
 - ~int~ is actually a so-called /signed integer/, a 32-bit datum that
