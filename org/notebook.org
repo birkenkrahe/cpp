@@ -1012,7 +1012,7 @@ PDF files, so you still have to get the literate programs right).
   + [[https://chat.google.com/room/AAAAIk8SqZE/fp53pnK30xs/fp53pnK30xs?cls=10][How to get started with Linux on Windows (WSL)]]
   + [[https://chat.google.com/room/AAAAIk8SqZE/FgWGE4AC1MQ/FgWGE4AC1MQ?cls=10][How to solve it - heuristic problem solving with Pólya.]]
 
-* DONE Week 10 - Process models / Selection statements (ifelse)
+* DONE Week 10 - Process models / Selection statements (if/else)
 #+attr_html: :width 400px:
 [[../img/week_10.png]]
 
@@ -1024,7 +1024,7 @@ PDF files, so you still have to get the literate programs right).
 - Home assignments and bonus assignments will be available.
 - This week: BPMN process diagrams from pseudocode, =if= and =switch=
 
-* Week 11 - Conditional statements (if...else,switch)
+* DONE Week 11 - Conditional statements (if...else,switch)
 #+attr_html: :width 400px:
 #+caption: Easter picture with hackers
 [[../img/he_is_risen.jpg]]
@@ -1038,7 +1038,33 @@ PDF files, so you still have to get the literate programs right).
 - This week: =if=, =else=, =switch=, & starting with loops (=while=, =do=, =for=)
 
 
-* Week 12 - Loops 
+* Week 12 - Loops - =do ... =while= and =for= / arrays!
+#+attr_html: :width 400px:
+[[../img/booking.png]]
+
+*Book appointments with me now!* Especially if you're thinking about
+computer and/or data science! Link: [[http://tinyurl.com/booking-fall24][tinyurl.com/booking-fall24]]
+
+- *Candidate talk:* Wednesday, 10 April at 4 pm in Derby 016
+  #+attr_html: :width 200px:
+  [[../img/wenhui.png]]
+
+- *New test available* until April 14: Pseudocode, BPMN, selection:
+  deadline Sunday April 14, 11:59 pm. 25 questions, 45 minutes:
+  + models, pseudocode and BPMN
+  + nested and stacked =if= selection statements
+  + case selection with =switch=
+
+- *This week:* we finish loops and start with arrays, our first
+  "interesting" data structures (data without structure = mess)
+
+- *Upcoming:* CSC 240 Data Structures with C++ (follow-up course). Adds
+  object-orientation, linked lists, stacks, queues, trees, and
+  graphs. In every other way like this course: interactive, inspiring,
+  and occasionally irritating! Emacs & Org-mode & C++ & Python.
+  #+attr_html: :width 200px:
+  [[../img/csc240-fall24.png]]
+
 * Week 13 - Arrays
 * Week 14 - Functions
 * Week 15 - Pointers
