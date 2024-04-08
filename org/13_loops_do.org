@@ -60,6 +60,8 @@
    count up while ~i~ counts down, then print ~count~ *after* the loop to see
    how many times the loop was run.
 
+4) Fix the problem so that ~i = 2147483649~ can be looped over.
+
 * TODO Summing numbers
 
 1) Rewrite the summing numbers program with a ~do~ instead of a ~while~
