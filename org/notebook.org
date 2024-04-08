@@ -1065,7 +1065,7 @@ computer and/or data science! Link: [[http://tinyurl.com/booking-fall24][tinyurl
   #+attr_html: :width 200px:
   [[../img/csc240-fall24.png]]
 
-** Review: Summing a series of numbers
+** Review: =while= summing a series of numbers
 
 User enters a series of numbers and wants them summed up.
 
@@ -1133,6 +1133,14 @@ User enters a series of numbers and wants them summed up.
   3. You have to modify the outcome to leave the body (or =break= out)
   #+end_quote
   
+
+** Review: counting with =while= and with =do= ... =while=
+
+- Open the last practice file (tinyurl.com/cc-do-loop), and look at
+  the "Limit ...
+  
+
+
 * Week 13 - Arrays
 * Week 14 - Functions
 * Week 15 - Pointers
