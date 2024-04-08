@@ -1038,7 +1038,7 @@ PDF files, so you still have to get the literate programs right).
 - This week: =if=, =else=, =switch=, & starting with loops (=while=, =do=, =for=)
 
 
-* Week 12 - Loops - =do ... =while= and =for= / arrays!
+* Week 12 - Loops - =do ... =while= and =for=
 #+attr_html: :width 400px:
 [[../img/booking.png]]
 
@@ -1077,7 +1077,21 @@ User enters a series of numbers and wants them summed up.
   4. output
   #+end_quote
   #+begin_example
-  ...
+  // Algorithm: sum a series of integers
+  Input: a sequence of integers ending with zero
+  Output: the sum of the sequence of integers
+
+  Begin:
+     // declare and initialize variables `n` (integer) and `sum`
+
+     // ask for and scan first integer
+
+     // begin loop while scanned integer non-zero
+        // add new integer to sum
+        // scan integer
+     // end loop
+
+     // print result: the sum
   #+end_example
 
 - Could you write the program?
@@ -1093,8 +1107,23 @@ User enters a series of numbers and wants them summed up.
   9. =printf=
   10. =return=
   #+end_quote
-  #+begin_src C
-  ...
+  #+begin_src C :tangle sum.c
+    // declare and initialize variables `n` (integer) and `sum`
+    long int n, sum = 0;
+
+    // ask for and scan first integer
+    puts("Enter integers separated by space, finish with 0:");
+    scanf("%ld",&n);
+    // begin loop while scanned integer non-zero
+    while ( n != 0 ) {
+      // add new integer to sum
+      sum += n;
+      // scan integer
+      scanf("%ld",&n);
+     }    // end loop
+
+    // print result: the sum
+    printf("\nSum = %ld\n",sum);
   #+end_src
 
 - Recall:
