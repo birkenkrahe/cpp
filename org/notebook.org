@@ -1065,6 +1065,28 @@ computer and/or data science! Link: [[http://tinyurl.com/booking-fall24][tinyurl
   #+attr_html: :width 200px:
   [[../img/csc240-fall24.png]]
 
+** Review: Summing a series of numbers
+
+User enters a series of numbers and wants them summed up.
+
+- Can you remember the pseudocode to solve this problem?
+  #+begin_example
+  ...
+  #+end_example
+
+- Could you write the program?
+  #+begin_src C :tangle sum.c
+  ...
+  #+end_src
+
+- Recall:
+  #+begin_quote
+  1. =while= tests a condition to enter the loop body.
+  2. If the condition is false (=0=), the body is never entered.
+  3. You have to modify the outcome to leave the body (or =break= out)
+  #+end_quote
+  
+
 * Week 13 - Arrays
 * Week 14 - Functions
 * Week 15 - Pointers

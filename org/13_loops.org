@@ -95,7 +95,7 @@
 - Your turn! Complete a simple practice exercise. Open the practice
   file from tinyurl.com/cc-while-loop, complete and run the code under
   the headline "Simple example".x
-  
+
 ** Countdown example
 
 - What does the following statement do? What is printed out at the very end?
@@ -174,7 +174,7 @@
   #+name: inf
   #+begin_src C :tangle inf.c
     while (1)
-       puts("Still running...\n");
+      puts("Still running...\n");
   #+end_src
 
 - You can tangle the code block compile and run ~inf.c~ on the CMD line.
@@ -250,7 +250,7 @@ Enter number of rows:
            9        81
           10       100
   #+end_example
-  
+
 ** Summing numbers
 *** Problem
 
@@ -281,7 +281,7 @@ Enter number of rows:
   Input: series of integers
   Output: sum of all integers
 
-  Begin:  
+  Begin:
      // declare and initialize variables
      // scan first integer
 
@@ -290,7 +290,7 @@ Enter number of rows:
        scan next integer
 
      print the sum
-  End     
+  End
   #+end_example
 
 - Generate test input file:
@@ -315,7 +315,7 @@ Enter number of rows:
     // test if number entered is non-zero
     while ( n != 0 ) {
       // sum = sum + n
-      sum += n;         
+      sum += n;
       scanf("%d", &n); printf("%d ", n);
      }
 
@@ -330,24 +330,24 @@ Enter number of rows:
   - There are two identical calls to ~scanf~, because we need a non-zero
     number to enter the ~while~ loop in the first place.
 
-* The ~do~ statement
+* The =do= statement
 
-- The ~do~ statement has the general form
+- The =do= statement has the general form
 
   ~do /statement/ while ( /expression/ ) ;~
 
-- It's like a ~while~ statement whose controlling expression is
+- It's like a =while= statement whose controlling expression is
   tested /after/ each execution of the loop body.
 
-- When a ~do~ statement is executed, the loop body is executed first,
-  then the controlling /expression/ is evaluated.
+- When a =do= statement is executed, the loop body is executed first,
+  (at least once), and then the controlling /expression/ is evaluated.
 
 - If the value of the /expression/ is non-zero, the loop body is
   executed again and the expression is evaluated once more.
 
-- Execution of the ~do~ statement terminates when the controlling
+- Execution of the =do= statement terminates when the controlling
   /expression/ has the value ~0~ (/FALSE/) *after* the loop body has been
-  executed.
+  executed (or if you abort the execution with =break=).
 
 - Always use braces ~{...}~ around /all/ ~do~ statements, because otherwise
   it can be mistaken for a ~while~ statement.
@@ -384,12 +384,14 @@ Enter number of rows:
     cat ../data/dowhile
   #+end_src
 
-  #+RESULTS:
+  #+RESULTS: in:dowhile
   : 656
 
 - Pseudocode:
   #+name: pseudo:dowhile
   #+begin_example C
+  // Input: non-negative integer n
+  // Output: number of digits of n
   do
     divide input n by 10
     add result to digits
@@ -414,14 +416,14 @@ Enter number of rows:
   #+end_src
 
   #+RESULTS: pgm:dowhile
-  : Enter a non-negative integer: 1410065408
-  : The number has 10 digit(s).
+  : Enter a non-negative integer: 656
+  : The number has 3 digit(s).
 
 
 - ~int~ is actually a so-called /signed integer/, a 32-bit datum that
   encodes integers in the range ~[-2147483647,2147483647]~. Any integer
   larger than this will not work - we have to use long integer types
-  (and a different conversion specifier).
+  (=long int=) and a different conversion specifier (=%ld=).
 
 ** Counting down
 
@@ -432,6 +434,7 @@ statement.
 
 - Go to the practice workbook and rewrite the summing numbers program
   [[sum]] using ~do...while~.
+
 
 * The ~for~ statement
 
