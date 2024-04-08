@@ -1070,12 +1070,30 @@ computer and/or data science! Link: [[http://tinyurl.com/booking-fall24][tinyurl
 User enters a series of numbers and wants them summed up.
 
 - Can you remember the pseudocode to solve this problem?
+  #+begin_quote
+  1. data
+  2. input
+  3. processing
+  4. output
+  #+end_quote
   #+begin_example
   ...
   #+end_example
 
 - Could you write the program?
-  #+begin_src C :tangle sum.c
+  #+begin_quote
+  1. tangle
+  2. =stdio.h=
+  3. =main=
+  4. =int=
+  5. =puts=
+  6. =scanf=
+  7. =while=
+  8. ~!=~ ~+=~
+  9. =printf=
+  10. =return=
+  #+end_quote
+  #+begin_src C
   ...
   #+end_src
 
@@ -1086,7 +1104,6 @@ User enters a series of numbers and wants them summed up.
   3. You have to modify the outcome to leave the body (or =break= out)
   #+end_quote
   
-
 * Week 13 - Arrays
 * Week 14 - Functions
 * Week 15 - Pointers
