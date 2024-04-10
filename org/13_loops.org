@@ -323,14 +323,14 @@ Enter number of rows:
   #+end_src
 
   #+RESULTS: sum
-  : Enter integers (0 to terminate): 
-  : 8 23 71 5 0 
+  : Enter integers (0 to terminate):
+  : 8 23 71 5 0
   : The sum is 107
 
   - There are two identical calls to ~scanf~, because we need a non-zero
     number to enter the ~while~ loop in the first place.
 
-* The =do= statement
+* DONE The =do= statement
 
 - The =do= statement has the general form
 
@@ -435,7 +435,6 @@ statement.
 - Go to the practice workbook and rewrite the summing numbers program
   [[sum]] using ~do...while~.
 
-
 * The ~for~ statement
 
 - The ~for~ statement has the general form
@@ -457,14 +456,8 @@ statement.
      }
   #+end_src
 
-  #+RESULTS: for
-  : T minus 5 and counting
-  : T minus 4 and counting
-  : T minus 3 and counting
-  : T minus 2 and counting
-  : T minus 1 and counting
-
-- *Practice that now!*
+- Practice this using the practice file: modify the code to count up
+  from 1 to 10. nWrite pseudocode first.
 
 * Swapping ~for~ and ~while~
 
@@ -487,14 +480,20 @@ statement.
   remember what happened when we swapped the postfix for a prefix
   operator in the ~while~ loop [[concise_counting]]. Rewriting this program
   as a ~for~ loop, we get:
-#+begin_example C
-  int i = 10;  /* expr1 */
+#+begin_src C
+  int i = 3;  /* expr1 */
   while ( i > 0 /* expr2 */) {
-    printf("T minus %d and counting\n", i-- /* expr3 */ );
+    printf("while: T minus %d and counting\n", i-- /* expr3 */ );
    }
-#+end_example
 
-- **Practice that now!**
+  for (int i = 3; i > 0; i--) {
+    printf("for: T minus %d and counting\n",i);
+    }
+#+end_src
+
+- Notice that we can re-use ~i~ in the =for= loop.
+
+- Practice that now in the practice file!
 
 * ~for~ statement patterns
 
@@ -511,8 +510,8 @@ statement.
     rely on ~>~ and ~>=~ operators.
 
   - Note that the controlling expression does *not* use ~==~ but ~=~
-    instead - we're not looking for Boolean/truth values but for
-    beginning numerical values.
+    instead - we're not computing Boolean/truth values (~==~) but we're
+    assigning beginning numerical values (~=~).
 
   - The following is cool (but also dangerous): you can initialize the
     counting variable inside the first expression:
@@ -529,8 +528,8 @@ statement.
 - Some ~for~ loops may not need all 3 expressions, though the
   separators ~;~ must all three be present
 
-- If the *first* expression is omitted, no initialization is
-  performed before the loop is executed:
+- If the *first* expression is omitted, no initialization is performed
+  before the loop is executed:
   #+name: omit1
   #+begin_src C
     int i = 3;
@@ -572,17 +571,17 @@ statement.
   #+name: omit5
   #+begin_src C :results silent :tangle forInf.c
     int i;
-    //      for ( i=10 ; ; i-- ) {
-    //         printf("T minus %d and counting\n", i);
-    //      }
+          for (  ; ;  ) {
+             printf("T minus %d and counting\n", i--);
+          }
   #+end_src
 
 - **Practice that now!**
 
 * Printing a table of squares
 
-- The program [[square]] can be improved by converting its ~while~ loop to a
-  ~for~ loop:
+- The program [[square]] can be condensed by converting its ~while~ loop to
+  a ~for~ loop:
 
   #+name: square1
   #+begin_src C :cmdline < ../data/square1_input
@@ -611,6 +610,9 @@ statement.
     echo "5" > ../data/square1_input
     cat ../data/square1_input
   #+end_src
+
+  #+RESULTS: input:square
+  : 5
 
 - In [[square1]], all three expressions are controlled by the variable ~i~
   for initialization, testing, and updating. However, *there is no
@@ -1019,12 +1021,19 @@ accordingly, from: ~tinyurl.com/475m5x4n~
       }
    #+end_src
 
-   #+RESULTS:
-   : T minus 3 and counting
-   : T minus 2 and counting
-   : T minus 1 and counting
-
 3) Summing numbers (convert ~do while~ to ~for~):
+   #+begin_example C 
+     int n, sum = 0;
+
+     scanf("%d", &n);
+
+     for ( ; n != 0; ) {
+       sum += n;
+       scanf("%d", &n);
+      }
+
+     printf("The sum is %d\n", sum);
+   #+end_example
 
 * References
 
