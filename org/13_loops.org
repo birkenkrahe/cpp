@@ -456,8 +456,15 @@ statement.
      }
   #+end_src
 
+  #+RESULTS: for
+  : T minus 5 and counting
+  : T minus 4 and counting
+  : T minus 3 and counting
+  : T minus 2 and counting
+  : T minus 1 and counting
+
 - Practice this using the practice file: modify the code to count up
-  from 1 to 10. nWrite pseudocode first.
+  from 1 to 10. Write pseudocode first.
 
 * Swapping ~for~ and ~while~
 
@@ -546,7 +553,7 @@ statement.
     for (int i = 3 ; i > 0 ; ) {
       printf("T minus %d and counting\n", i--);
      }
-  #+end_src
+    #+end_src
 
 - If the *first* and *third* expressions are omitted, the resulting
   loop is nothing but a ~while~ statement in disguise:
@@ -571,9 +578,9 @@ statement.
   #+name: omit5
   #+begin_src C :results silent :tangle forInf.c
     int i;
-          for (  ; ;  ) {
-             printf("T minus %d and counting\n", i--);
-          }
+    for (  ; ;  ) {
+      printf("T minus %d and counting\n", i--);
+     }
   #+end_src
 
 - **Practice that now!**
@@ -591,8 +598,7 @@ statement.
     printf("Enter number of entries in table: ");
     scanf("%d", &n); printf("%d\n", n);
 
-    for ( i = 1; i <= n; i++)
-      printf("%10d%10d\n", i, i * i);
+    for ( i = 1; i <= n; i++) printf("%10d%10d\n", i, i * i);
   #+end_src
 
   #+RESULTS: square1
@@ -694,10 +700,13 @@ statement.
 - Let's create an input file. We want to break a loop as soon as the
   number ~0~ is reached.
 
-  #+begin_src bash :results silent
+  #+begin_src bash :results output
     echo 10 9 8 7 6 5 4 3 2 1 0 > ../data/break_input
     cat ../data/break_input
   #+end_src
+
+  #+RESULTS:
+  : 10 9 8 7 6 5 4 3 2 1 0
 
 - Here's some code: what does it do? What would happen without the
   ~break~ statement? Would you know how to test that?
@@ -804,9 +813,12 @@ is skipped, but we're still inside the loop.
 
 Input file:
 #+begin_src bash
-  echo 1 1 1 1 1 1 1 1 0 1 1 > ../data/continue
-  cat ./src/continue
+  echo 1 1 1 1 1 1 1 1 0 1 1 > continue
+  cat continue
 #+end_src
+
+#+RESULTS:
+: 1 1 1 1 1 1 1 1 0 1 1
 
 Pseudo code:
 #+begin_example C
@@ -862,7 +874,7 @@ accordingly, from: ~tinyurl.com/475m5x4n~
 
 - Here is an example using ~goto~ to exit prematurely from a loop.
 
-  The program looks for primt numbers.
+  The program looks for prime numbers.
 
   #+begin_src C
     int d, n = 3;
