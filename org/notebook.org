@@ -1139,7 +1139,6 @@ User enters a series of numbers and wants them summed up.
   3. You have to modify the outcome to leave the body (or =break= out)
   #+end_quote
 
-
 ** TODO Review: counting with =while= and with =do= ... =while=
 
 1) Open the practice file to the section "Limits and =top=".
@@ -1217,6 +1216,7 @@ User enters a series of numbers and wants them summed up.
    [[../img/top.png]]
 
 Over the weekend, I'll publish a couple of easy loop exercises.
+
 
 * Week 13 - Arrays
 * Week 14 - Functions
