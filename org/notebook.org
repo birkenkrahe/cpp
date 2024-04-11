@@ -1048,7 +1048,7 @@ computer and/or data science! Link: [[http://tinyurl.com/booking-fall24][tinyurl
 *This week:* we finish loops and start with arrays, our first
 "interesting" data structures (data without structure = mess)
 
-** Test 6 available until Sunday, April 14
+** DONE Test 6 available until Sunday, April 14
 
 - *New test available* until April 14: Pseudocode, BPMN, selection:
   deadline Sunday April 14, 11:59 pm. 25 questions, 45 minutes:
@@ -1056,13 +1056,13 @@ computer and/or data science! Link: [[http://tinyurl.com/booking-fall24][tinyurl
   + nested and stacked =if= selection statements
   + case selection with =switch=
 
-** Teaching demonstration Wednesday 4 pm in Derby 016
+** DONE Teaching demonstration Wednesday 4 pm in Derby 016
 
 - *Candidate talk:* Wednesday, 10 April at 4 pm in Derby 016
   #+attr_html: :width 200px:
   [[../img/wenhui.png]]
 
-** Fall'24: Data Structures (CSC 240) - Spring'25: Algorithms (CSC 265)
+** DONE Fall'24: Data Structures (CSC 240) - Spring'25: Algorithms (CSC 265)
 
 - *Upcoming:* CSC 240 Data Structures with C++ (follow-up course). Adds
   object-orientation, linked lists, stacks, queues, trees, and
@@ -1139,7 +1139,7 @@ User enters a series of numbers and wants them summed up.
   3. You have to modify the outcome to leave the body (or =break= out)
   #+end_quote
 
-** TODO Review: counting with =while= and with =do= ... =while=
+** DONE Review: counting with =while= and with =do= ... =while=
 
 1) Open the practice file to the section "Limits and =top=".
 
@@ -1223,6 +1223,12 @@ User enters a series of numbers and wants them summed up.
 
 Over the weekend, I'll publish a couple of easy loop exercises.
 
+
+** TODO Review: looping with =for=, =break=
+
+1. =break= only gets you out of the innermost loop
+
+** TODO Lab: practicing loops with =while=, =do =... =while=, and =for=
 
 * Week 13 - Arrays
 * Week 14 - Functions
