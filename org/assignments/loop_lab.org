@@ -1,3 +1,6 @@
+#+title: Loop Lab
+#+author: [yourname] (pledged)
+#subtitle: Intro to programming in C++ (CSC 100) Lyon College Spring 2024
 #+startup: overview hideblocks indent entitiespretty:
 #+property: header-args:C :main yes :includes <stdio.h> :results output :exports both :tangle yes: 
 #+options: toc:nil num:nil
