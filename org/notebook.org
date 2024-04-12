@@ -1224,11 +1224,16 @@ User enters a series of numbers and wants them summed up.
 Over the weekend, I'll publish a couple of easy loop exercises.
 
 
-** TODO Review: looping with =for=, =break=
-
-1. =break= only gets you out of the innermost loop
-
 ** TODO Lab: practicing loops with =while=, =do =... =while=, and =for=
+
+Three exercises for class practice:
+1) pick any of these to begin with and complete it in class
+2) submit one or all of them later for bonus points in Canvas.
+3) Use the pseudocode block to document your approach, and the
+   "Lessons learnt" block below to record your observations or
+   insights (if any).
+
+Exercises as Org-mode file: [[https://tinyurl.com/cpp-loop-lab][tinyurl.com/cpp-loop-lab]]
 
 * Week 13 - Arrays
 * Week 14 - Functions
