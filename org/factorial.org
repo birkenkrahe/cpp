@@ -39,9 +39,9 @@ For the factorial problem, the answers are:
 4) From the example, we learn that one loop is sufficient: for ~n=4~,
    the loop variable ~i~ runs through the values 1,2,3,4.
 
-5) We have three loops to choose from. In this case, =for= was required,
-   but it is also the best choice because we're counting up (or down)
-   in whole numbers:
+5) We have three types of loops to choose from: =while=, =do=-=while=, and
+   =for=. In this case, =for= was required, but it is also the best choice
+   because we're counting up (or down) in whole numbers:
    #+begin_src C
      for ( int i = 1; i <= 4; i++) printf("%d ",i); // for n = 4
      puts("");
