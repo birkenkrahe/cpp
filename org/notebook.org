@@ -1037,8 +1037,7 @@ PDF files, so you still have to get the literate programs right).
 
 - This week: =if=, =else=, =switch=, & starting with loops (=while=, =do=, =for=)
 
-
-* Week 12 - Loops - =do ... =while= and =for=
+* DONE Week 12 - Loops - =do ... =while= and =for=
 #+attr_html: :width 400px:
 [[../img/booking.png]]
 
@@ -1048,7 +1047,7 @@ computer and/or data science! Link: [[http://tinyurl.com/booking-fall24][tinyurl
 *This week:* we finish loops and start with arrays, our first
 "interesting" data structures (data without structure = mess)
 
-** DONE Test 6 available until Sunday, April 14
+** Test 6 available until Sunday, April 14
 
 - *New test available* until April 14: Pseudocode, BPMN, selection:
   deadline Sunday April 14, 11:59 pm. 25 questions, 45 minutes:
@@ -1056,13 +1055,13 @@ computer and/or data science! Link: [[http://tinyurl.com/booking-fall24][tinyurl
   + nested and stacked =if= selection statements
   + case selection with =switch=
 
-** DONE Teaching demonstration Wednesday 4 pm in Derby 016
+** Teaching demonstration Wednesday 4 pm in Derby 016
 
 - *Candidate talk:* Wednesday, 10 April at 4 pm in Derby 016
   #+attr_html: :width 200px:
   [[../img/wenhui.png]]
 
-** DONE Fall'24: Data Structures (CSC 240) - Spring'25: Algorithms (CSC 265)
+** Fall'24: Data Structures (CSC 240) - Spring'25: Algorithms (CSC 265)
 
 - *Upcoming:* CSC 240 Data Structures with C++ (follow-up course). Adds
   object-orientation, linked lists, stacks, queues, trees, and
@@ -1071,7 +1070,7 @@ computer and/or data science! Link: [[http://tinyurl.com/booking-fall24][tinyurl
   #+attr_html: :width 200px:
   [[../img/csc240-fall24.png]]
 
-** DONE Review: =while= summing a series of numbers
+** Review: =while= summing a series of numbers
 
 User enters a series of numbers and wants them summed up.
 
@@ -1139,7 +1138,7 @@ User enters a series of numbers and wants them summed up.
   3. You have to modify the outcome to leave the body (or =break= out)
   #+end_quote
 
-** DONE Review: counting with =while= and with =do= ... =while=
+** Review: counting with =while= and with =do= ... =while=
 
 1) Open the practice file to the section "Limits and =top=".
 
@@ -1204,7 +1203,7 @@ User enters a series of numbers and wants them summed up.
      long int count[] = {0};  // empty array
 
      for (int i = 0; i < 3; i++) {   // `for` loop over array elements
-       do {            
+       do {
          limit[i]--;    // count down
          count[i]++;          // count up
        } while (limit[i] > 0);    // check if array element is non-zero
@@ -1213,7 +1212,7 @@ User enters a series of numbers and wants them summed up.
    #+end_src
 
    #+RESULTS:
-   : 2147483647 2147483648 2147483649 
+   : 2147483647 2147483648 2147483649
 
 6) These loops take long enough that you can see how the CPUs are
    stressed with the =top= command (Linux only - in Windows, try
@@ -1223,8 +1222,7 @@ User enters a series of numbers and wants them summed up.
 
 Over the weekend, I'll publish a couple of easy loop exercises.
 
-
-** TODO Lab: practicing loops with =while=, =do =... =while=, and =for=
+** Lab: practicing loops with =while=, =do =... =while=, and =for=
 
 Three exercises for class practice:
 1) pick any of these to begin with and complete it in class
@@ -1235,7 +1233,171 @@ Three exercises for class practice:
 
 Exercises as Org-mode file: [[https://tinyurl.com/cpp-loop-lab][tinyurl.com/cpp-loop-lab]]
 
+
 * Week 13 - Arrays
+#+attr_html: :width 400px:
+#+caption: What do you do if someone with power over you writes to you personally?
+[[../img/week_13.png]]
+
+*How should you react if a professor asks you in an email to see him?*
+*What if you're working and your boss sends you a text with a question?*
+
+#+begin_quote
+When dealing with anyone who has *power* over you:
+1) If they send you a message, you must always, without fail, *respond*.
+2) If the message contains an order or a suggestion, *obey*.
+3) If it includes a Question, *answer*.
+
+You only don't have to respond if the message says "FYI" (For Your
+Information) or if the other person writes "You do not need to reply."
+#+end_quote
+
+** Test preview: loops
+
+1) Will these two =for= loops have different outputs?
+   #+begin_example C
+    for (int i = 0; i < 5; i++) ...
+    for (int i = 0; i < 5; ++i) ...
+   #+end_example
+
+   #+begin_src C :main yes :includes <stdio.h> :results output :exports both :comments both :tangle yes :noweb yes
+     #include <stdio.h>
+     int main() {
+
+       for (int i = 0; i < 5; i++) printf("%d ",i);
+       puts("");
+       for (int i = 0; i < 5; ++i) printf("%d ",i);
+
+       return 0;
+     }
+   #+end_src
+
+2) What about these two:
+   #+begin_example C
+   for (int i = 0; i++ < 5; ) printf("%d ",i);
+   puts("");
+   for (int i = 0; ++i < 5; ) printf("%d ",i);
+   #+end_example
+
+   #+begin_src C
+     #include <stdio.h>
+     int main() {
+
+       for (int i = 0; i++ < 5; ) printf("%d ",i);
+       puts("");
+       for (int i = 0; ++i < 5; ) printf("%d ",i);
+
+       return 0;
+     }
+   #+end_src
+
+3) How does the =do=-=while= statement look like if the loop body is
+   empty? Do I still need curly braces?
+   #+begin_src C
+     int i = 0;
+     do {
+       //nothing to see here
+     } while (i != 0);
+   #+end_src
+
+   #+RESULTS:
+
+4) What's wrong with this code:
+   #+begin_src C
+     for ( int i = 1; i < 100; i++);
+     i++;
+   #+end_src
+
+   #+begin_quote
+   The variable =i= in the =i++= statement is undeclared. The declaration
+   of =i= in the =for= loop is local: it is voided when the loop is left.
+   #+end_quote
+
+5) What do all loops have in common?
+   #+begin_quote
+   An initialization, a testing condition, and a counter change;
+   #+end_quote
+   #+begin_src C
+     int i=0;              // init
+     while (i < 4) {       // test
+       printf("%d ",i++);  // change
+     }                   
+     puts("");
+     for (int i=0; i<4; i++)  // init; test; change
+       printf("%d ",i);
+     puts("");
+     int j=0;              // init
+     do { 
+       printf("%d ",j++);  // change
+     } while (j < 4);      // test
+   #+end_src
+
+6) One of these statements is not like the others. Which one and why?
+   #+begin_example
+     while ( i < 10 ) { ... }
+
+     for ( ; i < 10; ) { ... }
+
+     do { ... } while ( i < 10 );
+   #+end_example
+   #+begin_quote
+   In the last statement, whatever is between { ... } is executed at
+   least once, after which the test i < 10 might fail. In the other
+   two cases, it is only executed even once after the test passes.
+   #+end_quote
+
+7) How would you write an infinite loop with =while= and with =for=?
+   #+begin_example C
+   while(1) {
+      // this will run forever: test is always TRUE
+   }
+
+   for (; ; ;) {
+      // this will run forever: no test, no change
+   #+end_example
+
+8) How can you always leave an infinite loop?
+   #+begin_src C
+     while(1) {
+       puts("I'll be here forever!");
+       break;
+     }
+     puts("...Pheeew!!!...Saved!");
+   #+end_src
+   
+9) How would you count down from ~n-1~ to ~0~ using =for=?
+   #+begin_src C
+     int n = 10;  // upper limit
+     for ( int i = n; i >=0; i--)  
+       printf("%d ",i);
+   #+end_src
+   
+10) What's missing here? I wanted to count up from 1 to 5. Instead the
+    loop never finishes and does not print anything. How can you fix it?
+    #+begin_example C
+      int i = 1;
+
+      while (i < 6) 
+         printf("%d ",i);
+    #+end_example
+
+    #+begin_src C
+      int i = 1;
+
+      while (i < 6) 
+         printf("%d ",i++);
+    #+end_src
+
+** Arrays
+
+#+begin_quote
+"One rather curious thing I have noticed about aesthetic satisfaction
+is that our pleasure is significantly enhanced when we accomplish
+something with limited tools." Don Knuth, Literate Programming (1992)
+#+end_quote
+
+
+
 * Week 14 - Functions
 * Week 15 - Pointers
 * Week 16 - From C to C++
