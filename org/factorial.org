@@ -74,3 +74,8 @@ For the factorial problem, the answers are:
 You do not always need to write things out, especially if you already
 coded something in another language, but it really helps, especially
 the table that shows what happens in every iteration.
+
+There are many nifty debugging tools available. I often use
+[[https://pythontutor.com][pythontutor.com]] to visualize the walkthrough of an algorithm. Works in
+multiple languages. In Emacs, you also have the GNU debugger =gdb= for
+that.
