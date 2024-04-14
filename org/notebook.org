@@ -1252,7 +1252,14 @@ You only don't have to respond if the message says "FYI" (For Your
 Information) or if the other person writes "You do not need to reply."
 #+end_quote
 
-** Test preview: loops
+** TODO Loop lab: Understanding a problem before coding it
+#+attr_html: :width 200px:
+[[../img/factorial.png]]
+
+Detailed breakdown of the factorial program (with =for=), which involves
+overwriting the factorial with itself - link to the PDF [[https://chat.google.com/room/AAAAIk8SqZE/ASJbrCNyZ04/ASJbrCNyZ04?cls=10][in the chat]].
+
+** TODO Test preview: loops
 
 1) Will these two =for= loops have different outputs?
    #+begin_example C
@@ -1388,7 +1395,7 @@ Information) or if the other person writes "You do not need to reply."
          printf("%d ",i++);
     #+end_src
 
-** Arrays
+** TODO Arrays
 
 #+begin_quote
 "One rather curious thing I have noticed about aesthetic satisfaction
