@@ -1395,7 +1395,7 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
          printf("%d ",i++);
     #+end_src
 
-** TODO Arrays
+** TODO Arrays: declaration, subscripting, iterating
 
 #+begin_quote
 "One rather curious thing I have noticed about aesthetic satisfaction
@@ -1404,9 +1404,8 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 #+end_quote
 
 
-
-* Week 14 - Functions
-* Week 15 - Pointers
+* Week 14 - Functions vs. Procedures
+* Week 15 - Pointers vs. Pointer Arrays
 * Week 16 - From C to C++
 
 * Footnotes

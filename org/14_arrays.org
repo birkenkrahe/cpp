@@ -1,6 +1,6 @@
 #+TITLE:Arrays
 #+AUTHOR:Marcus Birkenkrahe
-#+SUBTITLE:CSC100 Introduction to programming in C/C++ - Spring 2023
+#+SUBTITLE:CSC100 Introduction to programming in C/C++ - Spring 2024
 #+STARTUP: overview hideblocks indent inlineimages
 #+OPTIONS: ^:nil num:nil
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
@@ -35,22 +35,20 @@
   central in C++. Classes contain objects and their properties.
 
 - Different programming languages have different data structures. The
-  language Python has *dictionaries*, and the language R has *data frames*
-  and *lists*.
+  language Python has *dictionaries*, the language R has *data frames*,
+  and the language Lisp has *lists*:
 
 - Example with Python: a /dictionary/ of car data.
   #+name: PyDict
-  #+begin_src python
+  #+begin_src python :python python3
     thisDict = {
-        "brand": "Ford",
-        "model": "Mustang",
-        "year": 1964
+        "brand": "Ford",     # key: brand attribute, value: Ford
+        "model": "Mustang",  # key: model attribute, value: Mustang
+        "year": 1964         # key: year attribute, value: 1964
     }
-    print(thisDict)
+    for key, value in thisDict.items():
+        print(f"key: {key}, value: {value}")
   #+end_src
-
-  #+RESULTS: PyDict
-  : {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
 
 - Example with R: a /data frame/ of tooth growth data, consisting of
   three different vectors of the same length but different data
@@ -60,11 +58,11 @@
     str(ToothGrowth)
   #+end_src
 
-  #+RESULTS: Rdf
-  : 'data.frame':	60 obs. of  3 variables:
-  :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
-  :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
-  :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
+- For Lisp, /lists/ are the fundamental data structure:
+  #+begin_src emacs-lisp
+    (setq my-list '(1 2 3 4 5))
+    (message "List contents: %s" my-list)
+  #+end_src
 
 * What is an array?
 
@@ -82,6 +80,7 @@
   #+attr_html: :width 600px
   #+caption: Memory representation of a 2D character array (Source: TheCguru.com)
   [[../img/storage.png]]
+
 * One-dimensional arrays
 
 - The simplest kind of array has one dimension - conceptually
@@ -121,7 +120,14 @@
   : a[9] = 0
 
 - The array must be initialized, just like any scalar variable, to
-  be of use to us (otherwise strange values may appear).
+  be of use to us (otherwise strange values may appear):
+  #+begin_src C
+    int a[10];
+    for (int i=0;i<10;i++) printf("%d ",a[i]);
+  #+end_src
+
+  #+RESULTS:
+  : 2 0 -1075053569 0 708162937 32765 100 0 4096 0 
 
 - You can initialize arrays explicitly using ~{...}~:
   #+begin_src C :results silent
@@ -133,6 +139,18 @@
   terminating character):
   #+attr_html: :width 600px
   [[../img/hello.png]]
+
+- Control over start/finish of arrays is essential, otherwise you
+  incur a so-called /memory overflow/:
+#+begin_src C
+  char c1[] = {'h','e','l','l','o','\0'}; // initialize with chars
+  char c2[] = {'h','e','l','l','o'}; // initialize with chars
+  printf("%s\n%s",c1,c2);
+#+end_src
+
+#+RESULTS:
+: hello
+: hellohello
 
 * Array length
 
@@ -168,10 +186,16 @@
     printf("%d\n", ++a[0]); // ++a[0] => a[0] + 1
   #+end_src
 
+- What is the value of ~a[10]~ in this last example?
+  #+begin_src C
+    int a[10]={0};
+    printf("%d\n",a[9]); // indices run from 0 to 9 only
+    printf("%d\n",a[10]); // remember that there is NO a[10]
+  #+end_src
+
   #+RESULTS:
-  : 4
   : 0
-  : 2
+  : 337535232
 
 * Array subscripting side effects
 ** C is too permissive
@@ -187,6 +211,7 @@
     foo[i+j*10] = 0; // e.g. i=-10, j=1 => foo[0]
     bar[i++];        // e.g. i = -1 => bar[0]
   #+end_example
+
 ** Weird ~while~ loop
 
 - As an example for the weird effects, trace this code:
