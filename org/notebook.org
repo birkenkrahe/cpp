@@ -1259,7 +1259,7 @@ Information) or if the other person writes "You do not need to reply."
 Detailed breakdown of the factorial program (with =for=), which involves
 overwriting the factorial with itself - link to the PDF [[https://chat.google.com/room/AAAAIk8SqZE/ASJbrCNyZ04/ASJbrCNyZ04?cls=10][in the chat]].
 
-** TODO Test preview: loops
+** TODO Test preview/review: loops
 
 1) Will these two =for= loops have different outputs?
    #+begin_example C
@@ -1278,6 +1278,10 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
        return 0;
      }
    #+end_src
+
+   #+RESULTS:
+   : 0 1 2 3 4 
+   : 0 1 2 3 4 
 
 2) What about these two:
    #+begin_example C
@@ -1298,6 +1302,10 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
      }
    #+end_src
 
+   #+RESULTS:
+   : 1 2 3 4 5 
+   : 1 2 3 4 
+
 3) How does the =do=-=while= statement look like if the loop body is
    empty? Do I still need curly braces?
    #+begin_src C
@@ -1312,8 +1320,10 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
 4) What's wrong with this code:
    #+begin_src C
      for ( int i = 1; i < 100; i++);
-     i++;
+     i++;   
    #+end_src
+
+   #+RESULTS:
 
    #+begin_quote
    The variable =i= in the =i++= statement is undeclared. The declaration
@@ -1371,6 +1381,10 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
      }
      puts("...Pheeew!!!...Saved!");
    #+end_src
+
+   #+RESULTS:
+   : I'll be here forever!
+   : ...Pheeew!!!...Saved!
    
 9) How would you count down from ~n-1~ to ~0~ using =for=?
    #+begin_src C
@@ -1378,6 +1392,9 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
      for ( int i = n; i >=0; i--)  
        printf("%d ",i);
    #+end_src
+
+   #+RESULTS:
+   : 10 9 8 7 6 5 4 3 2 1 0 
    
 10) What's missing here? I wanted to count up from 1 to 5. Instead the
     loop never finishes and does not print anything. How can you fix it?
@@ -1394,6 +1411,9 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
       while (i < 6) 
          printf("%d ",i++);
     #+end_src
+
+    #+RESULTS:
+    : 1 2 3 4 5 
 
 ** TODO Arrays: declaration, subscripting, iterating
 

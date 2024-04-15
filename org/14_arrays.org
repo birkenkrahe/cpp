@@ -28,6 +28,9 @@
     v
   #+end_src
 
+  #+RESULTS: Rvec
+  : [1] 1 2 3
+
 - In C there are two *aggregate* stuctures that can store /collections/
   of values: *arrays* and *structures*.
 
@@ -50,6 +53,11 @@
         print(f"key: {key}, value: {value}")
   #+end_src
 
+  #+RESULTS: PyDict
+  : key: brand, value: Ford
+  : key: model, value: Mustang
+  : key: year, value: 1964
+
 - Example with R: a /data frame/ of tooth growth data, consisting of
   three different vectors of the same length but different data
   types.
@@ -58,11 +66,20 @@
     str(ToothGrowth)
   #+end_src
 
+  #+RESULTS: Rdf
+  : 'data.frame':	60 obs. of  3 variables:
+  :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+  :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+  :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
+
 - For Lisp, /lists/ are the fundamental data structure:
   #+begin_src emacs-lisp
     (setq my-list '(1 2 3 4 5))
     (message "List contents: %s" my-list)
   #+end_src
+
+  #+RESULTS:
+  : List contents: (1 2 3 4 5)
 
 * What is an array?
 
@@ -127,7 +144,7 @@
   #+end_src
 
   #+RESULTS:
-  : 2 0 -1075053569 0 708162937 32765 100 0 4096 0 
+  : 2 0 -1075053569 0 635131049 32767 100 0 4096 0 
 
 - You can initialize arrays explicitly using ~{...}~:
   #+begin_src C :results silent
@@ -162,40 +179,6 @@
   #+end_src
 - Remember that now ~N~ will *blindly* be replaced by ~10~ *everywhere* in the
   program by the pre-processor.
-
-* Array subscripting
-
-- /Subscripting/ or /indexing/ means accessing a particular array
-  element.
-
-- Array elements in C are always numbered starting from 0, so the
-  elements of an array of length ~n~ are /indexed/ from ~0~ to ~n-1~.
-  #+attr_html: :width 600px
-  #+caption: Indexing of an 1-dim array 'a' (Source: King)
-  [[../img/index.png]]
-
-- Index expressions ~a[i]~ can be used like other variables:
-  #+begin_src C
-    int a[10];  // declare array 
-
-    a[0] = 1;   // assign value to array element
-    a[5] = 2 * 2; // assign operation result to array element
-
-    printf("%d\n", a[5]); // print array element
-    printf("%d\n", a[5] - 4); // subtracts 4 from 4
-    printf("%d\n", ++a[0]); // ++a[0] => a[0] + 1
-  #+end_src
-
-- What is the value of ~a[10]~ in this last example?
-  #+begin_src C
-    int a[10]={0};
-    printf("%d\n",a[9]); // indices run from 0 to 9 only
-    printf("%d\n",a[10]); // remember that there is NO a[10]
-  #+end_src
-
-  #+RESULTS:
-  : 0
-  : 337535232
 
 * Array subscripting side effects
 ** C is too permissive
