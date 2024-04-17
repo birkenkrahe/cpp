@@ -67,7 +67,7 @@
   #+end_src
 
   #+RESULTS: Rdf
-  : 'data.frame':	60 obs. of  3 variables:
+  : 'data.frame':       60 obs. of  3 variables:
   :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
   :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
   :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
@@ -110,7 +110,7 @@
   variable of type T:
   #+name: ex:oneDimArrays
   #+begin_example C
-    for ( int i = 0; i < N; i++ ) 
+    for ( int i = 0; i < N; i++ )
       a[i] = 0;                    /* clears a */
 
     for ( int i = 0; i < N; i++ )
@@ -144,7 +144,7 @@
   #+end_src
 
   #+RESULTS:
-  : 2 0 -1075053569 0 635131049 32767 100 0 4096 0 
+  : 2 0 -1075053569 0 635131049 32767 100 0 4096 0
 
 - You can initialize arrays explicitly using ~{...}~:
   #+begin_src C :results silent
@@ -218,20 +218,6 @@
      }
   #+end_src
 
-  #+RESULTS: pgm:arrayTest
-  #+begin_example
-  0 < N	a[0] = 0
-  1 < N	a[1] = 0
-  2 < N	a[2] = 0
-  3 < N	a[3] = 0
-  4 < N	a[4] = 0
-  5 < N	a[5] = 0
-  6 < N	a[6] = 0
-  7 < N	a[7] = 0
-  8 < N	a[8] = 0
-  9 < N	a[9] = 0
-  #+end_example
-
 - Without the support variable, we would get weird printing results:
   can you explain them?
   #+name: pgm:arrayTest1
@@ -244,30 +230,21 @@
       printf("a[%d] = %d\n", i, a[i]); // print i then a[i]
      }
   #+end_src
-  #+RESULTS: pgm:arrayTest1
-  #+begin_example
-  0 < N	a[1] = -1225222896
-  1 < N	a[2] = -1225479976
-  2 < N	a[3] = -1225476680
-  3 < N	a[4] = 66748
-  4 < N	a[5] = 66708
-  5 < N	a[6] = 0
-  6 < N	a[7] = 66328
-  7 < N	a[8] = 0
-  8 < N	a[9] = 0
-  9 < N	a[10] = 10
-  #+end_example
 
-- *Explanation 1:* in [[pgm:arrayTest1]], the condition test is printed
-  alright, because ~i~ has not been incremented. But after the
-  assignment, ~a[i]~ is the next index that has not been assigned a 0
-  yet, so all values are random.  When we print ~a[1]~ for example, it
-  has not been assigned to ~0~ yet. ~a[10]~ is not declared or assigned a
-  value at all, because ~a[N]~ has the elements ~{a[0] ... a[N-1]}~.
+- *Explanation 1:*
+  #+begin_quote
+  In [[pgm:arrayTest1]], the condition test is printed alright, because ~i~
+  has not been incremented. But after the assignment, ~a[i]~ is the next
+  index that has not been assigned a 0 yet, so all values are random.
+  When we print ~a[1]~ for example, it has not been assigned to ~0~
+  yet. ~a[10]~ is not declared or assigned a value at all, because ~a[N]~
+  has the elements ~{a[0] ... a[N-1]}~.
 
-- What would happen if the assignment were with ~a[++i]~? Let's see:
+  #+end_quote
+
+- What'd happen if the assignment were with ~a[++i]~ instead of ~a[++i]~?
   #+name: pgm:arrayTest2
-  #+begin_src C
+  #+begin_src C :flags
     #define N 10
     int i = 0, a[N]; int j;
     while ( i < N ) {
@@ -278,27 +255,31 @@
      }
   #+end_src
 
-  #+RESULTS: pgm:arrayTest2
+  On Windows, you'd get this answer:
   #+begin_example
-  0 < N	a[0] = 66110
-  1 < N	a[1] = 0
-  2 < N	a[2] = 0
-  3 < N	a[3] = 0
-  4 < N	a[4] = 0
-  5 < N	a[5] = 0
-  6 < N	a[6] = 0
-  7 < N	a[7] = 0
-  8 < N	a[8] = 0
-  9 < N	a[0] = 66110
+  0 < N a[0] = 66110
+  1 < N a[1] = 0
+  2 < N a[2] = 0
+  3 < N a[3] = 0
+  4 < N a[4] = 0
+  5 < N a[5] = 0
+  6 < N a[6] = 0
+  7 < N a[7] = 0
+  8 < N a[8] = 0
+  9 < N a[0] = 66110
   #+end_example
 
-- *Explanation 2:* ~a[++i]~ would not be right, because ~0~ would be assigned
-  to ~a[0] during the first loop iteration - remember that ~++i~
-  increments ~i~ first and then stores the result in ~i~. The last
-  iteration tries to assign 0 to ~a[11]~ which is undeclared. You can
-  test that by initializing ~int i = -1~ at the start. Same problem at
-  the end, for ~i=9~, the computer tries to initialize ~a[10]~, which is
-  not declared.
+- *Explanation 2:*
+  #+begin_quote
+  ~a[++i]~ would not be right, because ~0~ would be assigned to ~a[0]
+  during the first loop iteration - remember that ~++i~ increments ~i~
+  first and then stores the result in ~i~. The last iteration tries to
+  assign 0 to ~a[11]~ which is undeclared. You can test that by
+  initializing ~int i = -1~ at the start. Same problem at the end, for
+  ~i=9~, the computer tries to initialize ~a[10]~, which is not declared -
+  "stack smashing" means that the computer tries to write beyond its
+  defined boundaries.
+  #+end_quote
 
 ** Copying arrays into one another
 
@@ -312,7 +293,7 @@
       a[i] = b[i++];
   #+end_example
 
-  The statement in the loop accesses the value of ~i~ and modifies
+- The statement in the loop accesses the value of ~i~ and modifies
   ~i~. This causes undefined behavior. To do it right, use this code:
   #+name: copy2
   #+begin_example C
@@ -320,21 +301,33 @@
       a[i] = b[i];
   #+end_example
 
+- This is one example where the =while= loop is not the same as the =for=
+  loop.
+
 ** Weird ~for~ loop
 
-This innocent-looking ~for~ statement can cause an infinite loop:
-#+name: ex:infArray
-#+begin_example C
+- This innocent-looking ~for~ statement can cause an infinite loop:
+  #+name: ex:infArray
+  #+begin_example C
   int a[10], i;
 
   for ( i = 1; i <= 10; i++)
     a[i] = 0;
 #+end_example
 
-*Explanation:* when ~i~ reaches ~10~, the program stores ~0~ in ~a[10]~. But
-~a[10]~ does not exist (the array ends with ~a[9]~), so ~0~ goes into memory
-immediately after ~a[9]~. If the variable ~i~ happens to follow ~a[9]~ in
-memory, then ~i~ will be reset to ~0~, causing the loop to start over!
+- Explanation:* when ~i~ reaches ~10~, the program stores ~0~ in ~a[10]~. But
+  ~a[10]~ does not exist (the array ends with ~a[9]~), so ~0~ goes into
+  memory immediately after ~a[9]~. If the variable ~i~ happens to follow
+  ~a[9]~ in memory, then ~i~ will be reset to ~0~, causing the loop to start
+  over!
+
+- Let's smash the stack!
+  #+begin_src C
+    int a[10], i;
+
+    for ( i = 1; i <= 10; i++)
+      a[i] = 0;
+  #+end_src
 
 * Iterating over arrays
 
@@ -342,15 +335,15 @@ memory, then ~i~ will be reset to ~0~, causing the loop to start over!
   see what each of them does?
   #+name: ex:for_array_1
   #+begin_example C
-    for (i = 0; i < 10 ; i++ ) 
-      a[i] = 0;   
+    for (i = 0; i < 10 ; i++ )
+      a[i] = 0;
   #+end_example
   #+begin_quote
   *Answer 1:* ~0~ is assigned to ~a[0]~ through ~a[9]~.
   #+end_quote
   #+name: ex:for_array_2
-  #+begin_example C
-    for (i = 0; i < 10 ; i++ ) 
+  #+begin_example C 
+    for (i = 0; i < 10 ; i++ )
       scanf("%d", &a[i]);
   #+end_example
   #+begin_quote
@@ -358,18 +351,17 @@ memory, then ~i~ will be reset to ~0~, causing the loop to start over!
   #+end_quote
   #+name: ex:for_array_3
   #+begin_example C
-    for (i = 0; i < 10 ; i++ ) 
-      sum += a[i]; 
+    for (i = 0; i < 10 ; i++ )
+      sum += a[i];
   #+end_example
   #+begin_quote
   *Answer 3:* The values ~a[0]~ through ~a[9]~ are summed up: ~sum = sum +
-   a[i=1] = sum + a[i=1] + a[i=0] ...~
+  a[i=1] = sum + a[i=1] + a[i=0] ...~
   #+end_quote
 
 * Let's practice!
 
-- [[https://raw.githubusercontent.com/birkenkrahe/cc/piHome/org/14_arrays_practice.org][The practice file is in GitHub.]] Remember to download the *raw*
-  Org-mode file and open it in Emacs.
+- Let's practice: download [[https://tinyurl.com/array-practice][tinyurl.com/array-practice]] as array.org
 
 - The first two problems can be solved with what you've already heard
   (one-dimensional arrays).
@@ -418,7 +410,7 @@ memory, then ~i~ will be reset to ~0~, causing the loop to start over!
   5) Set each diagonal element ~ident[row][col]~ to 1, all others to 0
   6) Print the resulting matrix
   #+name: identityMatrix
-  #+begin_src C 
+  #+begin_src C
     #define N 5
 
     double ident[N][N];   // matrix dimension is N * N
@@ -440,18 +432,18 @@ memory, then ~i~ will be reset to ~0~, causing the loop to start over!
   #+end_src
 
   #+RESULTS: identityMatrix
-  : 1 0 0 0 0 
-  : 0 1 0 0 0 
-  : 0 0 1 0 0 
-  : 0 0 0 1 0 
-  : 0 0 0 0 1 
+  : 1 0 0 0 0
+  : 0 1 0 0 0
+  : 0 0 1 0 0
+  : 0 0 0 1 0
+  : 0 0 0 0 1
 
 - By comparison, this is how easy it is to declare, create and print
   an identity matrix in a language that is built for math
   manipulation, R:
   #+begin_src R
     diag(5)
-#    diag
+                                            #    diag
   #+end_src
 
   #+RESULTS:
@@ -477,15 +469,15 @@ memory, then ~i~ will be reset to ~0~, causing the loop to start over!
   #+end_src
 
   #+RESULTS: initArray
-  : 1 2 3 
-  : 4 5 6 
-  : 7 8 9 
+  : 1 2 3
+  : 4 5 6
+  : 7 8 9
 
 - By comparison, in R this looks like:
   #+begin_src R
     (matrix(1:9,3,byrow=TRUE))
-  #+end_src  
-  
+  #+end_src
+
 - How could you populate the matrix column-wise instead of row-wise?
   #+begin_quote Answer
   By swapping the indices in the print statement.
@@ -504,21 +496,21 @@ memory, then ~i~ will be reset to ~0~, causing the loop to start over!
   #+end_src
 
   #+RESULTS:
-  : 1 4 7 
-  : 2 5 8 
-  : 3 6 9 
+  : 1 4 7
+  : 2 5 8
+  : 3 6 9
 
 - In R, that's the default, so the command is even shorter:
   #+begin_src R
     (matrix(1:9,3))
-  #+end_src  
+  #+end_src
 
   #+RESULTS:
   :      [,1] [,2] [,3]
   : [1,]    1    4    7
   : [2,]    2    5    8
   : [3,]    3    6    9
-  
+
 * The size of arrays
 
 - The ~sizeof~ operator can determine the size of arrays (in bytes).
@@ -531,7 +523,7 @@ memory, then ~i~ will be reset to ~0~, causing the loop to start over!
   #+name: sizeof
   #+begin_src C :tangle sizeof.c
     int a[100000] = {0};  // initialize all array elements with 0
-    printf("%d", sizeof(a)); 
+    printf("%d", sizeof(a));
   #+end_src
 
   #+RESULTS: sizeof
@@ -554,60 +546,60 @@ memory, then ~i~ will be reset to ~0~, causing the loop to start over!
 
 * Use ~sizeof~ to print a matrix
 
-  - If an array of ~N~ elements has length ~N * 4~ (one for every byte of
-    length 4), what is the length of a matrix of size ~M x N~?
-    #+name: sizeof1
-    #+begin_src C
-      int B[3][3] = {0};
-      printf("%d", sizeof(B));
-    #+end_src
+- If an array of ~N~ elements has length ~N * 4~ (one for every byte of
+  length 4), what is the length of a matrix of size ~M x N~?
+  #+name: sizeof1
+  #+begin_src C
+    int B[3][3] = {0};
+    printf("%d", sizeof(B));
+  #+end_src
 
-    #+RESULTS: sizeof1
-    : 36
+  #+RESULTS: sizeof1
+  : 36
 
-    #+begin_quote Answer
-    It is the number of matrix elements (stored linearly) times the
-    byte length. In the case of N = 4, M = 3 that is 4 * 3 * 4 = 48.
-    #+end_quote
+  #+begin_quote Answer
+  It is the number of matrix elements (stored linearly) times the
+  byte length. In the case of N = 4, M = 3 that is 4 * 3 * 4 = 48.
+  #+end_quote
 
-  - Storing a matrix:
-    #+name: 2x3matrix
-    #+begin_src C :results silent
-      #define M 4
-      #define N 3
-      int C[M][N] = {1,2,3,4,5,6,7,8,9,10,11,12};
-    #+end_src
+- Storing a matrix:
+  #+name: 2x3matrix
+  #+begin_src C :results silent
+    #define M 4
+    #define N 3
+    int C[M][N] = {1,2,3,4,5,6,7,8,9,10,11,12};
+  #+end_src
 
-  - Can we use ~sizeof~ when looping over rows and columns? 
-    #+name: matrixLoop
-    #+begin_src C :noweb yes
-      <<2x3matrix>>
-      for (int i = 0; i < M ; i++) {
-       for(int j = 0; j < N; j++) {
-         printf("%3d", C[i][j]);
-       }
-       printf("\n");
+- Can we use ~sizeof~ when looping over rows and columns?
+  #+name: matrixLoop
+  #+begin_src C :noweb yes
+    <<2x3matrix>>
+    for (int i = 0; i < M ; i++) {
+      for(int j = 0; j < N; j++) {
+        printf("%3d", C[i][j]);
       }
-    #+end_src
+      printf("\n");
+     }
+  #+end_src
 
-    #+RESULTS: matrixLoop
-    :  1  2  3
-    :  4  5  6
-    :  7  8  9
-    : 10 11 12
+  #+RESULTS: matrixLoop
+  :  1  2  3
+  :  4  5  6
+  :  7  8  9
+  : 10 11 12
 
-  - The length of the row vectors:
-    #+begin_src C :noweb yes
-      <<2x3matrix>>
-      printf("%d\n", sizeof(C)); // size of matrix C
-      printf("%d\n", sizeof(C)/sizeof(C[0][0])); // size of row
-      printf("%d\n", sizeof(C)/sizeof(C[0][0])*M/N); // size of column
-    #+end_src
+- The length of the row vectors:
+  #+begin_src C :noweb yes
+    <<2x3matrix>>
+    printf("%d\n", sizeof(C)); // size of matrix C
+    printf("%d\n", sizeof(C)/sizeof(C[0][0])); // size of row
+    printf("%d\n", sizeof(C)/sizeof(C[0][0])*M/N); // size of column
+  #+end_src
 
-    #+RESULTS:
-    : 48
-    : 12
-    : 16
+  #+RESULTS:
+  : 48
+  : 12
+  : 16
 
 * Let's practice!
 
@@ -627,4 +619,3 @@ memory, then ~i~ will be reset to ~0~, causing the loop to start over!
 - Orgmode.org (n.d.). 16 Working with Source Code [website]. [[https://orgmode.org/manual/Working-with-Source-Code.html][URL:
   orgmode.org]]
 - Image [[fig:storage]] from: [[https://overiq.com/media/uploads/memory-representation-of-array-of-strings-1504599913892.png][TheCguru.com]]
-
