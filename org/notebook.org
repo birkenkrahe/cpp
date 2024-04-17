@@ -1443,16 +1443,29 @@ something with limited tools." Don Knuth, Literate Programming (1992)
    #+begin_src bash :results output
      free --giga --human      # available memory on this computer
    #+end_src
+
+   #+RESULTS:
+   :                total        used        free      shared  buff/cache   available
+   : Mem:            7.7G        2.7G        1.6G        491M        3.4G        4.2G
+   : Swap:           2.0G          0B        2.0G
+
 4) How can you initialize a one-dimensional array ~a[30]~ to 100 zero values?
    #+begin_src C
      int a[30]={0};
      for(int i=0;i<30;i++) printf("%d ",a[i]);
    #+end_src
+
+   #+RESULTS:
+   : 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+
 5) In a loop over ~i~, if ~int foo[10] = {1}~ what is the value of ~foo[10]~?
    #+begin_src C
      int foo[10] = {1};
      printf("foo[0] = %d, foo[10] = %d\n",foo[9], foo[10]);
    #+end_src
+
+   #+RESULTS:
+   : foo[0] = 0, foo[10] = 1789207040
 
 
 * Week 14 - Functions vs. Procedures

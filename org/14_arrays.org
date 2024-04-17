@@ -194,7 +194,7 @@
     foo[i+j*10] = 0; // e.g. i=-10, j=1 => foo[0]
     bar[i++];        // e.g. i = -1 => bar[0]
   #+end_example
-
+  
 ** Weird ~while~ loop
 
 - As an example for the weird effects, trace this code:
@@ -218,6 +218,20 @@
      }
   #+end_src
 
+  #+RESULTS: pgm:arrayTest
+  #+begin_example
+  0 < N	a[0] = 0
+  1 < N	a[1] = 0
+  2 < N	a[2] = 0
+  3 < N	a[3] = 0
+  4 < N	a[4] = 0
+  5 < N	a[5] = 0
+  6 < N	a[6] = 0
+  7 < N	a[7] = 0
+  8 < N	a[8] = 0
+  9 < N	a[9] = 0
+  #+end_example
+
 - Without the support variable, we would get weird printing results:
   can you explain them?
   #+name: pgm:arrayTest1
@@ -230,6 +244,20 @@
       printf("a[%d] = %d\n", i, a[i]); // print i then a[i]
      }
   #+end_src
+
+  #+RESULTS: pgm:arrayTest1
+  #+begin_example
+  0 < N	a[1] = 0
+  1 < N	a[2] = -1075053569
+  2 < N	a[3] = 0
+  3 < N	a[4] = -1962144679
+  4 < N	a[5] = 32765
+  5 < N	a[6] = 100
+  6 < N	a[7] = 0
+  7 < N	a[8] = 4096
+  8 < N	a[9] = 0
+  9 < N	a[10] = 220890880
+  #+end_example
 
 - *Explanation 1:*
   #+begin_quote
@@ -254,6 +282,8 @@
       printf("a[%d] = %d\n", j, a[j]); // print i then a[i]
      }
   #+end_src
+
+  #+RESULTS: pgm:arrayTest2
 
   On Windows, you'd get this answer:
   #+begin_example
@@ -361,7 +391,7 @@
 
 * Let's practice!
 
-- Let's practice: download [[https://tinyurl.com/array-practice][tinyurl.com/array-practice]] as array.org
+- Let's practice: download [[https://tinyurl.com/cpp-array-practice][tinyurl.com/cpp-array-practice]] as array.org
 
 - The first two problems can be solved with what you've already heard
   (one-dimensional arrays).
