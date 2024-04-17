@@ -1239,6 +1239,7 @@ Exercises as Org-mode file: [[https://tinyurl.com/cpp-loop-lab][tinyurl.com/cpp-
 #+caption: What do you do if someone with power over you writes to you personally?
 [[../img/week_13.png]]
 
+** DONE Power play
 *How should you react if a professor asks you in an email to see him?*
 *What if you're working and your boss sends you a text with a question?*
 
@@ -1252,14 +1253,14 @@ You only don't have to respond if the message says "FYI" (For Your
 Information) or if the other person writes "You do not need to reply."
 #+end_quote
 
-** TODO Loop lab: Understanding a problem before coding it
+** DONE Loop lab: Understanding a problem before coding it
 #+attr_html: :width 200px:
 [[../img/factorial.png]]
 
 Detailed breakdown of the factorial program (with =for=), which involves
 overwriting the factorial with itself - link to the PDF [[https://chat.google.com/room/AAAAIk8SqZE/ASJbrCNyZ04/ASJbrCNyZ04?cls=10][in the chat]].
 
-** TODO Test preview/review: loops
+** DONE Test preview/review: loops
 
 1) Will these two =for= loops have different outputs?
    #+begin_example C
@@ -1415,13 +1416,43 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
     #+RESULTS:
     : 1 2 3 4 5 
 
-** TODO Arrays: declaration, subscripting, iterating
+
+** IN PROGRESS Arrays: declaration, subscripting, iterating
 
 #+begin_quote
 "One rather curious thing I have noticed about aesthetic satisfaction
 is that our pleasure is significantly enhanced when we accomplish
 something with limited tools." Don Knuth, Literate Programming (1992)
 #+end_quote
+
+** TODO Review: Array declaration and length
+
+1) What array dimension does a vector have? A number?
+   #+begin_quote
+   - A vector is a one-dimensional array, e.g. ~a[10]~
+   - A number (or 'scalar') is a zero-dimensional array, e.g. ~10~.
+   #+end_quote
+2) What is the maximum length of an array?
+   #+begin_quote
+   There is none. The maximum length of anything in C is (usually)
+   determined by the available memory on the system. If you exceed
+   this memory you get errors like "stack overflow" or "segmentation
+   faults".
+   #+end_quote
+3) What is the available memory on your system?
+   #+begin_src bash :results output
+     free --giga --human      # available memory on this computer
+   #+end_src
+4) How can you initialize a one-dimensional array ~a[30]~ to 100 zero values?
+   #+begin_src C
+     int a[30]={0};
+     for(int i=0;i<30;i++) printf("%d ",a[i]);
+   #+end_src
+5) In a loop over ~i~, if ~int foo[10] = {1}~ what is the value of ~foo[10]~?
+   #+begin_src C
+     int foo[10] = {1};
+     printf("foo[0] = %d, foo[10] = %d\n",foo[9], foo[10]);
+   #+end_src
 
 
 * Week 14 - Functions vs. Procedures
