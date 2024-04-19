@@ -461,25 +461,12 @@
       }
   #+end_src
 
-  #+RESULTS: identityMatrix
-  : 1 0 0 0 0
-  : 0 1 0 0 0
-  : 0 0 1 0 0
-  : 0 0 0 1 0
-  : 0 0 0 0 1
-
 - By comparison, this is how easy it is to declare, create and print
   an identity matrix in a language that is built for math
   manipulation, R:
   #+begin_src R
-    diag(5)
-                                            #    diag
+    diag(5) #    diag
   #+end_src
-
-  #+RESULTS:
-  :      [,1] [,2]
-  : [1,]    1    0
-  : [2,]    0    1
 
 - To initialize an array, you can use brackets as in the 1-dim case,
   but for each dimension, you need a new set of ~[ ]~.
@@ -497,11 +484,6 @@
       printf("\n");
      }
   #+end_src
-
-  #+RESULTS: initArray
-  : 1 2 3
-  : 4 5 6
-  : 7 8 9
 
 - By comparison, in R this looks like:
   #+begin_src R
@@ -525,21 +507,10 @@
      }
   #+end_src
 
-  #+RESULTS:
-  : 1 4 7
-  : 2 5 8
-  : 3 6 9
-
 - In R, that's the default, so the command is even shorter:
   #+begin_src R
     (matrix(1:9,3))
   #+end_src
-
-  #+RESULTS:
-  :      [,1] [,2] [,3]
-  : [1,]    1    4    7
-  : [2,]    2    5    8
-  : [3,]    3    6    9
 
 * The size of arrays
 
