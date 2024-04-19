@@ -1281,8 +1281,8 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
    #+end_src
 
    #+RESULTS:
-   : 0 1 2 3 4 
-   : 0 1 2 3 4 
+   : 0 1 2 3 4
+   : 0 1 2 3 4
 
 2) What about these two:
    #+begin_example C
@@ -1304,8 +1304,8 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
    #+end_src
 
    #+RESULTS:
-   : 1 2 3 4 5 
-   : 1 2 3 4 
+   : 1 2 3 4 5
+   : 1 2 3 4
 
 3) How does the =do=-=while= statement look like if the loop body is
    empty? Do I still need curly braces?
@@ -1313,7 +1313,7 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
      int i = 0;
      do {
        //nothing to see here
-     } while (i != 0);
+      } while (i != 0);
    #+end_src
 
    #+RESULTS:
@@ -1321,7 +1321,7 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
 4) What's wrong with this code:
    #+begin_src C
      for ( int i = 1; i < 100; i++);
-     i++;   
+     i++;
    #+end_src
 
    #+RESULTS:
@@ -1339,15 +1339,15 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
      int i=0;              // init
      while (i < 4) {       // test
        printf("%d ",i++);  // change
-     }                   
+      }
      puts("");
      for (int i=0; i<4; i++)  // init; test; change
        printf("%d ",i);
      puts("");
      int j=0;              // init
-     do { 
+     do {
        printf("%d ",j++);  // change
-     } while (j < 4);      // test
+      } while (j < 4);      // test
    #+end_src
 
 6) One of these statements is not like the others. Which one and why?
@@ -1379,43 +1379,42 @@ overwriting the factorial with itself - link to the PDF [[https://chat.google.co
      while(1) {
        puts("I'll be here forever!");
        break;
-     }
+      }
      puts("...Pheeew!!!...Saved!");
    #+end_src
 
    #+RESULTS:
    : I'll be here forever!
    : ...Pheeew!!!...Saved!
-   
+
 9) How would you count down from ~n-1~ to ~0~ using =for=?
    #+begin_src C
      int n = 10;  // upper limit
-     for ( int i = n; i >=0; i--)  
+     for ( int i = n; i >=0; i--)
        printf("%d ",i);
    #+end_src
 
    #+RESULTS:
-   : 10 9 8 7 6 5 4 3 2 1 0 
-   
+   : 10 9 8 7 6 5 4 3 2 1 0
+
 10) What's missing here? I wanted to count up from 1 to 5. Instead the
     loop never finishes and does not print anything. How can you fix it?
     #+begin_example C
       int i = 1;
 
-      while (i < 6) 
+      while (i < 6)
          printf("%d ",i);
     #+end_example
 
     #+begin_src C
       int i = 1;
 
-      while (i < 6) 
-         printf("%d ",i++);
+      while (i < 6)
+        printf("%d ",i++);
     #+end_src
 
     #+RESULTS:
-    : 1 2 3 4 5 
-
+    : 1 2 3 4 5
 
 ** IN PROGRESS Arrays: declaration, subscripting, iterating
 
@@ -1425,7 +1424,7 @@ is that our pleasure is significantly enhanced when we accomplish
 something with limited tools." Don Knuth, Literate Programming (1992)
 #+end_quote
 
-** TODO Review: Array declaration and length
+** DONE Review: Array declaration and length
 
 1) What array dimension does a vector have? A number?
    #+begin_quote
@@ -1456,7 +1455,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
    #+end_src
 
    #+RESULTS:
-   : 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+   : 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 
 5) In a loop over ~i~, if ~int foo[10] = {1}~ what is the value of ~foo[10]~?
    #+begin_src C
@@ -1467,6 +1466,88 @@ something with limited tools." Don Knuth, Literate Programming (1992)
    #+RESULTS:
    : foo[0] = 0, foo[10] = 1789207040
 
+
+** TODO Review: Array
+
+1) What's a macro? Give an example?
+   #+begin_src C
+     #define PI 3.1452
+     #define N  10
+   #+end_src
+
+2) How can you use a macro to declare an array?
+   #+begin_src C
+     #define N 4
+     int arr[N];
+   #+end_src
+
+3) You want to print an array ~arr[N]~ for N=4. What's the error in the
+   following code? Can you fix it?
+   #+begin_src C
+     #define N 4
+     int arr[N];
+     for (int i=0;i<N;i++) printf("%d ",arr[N]);
+   #+end_src
+
+4) How can you initialize the array ~arr[N]~ to 0?
+   #+begin_src C
+     #define N 4
+     int arr[N] = {0};
+     for (int i=0;i<N;i++) printf("%d ",arr[i]);
+   #+end_src
+
+5) Can you initialize ~arr[4]~ to 5 4 3 2 1 with a =for= loop?
+   #+begin_src C
+     #define N 4
+     int arr[N];
+     for (int i = 5; i > 0; i--) {
+       arr[i] = i;
+       printf("%d ",arr[i]);
+      }
+   #+end_src
+
+6) What does this code do?
+   #+begin_src C
+     int f[10];
+     f[0] = 1;
+     f[1] = 1;
+
+     for (int i = 2; i < 10; i++) {
+       f[i] = f[i-2] + f[i-1];
+      }
+
+     for (int i = 0; i < 10; i++) printf("%d ", f[i]);
+   #+end_src
+
+   #+begin_quote
+   The code generates the first 10 Fibonacci numbers.
+   #+end_quote
+
+** TODO Code along: reversing numbers
+
+- Create a new practice file (=C-x C-f practice.org=)
+
+- At the top, enter the code:
+  #+begin_example
+  #+PROPERTY: header-args:C :main yes :includes <stdio.h> :results output
+  #+end_example
+
+- Create a headline with
+  #+begin_example org
+  * Reversing numeric array
+   #+end_example
+
+- Create a new C code block with =<s TAB C=.
+
+- Code along with me to solve the following problem:
+
+  1) Declare an array with 4 integer elements
+
+  2) Initialize the array with 4 numbers and print it.
+
+  3) Reverse the numbers by looping over the array in reverse order.
+
+  4) Generalize the solution from 4 -> N
 
 * Week 14 - Functions vs. Procedures
 * Week 15 - Pointers vs. Pointer Arrays
