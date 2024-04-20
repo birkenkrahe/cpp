@@ -1572,8 +1572,18 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 #+attr_html: :width 400px: 
 [[../img/functions.png]]
 
-** [[https://lyon.instructure.com/courses/2107/assignments/27026][Bonus assignment: height in light-years reloaded]]
-** Test 8 (arrays) live from today until next Sunday
+** TODO [[https://lyon.instructure.com/courses/2107/assignments/27026][Bonus assignment: height in light-years reloaded]]
+** TODO Test 8 (arrays) live from today until next Sunday
+** TODO Multidimensional arrays and the =sizeof= operator
+
+- You already have the practice file. Complete it on your own and
+  submit it for points.
+
+- Here in class continue with the ~practice.org~ file that you created
+  last week.
+
+- If you don't have it anymore - here is a template for download:
+  tinyurl.com/practice-org - save it as ~practice.org~ and code along!
 
 * Week 15 - Pointers vs. Pointer Arrays
 * Week 16 - From C to C++
