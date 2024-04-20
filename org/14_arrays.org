@@ -194,7 +194,7 @@
     foo[i+j*10] = 0; // e.g. i=-10, j=1 => foo[0]
     bar[i++];        // e.g. i = -1 => bar[0]
   #+end_example
-  
+
 ** Weird ~while~ loop
 
 - As an example for the weird effects, trace this code:
@@ -220,16 +220,16 @@
 
   #+RESULTS: pgm:arrayTest
   #+begin_example
-  0 < N	a[0] = 0
-  1 < N	a[1] = 0
-  2 < N	a[2] = 0
-  3 < N	a[3] = 0
-  4 < N	a[4] = 0
-  5 < N	a[5] = 0
-  6 < N	a[6] = 0
-  7 < N	a[7] = 0
-  8 < N	a[8] = 0
-  9 < N	a[9] = 0
+  0 < N a[0] = 0
+  1 < N a[1] = 0
+  2 < N a[2] = 0
+  3 < N a[3] = 0
+  4 < N a[4] = 0
+  5 < N a[5] = 0
+  6 < N a[6] = 0
+  7 < N a[7] = 0
+  8 < N a[8] = 0
+  9 < N a[9] = 0
   #+end_example
 
 - Without the support variable, we would get weird printing results:
@@ -247,16 +247,16 @@
 
   #+RESULTS: pgm:arrayTest1
   #+begin_example
-  0 < N	a[1] = 0
-  1 < N	a[2] = -1075053569
-  2 < N	a[3] = 0
-  3 < N	a[4] = -1962144679
-  4 < N	a[5] = 32765
-  5 < N	a[6] = 100
-  6 < N	a[7] = 0
-  7 < N	a[8] = 4096
-  8 < N	a[9] = 0
-  9 < N	a[10] = 220890880
+  0 < N a[1] = 0
+  1 < N a[2] = -1075053569
+  2 < N a[3] = 0
+  3 < N a[4] = -1962144679
+  4 < N a[5] = 32765
+  5 < N a[6] = 100
+  6 < N a[7] = 0
+  7 < N a[8] = 4096
+  8 < N a[9] = 0
+  9 < N a[10] = 220890880
   #+end_example
 
 - *Explanation 1:*
@@ -372,7 +372,7 @@
   *Answer 1:* ~0~ is assigned to ~a[0]~ through ~a[9]~.
   #+end_quote
   #+name: ex:for_array_2
-  #+begin_example C 
+  #+begin_example C
     for (i = 0; i < 10 ; i++ )
       scanf("%d", &a[i]);
   #+end_example
@@ -410,6 +410,23 @@
   #+caption: Matrix indexes in a 2-dim C array (Source: King)
   [[../img/matrix.png]]
 
+- In your practice file, declare a 2 x 2 matrix named ~foo~ of floating
+  point values.
+
+- Initialize the matrix with zero values as you would initialize an
+  one-dimensional array.
+
+- Solution:
+  #+begin_src C  :noweb yes
+    // Declare a 4 x 4 matrix
+    float foo[2][2] = {0.f};
+    <<print_matrix>>
+  #+end_src
+
+  #+RESULTS:
+  : 0 0 
+  : 0 0 
+
 * Accessing arrays
 
 - To access the element in row ~i~ and column ~j~, we must write ~m[i][j]~.
@@ -431,6 +448,34 @@
 * Accessing arrays with nested ~for~ loops
 
 - Nested ~for~ loops are ideal for processing multi-dimensional arrays.
+
+- In your practice file, create a new code block to print the elements
+  of a 2 x 2 matrix ~foo~. Write the pseudocode first:
+  #+begin_example
+  // declare 2 x 2 matrix of floating-point values
+
+  // print matrix
+  // iterate over the rows 
+     // iterate over the columns
+        // print one element
+  #+end_example
+  
+  #+begin_src C
+    // Declare a 2 x 2 matrix
+    float foo[2][2] = {0.f}; // only for {0.f} will all elements be set
+    // print matrix
+    // iterate over the row indices
+    for (int row = 0; row < 2; row++) {
+      // iterate over the column indices
+      for (int col = 0; col < 2; col++) {
+        //print matrix element in row,col
+        printf("%2.0f",foo[row][col]);
+      }
+     }
+  #+end_src
+
+  #+RESULTS:
+  : 0 0 0 0
 
 - This code initializes a 10x10 /identity/ matrix.
   1) Set the dimension of the matrix to N = 10
@@ -609,6 +654,19 @@
 
 - The last two problems can be solved with what you've just heard
   (multi-dimensional arrays).
+
+* Functions
+#+name: print_matrix
+#+begin_src C
+  for (int i=0;i<2;i++) {
+    for (int j=0;j<2;j++) {
+      printf("%.0f ",foo[i][j]);
+    }
+    printf("\n");
+   }
+#+end_src
+
+#+RESULTS: print_matrix
 
 * References
 
