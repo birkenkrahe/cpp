@@ -1233,13 +1233,12 @@ Three exercises for class practice:
 
 Exercises as Org-mode file: [[https://tinyurl.com/cpp-loop-lab][tinyurl.com/cpp-loop-lab]]
 
-
-* Week 13 - Arrays
+* DONE Week 13 - Arrays
 #+attr_html: :width 400px:
 #+caption: What do you do if someone with power over you writes to you personally?
 [[../img/week_13.png]]
 
-** DONE Power play
+** Power play
 *How should you react if a professor asks you in an email to see him?*
 *What if you're working and your boss sends you a text with a question?*
 
@@ -1253,14 +1252,14 @@ You only don't have to respond if the message says "FYI" (For Your
 Information) or if the other person writes "You do not need to reply."
 #+end_quote
 
-** DONE Loop lab: Understanding a problem before coding it
+** Loop lab: Understanding a problem before coding it
 #+attr_html: :width 200px:
 [[../img/factorial.png]]
 
 Detailed breakdown of the factorial program (with =for=), which involves
 overwriting the factorial with itself - link to the PDF [[https://chat.google.com/room/AAAAIk8SqZE/ASJbrCNyZ04/ASJbrCNyZ04?cls=10][in the chat]].
 
-** DONE Test preview/review: loops
+** Test preview/review: loops
 
 1) Will these two =for= loops have different outputs?
    #+begin_example C
@@ -1424,7 +1423,7 @@ is that our pleasure is significantly enhanced when we accomplish
 something with limited tools." Don Knuth, Literate Programming (1992)
 #+end_quote
 
-** DONE Review: Array declaration and length
+** Review: Array declaration and length
 
 1) What array dimension does a vector have? A number?
    #+begin_quote
@@ -1466,7 +1465,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
    #+RESULTS:
    : foo[0] = 0, foo[10] = 1789207040
 
-** TODO Review: Array
+** Review: Array
 
 1) What's a macro (aka 'preprocessor directive')? Give an example?
    #+begin_src C
@@ -1540,7 +1539,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
    The code generates the first 10 Fibonacci numbers.
    #+end_quote
 
-** TODO Code along: reversing numbers
+** Code along: reversing numbers
 
 - Open Emacs
 
@@ -1569,7 +1568,13 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 
   4) Generalize the solution from 4 -> N
 
-* Week 14 - Functions vs. Procedures
+* Week 14 - Multidimensional arrays & Functions
+#+attr_html: :width 400px: 
+[[../img/functions.png]]
+
+** [[https://lyon.instructure.com/courses/2107/assignments/27026][Bonus assignment: height in light-years reloaded]]
+** Test 8 (arrays) live from today until next Sunday
+
 * Week 15 - Pointers vs. Pointer Arrays
 * Week 16 - From C to C++
 
