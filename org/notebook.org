@@ -1583,7 +1583,8 @@ something with limited tools." Don Knuth, Literate Programming (1992)
   last week.
 
 - If you don't have it anymore - here is a template for download:
-  tinyurl.com/practice-org - save it as ~practice.org~ and code along!
+  [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] - save it as ~practice.org~ and code
+  along!
 
 * Week 15 - Pointers vs. Pointer Arrays
 * Week 16 - From C to C++
