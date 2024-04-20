@@ -1573,7 +1573,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 [[../img/functions.png]]
 
 ** TODO [[https://lyon.instructure.com/courses/2107/assignments/27026][Bonus assignment: height in light-years reloaded]]
-** TODO Test 8 (arrays) live from today until next Sunday
+** TODO Test 8 (arrays) live from today until next Sunday [freischalten]
 ** TODO Multidimensional arrays and the =sizeof= operator
 
 - You already have the practice file. Complete it on your own and
