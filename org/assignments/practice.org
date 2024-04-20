@@ -1,4 +1,4 @@
-#+TITLE:Array practice
+#+TITLE:Practice template file
 #+AUTHOR: [Your name here] [pledged]
 #+STARTUP: overview hideblocks indent
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
