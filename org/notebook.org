@@ -1568,7 +1568,6 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 
   4) Generalize the solution from 4 -> N
 
-
 * NEXT Week 14 - Multidimensional arrays & Functions
 #+attr_html: :width 400px: 
 [[../img/functions.png]]

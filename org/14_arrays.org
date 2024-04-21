@@ -472,7 +472,6 @@
 
 - Challenge: 
 
-
 * Accessing arrays with nested ~for~ loops
 
 - Nested ~for~ loops are ideal for processing multi-dimensional arrays.
