@@ -1568,9 +1568,23 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 
   4) Generalize the solution from 4 -> N
 
-* NEXT Week 14 - Multidimensional arrays & Functions
+* NEXT Week 14 - Multidimensional arrays & functions
 #+attr_html: :width 400px: 
 [[../img/functions.png]]
+
+** NEXT Shameless plug! Picking fall courses: Where to go from here
+
+- Computer science: take *CSC 240 "Datastructures in C++"*. The course
+  continues where this one ended, and leads to CSC 265 "Algorithms".
+
+- Data science: take *DSC 105 "Introduction to data science"* in
+  Python. This is a completely new course (used to be in R).
+
+- Interested in psychology, art, exercise science, biology,
+  etc. consider *DSC 302 "Data visualization"* (with R = easy).
+
+- Everybody else: keep in mind what you learnt about "computational
+  thinking" and the programming approach to problem solving.
 
 ** TODO [[https://lyon.instructure.com/courses/2107/assignments/27026][Bonus assignment: height in light-years reloaded]]
 ** TODO Test 8 (arrays) live from today until next Sunday [freischalten]
@@ -1580,15 +1594,20 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 - You already have the practice file. Complete it on your own and
   submit it for points (by May 8).
 
-- In class continue with the ~practice.org~ file that you created last
-  week.
+- In class continue with the ~arrays.org~ practice file that you created
+  last week.
 
 - If you don't have it anymore - here is a template for download:
-  [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] - save it as ~practice.org~ and code
+  [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] - save it as ~arrays.org~ and code
   along!
 
-* Week 15 - Pointers vs. Pointer Arrays
-* Week 16 - From C to C++
+** TODO Finally! Functions! Freedom from repetition!
+
+- Use the template [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] and save it as a new
+  practice file ~functions.org~
+
+* Week 15 - Pointers and pointer arrays
+* Week 16 - From C to C++ - =enum= and =structx=
 
 * Footnotes
 
