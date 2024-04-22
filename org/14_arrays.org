@@ -672,26 +672,21 @@
   #+name: matrixLoop
   #+begin_src C :noweb yes
     <<4x3matrix>> 
-    for (int i = 0; i < M ; i++) {
-      for(int j = 0; j < N; j++) {
+    for (int i = 0; i < M ; i++) { // iterate over M rows
+      for(int j = 0; j < N; j++) { // iterate over N columns
         printf("%3d", C[i][j]);
       }
-      printf("\n");
+      printf("\n"); // next row
      }
   #+end_src
 
 - The length of the row vectors:
   #+begin_src C :noweb yes
     <<4x3matrix>>
-    printf("%ld\n", sizeof(C)); // size of matrix C
-    printf("%ld\n", sizeof(C)/sizeof(C[0][0])); // size of row
-    printf("%ld\n", sizeof(C)/sizeof(C[0][0])*M/N); // size of column
+    printf("%ld\n", sizeof(C)); // size of matrix C = M * N * 4
+    printf("%ld\n", sizeof(C)/sizeof(C[0][0])); // size of row = 48 / 4
+    printf("%ld\n", sizeof(C)/sizeof(C[0][0])*M/N); // size of column = 48 / 3
   #+end_src
-
-  #+RESULTS:
-  : 48
-  : 12
-  : 16
 
 * Let's practice!
 
