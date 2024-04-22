@@ -396,7 +396,28 @@
 - The first two problems can be solved with what you've already heard
   (one-dimensional arrays).
 
-* Multi-dimensional arrays
+* Initalizing arrays with /designated initializers/
+
+- You can give default values to arrays if you want to change only
+  few elements, e.g. here:
+  #+begin_example C
+    int a[15] = {0,0,29,0,0,0,0,0,0,0,7,0,0,0,48};
+  #+end_example
+
+- When you initialize explicitly, you don't have to specify the number
+  of elements on the left hand side:
+  #+begin_example C
+    int a[] = {0,0,29,0,0,0,0,0,0,0,7,0,0,0,0,48};
+  #+end_example
+
+- You can only initialize non-zero elements:
+  #+begin_src C
+    int a[] = { [2] = 29, [10] = 7, [14] = 48};
+
+    for (int i=0;i<15;i++) printf("%d ",a[i]);
+  #+end_src
+
+* NEXT Multi-dimensional arrays
 
 - An array may have any number of dimensions.
 
@@ -410,16 +431,27 @@
   #+caption: Matrix indexes in a 2-dim C array (Source: King)
   [[../img/matrix.png]]
 
-- In your practice file, declare a 2 x 2 matrix named ~foo~ of floating
+- In a practice file, *declare* a 2 x 2 matrix named ~foo~ of floating
   point values.
 
-- Initialize the matrix with zero values as you would initialize an
+- *Initialize* the matrix with zero values as you would initialize an
   one-dimensional array.
 
 - Solution:
   #+begin_src C  :noweb yes
     // Declare a 4 x 4 matrix
     float foo[2][2] = {0.f};
+    <<2x2>>
+  #+end_src
+
+- You can also initialize a matrix using designated initializers:
+  #+begin_src C :noweb yes
+    double foo[2][2] = {[0][0] = 1.0, [1][1] = 1.0}; 
+    <<2x2>>
+  #+end_src
+
+  #+begin_src C :noweb yes
+    double foo[2][2] = {1.0, 0., 0.,1.0};
     <<2x2>>
   #+end_src
 
@@ -441,7 +473,12 @@
   other programming languages because C has a more flexible way to
   store multi-dimensional data, namely /arrays of pointers/.
 
-- Practice! In the 4x4 matrix below, what are the values of
+- Practice! In the 4x4 matrix below, what are the values of:
+    #+begin_src C :noweb yes
+    int foo[4][4] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+    <<4x4>>
+  #+end_src
+
   1. ~foo[0][0]~
      #+begin_quote
      0
@@ -459,26 +496,48 @@
      Out of bounds!
      #+end_quote
 
-  #+begin_src C
-    int foo[4][4] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
-    <<4x4>>
-  #+end_src
-
 - Let's check:
-  #+begin_src C
+  #+begin_src C :noweb yes
     int foo[4][4] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
     <<[4x4]>>
   #+end_src
 
-- Challenge: 
+- Challenge: How would you declare a matrix of characters a,b,c,d?
+  #+begin_src C
 
+  #+end_src
+  
+- In your practice file, start with a *vector* of characters a,b,c,d.
+  #+begin_src C
+
+  #+end_src
+
+- Then try a matrix.
+  #+begin_src C
+
+  #+end_src
+  
 * Accessing arrays with nested ~for~ loops
 
 - Nested ~for~ loops are ideal for processing multi-dimensional arrays.
 
-- Practice! Declare a 2 x 2 array of floating-point values.
+- Practice! Declare and print a 2 x 2 array of floating-point values.
+  #+begin_example
+  0    3.14
+  2.71 0
+  #+end_example
 
-- This code initializes a 10x10 /identity/ matrix.
+- Write the pseudocode first:
+  #+begin_example
+
+  #+end_example
+
+- Code:  
+  #+begin_src C
+    
+  #+end_src
+
+- The following code code initializes a 10x10 /identity/ matrix.
   1) Set the dimension of the matrix to N = 10
   2) Declare a ~double~ matrix named ~ident~
   3) Loop over rows with loopindex ~row~
@@ -506,7 +565,7 @@
         printf("\n");
       }
   #+end_src
-
+  
 - By comparison, this is how easy it is to declare, create and print
   an identity matrix in a language that is built for math
   manipulation, R:
@@ -565,16 +624,13 @@
 - If ~a~ is an array of ~10~ integers, then ~sizeof(a)~ is 40 provided
   each integer requires 4 bytes of storage.
 
-- The block below declares and initializes an array of 10 elements and
-  prints its size in bytes.
+- Write this in your practice file: The block below declares and
+  initializes an array of 10 elements and prints its size in bytes.
   #+name: sizeof
   #+begin_src C :tangle sizeof.c
     int a[100000] = {0};  // initialize all array elements with 0
-    printf("%d", sizeof(a));
+    printf("%ld", sizeof(a));
   #+end_src
-
-  #+RESULTS: sizeof
-  : 400000
 
 - You can use the operator also to measure the size of an array:
   dividing the array size by the element size gives you the length of
@@ -584,33 +640,28 @@
     printf("%d", sizeof(a)/sizeof(a[0])); // prints length of array a
   #+end_src
 
-  #+RESULTS:
-  : 10
-
 - You can use this last fact to write a ~for~ loop that goes over the
   whole /length/ of an array - then the array does not have to be
   modified if its length changes (see practice file).
 
 * Use ~sizeof~ to print a matrix
 
-- If an array of ~N~ elements has length ~N * 4~ (one for every byte of
-  length 4), what is the length of a matrix of size ~M x N~?
+- Example:   
   #+name: sizeof1
   #+begin_src C
-    int B[3][3] = {0};
-    printf("%d", sizeof(B));
+    int B[3][3] = {0};     // 3 * 3 = 9 array elements
+    printf("%d", sizeof(B));  // 9 * 4 = 36 bytes
   #+end_src
 
-  #+RESULTS: sizeof1
-  : 36
-
+- If an array of ~N~ elements has length ~N * 4~ (one for every byte of
+  length 4), what is the length of a matrix of size ~M x N~?
   #+begin_quote Answer
   It is the number of matrix elements (stored linearly) times the
   byte length. In the case of N = 4, M = 3 that is 4 * 3 * 4 = 48.
   #+end_quote
 
 - Storing a matrix:
-  #+name: 2x3matrix
+  #+name: 4x3matrix
   #+begin_src C :results silent
     #define M 4
     #define N 3
@@ -620,7 +671,7 @@
 - Can we use ~sizeof~ when looping over rows and columns?
   #+name: matrixLoop
   #+begin_src C :noweb yes
-    <<2x3matrix>>
+    <<4x3matrix>> 
     for (int i = 0; i < M ; i++) {
       for(int j = 0; j < N; j++) {
         printf("%3d", C[i][j]);
@@ -629,18 +680,12 @@
      }
   #+end_src
 
-  #+RESULTS: matrixLoop
-  :  1  2  3
-  :  4  5  6
-  :  7  8  9
-  : 10 11 12
-
 - The length of the row vectors:
   #+begin_src C :noweb yes
-    <<2x3matrix>>
-    printf("%d\n", sizeof(C)); // size of matrix C
-    printf("%d\n", sizeof(C)/sizeof(C[0][0])); // size of row
-    printf("%d\n", sizeof(C)/sizeof(C[0][0])*M/N); // size of column
+    <<4x3matrix>>
+    printf("%ld\n", sizeof(C)); // size of matrix C
+    printf("%ld\n", sizeof(C)/sizeof(C[0][0])); // size of row
+    printf("%ld\n", sizeof(C)/sizeof(C[0][0])*M/N); // size of column
   #+end_src
 
   #+RESULTS:
@@ -650,11 +695,8 @@
 
 * Let's practice!
 
-- [[https://raw.githubusercontent.com/birkenkrahe/cc/piHome/org/14_arrays_practice.org][The practice file is in GitHub.]] Remember to download the *raw*
-  Org-mode file and open it in Emacs.
-
-- The last two problems can be solved with what you've just heard
-  (multi-dimensional arrays).
+ The last two problems in [[https://tinyurl.com/cpp-array-practice][tinyurl.com/cpp-array-practice]] can be solved
+ with what you've just heard (multi-dimensional arrays).
 
 * Noweb chunks
 #+name: 2x2
@@ -684,7 +726,25 @@
     printf("\n");
    }
 #+end_src
-
+#+name: 2x2_char
+#+begin_src C :results silent
+  puts("");
+  for (int i=0;i<2;i++) {
+    for (int j=0;j<2;j++) {
+      printf("%c ",matrix[i][j]);
+    }
+    printf("\n");
+   }
+#+end_src
+#+name: 2x2_string
+#+begin_src C :results silent
+  for (int i=0;i<2;i++) {
+    for (int j=0;j<2;j++) {
+      printf("%s ",matrix[i][j]);
+    }
+    printf("\n");
+   }
+#+end_src
 * References
 
 - Davenport/Vine (2015) C Programming for the Absolute Beginner
