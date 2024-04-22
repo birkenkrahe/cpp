@@ -396,7 +396,7 @@
 - The first two problems can be solved with what you've already heard
   (one-dimensional arrays).
 
-* Initalizing arrays with /designated initializers/
+* Initalizing arrays with /designated initializers (C99)/
 
 - You can give default values to arrays if you want to change only
   few elements, e.g. here:
@@ -417,7 +417,10 @@
     for (int i=0;i<15;i++) printf("%d ",a[i]);
   #+end_src
 
-* NEXT Multi-dimensional arrays
+  #+RESULTS:
+  : 0 0 29 0 0 0 0 0 0 0 7 0 0 0 48 
+
+* Multi-dimensional arrays
 
 - An array may have any number of dimensions.
 
@@ -433,22 +436,35 @@
 
 - In a practice file, *declare* a 2 x 2 matrix named ~foo~ of floating
   point values.
+  #+begin_src C
+    float foo[2][2];
+  #+end_src
 
 - *Initialize* the matrix with zero values as you would initialize an
   one-dimensional array.
-
+  #+begin_src C
+    float foo[2][2] = {0.f};  // declare and init 2x2 floating matrix
+  #+end_src
+  
 - Solution:
   #+begin_src C  :noweb yes
     // Declare a 4 x 4 matrix
     float foo[2][2] = {0.f};
+
     <<2x2>>
   #+end_src
 
+  #+RESULTS:
+  : 0 0 
+  : 0 0 
+
 - You can also initialize a matrix using designated initializers:
   #+begin_src C :noweb yes
-    double foo[2][2] = {[0][0] = 1.0, [1][1] = 1.0}; 
+    double foo[2][2] = {[0][0] = 1.0, [1][1] = 1.0}; // identity matrix
     <<2x2>>
   #+end_src
+
+  #+RESULTS:
 
   #+begin_src C :noweb yes
     double foo[2][2] = {1.0, 0., 0.,1.0};
@@ -502,20 +518,47 @@
     <<[4x4]>>
   #+end_src
 
+  #+RESULTS:
+  : [0][0]:  0 [0][1]:  1 [0][2]:  2 [0][3]:  3 
+  : [1][0]:  4 [1][1]:  5 [1][2]:  6 [1][3]:  7 
+  : [2][0]:  8 [2][1]:  9 [2][2]: 10 [2][3]: 11 
+  : [3][0]: 12 [3][1]: 13 [3][2]: 14 [3][3]: 15 
+
 - Challenge: How would you declare a matrix of characters a,b,c,d?
   #+begin_src C
+    // start with vector of four characters
+    char vector[4] = {'a','b','c','d'};
+    // iterate over elements to print
+    for(int i=0; i<4; ++i) printf("%c ", vector[i]);
 
   #+end_src
+
+  #+RESULTS:
+  : a b c d 
   
 - In your practice file, start with a *vector* of characters a,b,c,d.
   #+begin_src C
-
+    // start with vector of four characters
+    char vector[4] = {'a','b','c','d'};
+    // iterate over elements to print
+    for(int i=0; i<4; ++i) printf("%c ", vector[i]);
   #+end_src
 
-- Then try a matrix.
-  #+begin_src C
+  #+RESULTS:
+  : a b c d 
 
+- Then try a matrix (2 x 2):
+  #+begin_src C :noweb yes
+    // declare and initialize 2x2 matrix of characters
+    char matrix[2][2] = {'a','b','c','d'};
+
+    <<2x2_char>>
   #+end_src
+
+  #+RESULTS:
+  : 
+  : a b 
+  : c d 
   
 * Accessing arrays with nested ~for~ loops
 
@@ -528,14 +571,37 @@
   #+end_example
 
 - Write the pseudocode first:
-  #+begin_example
+  #+begin_example 
+  // declare & print 2x2 floating point matrix values 0,3.14,2.71,0
 
+  // print matrix:
+  // iterate over the matrix rows with `row`
+
+       // iterate over the matrix columns `col`
+
+          // print one element m[row][col]
+  
   #+end_example
 
 - Code:  
   #+begin_src C
-    
+    // declare & print 2x2 floating point matrix values 0,3.14,2.71,0
+    float foo[2][2]={ [0][1] = 3.14, [1][0] = 2.71 };
+    // print matrix:
+    // iterate over the matrix rows i 
+    for ( int row=0; row < 2; row++) {
+      // iterate over the matrix columns j
+      for ( int col=0; col < 2; col++) {
+        // print one element m[row][col]
+        printf("%3.2f ", foo[row][col]);
+      }
+      puts("");
+     }
   #+end_src
+
+  #+RESULTS:
+  : 0.00 3.14 
+  : 2.71 0.00 
 
 - The following code code initializes a 10x10 /identity/ matrix.
   1) Set the dimension of the matrix to N = 10
@@ -546,7 +612,7 @@
   6) Print the resulting matrix
   #+name: identityMatrix
   #+begin_src C
-    #define N 5
+    #define N 5  // macro definition
 
     double ident[N][N];   // matrix dimension is N * N
     int row, col;         // loop indices for row and column
@@ -565,6 +631,13 @@
         printf("\n");
       }
   #+end_src
+
+  #+RESULTS: identityMatrix
+  : 1 0 0 0 0 
+  : 0 1 0 0 0 
+  : 0 0 1 0 0 
+  : 0 0 0 1 0 
+  : 0 0 0 0 1 
   
 - By comparison, this is how easy it is to declare, create and print
   an identity matrix in a language that is built for math
@@ -572,6 +645,14 @@
   #+begin_src R
     diag(5) #    diag
   #+end_src
+
+  #+RESULTS:
+  :      [,1] [,2] [,3] [,4] [,5]
+  : [1,]    1    0    0    0    0
+  : [2,]    0    1    0    0    0
+  : [3,]    0    0    1    0    0
+  : [4,]    0    0    0    1    0
+  : [5,]    0    0    0    0    1
 
 - To initialize an array, you can use brackets as in the 1-dim case,
   but for each dimension, you need a new set of ~[ ]~.
@@ -590,10 +671,23 @@
      }
   #+end_src
 
+  #+RESULTS: initArray
+  : 1 2 3 
+  : 4 5 6 
+  : 7 8 9 
+
 - By comparison, in R this looks like:
   #+begin_src R
-    (matrix(1:9,3,byrow=TRUE))
+    (matrix(1:9,
+            3,
+            byrow=TRUE))
   #+end_src
+
+  #+RESULTS:
+  :      [,1] [,2] [,3]
+  : [1,]    1    2    3
+  : [2,]    4    5    6
+  : [3,]    7    8    9
 
 - How could you populate the matrix column-wise instead of row-wise?
   #+begin_quote Answer
@@ -606,16 +700,27 @@
 
     for (int i=0;i<3;i++) {
       for(int j=0;j<3;j++) {
-        printf("%d ", m[j][i]);
+        printf("%d ", m[j][i]);  // prints matrix column-wise
       }
       printf("\n");
      }
   #+end_src
 
+  #+RESULTS:
+  : 1 4 7 
+  : 2 5 8 
+  : 3 6 9 
+
 - In R, that's the default, so the command is even shorter:
   #+begin_src R
     (matrix(1:9,3))
   #+end_src
+
+  #+RESULTS:
+  :      [,1] [,2] [,3]
+  : [1,]    1    4    7
+  : [2,]    2    5    8
+  : [3,]    3    6    9
 
 * The size of arrays
 
@@ -631,6 +736,9 @@
     int a[100000] = {0};  // initialize all array elements with 0
     printf("%ld", sizeof(a));
   #+end_src
+
+  #+RESULTS: sizeof
+  : 400000
 
 - You can use the operator also to measure the size of an array:
   dividing the array size by the element size gives you the length of
@@ -650,8 +758,11 @@
   #+name: sizeof1
   #+begin_src C
     int B[3][3] = {0};     // 3 * 3 = 9 array elements
-    printf("%d", sizeof(B));  // 9 * 4 = 36 bytes
+    printf("%ld", sizeof(B));  // 9 * 4 = 36 bytes
   #+end_src
+
+  #+RESULTS: sizeof1
+  : 36
 
 - If an array of ~N~ elements has length ~N * 4~ (one for every byte of
   length 4), what is the length of a matrix of size ~M x N~?
@@ -680,6 +791,12 @@
      }
   #+end_src
 
+  #+RESULTS: matrixLoop
+  :  1  2  3
+  :  4  5  6
+  :  7  8  9
+  : 10 11 12
+
 - The length of the row vectors:
   #+begin_src C :noweb yes
     <<4x3matrix>>
@@ -687,6 +804,11 @@
     printf("%ld\n", sizeof(C)/sizeof(C[0][0])); // size of row = 48 / 4
     printf("%ld\n", sizeof(C)/sizeof(C[0][0])*M/N); // size of column = 48 / 3
   #+end_src
+
+  #+RESULTS:
+  : 48
+  : 12
+  : 16
 
 * Let's practice!
 
