@@ -1572,7 +1572,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 #+attr_html: :width 400px: 
 [[../img/functions.png]]
 
-** NEXT Shameless plug! Picking fall courses: Where to go from here
+** DONE Shameless plug! Picking fall courses: Where to go from here
 
 - Computer science: take *CSC 240 "Datastructures in C++"*. The course
   continues where this one ended, and leads to CSC 265 "Algorithms".
@@ -1586,10 +1586,9 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 - Everybody else: keep in mind what you learnt about "computational
   thinking" and the programming approach to problem solving.
 
-** TODO [[https://lyon.instructure.com/courses/2107/assignments/27026][Bonus assignment: height in light-years reloaded]]
-** TODO Test 8 (arrays) live from today until next Sunday [freischalten]
-** TODO Program 8 (Fibonacci numbers) is live until next Sunday
-** TODO Multidimensional arrays and the =sizeof= operator
+** DONE [[https://lyon.instructure.com/courses/2107/assignments/27026][Bonus assignment: height in light-years reloaded]]
+** DONE Program 8 (Fibonacci numbers) is live until next Sunday
+** DONE Multidimensional arrays and the =sizeof= operator
 
 - You already have the practice file. Complete it on your own and
   submit it for points (by May 8).
@@ -1601,10 +1600,26 @@ something with limited tools." Don Knuth, Literate Programming (1992)
   [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] - save it as ~arrays.org~ and code
   along!
 
+
+** TODO Test 8 (arrays) live from today until Friday
+
+10 questions only - half of the questions are TRUE/FALSE
+
 ** TODO Finally! Functions! Freedom from repetition!
 
 - Use the template [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] and save it as a new
   practice file ~functions.org~
+
+** TODO Extended example: Finding the minimum in an array
+
+- We'll solve a [[https://dmoj.ca/problem/lkp18c2p1][programming competition]] problem in three steps.
+
+- First step: determine the minimum value of an array (from scratch)
+
+- Second step: moving the code into a helper function
+
+- Third step: iterating over the array with repeated function calls
+
 
 * Week 15 - Pointers and pointer arrays
 * Week 16 - From C to C++ - =enum= and =structx=

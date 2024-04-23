@@ -479,7 +479,9 @@
 
 - The expression ~m[i,j]~ is the same as ~m[j]~ (don't use it)
 
-- C stores arrays not in 2 dim but in row-major order:
+- C stores arrays not in 2 dim but in row-major order: In row-major
+  order, the entire row is stored in sequence before moving to the
+  next row.
   #+attr_html: :width 500px
   #+name: matrix
   #+caption: Row-major memory storage in C (Source: King)
