@@ -1624,8 +1624,9 @@ something with limited tools." Don Knuth, Literate Programming (1992)
   practice file ~functions.org~
 - Code along with me and upload your practice file to Canvas when we
   move on to pointers.
-- There is also a practice file in GitHub for you (just for fun):
-  tinyurl.com/cpp-functions-practice (I have not reviewed this).
+- There is also a practice file in GitHub for you
+  [[https://tinyurl.com/cpp-functions-practice][tinyurl.com/cpp-functions-practice]] - you can submit this to me for
+  bonus points at any time (via email).
 
 ** TODO Extended example: Finding the minimum in an array
 
