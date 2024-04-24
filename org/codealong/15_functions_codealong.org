@@ -44,34 +44,9 @@
 - Can you guess what the output of this code block will be?
   #+name: pgm:hello_world
   #+begin_src C :tangle ../src/hello_world.c
-    // reusable function definition
-    void hello_world(void)
-    {
-      printf("Hello world\n"); // what the function does
-    }
-    // reusable function call
-    hello_world();
-    hello_world();
-    hello_world();
+    
   #+end_src
-
-  #+begin_src C :tangle hello_world.c
-    // reusable function definition
-    void hello_world(void)
-    {
-      printf("Hello world\n"); // what the function does
-    }
-    // reusable function call
-    hello_world(); 
-    hello_world();
-    hello_world();
-  #+end_src
-
-  #+RESULTS:
-  : Hello world
-  : Hello world
-  : Hello world
-
+  
 - function is doubly ~void~: no =return= value, no argument parameter
 
 - function code can be reused elsewhere
@@ -84,25 +59,22 @@
   3) ~hello_world~ function definition {...}
   4) three ~hello_world~ function calls
   #+attr_latex: :width 400px
-  [[../img/15_helloc.png]]
+  [[../../img/15_helloc.png]]
 
-- If you tangle the code above, (C-u C-c C-v t) then you can look at the
-  source code.
-  
 * Functions are everywhere in C!
 
 - How many functions do you see in the following code block and what
   do you think will be its output (guess before running it)?
 
-  #+begin_src C :tangle euler.c
-    #include <stdio.h> // input / output
-    #include <math.h> // math constants and functions
+  #+begin_src C
+    #include <stdio.h>
+    #include <math.h>
 
-    int main(void)  // function 1
+    int main(void)
     {
-      const double E = 2.7182818; 
+      const double E = 2.7182818;
 
-      printf("%g\n", log(E));  // function 2 + 3
+      printf("%g\n", log(E));
       return 0;
     }
   #+end_src
