@@ -66,20 +66,9 @@
 - How many functions do you see in the following code block and what
   do you think will be its output (guess before running it)?
 
-  #+begin_src C
-    #include <stdio.h>
-    #include <math.h>
+  #+begin_src C :libs -lm
 
-    int main(void)
-    {
-      const double E = 2.7182818;
-
-      printf("%g\n", log(E));
-      return 0;
-    }
   #+end_src
-
-  #+RESULTS:
 
   Answer:
   #+begin_quote
@@ -94,14 +83,14 @@
 ** Function definition
 
 - We want to compute the average of two ~double~ values, we can define a
-  function to do it:
+  function to do it. When ready, run it to check the syntax.
 
   #+name: average
   #+begin_src C :results silent
-    double average ( double a, double b)
-    {
-      return (a + b) / 2.;
-    }
+    // function definition
+
+       // return value
+    
   #+end_src
 
 - Here, ~double~ is /return type/ and /argument data type/.
@@ -128,62 +117,52 @@
 - The argument can be any /expression/.
   
 *** Simple call with numbers
+
+- Functions can be called with numbers as arguments:
 #+name: simpleCall
-#+begin_src C :noweb yes
-  // function definition
-  <<average>>
-
-  // function call - result assigned to avg
-  double avg = average(5.1, 8.9); // compute average of two numbers
-
-  // function call inside function
-  printf("Average of %g and %g: %g\n", 5.1, 8.9, avg);
+#+begin_src C 
+  
 #+end_src
 
-#+RESULTS: simpleCall
-: Average of 5.1 and 8.9: 7
+- What's happening in this code block exactly?
+  #+begin_quote
+  1. The ~average~ function is defined.
+  2. ~average~ is called with arguments ~a=5.1~ and ~b=8.9~
+  3. The returned average is assigned to ~avg~
+  4. The two arguments and ~avg~ are printed.
+  #+end_quote
 
 *** Call with expressions
 
 - Functions can have expressions as arguments.
 
   #+name: exprCall
-  #+begin_src C :noweb yes
-    // function definition
-    <<average>>
+  #+begin_src C
 
-    // declarations
-    double x=5.1, y=8.9, avg2;
-
-    // function call with expression
-    avg2 = average(x/2., y/2.);
-
-    // function call inside function
-    printf("Average of %g/2 and %g/2: %g\n", x, y, avg2);
   #+end_src
 
-  #+RESULTS: exprCall
-  : Average of 5.1/2 and 8.9/2: 3.5
-
+- What's happening here exactly?
+  #+begin_quote
+  1. The ~average~ function is defined.
+  2. Numbers are assigned to ~x~ and ~y~, and ~avg2~ is declared.
+  3. The ~average~ function is called with the arguments ~x~ and ~y~
+  4. The returned result is assigned to ~avg2~
+  5. All three variables are printed.
+   #+end_quote
+  
 *** Call by other functions
+
 - Functions can be called by other functions.
 
   #+name: nestedCall
   #+begin_src C :noweb yes
-    // function definition
-    <<average>>
 
-      // declarations
-    double x=5.1, y=8.9;
-
-    // function call inside function
-    printf("Average of %g and %g: %g\n", x, y, average(x,y));
   #+end_src
 
-- What's happening in the last line exactly? Describe it!
+- What's happening in the last line (=printf=) exactly? Describe it!
   #+begin_quote
-  1. The ~average~ function is called with ~x~ and ~y~ as arguments.
-  2. ~average~ executes its ~return~ statement, returning ~(a+b)/2~.
+  1. The ~average~ function is called with ~a=x~ and ~b=y~ as arguments.
+  2. ~average~ executes its ~return~ statement, returning ~(x+y)/2~.
   3. ~printf~ prints the value that ~average~ returns.
   4. The ~return~ value of ~average~ becomes an argument of ~printf~.
   #+end_quote
@@ -201,15 +180,10 @@
 - The following program reads three numbers and computes their
   averages, one pair at a time.
 
-  Sample input:
-  #+begin_src bash
-    echo "3.5 9.6 10.2" > ./src/input
-    cat ./src/input
-  #+end_src
+  Sample input: ~3.5~, ~9.6~, ~10.2~
 
   Sample output:
   #+begin_example org
-  : Enter three numbers: 3.5 9.6 10.2
   : Average of 3.5 and 9.6: 6.55
   : Average of 9.6 and 10.2: 9.9
   : Average of 3.5 and 10.2: 6.85
@@ -217,37 +191,16 @@
 
   Code:
   #+begin_src C :cmdline < ./src/input
-    // function definition
-    double average(double a,double b) {
-      return (a+b)/2.;
-    }
 
-    int main (void)
-    {
-      float x, y, z;
-      printf("Enter three numbers: ");
-      scanf("%f%f%f", &x, &y, &z);  // input
-      printf("%g %g %g\n", x, y, z); // input check
-
-      // print averages
-      printf("Average of %g and %g: %g\n", x, y, average(x,y));
-      printf("Average of %g and %g: %g\n", y, z, average(y,z));
-      printf("Average of %g and %g: %g\n", x, z, average(x,z));
-
-      return 0;
-    }
   #+end_src
 
-  #+RESULTS:
-  
 - Important: the definition of ~average~ needs to be put *before* ~main~ -
   otherwise the function needs to be declared.
 
-* Let's practice!
+* Practice
 
-- [[https://raw.githubusercontent.com/birkenkrahe/cc/piHome/org/15_functions_practice.org][The practice file is in GitHub:]] ~15_functions_practice.org~
-
-- Remember to download the *raw* Org-mode file and open it in Emacs.
+- With what you've learnt, you can complete the practice file
+  tinyurl.com/cpp-functions-practice (download as .org file)
 
 * References
 
