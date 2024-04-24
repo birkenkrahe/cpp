@@ -2,7 +2,7 @@
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:CSC 100 / Introduction to programming in C/C++
 #+STARTUP: overview hideblocks indent
-#+OPTIONS: toc:1 ^:nil num:nil
+#+OPTIONS: toc:nil ^:nil num:nil 
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output 
 * README
 
@@ -35,7 +35,7 @@
   3. *modularize*, and easier understand and modify programs
 
 - Once upon a time, programs didn't use to have functions!
-  #+attr_latex: :width 500px
+  #+attr_latex: :width 400px
   #+caption: BASIC program snippet (Source: Collingbourne, 2022).
   _[[../img/15_basic.png]]
 
@@ -94,7 +94,7 @@
 - How many functions do you see in the following code block and what
   do you think will be its output (guess before running it)?
 
-  #+begin_src C :tangle euler.c
+  #+begin_src C :tangle euler.c :libs -lm
     #include <stdio.h> // input / output
     #include <math.h> // math constants and functions
 
@@ -108,6 +108,7 @@
   #+end_src
 
   #+RESULTS:
+  : 1
 
   Answer:
   #+begin_quote
@@ -157,11 +158,11 @@
   
 *** Simple call with numbers
 #+name: simpleCall
-#+begin_src C :noweb yes
-  // function definition
-  <<average>>
+#+begin_src C 
+  // function definition (one line version)
+  double average(double a,double b){return (a + b) / 2.;}
 
-  // function call - result assigned to avg
+  // function call - result assigned to variable avg
   double avg = average(5.1, 8.9); // compute average of two numbers
 
   // function call inside function
@@ -176,9 +177,9 @@
 - Functions can have expressions as arguments.
 
   #+name: exprCall
-  #+begin_src C :noweb yes
-    // function definition
-    <<average>>
+  #+begin_src C
+    // function definition (one line version)
+    double average(double a,double b){return (a + b) / 2.;}
 
     // declarations
     double x=5.1, y=8.9, avg2;
@@ -226,36 +227,26 @@
 
 * Using a function in a program
 
-- The following program reads three numbers and computes their
+- The program below reads three numbers and computes their
   averages, one pair at a time.
 
-  Sample input:
-  #+begin_src bash
-    echo "3.5 9.6 10.2" > ./src/input
-    cat ./src/input
-  #+end_src
+  Sample input: ~3.5~, ~9.6~, ~10.2~
 
   Sample output:
   #+begin_example org
-  : Enter three numbers: 3.5 9.6 10.2
   : Average of 3.5 and 9.6: 6.55
   : Average of 9.6 and 10.2: 9.9
   : Average of 3.5 and 10.2: 6.85
   #+end_example
 
   Code:
-  #+begin_src C :cmdline < ./src/input
-    // function definition
-    double average(double a,double b) {
-      return (a+b)/2.;
-    }
+  #+begin_src C
+    // function definition outside of main()
+    double average(double a,double b){return (a+b)/2.;}
 
     int main (void)
     {
-      float x, y, z;
-      printf("Enter three numbers: ");
-      scanf("%f%f%f", &x, &y, &z);  // input
-      printf("%g %g %g\n", x, y, z); // input check
+      float x=3.5, y=9.6, z=10.2;
 
       // print averages
       printf("Average of %g and %g: %g\n", x, y, average(x,y));
@@ -267,20 +258,21 @@
   #+end_src
 
   #+RESULTS:
+  : Average of 3.5 and 9.6: 6.55
+  : Average of 9.6 and 10.2: 9.9
+  : Average of 3.5 and 10.2: 6.85
   
 - Important: the definition of ~average~ needs to be put *before* ~main~ -
   otherwise the function needs to be declared.
 
-* Let's practice!
+* Practice
 
-- [[https://raw.githubusercontent.com/birkenkrahe/cc/piHome/org/15_functions_practice.org][The practice file is in GitHub:]] ~15_functions_practice.org~
-
-- Remember to download the *raw* Org-mode file and open it in Emacs.
+- With what you've learnt, you can complete the practice file
+  tinyurl.com/cpp-functions-practice (download as .org file)
 
 * References
 
 - Kernighan/Ritchie (1978). The C Programming Language
   (1st). Prentice Hall.
 - King (2008). C Programming - A modern approach (2e). W A Norton.
-- Orgmode.org (n.d.). 16 Working with Source Code [website]. [[https://orgmode.org/manual/Working-with-Source-Code.html][URL:
-  orgmode.org]]
+
