@@ -1600,15 +1600,32 @@ something with limited tools." Don Knuth, Literate Programming (1992)
   [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] - save it as ~arrays.org~ and code
   along!
 
-
-** TODO Test 8 (arrays) live from today until Friday
+** NEXT Test 8 (arrays) live from today until Friday
 
 10 questions only - half of the questions are TRUE/FALSE
+
+** TODO You can upload your in-class practice file to Canvas
+
+- The background for this practice file is in the lecture on GitHub on
+  arrays.
+- To simplify things, you just code alongside me in class using a bare
+  bones practice file.
+- You can download a practice template file from
+  tinyurl.com/cpp-practice-org
+- Save the template as an Org-mode file (arrays.org) and complete it
+  as seen in class.
+- If you missed the class or if your file is incomplete, please watch
+  the Zoom recording and code along then.
+- Submit your practice file in Canvas for points.
 
 ** TODO Finally! Functions! Freedom from repetition!
 
 - Use the template [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] and save it as a new
   practice file ~functions.org~
+- Code along with me and upload your practice file to Canvas when we
+  move on to pointers.
+- There is also a practice file in GitHub for you (just for fun):
+  tinyurl.com/cpp-functions-practice (I have not reviewed this).
 
 ** TODO Extended example: Finding the minimum in an array
 
@@ -1619,7 +1636,6 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 - Second step: moving the code into a helper function
 
 - Third step: iterating over the array with repeated function calls
-
 
 * Week 15 - Pointers and pointer arrays
 * Week 16 - From C to C++ - =enum= and =structx=
