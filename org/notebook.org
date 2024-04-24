@@ -132,7 +132,7 @@ ASK FOR MY HELP TO INSTALL EMACS + GCC ON YOUR PC
   #+ATTR_HTML: :WIDTH 700px:
   [[../img/1_introduction_practice_error5.png]]
 
-** Emacs tutorial
+>** Emacs tutorial
 #+ATTR_HTML: :WIDTH 600px:
 [[../img/emacs_learning_curve.jpg]]
 
@@ -1568,7 +1568,8 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 
   4) Generalize the solution from 4 -> N
 
-* NEXT Week 14 - Multidimensional arrays & functions
+
+* Week 14 - Multidimensional arrays & functions
 #+attr_html: :width 400px: 
 [[../img/functions.png]]
 
