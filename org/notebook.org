@@ -5,7 +5,7 @@
 #+OPTIONS: toc:nil num:nil ^:nil
 #+property: header-args:C :main yes :includes <stdio.h> :results output :noweb yes
 #+property: header-args:R :results output :noweb yes :session *R* :exports both
-* DONE Week 1 - Overview & first C program
+* Week 1 - Overview & first C program
 #+attr_html: :width 400px
 [[../img/cover.png]]
 
@@ -67,7 +67,7 @@ someone else had written it, and also using AI to deliver a critique.
 - Bonus: GitHub Hello World exercise (upload screenshot).
 - Test 1 (by Thu 25 Jan)
 
-* DONE Week 2 - Introduction to C & first literate program
+* Week 2 - Introduction to C & first literate program
 #+ATTR_HTML: :WIDTH 400px:
 [[../img/first_test.png]]
 
@@ -83,7 +83,7 @@ someone else had written it, and also using AI to deliver a critique.
 - Parts of the introduction are inspired by King, chapter 1 (pp. 1-8).
 - Parts of the hello world basics are inspired by King, chapter 2 (9-18).
 
-* DONE Week 3 - C fundamentals & Emacs tutorial
+* Week 3 - C fundamentals & Emacs tutorial
 #+ATTR_HTML: :WIDTH 400px:
 [[../img/adalovelace.png]]
 
@@ -184,7 +184,7 @@ nightmare and will be ready for more!
 
 ** C fundamentals: variables & planning a program
 
-* DONE Week 4 - Variables & Data types & Format specifiers
+* Week 4 - Variables & Data types & Format specifiers
 #+ATTR_HTML: :WIDTH 400px:
 [[../img/midnight_oil.png]]
 
@@ -297,7 +297,7 @@ on stuff of last week. Some of these may return in a test.
 
 - You'll get my sample solution when you submit your solution.
 
-* DONE Week 5 - Constants
+* Week 5 - Constants
 #+attr_html: :width 400px
 [[../img/solution_video.png]]
 
@@ -335,7 +335,7 @@ Plan:
 |                     | except after keywords &  |
 |                     | strings across lines     |
 
-* DONE Week 6 - Printing with printf
+* Week 6 - Printing with printf
 #+attr_html: :width 400px:
 [[../img/week_6.png]]
 
@@ -393,7 +393,7 @@ I apply the following *evaluation criteria*:
 - Practice solution video ([[https://youtu.be/BTfTfoaUqVQ?si=B8hEkLOcTqQ05wgh][YouTube]])
 - If you are done early, start the [[https://lyon.instructure.com/courses/2107/assignments/25268][programming assignment]]!
 
-* DONE Week 7 - Scanning with scanf
+* Week 7 - Scanning with scanf
 #+attr_html: :width 400px:
 [[../img/week_7.webp]]
 
@@ -621,7 +621,7 @@ I apply the following *evaluation criteria*:
    whitespaces after the ~/~ are ignored, and finishes.
    #+end_quote
 
-* DONE Week 8 - C operators
+* Week 8 - C operators
 #+attr_html: :width 400px:
 [[../img/week_8.webp]]
 
@@ -837,7 +837,7 @@ an argument and what's not.
    5) Increment/decrement: =++i=
    #+end_quote
 
-* DONE Week 9 - C Operators practice / pseudocode
+* Week 9 - C Operators practice / pseudocode
 #+attr_html: :width 400px:
 [[../img/collaboration.png]]
 
@@ -1012,7 +1012,7 @@ PDF files, so you still have to get the literate programs right).
   + [[https://chat.google.com/room/AAAAIk8SqZE/fp53pnK30xs/fp53pnK30xs?cls=10][How to get started with Linux on Windows (WSL)]]
   + [[https://chat.google.com/room/AAAAIk8SqZE/FgWGE4AC1MQ/FgWGE4AC1MQ?cls=10][How to solve it - heuristic problem solving with Pólya.]]
 
-* DONE Week 10 - Process models / Selection statements (if/else)
+* Week 10 - Process models / Selection statements (if/else)
 #+attr_html: :width 400px:
 [[../img/week_10.png]]
 
@@ -1024,7 +1024,7 @@ PDF files, so you still have to get the literate programs right).
 - Home assignments and bonus assignments will be available.
 - This week: BPMN process diagrams from pseudocode, =if= and =switch=
 
-* DONE Week 11 - Conditional statements (if...else,switch)
+* Week 11 - Conditional statements (if...else,switch)
 #+attr_html: :width 400px:
 #+caption: Easter picture with hackers
 [[../img/he_is_risen.jpg]]
@@ -1037,7 +1037,7 @@ PDF files, so you still have to get the literate programs right).
 
 - This week: =if=, =else=, =switch=, & starting with loops (=while=, =do=, =for=)
 
-* DONE Week 12 - Loops - =do ... =while= and =for=
+* Week 12 - Loops - =do ... =while= and =for=
 #+attr_html: :width 400px:
 [[../img/booking.png]]
 
@@ -1233,7 +1233,7 @@ Three exercises for class practice:
 
 Exercises as Org-mode file: [[https://tinyurl.com/cpp-loop-lab][tinyurl.com/cpp-loop-lab]]
 
-* DONE Week 13 - Arrays
+* Week 13 - Arrays
 #+attr_html: :width 400px:
 #+caption: What do you do if someone with power over you writes to you personally?
 [[../img/week_13.png]]
@@ -1567,7 +1567,6 @@ something with limited tools." Don Knuth, Literate Programming (1992)
   3) Reverse the numbers by looping over the array in reverse order.
 
   4) Generalize the solution from 4 -> N
-
 
 * Week 14 - Multidimensional arrays & functions
 #+attr_html: :width 400px: 
