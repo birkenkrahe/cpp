@@ -402,7 +402,7 @@ I apply the following *evaluation criteria*:
 - [X] Code along lecture & practice: =scanf=
 - [ ] Code along lecture & practice: C operators
 
-** DONE Fast Fun Review: =printf=
+** Fast Fun Review: =printf=
 
 1) What's the general format of the =printf= function?
    #+begin_example C
@@ -482,7 +482,7 @@ I apply the following *evaluation criteria*:
    : 1E+06
    : (etc.)
 
-** DONE Fast Fun Review: =scanf=
+** Fast Fun Review: =scanf=
 
 1) What is the general format of the =scanf= argument if the input is just numbers?
    #+begin_example C
@@ -1638,8 +1638,32 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 
 - Third step: iterating over the array with repeated function calls
 
+
 * Week 15 - Pointers and pointer arrays
-* Week 16 - From C to C++ - =enum= and =structx=
+
+* Week 16 - From C to C++ - =enum= and =struct=
+
+- For the holidays: bonus content weeks 10-15 (since the midterms):
+  1) [[https://chat.google.com/room/AAAAIk8SqZE/fp53pnK30xs/fp53pnK30xs?cls=10][Consider dual boot Windows + Linux]]
+  2) [[https://chat.google.com/room/AAAAIk8SqZE/ZmRb1DYduzo/ZmRb1DYduzo?cls=10][Books! Expand your mind with The Emperor's New Mind by Penrose]]
+  3) [[https://chat.google.com/room/AAAAIk8SqZE/NMNe-Y68-bM/NMNe-Y68-bM?cls=10][Workflow automation with IFTTT]]
+  4) [[https://chat.google.com/room/AAAAIk8SqZE/0JXyEZZQLHI/0JXyEZZQLHI?cls=10][Did Christmas come early to Software Engineering (with AI)?]]
+  5) [[https://chat.google.com/room/AAAAIk8SqZE/n9qZ1rK3_x0/n9qZ1rK3_x0?cls=10][Flexing on others with GitHub or Emacs]]
+  6) [[https://chat.google.com/room/AAAAIk8SqZE/VE83pQlQyaY/VE83pQlQyaY?cls=10][Talk on AI, literate programming and data science at Oklahoma U]]
+  7) [[https://chat.google.com/room/AAAAIk8SqZE/5ap5_DIt3aM/5ap5_DIt3aM?cls=10][How to include image files in an Emacs Org-mode file]]
+  8) [[https://chat.google.com/room/AAAAIk8SqZE/5pWM7I4cqz8/5pWM7I4cqz8?cls=10][Summer reading: "Structure & Interpretation of Computer Programs"]]
+  9) [[https://chat.google.com/room/AAAAIk8SqZE/sOLWpi3PeAI/sOLWpi3PeAI?cls=10][Fun book: Land of Lisp (language with "padded walls for babies")]]
+  10) [[https://chat.google.com/room/AAAAIk8SqZE/hiny1WTDsyY/hiny1WTDsyY?cls=10][KDEConnect to connect phone and Linux]]
+  11) [[https://chat.google.com/room/AAAAIk8SqZE/gfprqjc0tRY/gfprqjc0tRY?cls=10][Stackoverflow bans ChatGPT when posting content]]
+  12) [[https://chat.google.com/room/AAAAIk8SqZE/c4TS79AEjBY/c4TS79AEjBY?cls=10][Short course on "programming paradigms" on DataCamp]]
+  13) [[https://chat.google.com/room/AAAAIk8SqZE/DNsbMA4Hzrg/DNsbMA4Hzrg?cls=10][Subscribe to The Overflow, the blog/podcast by Stackoverflow]]
+  14) [[https://chat.google.com/room/AAAAIk8SqZE/4NbplWwymok/4NbplWwymok?cls=10][The computer scientist's bible: The Art of Computer Programming]]
+  15) [[https://chat.google.com/room/AAAAIk8SqZE/amZ2Nqjs-E0/amZ2Nqjs-E0?cls=10][How to learn JavaScript effectively (freeCodeCamp)]]
+  16) [[https://chat.google.com/room/AAAAIk8SqZE/ASJbrCNyZ04/ASJbrCNyZ04?cls=10][Understanding a problem before coding (factorial problem)]]
+  17) [[https://chat.google.com/room/AAAAIk8SqZE/0yz4a0YZswE/0yz4a0YZswE?cls=10][Chomsky's Universal Grammar, Steven Pinker and languages]]
+  18) [[https://chat.google.com/room/AAAAIk8SqZE/ovsJ18DY_Gs/ovsJ18DY_Gs?cls=10][Visualize code in Python, Java, C, C++, JavaScript]]
+  19) [[https://chat.google.com/room/AAAAIk8SqZE/JbYm-bAkwGk/JbYm-bAkwGk?cls=10][Podcast: careers in computer and data science and AI]]
+  20) [[https://chat.google.com/room/AAAAIk8SqZE/_HGQDGN3E5w/_HGQDGN3E5w?cls=10][Learn to think like the computer hates you, because it does.]]
 
 * Footnotes
 
