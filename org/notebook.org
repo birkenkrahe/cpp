@@ -1600,25 +1600,23 @@ something with limited tools." Don Knuth, Literate Programming (1992)
   [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] - save it as ~arrays.org~ and code
   along!
 
-** NEXT Test 8 (arrays) live from today until Friday
+** DONE Test 8 (arrays) live from today until Friday
 
 10 questions only - half of the questions are TRUE/FALSE
 
-** TODO You can upload your in-class practice file to Canvas
+** DONE You can upload your in-class practice file to Canvas
 
 - The background for this practice file is in the lecture on GitHub on
   arrays.
 - To simplify things, you just code alongside me in class using a bare
   bones practice file.
-- You can download a practice template file from
-  tinyurl.com/cpp-practice-org
 - Save the template as an Org-mode file (arrays.org) and complete it
   as seen in class.
 - If you missed the class or if your file is incomplete, please watch
   the Zoom recording and code along then.
 - Submit your practice file in Canvas for points.
 
-** TODO Finally! Functions! Freedom from repetition!
+** DONE Finally! Functions! Freedom from repetition!
 
 - Use the template [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] and save it as a new
   practice file ~functions.org~
@@ -1627,6 +1625,13 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 - There is also a practice file in GitHub for you
   [[https://tinyurl.com/cpp-functions-practice][tinyurl.com/cpp-functions-practice]] - you can submit this to me for
   bonus points at any time (via email).
+
+
+** TODO Program 9: Fahrenheit to Celsius conversion function (Canvas)
+
+** TODO Lab session: practice functions ([[https://tinyurl.com/cpp-functions-practice][tinyurl.com/cpp-functions-practice]])
+
+* Week 15 - Pointers and pointer arrays
 
 ** TODO Extended example: Finding the minimum in an array
 
@@ -1637,9 +1642,6 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 - Second step: moving the code into a helper function
 
 - Third step: iterating over the array with repeated function calls
-
-
-* Week 15 - Pointers and pointer arrays
 
 * Week 16 - From C to C++ - =enum= and =struct=
 

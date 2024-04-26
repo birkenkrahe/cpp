@@ -35,6 +35,25 @@
 
    #+RESULTS: f:hello_world
 
+Solution:
+#+begin_src C
+  #include <stdio.h>
+  // function definition
+  void hello_world(void)
+  {
+    printf("Hello world\n");
+  }
+
+  int main(void) {
+    // function call
+    hello_world();
+    return 0;
+  }
+#+end_src
+
+#+RESULTS:
+: Hello world
+
 * TODO Back to basics - the command line
 
 1) Add the header argument ~:tangle hello.c~ to the code block of your
@@ -76,6 +95,31 @@
 
    #+end_src
 
+   Solution:
+   #+begin_src C
+     #include <stdio.h>
+
+     // function definition
+     double average (double a,double b)
+     {
+       return (a+b)/2;
+     }
+
+     int main(void) {
+       // Input variable declaration and definition
+       double x = 5.1, y = 8.9;
+
+       // Save the average of x and y in a variable avg
+       double avg = average(x,y);
+       // Print the variable avg
+       printf("The average of %g and %g is %g\n",x,y,avg);
+       return 0;
+     }
+   #+end_src
+
+   #+RESULTS:
+   : The average of 5.1 and 8.9 is 7
+
 * TODO Write your own function
 
 1) Write a function ~add~ that adds two integer numbers ~num1~ and ~num2~.
@@ -102,6 +146,28 @@
 
    #+end_src
 
+Solution:
+#+begin_src C
+  // preprocessor directive
+  #include <stdio.h>
+  // function definition
+  double add(double a, double b)
+  {
+    return (a + b);
+  }
+  // main function
+  int main(void) {
+    // declare and initialize variables
+    double x=100.f, y=200.f;
+    // function call and print
+    printf("%g + %g = %g\n",x,y,add(x,y));
+    return 0;
+  }
+#+end_src
+
+#+RESULTS:
+: 100 + 200 = 300
+
 * TODO Encapsulate a formula
 
 Problem: Compute log10 squared (square of the logarithm base 10) and
@@ -124,3 +190,26 @@ Tip: =log10= is defined in =math.h=.
     // compute and print result
 
 #+end_src
+
+
+Solution:
+#+begin_src C :libs -lm
+  // macros
+  #include <stdio.h>
+  #include <math.h>
+
+  double l2(double x)
+  {
+    return log10(x)*log10(x);
+  }
+
+  int main(void)
+  {
+    double x=100.0;
+    printf("The logarithm to base 10 of %g squared is %g\n", x, l2(x));
+    return 0;
+  }
+#+end_src
+
+#+RESULTS:
+: The logarithm to base 10 of 100 squared is 4
