@@ -1629,6 +1629,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 
 ** TODO Program 9: Fahrenheit to Celsius conversion function (Canvas)
 
+
 ** TODO Lab session: practice functions ([[https://tinyurl.com/cpp-functions-practice][tinyurl.com/cpp-functions-practice]])
 
 * Week 15 - Pointers and pointer arrays
