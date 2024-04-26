@@ -1,5 +1,5 @@
 #+TITLE: Practicing functions
-#+AUTHOR: Marcus Birkenkrahe [pledged]
+#+AUTHOR: [yourname] [pledged]
 #+STARTUP: overview hideblocks indent
 * README
 
@@ -32,8 +32,6 @@
      // function call
      hello_world();
    #+end_src
-
-   #+RESULTS: f:hello_world
 
 * TODO Back to basics - the command line
 
