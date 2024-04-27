@@ -1572,7 +1572,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 #+attr_html: :width 400px: 
 [[../img/functions.png]]
 
-** DONE Shameless plug! Picking fall courses: Where to go from here
+** Shameless plug! Picking fall courses: Where to go from here
 
 - Computer science: take *CSC 240 "Datastructures in C++"*. The course
   continues where this one ended, and leads to CSC 265 "Algorithms".
@@ -1586,9 +1586,9 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 - Everybody else: keep in mind what you learnt about "computational
   thinking" and the programming approach to problem solving.
 
-** DONE [[https://lyon.instructure.com/courses/2107/assignments/27026][Bonus assignment: height in light-years reloaded]]
-** DONE Program 8 (Fibonacci numbers) is live until next Sunday
-** DONE Multidimensional arrays and the =sizeof= operator
+** [[https://lyon.instructure.com/courses/2107/assignments/27026][Bonus assignment: height in light-years reloaded]]
+** Program 8 (Fibonacci numbers) is live until next Sunday
+** Multidimensional arrays and the =sizeof= operator
 
 - You already have the practice file. Complete it on your own and
   submit it for points (by May 8).
@@ -1600,11 +1600,11 @@ something with limited tools." Don Knuth, Literate Programming (1992)
   [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] - save it as ~arrays.org~ and code
   along!
 
-** DONE Test 8 (arrays) live from today until Friday
+** Test 8 (arrays) live from today until Friday
 
 10 questions only - half of the questions are TRUE/FALSE
 
-** DONE You can upload your in-class practice file to Canvas
+** You can upload your in-class practice file to Canvas
 
 - The background for this practice file is in the lecture on GitHub on
   arrays.
@@ -1616,7 +1616,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
   the Zoom recording and code along then.
 - Submit your practice file in Canvas for points.
 
-** DONE Finally! Functions! Freedom from repetition!
+** Finally! Functions! Freedom from repetition!
 
 - Use the template [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] and save it as a new
   practice file ~functions.org~
@@ -1626,24 +1626,40 @@ something with limited tools." Don Knuth, Literate Programming (1992)
   [[https://tinyurl.com/cpp-functions-practice][tinyurl.com/cpp-functions-practice]] - you can submit this to me for
   bonus points at any time (via email).
 
-
-** TODO Program 9: Fahrenheit to Celsius conversion function (Canvas)
-
-** TODO Lab session: practice functions ([[https://tinyurl.com/cpp-functions-practice][tinyurl.com/cpp-functions-practice]])
+** Program 9: Fahrenheit to Celsius conversion function (Canvas)
+** Lab session: practice functions ([[https://tinyurl.com/cpp-functions-practice][tinyurl.com/cpp-functions-practice]])
 
 * Week 15 - Pointers and pointer arrays
+#+attr_html: :width 400px:
+[[../img/week_15.png]]
 
-** TODO Extended example: Finding the minimum in an array
+#+begin_quote
+"It is during this first computer course that the student awakes to
+the possibilities and consequences of computation. They arise most
+usefully and in greatest profusion during his writing of programs. He
+must program and program and program! He must learn how to state
+precisely in a programming language what he perceives about the nature
+of symbolic systems. I know of no better way to expedite this
+awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.htm][Alan J. Perlis]]
+#+end_quote
 
-- We'll solve a [[https://dmoj.ca/problem/lkp18c2p1][programming competition]] problem in three steps.
+** Take 5 minutes to fill in the course evaluation!
+#+attr_html: :width 400px:
+[[../img/evaluation.png]]
 
-- First step: determine the minimum value of an array (from scratch)
+- Register your email to get bonus points!
+- It's still anonymous but I will be told that you filled it in!
+- Don't hold back - let me have it - I can (probably) take it!
 
-- Second step: moving the code into a helper function
+** Test 8 results
+#+attr_html: :width 600px:
+[[../img/test_8.png]]
 
-- Third step: iterating over the array with repeated function calls
+** Test 9 (functions) is ready for you to complete by May 1 (Wednesday)
 
 * Week 16 - From C to C++ - =enum= and =struct=
+#+attr_html: :width 400px:
+[[../img/week_16.png]]
 
 - For the holidays: bonus content weeks 10-15 (since the midterms):
   1) [[https://chat.google.com/room/AAAAIk8SqZE/fp53pnK30xs/fp53pnK30xs?cls=10][Consider dual boot Windows + Linux]]
