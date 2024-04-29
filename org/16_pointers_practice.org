@@ -5,33 +5,35 @@
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
 * README
 
-  * Practice workbook for pointers in C
-  * See GitHub for script/solutions
+* Practice workbook for pointers in C
+* See GitHub for script/solutions
 
 * TODO Identify yourself
 
 - replace the placeholder ~[yourName]~ in the header of this file by
   your name and save the file (~C-x C-s~).
 
-* TODO Indirection operator ~*~ 
+* TODO Indirection operator ~*~
 
 Put the code [[https://github.com/birkenkrahe/cc/blob/piHome/img/16_indirection.png][from this diagram]] into the code block below and run it
 to confirm the claims.
-  - Make sure you declare your variables!
-  - Comment your code to indicate you know what you're doing
+- Make sure you declare your variables!
+- Comment your code to indicate you know what you're doing.
+- Try to break the code and use the compiler flag ~-Wall~ to report
+  all warnings.
 
 #+begin_src C
   /* demonstrate pointer arithmetic */
-  
-#+end_src    
+
+#+end_src
 
 * TODO Initializing pointers
 
 - The initialization of the pointer ~iPtr~ in the following code
   block went wrong:
-  - Fix the initialization so that the pointer is assigned an
-    address, not a value
-  - Print the pointer variable ~ptr~, the address and value of ~x~
+- Fix the initialization so that the pointer is assigned an
+  address, not a value
+- Print the pointer variable ~ptr~, the address and value of ~x~
 
   #+begin_src C
     double x = 3.14159;
@@ -46,6 +48,8 @@ to confirm the claims.
   #+end_src
 
 * TODO Fix the program
+
+
 
 - The following function supposedly computes the sum and average of
   the numbers in the array ~a~, which has length ~n~. The variables ~avg~
@@ -65,4 +69,3 @@ to confirm the claims.
       avg = sum / n;
     } // end of function
   #+end_src
-

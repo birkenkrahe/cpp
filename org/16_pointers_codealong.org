@@ -116,14 +116,16 @@
 
 - Imagine you have a /variable/ ~iResult~ that contains the /value/ ~75~.
 
-- The variable is /located/ at a memory address, e.g. ~0061FEC8~.
+- The variable is /located/ at a memory address, which you can print:
   #+begin_src C
     int iResult = 75.;
     printf("%d is referenced by %p\n", iResult, &iResult);
+    printf("%d <- %p\n", iResult, &iResult);    
   #+end_src
 
   #+RESULTS:
-  : 75 is referenced by 0x7fffcbf922f4
+  : 75 is referenced by 0x7fffb01b0ef4
+  : 75 <- 0x7fffb01b0ef4
 
 - You see that repeated executions of this code creates different
   addresses. A /pointer/ is a variable that holds an address.
@@ -133,13 +135,9 @@
   #+begin_src C
     int iResult = 75.;
     printf("%d <- %p\n", iResult, &iResult);
-    int *myPointer = &iResult;
-    printf("%p -> %d\n",myPointer, iResult);
-  #+end_src
 
-  #+RESULTS:
-  : 75 <- 0x7fff03138c0c
-  : 0x7fff03138c0c -> 75
+    
+  #+end_src
 
 - This means that ~myPointer~ /indirectly/ points to the value ~75~.
 
@@ -153,14 +151,8 @@
 - We declare an array ~a[2]~ and then we print its addresses:  
   #+name: ptrprint
   #+begin_src C
-    int a[2] = {100,1000}; // define a 1-dim array of 2 elements
-    printf("a[0] = %p\na[1] = %p\n&a   = %p\n", &a[0], &a[1], &a);
-  #+end_src
 
-  #+RESULTS: ptrprint
-  : a[0] = 0x7ffe86d81e00
-  : a[1] = 0x7ffe86d81e04
-  : &a   = 0x7ffe86d81e00
+  #+end_src
 
 - You can see that the address for ~a~ points to ~a[0].~
 
@@ -189,15 +181,8 @@
 - What if ~i~ has not been initialized yet? Will the address change?
   Print the reference to ~i~ before initializing it, and after.
   #+begin_src C
-    int i;
-    printf("%p\n",&i);
-    i = 100;
-    printf("%p\n",&i);    
-  #+end_src
 
-  #+RESULTS:
-  : 0x7ffd9b388cc4
-  : 0x7ffd9b388cc4
+  #+end_src
 
 - The unary /indirection/ operator ~*~ returns a value, e.g. ~*p = 75~ if ~p~
   points at a variable that contains the value ~75~.
@@ -212,35 +197,27 @@
 
   #+begin_src C
     // variables
-    int i; // declare integer variable
-    i = 1; // assign value to variable
+      // declare integer variable
+      // assign value to variable
 
     // pointers
-    int *p; // declare integer pointer
-    p = &i;
+      // declare integer pointer
+      // assign the address of variable to pointer
 
     // print variables
-    printf("%d is located at address %p\n",i,&i);
     
     // print pointers
-    printf("%p points to value %d\n",p,i);
-  #+end_src
 
-  #+RESULTS:
-  : 1 is located at address 0x7ffd99ee9bec
-  : 0x7ffd99ee9bec points to value 1
+  #+end_src
 
 - What if you assign a number ~1~ to ~p~ instead of an address?
   #+begin_src C 
-    int *p; // declare integer pointer
-    p = 1; // warning: missing 'cast' 
+     // declare integer pointer
+        // assign integer value to pointer (instead of address)
 
     // print pointer value
-    printf("%p\n",p); // '0x1' is a reserved memory address
-  #+end_src
 
-  #+RESULTS:
-  : 0x1
+  #+end_src
 
 - Compiler message (~-Wint-conversion~ is a compiler flag):
   #+begin_example
@@ -278,23 +255,16 @@
 
   - Applying referencing ~&~ to a pointer extracts its address.
 
+  - Let's demonstrate this with some code:
     #+name: inverseOps
     #+begin_src C
       // declaring and initializing
-      int val = 75, *ptr = &val;
 
       // print variable and dereferenced pointer
-      printf("value = %d => *&(value) = %d\n",
-              val, *&val);
 
       // print pointer and address of pointer
-      printf("pointer = %p => &*(ptr) = %p\n",
-             ptr, &*ptr);
-    #+end_src
 
-    #+RESULTS: inverseOps
-    : value = 75 => *&(value) = 75
-    : pointer = 0x7ffeae98ae4c => &*(ptr) = 0x7ffeae98ae4c
+    #+end_src
 
   - Applying ~*~ to the pointer takes us back to the original variable
     (dereferences the pointer)
@@ -315,39 +285,15 @@
   conversion specifier ~%p~ for pointers.
   #+name: ptrInit
   #+begin_src C :tangle ./src/ptrinit.c
-    double *ptr1;  // pointer declarations
-    int *ptr2;
-    int *ptr3;
-    double x = 3.14; // initialize variable
 
-    ptr1 = &x; // initialize with address
-    ptr2 = 0;  // initialize with 0
-    ptr3 = NULL; // initialize with NULL
-
-    printf("%p %p %p\n", ptr1, ptr2, ptr3);
   #+end_src
 
-  #+RESULTS: ptrInit
-  : 0x7ffc31e308e8 (nil) (nil)
-
-- Let's print these last values: how do you have to change the ~printf~
-  statement? (Add the flag ~-w~ to disable all warnings)
+- Let's print the last values (not the pointers): how do you have to
+  change the ~printf~ statement? (Add the flag ~-w~ to disable all
+  warnings)
   #+begin_src C :flags -w
-    double *ptr1;  // pointer declarations
-    int *ptr2;
-    int *ptr3;
-    double x = 3.14; // initialize variable
 
-    ptr1 = &x; // initialize with address
-    ptr2 = 0;  // initialize with 0
-    ptr3 = NULL; // initialize with NULL
-
-    // different conversion specifiers
-    printf("%.2f %d %d\n", *ptr1, ptr2, ptr3); 
   #+end_src
-
-  #+RESULTS:
-  : 3.14 0 0
 
 - Here are a few non-valid initializations: we want to change the
   value of a variable using the pointer to its memory address.
@@ -364,13 +310,7 @@
 
 - Solution:
   #+begin_src C :results output
-    int i; 
-    int *iPtr;
-
-    iPtr = &i;   // pointer initialized with memory address
-    *iPtr = 7;   // value of i indirectly changed
-
-    printf("%p %p %d\n", iPtr, &i, i);
+    
   #+end_src
 
 * Let's practice!
