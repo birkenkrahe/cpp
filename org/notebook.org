@@ -1657,6 +1657,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 [[../img/test_8.png]]
 
 ** Test 9 (functions) is ready for you to complete by May 1 (Wednesday)
+
 ** Function review:
 
 1) Where should the =main= function be put with regard to other
@@ -1697,8 +1698,9 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
      }
      #+end_src
 
-   #+RESULTS:
-   : hello hello
+     #+RESULTS:
+     : hello hello
+
 3) How many =return= commands can a function have?
    #+begin_quote
    Any number! You can nest statements and =return= from every single
@@ -1720,14 +1722,14 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
      int main()
      {
        printf("%d is the larger number\n", larger(10,5));
-       printf("%d is the larger number\n", larger(5,100));
+       printf("%d is the larger number\n", larger(5,10));
        return 0;
      }
    #+end_src
 
    #+RESULTS:
    : 10 is the larger number
-   : 100 is the larger number
+   : 10 is the larger number
 
 ** New topic: pointers! C's secret memory management weapon
 
@@ -1738,7 +1740,6 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 
 - After the interactive lecture, we'll tackle the practice file
   [[https://tinyurl.com/cpp-pointers-practice][tinyurl.com/cpp-pointers-practice]]
-
 
 * Week 16 - From C to C++ - =enum= and =struct=
 #+attr_html: :width 400px:
