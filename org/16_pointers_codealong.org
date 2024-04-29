@@ -5,114 +5,17 @@
 #+OPTIONS: toc:nil ^:nil num:nil
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output 
 * README
-#+attr_latex: :width 400px
-#+caption: Roadside stand near Birmingham, AL (LOC@flickr.com)
-[[../img/pointer.jpg]]
 
-- This script introduces C pointers in theory and practice.
+- The script introduces C pointers in theory and practice.
+
+- This is the codealong file for you to code along during the
+  lecture. Open it in Emacs as [[https://tinyurl.com/cpp-pointers-codealong][tinyurl.com/cpp-pointers-codealong]] and
+  save it as ~~/pointers.org~ to your Emacs home directory.
 
 - This section, including some sample code, is based on: chapter 11
   in King (2008), and chapter 7 in Davenport/Vine.
 
-* Overview
-
-- Remember the fundamental architectural problem of the "von Neumann"
-  architecture of digital computers.
-  #+caption: Computer architecture (simplified)
-  #+attr_latex: :width 400px
-  [[../img/1_computer.png]]
-
-- Imagine: CPU \equiv brain, Memory \equiv house, Harddisk \equiv moon
-  #+begin_quote
-  1. CPU and the Brain: The CPU (Central Processing Unit) is like the
-     brain because it is responsible for processing all instructions
-     and making decisions. It performs the core computations and
-     controls other parts of the computer based on the input it
-     receives, similar to how the brain processes sensory information
-     and dictates responses.
-  2. RAM and a House: RAM (Random Access Memory) is akin to a house
-     because it serves as the active, working area where tasks are
-     carried out and information is temporarily held. Just as a house
-     contains rooms where daily activities occur (e.g., sleeping,
-     eating, working), RAM holds active applications and data for
-     quick access by the CPU. The size of the RAM affects how much
-     activity (or how many applications) can be handled at once, much
-     like the size of a house determines how many activities can
-     comfortably occur simultaneously.
-  3. Hard Disk and the Moon: A hard disk is comparable to the Moon in
-     that it serves as a distant but integral storage location. Just
-     as the Moon orbits Earth and is a more remote body holding
-     impacts of meteorites and historical footprints, a hard disk
-     stores data that is not immediately needed for current processing
-     tasks but is crucial for long-term storage. Its contents are not
-     as quickly accessible as those in RAM, reflecting the Moon’s
-     greater distance compared to our immediate environment.
-  #+end_quote
-
-- Computer memory is like a list of /locations/
-  #+caption: Sample data stored in an imaginary memory stack
-  #+attr_latex: :width 400px
-  [[../img/memory.png]]
-
-- Each chunk of memory has an /address/ to a location
-
-- /Pointers/ point to these addresses
-  #+attr_latex: :width 300px
-  #+caption: A pointer p points to address of i
-  [[../img/16_pointer.png]]
-
-- The /address/ is not the house, it's a /reference/ to the house:
-  #+attr_html: :width 300px
-  #+caption: envelope = pointer to an address
-  [[../img/16_letter.png]]
-
-- C#, Java, Python...do not offer pointers (easily) - most of the
-  direct memory management is "abstracted" away (i.e. the memory is
-  hidden and a simpler user interface is offered).
-  #+begin_quote
-  1. C#: C# does support pointers, but their use is limited to unsafe
-     code blocks. You must explicitly mark these areas with the =unsafe=
-     keyword. This feature allows you to perform operations that
-     involve direct memory access, similar to C or C++. However, using
-     pointers is generally discouraged in favor of safer constructs
-     provided by the language, such as objects and reference types.
-  2. Java: Java does not support pointers, at least not in the
-     traditional sense as seen in C or C++. Instead, Java handles
-     memory through references to objects, and these references are
-     abstracted away from direct memory address manipulation. This
-     abstraction is part of Java's design to ensure security and
-     simplicity in memory management, reducing the likelihood of
-     errors such as memory leaks or pointer arithmetic.
-  3. Python: Python also does not use pointers. It handles everything
-     by object references. The language is designed to abstract away
-     most direct memory management tasks from the developer,
-     automatically handling object creation and destruction through a
-     built-in garbage collector. Python’s approach simplifies the
-     development process but at the cost of direct control over memory
-     and performance optimizations that pointers can offer.
-  #+end_quote
-
-- C and C++ offer pointer variables and operators naturally
-
-- This gives you a lot more control over the computer (because every
-  operation, every process involves memory management)
-
-- Examples:
-  - *String manipulation* (working with text - e.g. when creating
-    fast-performing chat bots or AI agents.
-    
-  - *Dynamic memory allocation* - the process of assigning memory
-    during the execution time (when a program typically competes
-    with thousands of other processes).
-
-- This is /mind control/: You can essentially decide what the computer
-  should think with which part of its "brain" (great potential to
-  mess up, too), e.g. when you mis-allocate resources.
-
 * Indirection (concept)
-
-- Open Emacs on a codealong file like [[https://tinyurl.com/cpp-practice-org][tinyurl.com/cpp-practice-org]] and
-  save it (C-x C-s) as an Org-mode file ~pointers.org~ to code along.
 
 - Imagine you have a /variable/ ~iResult~ that contains the /value/ ~75~.
 
