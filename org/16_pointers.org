@@ -376,7 +376,7 @@
 * Let's practice!
 
 - Download and complete the practice file:
-  [[  https://tinyurl.com/cpp-pointers-practice][tinyurl.com/cpp-pointers-practice]]
+  [[https://tinyurl.com/cpp-pointers-practice][tinyurl.com/cpp-pointers-practice]]
 
 * References
 
