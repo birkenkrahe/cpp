@@ -5,8 +5,7 @@
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
 * README
 
-* Practice workbook for pointers in C
-* See GitHub for script/solutions
+ - Practice workbook for pointers in C
 
 * TODO Identify yourself
 
