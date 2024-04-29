@@ -1489,11 +1489,11 @@ something with limited tools." Don Knuth, Literate Programming (1992)
    #+end_src
 
    #+RESULTS:
-   : -1857983159 32765 100 0 
+   : -1857983159 32765 100 0
 
    #+begin_quote
    Answer: ~arr[N]~ becomes ~arr[4]~, which is printed (but not the other
-   elements: ~arr[0]~, ~arr[1]~, ~arr[2]~, and ~arr[3]~. 
+   elements: ~arr[0]~, ~arr[1]~, ~arr[2]~, and ~arr[3]~.
    #+end_quote
 
 4) How can you initialize the array ~arr[N]~ to 0?
@@ -1504,7 +1504,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
    #+end_src
 
    #+RESULTS:
-   : 0 0 0 0 
+   : 0 0 0 0
 
 5) Can you initialize ~arr[N]~ (for N=4) to 5 4 3 2 1 with a =for= loop?
    #+begin_src C
@@ -1517,7 +1517,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
    #+end_src
 
    #+RESULTS:
-   : 5 4 3 2 1 
+   : 5 4 3 2 1
 
 6) What does this code do?
    #+begin_src C
@@ -1533,8 +1533,8 @@ something with limited tools." Don Knuth, Literate Programming (1992)
    #+end_src
 
    #+RESULTS:
-   : 1 1 2 3 5 8 13 21 34 55 
-   
+   : 1 1 2 3 5 8 13 21 34 55
+
    #+begin_quote
    The code generates the first 10 Fibonacci numbers.
    #+end_quote
@@ -1569,7 +1569,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
   4) Generalize the solution from 4 -> N
 
 * Week 14 - Multidimensional arrays & functions
-#+attr_html: :width 400px: 
+#+attr_html: :width 400px:
 [[../img/functions.png]]
 
 ** Shameless plug! Picking fall courses: Where to go from here
@@ -1629,6 +1629,7 @@ something with limited tools." Don Knuth, Literate Programming (1992)
 ** Program 9: Fahrenheit to Celsius conversion function (Canvas)
 ** Lab session: practice functions ([[https://tinyurl.com/cpp-functions-practice][tinyurl.com/cpp-functions-practice]])
 
+
 * Week 15 - Pointers and pointer arrays
 #+attr_html: :width 400px:
 [[../img/week_15.png]]
@@ -1656,6 +1657,88 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 [[../img/test_8.png]]
 
 ** Test 9 (functions) is ready for you to complete by May 1 (Wednesday)
+** Function review:
+
+1) Where should the =main= function be put with regard to other
+   user-defined functions?
+   #+begin_quote
+   All other user-defined functions should be defined ahead of the
+   mandatory =main= function.
+   #+end_quote
+2) Where can I call a function?
+   #+begin_quote
+   - Functions can be called from anywhere.
+   - Functions should be defined before they are called.
+   - If I want them to run properly, they need to be called from
+     within =main=.
+   - Functions can also be called from within other functions (both
+     inside =main=, like =printf= and outside of =main=).
+   #+end_quote
+   #+begin_src C
+     #include <stdio.h>
+
+     // function definition
+     void hellohello()
+     {
+       printf("hello hello");
+     }
+
+     // function definition
+     void hello()
+     {
+       hellohello(); // must be defined before it is called
+     }
+
+     // main function
+     int main()
+     {
+       hello();
+       return 0;
+     }
+     #+end_src
+
+   #+RESULTS:
+   : hello hello
+3) How many =return= commands can a function have?
+   #+begin_quote
+   Any number! You can nest statements and =return= from every single
+   one.
+   #+end_quote
+   #+begin_src C
+     /* COMPARE TWO INTEGERS AND RETURN THE LARGER ONE */
+
+     // function definition
+     int larger(int a, int b)
+     {
+       if (a > b) {
+         return a;
+       } else {
+         return b;
+       }
+     }
+
+     int main()
+     {
+       printf("%d is the larger number\n", larger(10,5));
+       printf("%d is the larger number\n", larger(5,100));
+       return 0;
+     }
+   #+end_src
+
+   #+RESULTS:
+   : 10 is the larger number
+   : 100 is the larger number
+
+** New topic: pointers! C's secret memory management weapon
+
+- Download [[https://tinyurl.com/cpp-pointers-codealong][tinyurl.com/cpp-pointers-codealong]] with Emacs and save it
+  as ~~/pointers.org~ to your Emacs home directory.
+
+- Code along with me.
+
+- After the interactive lecture, we'll tackle the practice file
+  [[https://tinyurl.com/cpp-pointers-practice][tinyurl.com/cpp-pointers-practice]]
+
 
 * Week 16 - From C to C++ - =enum= and =struct=
 #+attr_html: :width 400px:
