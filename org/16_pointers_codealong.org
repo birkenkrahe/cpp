@@ -118,14 +118,8 @@
 
 - The variable is /located/ at a memory address, which you can print:
   #+begin_src C
-    int iResult = 75.;
-    printf("%d is referenced by %p\n", iResult, &iResult);
-    printf("%d <- %p\n", iResult, &iResult);    
-  #+end_src
 
-  #+RESULTS:
-  : 75 is referenced by 0x7fffb01b0ef4
-  : 75 <- 0x7fffb01b0ef4
+  #+end_src
 
 - You see that repeated executions of this code creates different
   addresses. A /pointer/ is a variable that holds an address.
