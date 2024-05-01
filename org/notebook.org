@@ -1729,7 +1729,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
    : 10 is the larger number
    : 10 is the larger number
 
-** New topic: pointers! C's secret memory management weapon
+** IN PROGRESS New topic: pointers! C's secret memory management weapon
 
 - Download [[https://tinyurl.com/cpp-pointers-codealong][tinyurl.com/cpp-pointers-codealong]] with Emacs and save it
   as ~~/pointers.org~ to your Emacs home directory.
@@ -1738,6 +1738,14 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 
 - After the interactive lecture, we'll tackle the practice file
   [[https://tinyurl.com/cpp-pointers-practice][tinyurl.com/cpp-pointers-practice]]
+
+** Last programming assignments
+
+- Function assignment: all you need to do is extract the Celsius to
+  Fahrenheit conversion formula and put it in a function.
+- You're given the Fahrenheit to Celsius formula (you need to solve it
+  for Celsius first).
+- The last assignment (pointers) is going to be a bonus assignment!
 
 ** Pointers review
 
@@ -1791,7 +1799,17 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
    7) The value of ~i~ is printed using the conversion specifier ~%d~
    8) The value of ~i~ is printed using the dereferenced pointer ~*p~
    #+end_quote
+
+5) What happens when you initialize a pointer not with an address but
+   with a number or a character?
+   #+begin_quote
    
+   #+end_quote
+   #+begin_src C
+     
+   #+end_src
+
+
 * Week 16 - From C to C++ - =enum= and =struct=
 #+attr_html: :width 400px:
 [[../img/week_16.png]]
