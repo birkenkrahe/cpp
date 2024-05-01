@@ -210,6 +210,23 @@
     
   #+end_src
 
+* Arrays and pointers as function arguments
+
+- To code along in this section, create your own code blocks!
+
+- The code contains two functions:
+  1) function ~sumArray~ that directly takes an array and its size as parameters.
+  2) function ~sumPointer~ that takes a pointer to the first array
+     element and the size as parameters.
+  #+begin_src C
+  
+  #+end_src
+
+- How does this work exactly?
+  #+begin_src C
+
+  #+end_src
+
 * Let's practice!
 
 - Download and complete the practice file:
