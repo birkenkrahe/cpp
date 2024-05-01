@@ -302,7 +302,7 @@
       j = *&i  // same as j = i
     #+end_example
   
-* Pointers must be initialized
+* NEXT Pointers must be initialized
 
 - Non-initialized pointers lead to invalid data or expressions.
 

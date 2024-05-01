@@ -1656,7 +1656,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 [[../img/test_8.png]]
 
 ** DONE Test 9 (functions) is ready for you to complete by May 1 (Wednesday)
-** Function review:
+** DONE Function review:
 
 1) Where should the =main= function be put with regard to other
    user-defined functions?
@@ -1739,6 +1739,59 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 - After the interactive lecture, we'll tackle the practice file
   [[https://tinyurl.com/cpp-pointers-practice][tinyurl.com/cpp-pointers-practice]]
 
+** Pointers review
+
+1) How are =*= and =&= called in the context of pointer arithmetic?
+   #+begin_quote
+   - =*= is the indirection operator: it dereferences a pointer's value
+   - =&= is the address operator: it references a variable's value
+   #+end_quote
+
+2) What happens when you apply =*= to an address ~&i~?
+   #+begin_quote
+   The address is dereferenced and the value is extracted:
+   #+end_quote
+   #+begin_src C
+     int i=10;
+     printf("address of i: %p\n", &i);
+     printf("dereferenced address of i = value: %d\n", *&i);
+   #+end_src
+
+   #+RESULTS:
+   : address of i: 0x7ffee619c584
+   : dereferenced address of i = value: 10
+
+3) What happens when you apply =&= to a pointer ~*p~?
+   #+begin_quote
+   The pointer is referenced and the address is extracted.
+   #+end_quote
+   #+begin_src C
+     int i=10;
+     int *p = &i;
+     printf("value of i: %d\n",*p);
+     printf("referenced pointer value of i = address: %p\n", &*p);
+   #+end_src
+
+   #+RESULTS:
+   : value of i: 10
+   : referenced pointer value of i = address: 0x7ffd6f89e25c
+
+4) What operations are described in the diagram? Can you express
+   what's going on in technical terms?
+   #+attr_html: :width 400px:
+   [[../img/16_indirection.png]]
+
+   #+begin_quote
+   1) The address of the integer variable ~i~ is assigned to a pointer ~p~
+   2) ~p~ now points at the memory cell called ~i~
+   3) The value 1 is assigned to ~i~
+   4) The value of ~i~ is printed using the conversion specifier ~%d~
+   5) The value of ~i~ is printed using the dereferenced pointer ~*p~
+   6) The value of ~i~ is changed using the dereference pointer ~*p~
+   7) The value of ~i~ is printed using the conversion specifier ~%d~
+   8) The value of ~i~ is printed using the dereferenced pointer ~*p~
+   #+end_quote
+   
 * Week 16 - From C to C++ - =enum= and =struct=
 #+attr_html: :width 400px:
 [[../img/week_16.png]]
