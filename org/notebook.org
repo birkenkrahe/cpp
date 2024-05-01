@@ -1766,7 +1766,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
    #+end_src
 
    #+RESULTS:
-   : address of i: 0x7ffee619c584
+   : address of i: 0x7ffce13b3214
    : dereferenced address of i = value: 10
 
 3) What happens when you apply =&= to a pointer ~*p~?
@@ -1782,7 +1782,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 
    #+RESULTS:
    : value of i: 10
-   : referenced pointer value of i = address: 0x7ffd6f89e25c
+   : referenced pointer value of i = address: 0x7fff11aff7bc
 
 4) What operations are described in the diagram? Can you express
    what's going on in technical terms?
@@ -1803,11 +1803,17 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 5) What happens when you initialize a pointer not with an address but
    with a number or a character?
    #+begin_quote
-   
+   You are warned that you are trying to make a pointer "without a
+   cast", which means you cannot use the address that it holds.
    #+end_quote
-   #+begin_src C
-     
+   #+begin_src C 
+     int *p;
+     p = 1;
+     printf("%p\n",p);
    #+end_src
+
+   #+RESULTS:
+   : 0x1
 
 
 * Week 16 - From C to C++ - =enum= and =struct=
