@@ -373,6 +373,9 @@
       printf("%p %p %d\n", iPtr, &i, i);
     #+end_src
 
+    #+RESULTS:
+    : 0x7ffcdcbffb9c 0x7ffcdcbffb9c 7
+
 * Arrays and pointers as function arguments
 
 - To code along in this section, create your own code blocks!
