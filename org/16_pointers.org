@@ -304,74 +304,136 @@
   
 * NEXT Pointers must be initialized
 
-- Non-initialized pointers lead to invalid data or expressions.
+  - Non-initialized pointers lead to invalid data or expressions.
 
-- Pointer variables should always be initialized with:
-  + another variable's memory address (e.g. ~&i~), OR
-  + with 0, OR
-  + with the keyword ~NULL~.
+  - Pointer variables should always be initialized with:
+    + another variable's memory address (e.g. ~&i~), OR
+    + with 0, OR
+    + with the keyword ~NULL~.
 
-- Here are some /valid/ pointer initializations - ~printf~ uses the
-  conversion specifier ~%p~ for pointers.
-  #+name: ptrInit
-  #+begin_src C :tangle ./src/ptrinit.c
-    double *ptr1;  // pointer declarations
-    int *ptr2;
-    int *ptr3;
-    double x = 3.14; // initialize variable
+  - Here are some /valid/ pointer initializations - ~printf~ uses the
+    conversion specifier ~%p~ for pointers.
+    #+name: ptrInit
+    #+begin_src C :tangle ./src/ptrinit.c
+      double *ptr1;  // pointer declarations
+      int *ptr2;
+      int *ptr3;
+      double x = 3.14; // initialize variable
 
-    ptr1 = &x; // initialize with address
-    ptr2 = 0;  // initialize with 0
-    ptr3 = NULL; // initialize with NULL
+      ptr1 = &x; // initialize with address
+      ptr2 = 0;  // initialize with 0
+      ptr3 = NULL; // initialize with NULL
 
-    printf("%p %p %p\n", ptr1, ptr2, ptr3);
-  #+end_src
+      printf("%p %p %p\n", ptr1, ptr2, ptr3);
+    #+end_src
 
-  #+RESULTS: ptrInit
-  : 0x7ffc31e308e8 (nil) (nil)
+    #+RESULTS: ptrInit
+    : 0x7ffc31e308e8 (nil) (nil)
 
-- Let's print these last values: how do you have to change the ~printf~
-  statement? (Add the flag ~-w~ to disable all warnings)
-  #+begin_src C :flags -w
-    double *ptr1;  // pointer declarations
-    int *ptr2;
-    int *ptr3;
-    double x = 3.14; // initialize variable
+  - Let's print these last values: how do you have to change the ~printf~
+    statement? (Add the flag ~-w~ to disable all warnings)
+    #+begin_src C :flags -w
+      double *ptr1;  // pointer declarations
+      int *ptr2;
+      int *ptr3;
+      double x = 3.14; // initialize variable
 
-    ptr1 = &x; // initialize with address
-    ptr2 = 0;  // initialize with 0
-    ptr3 = NULL; // initialize with NULL
+      ptr1 = &x; // initialize with address
+      ptr2 = 0;  // initialize with 0
+      ptr3 = NULL; // initialize with NULL
 
-    // different conversion specifiers
-    printf("%.2f %d %d\n", *ptr1, ptr2, ptr3); 
+      // different conversion specifiers
+      printf("%.2f %d %d\n", *ptr1, ptr2, ptr3); 
+    #+end_src
+
+    #+RESULTS:
+    : 3.14 0 0
+
+  - Here are a few non-valid initializations: we want to change the
+    value of a variable using the pointer to its memory address.
+    + can you tell why?
+    + can you right the wrong?
+    + print ~iPtr~, ~&i~ and ~i~ 
+    #+begin_src C :results silent
+      int i=5; // declare integer i
+      int *iPtr; // declare pointer iPtr
+
+      iPtr = &i; // initialize pointer
+      iPtr = 7;  // change value of variable
+    #+end_src
+
+  - Solution:
+    #+begin_src C :results output
+      int i; 
+      int *iPtr;
+
+      iPtr = &i;   // pointer initialized with memory address
+      ,*iPtr = 7;   // value of i indirectly changed
+
+      printf("%p %p %d\n", iPtr, &i, i);
+    #+end_src
+
+* Arrays and pointers as function arguments
+
+- To code along in this section, create your own code blocks!
+
+- The code contains two functions:
+  1) function ~sumArray~ that directly takes an array and its size as parameters.
+  2) function ~sumPointer~ that takes a pointer to the first array
+     element and the size as parameters.
+  #+begin_src C
+    #include <stdio.h>
+
+    // Function takes array arr[size] as argument and returns integer
+    int sumArray(int arr[], int size)
+    {
+      int sum = 0;
+      for ( int i = 0; i < size; i++ )
+        {
+          sum += arr[i]; // sum up subsequent elements of arr[] 
+        }
+      return sum;
+    }
+
+    // Function takes pointer to the first element of array as argument
+    int sumPointer(int *ptr, int size) 
+    {
+      int sum = 0;
+      for ( int i = 0; i < size; i++ )
+        {
+          sum += *(ptr + 1); 
+        }
+      return sum;
+    }
+
+    // Main function
+    int main()
+    {
+      int array[4] = {100,100,100,100};
+      int size = sizeof(array) / sizeof(array[0]);
+
+      printf("Sum using array: %d\n", sumArray(array, size));
+
+      return 0;
+    }
   #+end_src
 
   #+RESULTS:
-  : 3.14 0 0
+  : Sum using array: 400
 
-- Here are a few non-valid initializations: we want to change the
-  value of a variable using the pointer to its memory address.
-  + can you tell why?
-  + can you right the wrong?
-  + print ~iPtr~, ~&i~ and ~i~ 
-  #+begin_src C :results silent
-    int i=5; // declare integer i
-    int *iPtr; // declare pointer iPtr
+- How does this work exactly?
+  #+begin_src C
+    int array[4] = {100,200,300,400};
+    int size = sizeof(array) / sizeof(array[0]);
+    int *ptr = array;
 
-    iPtr = &i; // initialize pointer
-    iPtr = 7;  // change value of variable
+    for (int i = 0; i < size; i++)
+      printf("%d ", *(ptr + i));
   #+end_src
 
-- Solution:
-  #+begin_src C :results output
-    int i; 
-    int *iPtr;
+  #+RESULTS:
+  : 100 200 300 400 
 
-    iPtr = &i;   // pointer initialized with memory address
-    *iPtr = 7;   // value of i indirectly changed
-
-    printf("%p %p %d\n", iPtr, &i, i);
-  #+end_src
 
 * Let's practice!
 
