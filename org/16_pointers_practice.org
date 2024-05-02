@@ -5,7 +5,7 @@
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
 * README
 
- - Practice workbook for pointers in C
+- Practice workbook for pointers in C
 
 * TODO Identify yourself
 
@@ -14,36 +14,62 @@
 
 * TODO Indirection operator ~*~
 
-Put the code [[https://github.com/birkenkrahe/cc/blob/piHome/img/16_indirection.png][from this diagram]] into the code block below and run it
-to confirm the claims.
-- Make sure you declare your variables!
-- Comment your code to indicate you know what you're doing.
-- Try to break the code and use the compiler flag ~-Wall~ to report
-  all warnings.
+- Write code showing how the value of a variable ~i~ can be changed from
+  its initial value ~1~ to a new value ~1~ using a pointer ~*p~ to the
+  variable.
+- Add the flag ~-Wall~ to the code block header and try to break the
+  code.
 
+Pseudocode:
+#+begin_example C
+/* Change value of integer variable using pointer to variable
+   Input: initialized integer variable, initialied NULL pointer
+   Output: print original value of variable and pointer to variable
+   before and after the change of value  */
+
+ // include standard input/output library header file
+
+ // declare integer variable
+
+ // declare and initialize NULL pointer
+
+ // store address-to variable in pointer
+
+ // assign 1 to variable
+
+ // print values of variable and of pointer to variable
+
+ // change value of variable to 2 using pointer to variable
+
+ // print values of variable and of pointer to variable
+
+ #+end_example
+
+Code:
 #+begin_src C
-  /* demonstrate pointer arithmetic */
 
 #+end_src
 
 * TODO Initializing pointers
 
-- The initialization of the pointer ~iPtr~ in the following code
+- The initialization of the pointer ~ptr~ in the following code
   block went wrong:
 - Fix the initialization so that the pointer is assigned an
   address, not a value
-- Print the pointer variable ~ptr~, the address and value of ~x~
+- Print the pointer variable ~ptr~, the address and value of ~var~
 
   #+begin_src C
-    double x = 3.14159;
-    double *ptr;
+    // declare double precision variable
+    double var = 3.14159;
+    // declare pointer to double precision variable
+    int ptr;
 
     // initialize pointer
-    ptr = x;      // ptr is assigned the address of x
-    ptr = 2.71828; // value of x is indirectly changed to e
+    ptr = var;      // ptr is assigned the address of var
+    ptr = 2.71828; // value of var is indirectly changed to the Euler number
 
     // print pointer, address and value of i
-    ...
+
   #+end_src
 
 * TODO Fix the program
@@ -58,15 +84,15 @@ to confirm the claims.
   #+name: sum1
   #+begin_src C :results silent
     void avg_sum (double a[], int n, double *avg, double *sum)
-      {
-        int i;
-        sum = 0.0;
-        for (i = 0; i < n; i++)
-          {
+    {
+      int i;
+      sum = 0.0;
+      for (i = 0; i < n; i++)
+        {
           sum += a[i];
-          }
-        avg = sum / n;
-      } // end of function
+        }
+      avg = sum / n;
+    } // end of function
   #+end_src
 
 * TODO Swap numbers as pointers
@@ -95,23 +121,22 @@ Pseudocode:
    /* Exchange values of two integer variables i and j
     * using a function with pointer-to i and pointer-to j as arguments
     *  Input: address-of i (&i) and address-of j (&j)
-    *  Output: print i,j before and after 
+    *  Output: print i,j before and after
     */
 
     Begin
        // ...
 
        // ...
-    End 
+    End
 #+end_example
 
 Code:
 #+begin_src C
-   /* Exchange values of two integer variables i and j
-    *  using a function with pointer-to i and pointer-to j as arguments
-    *  Input: address-of i (&i) and address-of j (&j)
-    *  Output: print i,j before and after 
-    */
+  /* Exchange values of two integer variables i and j
+   ,*  using a function with pointer-to i and pointer-to j as arguments
+   ,*  Input: address-of i (&i) and address-of j (&j)
+   ,*  Output: print i,j before and after
+   ,*/
 
 #+end_src
-
