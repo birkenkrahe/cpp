@@ -68,3 +68,50 @@ to confirm the claims.
         avg = sum / n;
       } // end of function
   #+end_src
+
+* TODO Swap numbers as pointers
+
+Write the following function:
+#+begin_example
+void swap(int *p, int *q);
+#+end_example
+When passed the addresses of two variables, ~swap~ should exchange the
+values of the variables. Function call:
+#+begin_example C
+swap(&i, &j); // exchanges values of i and j
+#+end_example
+
+Sample input:
+#+begin_example
+0 1
+#+end_example
+Sample output:
+#+begin_example
+1 0
+#+end_example
+
+Pseudocode:
+#+begin_example C
+   /* Exchange values of two integer variables i and j
+    * using a function with pointer-to i and pointer-to j as arguments
+    *  Input: address-of i (&i) and address-of j (&j)
+    *  Output: print i,j before and after 
+    */
+
+    Begin
+       // ...
+
+       // ...
+    End 
+#+end_example
+
+Code:
+#+begin_src C
+   /* Exchange values of two integer variables i and j
+    *  using a function with pointer-to i and pointer-to j as arguments
+    *  Input: address-of i (&i) and address-of j (&j)
+    *  Output: print i,j before and after 
+    */
+
+#+end_src
+
