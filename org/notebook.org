@@ -1729,17 +1729,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
    : 10 is the larger number
    : 10 is the larger number
 
-** IN PROGRESS New topic: pointers! C's secret memory management weapon
-
-- Download [[https://tinyurl.com/cpp-pointers-codealong][tinyurl.com/cpp-pointers-codealong]] with Emacs and save it
-  as ~~/pointers.org~ to your Emacs home directory.
-
-- Code along with me.
-
-- After the interactive lecture, we'll tackle the practice file
-  [[https://tinyurl.com/cpp-pointers-practice][tinyurl.com/cpp-pointers-practice]]
-
-** Last programming assignments
+** DONE Last programming assignments
 
 - Function assignment: all you need to do is extract the Celsius to
   Fahrenheit conversion formula and put it in a function.
@@ -1747,7 +1737,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
   for Celsius first).
 - The last assignment (pointers) is going to be a bonus assignment!
 
-** Pointers review
+** DONE Pointers review 1
 
 1) How are =*= and =&= called in the context of pointer arithmetic?
    #+begin_quote
@@ -1814,6 +1804,97 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 
    #+RESULTS:
    : 0x1
+
+** Test 10 (pointers) available later today until May 8.
+** Pointers review 2
+
+1) Should pointers be initialized?
+   #+begin_quote
+   Yes! It's more important to initialize them than variables because
+   you've taken some memory control away from the computer (and with
+   great power...)
+   #+end_quote
+
+2) If so, how should pointers be initialized?
+   #+begin_quote
+   - With the address of a variable of the same type, e.t. ~ptr=&i~ 
+   #+end_quote
+
+3) Can you declare and initialize pointers at the same time?
+   #+begin_quote
+
+   #+end_quote
+   #+begin_src C
+     int i = 1;  // declare and  intialize integer variable
+     int *ptr = &i; // declare and initialize pointer 
+     printf("%d <- %p\n",i,ptr);
+     printf("%p -> %d\n",&i,*ptr);     
+   #+end_src
+   
+4) If I pass an array to a function, can I catch it with a pointer
+   parameter like so: ~foo(int *p)~ ? And how to call ~foo~?
+   #+begin_quote
+   - You can have pointer parameters like ~foo(int *p)~
+   - This is especially useful when working with arrays ~a[]~
+   - You can call ~foo~ with an array: ~a~ is implicitly converted to a
+     pointer, so ~foo(a)~ passes on the address of ~a[0]~ to ~foo~.
+   - You call ~foo~ with any address like ~&i~ or ~&a[0]~
+   #+end_quote
+   
+   #+begin_src C
+     #include <stdio.h>
+     int foo(int *p) // function definition header
+     {
+       return *(p);
+     } 
+
+     int main()
+     {
+       int a[3] = {100,200,300};
+       int i = 1000;
+       printf("%d \n", foo(a));
+       printf("%d \n", foo(&i));       
+       return 0;
+     }
+   #+end_src
+
+5) If =sizeof= for an array gives the total size in bytes of the
+   array, what does =sizeof= of a pointer yield?
+   #+begin_src C
+     // size of arrays
+     int a[10] = {0}; // array of 10 elements
+     printf("%ld\n", sizeof(a));  // 10 * 4 bytes = 40 bytes
+     printf("%ld\n", sizeof(a)/sizeof(a[0]));  // size of array
+
+     // size of pointers
+     printf("%ld\n", sizeof(*a));  // size of first array element
+     printf("%ld\n", sizeof(&a[0]));  // 
+   #+end_src
+
+   #+begin_quote
+   1. ~printf("%ld\n", sizeof(a));~ This statement prints the size of
+      the entire array ~a~. Since ~a~ is an array of 10 integers and each
+      integer takes 4 bytes, the total size is 40 bytes.
+   2. ~printf("%ld\n", sizeof(a)/sizeof(a[0]));~ This calculates the
+      number of elements in the array.
+   3. ~printf("%ld\n", sizeof(*a));~ Since ~*a~ dereferences the pointer
+      to the first element of the array, which is an integer,
+      ~sizeof(*a)~ gives the size of an integer (4 bytes).
+   4. ~printf("%ld\n", sizeof(&a[0]));~ Here, ~&a[0]~ is the address of
+      the first element of the array, so this is a pointer to an
+      integer (~int*~). The =sizeof= a pointer on a 64-bit system is 8
+      bytes, hence why this prints 8.
+   #+end_quote
+   
+** IN PROGRESS Pointers! C's secret memory management weapon
+
+- Download [[https://tinyurl.com/cpp-pointers-codealong][tinyurl.com/cpp-pointers-codealong]] with Emacs and save it
+  as ~~/pointers.org~ to your Emacs home directory.
+
+- Code along with me.
+
+- After the interactive lecture, we'll tackle the practice file
+  [[https://tinyurl.com/cpp-pointers-practice][tinyurl.com/cpp-pointers-practice]]
 
 
 * Week 16 - From C to C++ - =enum= and =struct=
