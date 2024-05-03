@@ -1921,7 +1921,6 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 - After the interactive lecture, we'll tackle the practice file
   [[https://tinyurl.com/cpp-pointers-practice][tinyurl.com/cpp-pointers-practice]]
 
-
 * Week 16 - From C to C++ - =enum= and =struct=
 #+attr_html: :width 400px:
 [[../img/week_16.png]]
