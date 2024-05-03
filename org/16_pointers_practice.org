@@ -52,11 +52,9 @@ Code:
 
 * TODO Initializing pointers
 
-- The initialization of the pointer ~ptr~ in the following code
-  block went wrong:
-- Fix the initialization so that the pointer is assigned an
-  address, not a value
-- Print the pointer variable ~ptr~, the address and value of ~var~
+- A few things went wrong in the code block below.
+- Fix the problems, and then print the value that ~ptr~ points to, the
+  address that ~ptr~ references, and the value of ~var.~
 
   #+begin_src C
     // declare double precision variable
@@ -79,7 +77,7 @@ Code:
   and ~sum~ /point/ to variables that the function should modify.
 
   Unfortunately, the function contains several errors:
-  - find and correct them so that the code compiles
+  - find and correct them so that the code compiles.
 
   #+name: sum1
   #+begin_src C :results silent
