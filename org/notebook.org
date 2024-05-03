@@ -1805,7 +1805,9 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
    #+RESULTS:
    : 0x1
 
-** Test 10 (pointers) available later today until May 8.
+
+** DONE Test 10 (pointers) available later today until May 8.
+
 ** Pointers review 2
 
 1) Should pointers be initialized?
@@ -1817,19 +1819,27 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 
 2) If so, how should pointers be initialized?
    #+begin_quote
-   - With the address of a variable of the same type, e.t. ~ptr=&i~ 
+   - With the address of a variable of the same type, e.t. ~ptr=&i~
+   - Or with =NULL=  (~*ptr = NULL~)
+   - Or with the value ~0~.
    #+end_quote
 
 3) Can you declare and initialize pointers at the same time?
    #+begin_quote
-
+   Yes you can!
    #+end_quote
    #+begin_src C
      int i = 1;  // declare and  intialize integer variable
      int *ptr = &i; // declare and initialize pointer 
-     printf("%d <- %p\n",i,ptr);
-     printf("%p -> %d\n",&i,*ptr);     
+     printf("%d <- %p\n",i,ptr); // print variable (value) and pointer
+                                 // (address)
+     printf("%p -> %d\n",&i,*ptr);  // print address and deferenced pointer
+                                    // (value)
    #+end_src
+
+   #+RESULTS:
+   : 1 <- 0x7fff7dc81e6c
+   : 0x7fff7dc81e6c -> 1
    
 4) If I pass an array to a function, can I catch it with a pointer
    parameter like so: ~foo(int *p)~ ? And how to call ~foo~?
@@ -1843,20 +1853,28 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
    
    #+begin_src C
      #include <stdio.h>
+
      int foo(int *p) // function definition header
      {
-       return *(p);
+       return *(p); // return pointer to calling routine
      } 
 
      int main()
      {
-       int a[3] = {100,200,300};
-       int i = 1000;
-       printf("%d \n", foo(a));
+       int a[3] = {100,200,300}; // declare and define array
+       int i = 1000;  // declare and define variable
+
+       printf("%d \n", foo(a));  // implicit conversion
+       printf("%d \n", foo(&a[0]));  // pass address of first element
        printf("%d \n", foo(&i));       
        return 0;
      }
    #+end_src
+
+   #+RESULTS:
+   : 100 
+   : 100 
+   : 1000 
 
 5) If =sizeof= for an array gives the total size in bytes of the
    array, what does =sizeof= of a pointer yield?
@@ -1870,6 +1888,12 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
      printf("%ld\n", sizeof(*a));  // size of first array element
      printf("%ld\n", sizeof(&a[0]));  // 
    #+end_src
+
+   #+RESULTS:
+   : 40
+   : 10
+   : 4
+   : 8
 
    #+begin_quote
    1. ~printf("%ld\n", sizeof(a));~ This statement prints the size of
@@ -1886,6 +1910,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
       bytes, hence why this prints 8.
    #+end_quote
    
+
 ** IN PROGRESS Pointers! C's secret memory management weapon
 
 - Download [[https://tinyurl.com/cpp-pointers-codealong][tinyurl.com/cpp-pointers-codealong]] with Emacs and save it
