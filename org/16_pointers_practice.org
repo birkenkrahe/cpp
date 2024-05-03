@@ -7,6 +7,10 @@
 
 - Practice workbook for pointers in C
 
+- Take 10 minutes max for each question
+
+- After 10 min you can present your sample solution
+
 * TODO Identify yourself
 
 - replace the placeholder ~[yourName]~ in the header of this file by
@@ -79,25 +83,6 @@ Code:
   Unfortunately, the function contains several errors: find and
   correct them so that the code compiles.
 
-  The pseudocode:
-  #+begin_example C
-  /* Compute sum and average of elements of an array
-     Input: array of length n
-     Output: average and sum of array elements */
-
-     // void function definition: accept array and size of array,
-     // return pointers to avg and sum as parameters
-
-        // initialize sum
-
-        // loop over array
-
-           // sum array elements
-
-        // compute arithmetic average
-
-  #+end_example
-
   Unfortunately, the function contains several errors: find and
   correct them so that the code compiles and runs.
 
@@ -158,9 +143,8 @@ Pseudocode:
 Code:
 #+begin_src C
   /* Exchange values of two integer variables i and j
-   ,*  using a function with pointer-to i and pointer-to j as arguments
-   ,*  Input: address-of i (&i) and address-of j (&j)
-   ,*  Output: print i,j before and after
-   ,*/
+     using a function with pointer-to i and pointer-to j as arguments
+     Input: address-of i (&i) and address-of j (&j)
+     Output: print i,j before and after */
 
 #+end_src
