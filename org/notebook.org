@@ -1643,7 +1643,7 @@ of symbolic systems. I know of no better way to expedite this
 awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.htm][Alan J. Perlis]]
 #+end_quote
 
-** DONE Take 5 minutes to fill in the course evaluation!
+** Take 5 minutes to fill in the course evaluation!
 #+attr_html: :width 400px:
 [[../img/evaluation.png]]
 
@@ -1651,12 +1651,12 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 - It's still anonymous but I will be told that you filled it in!
 - Don't hold back - let me have it - I can (probably) take it!
 
-** DONE Test 8 results
+** Test 8 results
 #+attr_html: :width 600px:
 [[../img/test_8.png]]
 
-** DONE Test 9 (functions) is ready for you to complete by May 1 (Wednesday)
-** DONE Function review:
+** Test 9 (functions) is ready for you to complete by May 1 (Wednesday)
+** Function review:
 
 1) Where should the =main= function be put with regard to other
    user-defined functions?
@@ -1729,7 +1729,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
    : 10 is the larger number
    : 10 is the larger number
 
-** DONE Last programming assignments
+** Last programming assignments
 
 - Function assignment: all you need to do is extract the Celsius to
   Fahrenheit conversion formula and put it in a function.
@@ -1737,7 +1737,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
   for Celsius first).
 - The last assignment (pointers) is going to be a bonus assignment!
 
-** DONE Pointers review 1
+** Pointers review 1
 
 1) How are =*= and =&= called in the context of pointer arithmetic?
    #+begin_quote
@@ -1805,8 +1805,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
    #+RESULTS:
    : 0x1
 
-
-** DONE Test 10 (pointers) available later today until May 8.
+** Test 10 (pointers) available later today until May 8.
 
 ** Pointers review 2
 
@@ -1910,7 +1909,6 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
       bytes, hence why this prints 8.
    #+end_quote
    
-
 ** IN PROGRESS Pointers! C's secret memory management weapon
 
 - Download [[https://tinyurl.com/cpp-pointers-codealong][tinyurl.com/cpp-pointers-codealong]] with Emacs and save it
