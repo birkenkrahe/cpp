@@ -216,7 +216,7 @@ end if
 
 *** BPMN model
 
-#+attr_html: :width 600px
+#+attr_html: :width 400px
 #+caption: BPMN model of problem (switch solution)
 [[../../img/n2l_switch.png]]
 
