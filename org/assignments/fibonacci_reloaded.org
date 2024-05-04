@@ -1,0 +1,192 @@
+#+title: Fibonacci Reloaded
+#+author: Marcus Birkenkrahe (pledged)
+#+options: toc:nil num:nil ^:nil: 
+* Problem
+
+The program below generates the first 10 Fibonacci numbers:
+#+begin_src C
+  int f[10];   // declare array of 10 elements
+  f[0] = 1;    // initialize first element
+  f[1] = 1;    // initialize second element
+
+  for (int i = 2; i < 10; i++) {
+    f[i] = f[i-2] + f[i-1];
+   }
+
+  for (int i = 0; i < 10; i++) printf("%d ", f[i]);
+#+end_src
+
+#+RESULTS:
+: 1 1 2 3 5 8 13 21 34 55
+
+Your tasks:
+1) Generalize the program so that the user is asked to input the
+   length N of the series, and is given the first N Fibonacci numbers.
+
+2) Print the first N=30 Fibonacci numbers as a 6 x 5 matrix:
+   #+begin_example
+   fib[ 0] = 0   ... fib[23] = 28657
+   fib[ 1] = 1   ... fib[24] = 46368
+   fib[ 2] = 1   ... fib[25] = 75025
+   fib[ 3] = 2   ... fib[26] = 121393
+   fib[ 4] = 3   ... fib[27] = 196418
+   fib[ 5] = 5   ... fib[28] = 317811
+   fib[ 6] = 8   ... fib[29] = 514229
+   #+end_example
+
+Submit your solutions in an Org-mode file with the usual title and
+author meta data. For full points, document your code and present code
+that compiles and produces the desired output.
+
+* Solution:
+
+Generalize and set N first in the program using =#define=,
+then add input routine with =scanf=.
+
+There are two solutions to this:
+1. Compute Fibonacci series as 1d array and print it as matrix (this
+   is what you are supposed to do).
+3. Compute Fibonacci series as 2d array, then print it (bonus solution
+   included below).
+
+** Compute series as 1d array and print as matrix.
+
+  - Pseudocode:
+    #+begin_example C
+     // set series upper bound N
+     // declare and initialize Fibonacci series as 1d array
+     // compute terms 2..N
+     // print series as 2d matrix of 6 rows and 5 columns
+        // iterate over series
+           // print series element
+           // if index is multiple of 5 go to next line
+    #+end_example
+
+  - Code for column-wise printing:
+    #+begin_src C
+      #include <stdio.h>
+
+      int main() {
+        int N = 30;  // The number of Fibonacci numbers to compute
+        long long fib[N];  // Array to store Fibonacci numbers
+
+        // Initial conditions for the Fibonacci sequence
+        fib[0] = 0;
+        fib[1] = 1;
+
+        // Compute Fibonacci numbers
+        for (int i = 2; i < N; i++) {
+          fib[i] = fib[i - 1] + fib[i - 2];
+        }
+
+        // Print the Fibonacci numbers in a 6 x 5 matrix format
+        for (int i = 0; i < N; i++) {
+          printf("fib[%2d] = %-8lld", i, fib[i]);
+          if ((i + 1) % 5 == 0) {
+            printf("\n");
+          }
+        }
+
+        return 0;
+      }
+    #+end_src
+
+    #+RESULTS:
+    : fib[ 0] = 0       fib[ 1] = 1       fib[ 2] = 1       fib[ 3] = 2       fib[ 4] = 3
+    : fib[ 5] = 5       fib[ 6] = 8       fib[ 7] = 13      fib[ 8] = 21      fib[ 9] = 34
+    : fib[10] = 55      fib[11] = 89      fib[12] = 144     fib[13] = 233     fib[14] = 377
+    : fib[15] = 610     fib[16] = 987     fib[17] = 1597    fib[18] = 2584    fib[19] = 4181
+    : fib[20] = 6765    fib[21] = 10946   fib[22] = 17711   fib[23] = 28657   fib[24] = 46368
+    : fib[25] = 75025   fib[26] = 121393  fib[27] = 196418  fib[28] = 317811  fib[29] = 514229
+
+  - Code for row-wise printing:
+    #+begin_src C
+      #include <stdio.h>
+
+      int main() {
+        int N = 30;  // The number of Fibonacci numbers to compute
+        int fib[N];  // Array to store Fibonacci numbers
+
+        // Initial conditions for the Fibonacci sequence
+        fib[0] = 0;
+        fib[1] = 1;
+
+        // Compute Fibonacci numbers
+        for (int i = 2; i < N; i++) {
+          fib[i] = fib[i - 1] + fib[i - 2];
+        }
+
+        // Print the Fibonacci numbers in a 6 x 5 matrix format column-wise
+        int rows = 6;
+        int cols = 5;
+        for (int i = 0; i < rows; i++) {
+          for (int j = 0; j < cols; j++) {
+            int index = j * rows + i;
+            if (index < N) {
+              printf("fib[%2d] = %-8d", index, fib[index]);
+            }
+          }
+          printf("\n");
+        }
+
+        return 0;
+      }
+    #+end_src
+
+    #+RESULTS:
+    : fib[ 0] = 0       fib[ 6] = 8       fib[12] = 144     fib[18] = 2584    fib[24] = 46368   
+    : fib[ 1] = 1       fib[ 7] = 13      fib[13] = 233     fib[19] = 4181    fib[25] = 75025   
+    : fib[ 2] = 1       fib[ 8] = 21      fib[14] = 377     fib[20] = 6765    fib[26] = 121393  
+    : fib[ 3] = 2       fib[ 9] = 34      fib[15] = 610     fib[21] = 10946   fib[27] = 196418  
+    : fib[ 4] = 3       fib[10] = 55      fib[16] = 987     fib[22] = 17711   fib[28] = 317811  
+    : fib[ 5] = 5       fib[11] = 89      fib[17] = 1597    fib[23] = 28657   fib[29] = 514229  
+
+** Compute Fibonacci series as 2d array, then print it
+
+#+begin_src C
+  #include <stdio.h>
+
+  int main() {
+    int rows = 6;
+    int cols = 5;
+    long long fib[rows][cols];  // 2D array to store Fibonacci numbers
+
+    // Initial conditions for the Fibonacci sequence
+    if (rows * cols >= 1) fib[0][0] = 0;
+    if (rows * cols >= 2) fib[1][0] = 1;
+
+    // Compute Fibonacci numbers and populate the 2D array column-wise
+    for (int j = 0; j < cols; j++) {
+      for (int i = 0; i < rows; i++) {
+        int index = j * rows + i;
+        if (index >= 2) {
+          int prev1_x = (index - 1) % rows;
+          int prev1_y = (index - 1) / rows;
+          int prev2_x = (index - 2) % rows;
+          int prev2_y = (index - 2) / rows;
+          fib[i][j] = fib[prev1_x][prev1_y] + fib[prev2_x][prev2_y];
+        }
+        if (index == 29) break; // Stop after the 30th number
+      }
+    }
+
+    // Print the Fibonacci numbers stored in a 2D array, column-wise
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < cols; j++) {
+        printf("fib[%2d] = %-8lld", j * rows + i, fib[i][j]);
+      }
+      printf("\n");
+    }
+
+    return 0;
+  }
+#+end_src
+
+#+RESULTS:
+: fib[ 0] = 0       fib[ 6] = 8       fib[12] = 144     fib[18] = 2584    fib[24] = 46368
+: fib[ 1] = 1       fib[ 7] = 13      fib[13] = 233     fib[19] = 4181    fib[25] = 75025
+: fib[ 2] = 1       fib[ 8] = 21      fib[14] = 377     fib[20] = 6765    fib[26] = 121393
+: fib[ 3] = 2       fib[ 9] = 34      fib[15] = 610     fib[21] = 10946   fib[27] = 196418
+: fib[ 4] = 3       fib[10] = 55      fib[16] = 987     fib[22] = 17711   fib[28] = 317811
+: fib[ 5] = 5       fib[11] = 89      fib[17] = 1597    fib[23] = 28657   fib[29] = 514229
+
