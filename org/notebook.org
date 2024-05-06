@@ -1938,7 +1938,6 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 #+attr_html: :width 400px:
 [[../img/oop_ai.png]]
 
-
 ** What's next?
 
 - For the holidays: bonus content weeks 10-15 (since the midterms):
@@ -1962,6 +1961,7 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
   18) [[https://chat.google.com/room/AAAAIk8SqZE/ovsJ18DY_Gs/ovsJ18DY_Gs?cls=10][Visualize code in Python, Java, C, C++, JavaScript]]
   19) [[https://chat.google.com/room/AAAAIk8SqZE/JbYm-bAkwGk/JbYm-bAkwGk?cls=10][Podcast: careers in computer and data science and AI]]
   20) [[https://chat.google.com/room/AAAAIk8SqZE/_HGQDGN3E5w/_HGQDGN3E5w?cls=10][Learn to think like the computer hates you, because it does.]]
+
 
 * Footnotes
 
