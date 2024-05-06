@@ -4,7 +4,7 @@
 #+STARTUP: overview hideblocks indent
 #+OPTIONS: toc:nil ^:nil num:nil
 #+PROPERTY: header-args:C :main yes :includes <stdio.h> :exports both :results output :comments both
-#+PROPERTY: header-args:C++ :main yes :includes "c:/Users/birkenkrahe/Documents/GitHub/cc100/10_cpp/header/std_lib_facilities.h" :exports both :results output :comments both :includes <iostream.h>
+#+PROPERTY: header-args:C++ :main yes :exports both :results output :comments both :includes <iostream.h> :includes "c:/Users/birkenkrahe/Documents/GitHub/cc100/10_cpp/header/std_lib_facilities.h" 
 * README
 
 - This script introduces the basics of C++ and compares C and C++.
@@ -16,11 +16,6 @@
 
 * History
 
-- Both modern C and C++ descend from 1979's "classic" C.
-  #+attr_html: :width 400px
-  #+caption: History of C++ 1967-2014 (Source: Stroustrup, 2014)
-  [[../img/17_history.png]]
-
 - C++ is a superset of C: constructs that are both C and C++ have
   the same meaning (= semantics) in both languages.
 
@@ -28,27 +23,18 @@
   character constant) in C and C++
   #+name: sizeofAinC
   #+begin_src C
-    int s = sizeof('a');
-    printf("%d\n", s);
-  #+end_src
 
-  #+RESULTS: sizeofAinC
-  : 4
+  #+end_src
 
   #+name: sizeofAinC++
   #+begin_src C++ :includes <iostream> :exports both
-    using namespace std;
-    int s = sizeof('a');
-    cout << s;
-  #+end_src
 
-  #+RESULTS: sizeofAinC++
-  : 1
+  #+end_src
 
 - C++ employs stricter /data type/ checking: the language doesn't quite
   let you get away with as much.
 
-* Sample program
+* Sample program: hello world
 
 - It all begins with ~Hello World~, of course. When you tangle this file
   as ~hello.cpp~ you need to use ~g++~ to compile it (part of GCC).
@@ -101,7 +87,7 @@
 * Sample program: rectangle
 
 - Here is the rectangle program in C++ - we'll look at the details
-  below.
+  below. The pseudocode is identical to the C program.
   #+begin_src C++ :results output
     // *****************************************************
     // Compute and print perimeter and area of a rectangle
@@ -110,34 +96,24 @@
     // *****************************************************
 
     // Include input/output library
-    #include <iostream>
 
     // Use standard namespace
-    using namespace std;
 
     // Begin main program
-    int main()
-    {
+    
       // Declare variables
-      double length, width, area, perimeter;
+    
       // Print program information
-      cout << "Program to compute and print perimeter and "
-           << "area of a rectangle." << endl << endl;
+    
       // Set variable values for length and width
-      length = 6.0;
-      width = 4.0;
+    
       // Compute perimeter = 2 * (length + width)
-      perimeter = 2 * (length + width);
+    
       // Compute area = length * width
-      area = length * width; 
+    
       // Print input and output values
-      cout << "Length = " << length << endl;
-      cout << "Width = " << width << endl;
-      cout << "Perimeter = " << perimeter << endl;
-      cout << "Area = " << area << endl;
-
-      return 0;
-    } // End main program
+    
+      // End main program
   #+end_src
 
 * C++ features that are missing from C
@@ -166,8 +142,6 @@
   #+begin_src C++ :includes <iostream> :results silent :exports both
     using namespace std;
 
-    int myVariable = 1;
-    double a = 2.2;
   #+end_src
 
 * Constants
@@ -176,28 +150,12 @@
   #+begin_src C++ :includes <iostream> :results output :exports both
     using namespace std;
 
-    const float pi = 3.14;  // pi is the constant, 3.14 is the literal
-    float radius = 5, area;
-
-    area = radius * radius * pi;
-    cout << area;
   #+end_src
-
-  #+RESULTS:
-  : 78.5
 
 - The good old =printf= works, too, of course:
   #+begin_src C++ :results output :exports both  :includes <iostream>
-    const float pi = 3.14;  // pi is the constant, 3.14 is the literal
-    float radius = 5, area;
 
-    area = radius * radius * pi;
-
-    printf("%g\n",area);
   #+end_src
-
-  #+RESULTS:
-  : 78.5
 
 * Assignments
 
@@ -205,37 +163,12 @@
   #+begin_src C++ :includes <iostream> :results output :exports both
     using namespace std;
 
-    int myValue = 4;
-    int yourVal;
-    string myString = "word";
-
-    yourVal = myValue + myString;
   #+end_src
 
-  #+RESULTS:
+- And what happens in C?
+  #+begin_src C :exports both :includes <stdio.h> :main yes    printf("%d\n", bar);
 
-  Error output:
-  #+begin_example
-  error: no match for 'operator+'
-  (operand types are 'int' and 'std::__cxx11::string'
-  yourVal = myValue + myString
-       ~~~~~~~~^~~~~~~~~~
-  #+end_example
-
-  And in C: no error - just a warning, and an output is generated:
-  #+begin_src C :exports both :includes <stdio.h> :main yes
-    int foo = 4;
-    int bar;
-    char myString = "word";
-
-    bar = foo + myString;
-    printf("%d\n", bar);
-    printf("%d\n", myString);
   #+end_src
-
-  #+RESULTS:
-  : 8
-  : 4
 
 * Output
 
@@ -249,52 +182,33 @@
   #+begin_src C++ :includes <iostream> :results output :exports both
     using namespace std;
 
-    int myVariable = 1;
-    double a = 2.2;
 
-    cout << myVariable << endl;
-    cout << a;
   #+end_src
 
 - You can pipeline console output:
 
   #+begin_src C++ :includes <iostream> :results output :exports both
-    using namespace std; int myVal = 1000;
+    using namespace std;
 
-    cout << "Go Scots! " << "You can do it!" << endl << myVal;
   #+end_src
 
   - You can still use ~\n~:
   #+begin_src C++ :includes <iostream> :results output :exports both
-    using namespace std; int myVal = 1000;
+    using namespace std;
 
-    cout << "Go Scots!\nYou can do it!" << endl << myVal;
   #+end_src
 
 - This makes formatting printout quite easy:
   #+begin_src C++ :includes <iostream> :results output :exports both
     using namespace std;
-    int myVal = 1000;
 
-    cout << "Lyon" << endl;
-    cout.width(16);
-    cout << "College" << endl;
-    cout << "****************" << endl;
-    cout << "Freshmen/juniors" << endl;
   #+end_src
-
-  #+RESULTS:
-  : Lyon
-  :          College
-  : ****************
-  : Freshmen/juniors
 
 * Input
 
 - Generating an input file
   #+begin_src bash
-    echo "1000" > ../data/input
-    cat ../data/input
+
   #+end_src
 
 - To generate input, use the ~cin~ (pronounced 'see-in', "console
@@ -303,12 +217,6 @@
   #+begin_src C++ :includes <iostream> :results output :cmdline < ../data/input  :exports both
     using namespace std;
 
-    int x = 0;
-    cout << "Please enter a value for x " << endl;
-
-    cin >> x;   // this is equivalent scanf("%d", &x);
-
-    cout << "You entered: " << x << endl;
   #+end_src
 
 - "Exception handling": Checking failed input with ~cin.fail~. This
@@ -316,15 +224,6 @@
   #+begin_src C++ :includes <iostream> :results output :exports both
     using namespace std;
 
-    int x = 0;
-
-    cout << "Please enter a value for x " << endl;
-
-    cin >> x;
-    if (cin.fail())
-      {
-        cout << "That is not a valid input" << endl;
-      }
   #+end_src
 
 * Other differences:
