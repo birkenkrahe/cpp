@@ -330,7 +330,7 @@
 * Other differences:
 
 There are slight differences in all areas we've covered:
-
+#+attr_latex: :width 500px: 
 | Area       | C                                                     | C++                                                      |
 |------------+-------------------------------------------------------+----------------------------------------------------------|
 | Arithmetic | Supports basic arithmetic operations. Arithmetic is   | Similar basic arithmetic capabilities but supports       |
