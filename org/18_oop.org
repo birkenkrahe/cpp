@@ -14,9 +14,7 @@
 - This section, including some sample code, is based on Stroustrup
   (2014) and Hansen (2013).
 
-* Object Oriented Programming (OOP)
-
-** The Mythical Man-Month
+* The Mythical Man-Month
 
 - "As a project's complexity increases, the number of man-months to
   complete it goes up exponentially." (Brooks, 1975)
@@ -38,7 +36,7 @@
   (cp. [[https://en.wikipedia.org/wiki/Paradigm_shift][Wikipedia]]).
   #+end_quote
 
-** Procedural programming
+* Procedural programming
 
 - *Procedural* programming is what you already know:
 
@@ -53,98 +51,93 @@
 
   + Can you think of an example?
     #+name: datastructure_example
-    #+begin_src C 
+    #+begin_src C
       int add (int x, int y)
       {
         return x + y; // this only works for int data
       }
       printf("%d\n", add(2,2));     // works well
-      printf("%g\n", add(2.0,2.0)); // returns 0
+      printf("%g\n", add(2.0,2.0)); // returns machine 0
     #+end_src
 
-    #+RESULTS: datastructure_example
-    : 4
-    : 1.97626e-323
+    + Large programs become difficult to understand/maintain/debug
 
-  + Large programs become difficult to understand/maintain/debug
+    + Large programs are hard to maintain/extend/reuse
 
-  + Large programs are hard to maintain/extend/reuse
+  - When an approach generates too many *anomalies*, a totally new
+    approach, or a new *paradigm* often emerges - paradigms turn
+    people's worldviews upside down.
 
-- When an approach generates too many *anomalies*, a totally new
-  approach, or a new *paradigm* often emerges - paradigms turn
-  people's worldviews upside down.
+  - Can you think of /new paradigms/ in science, history, etc.?
+    #+begin_quote Paradigm changes
 
-- Can you think of /new paradigms/ in science, history, etc.?
-  #+begin_quote Paradigm changes
-
-  - Darwin's model of evolution based on genetic mutations
-  - Idea of climate change as man-made phenomenon linked to CO2
-  - Focus on germs as the origin of disease
-  - Cosmological model of the universe (and heliocentric model)
-  - Relativity (special: of mass/energy, general: mass/spacetime)
-  - Quantum mechanical model of the world at smallest distances
+- Darwin's model of evolution based on genetic mutations
+- Idea of climate change as man-made phenomenon linked to CO2
+- Focus on germs as the origin of disease
+- Cosmological model of the universe (and heliocentric model)
+- Relativity (special: of mass/energy, general: mass/spacetime)
+- Quantum mechanical model of the world at smallest distances
 
   Note: none of these are true in the "biblical" sense but they are
   scientifically true, that is they describe some of the world as an
   approximation, through abstraction, and are in continuous
   development.
+    #+end_quote
 
-  #+end_quote
+  * Object orientation (Software Engineering concept)
 
-** Object orientation (SE concept)
+  - The greatest conceptual and practical difference between C and
+    C++ is the explicit use of /object orientation/ (OO).
 
-- The greatest conceptual and practical difference between C and
-  C++ is the explicit use of /object orientation/ (OO).
+  - OO can extend to general design, analysis, testing, even
+    management - whenever you focus not on the procedure but on the
+    /objects/ involved and their ability to exchange /messages/.
 
-- OO can extend to general design, analysis, testing, even
-  management - whenever you focus not on the procedure but on the
-  /objects/ involved and their ability to exchange /messages/.
+  - /Classes/ model real-world domain entities (modeling), e.g.
+    + for a school application: ~student~, ~professor~, ~course~, etc.
+    + for a photo application: ~slideshow~, ~location~, ~photo~ etc.
 
-- /Classes/ model real-world domain entities (modeling), e.g.
-  + for a school application: ~student~, ~professor~, ~course~, etc.
-  + for a photo application: ~slideshow~, ~location~, ~photo~ etc.
+  - Higher level of /abstraction/ during development (less detail)
+    + When coding a ~student~ class, think about what a student, as an
+      instance of the class, might do (/method/) or have (/attribute/)
+    + You need to concern yourself with interactions and
+      relationships between the different objects of your world
 
-- Higher level of /abstraction/ during development (less detail)
-  + When coding a ~student~ class, think about what a student, as an
-    instance of the class, might do (/method/) or have (/attribute/)
-  + You need to concern yourself with interactions and
-    relationships between the different objects of your world
+  - What are examples for /methods/ (= abilities) of a ~student~ class?
+    #+begin_quote
+    E.g.
+    - ~student.enrol()~
+    - ~student.attend()~
+    - ~student.graduate()~
+    - ~student.dropClass()~
+    - etc.
+    #+end_quote
 
-- What are examples for /methods/ (= abilities) of a ~student~ class?
-  #+begin_quote
-  E.g.
-  - ~student.enrol()~
-  - ~student.attend()~
-  - ~student.graduate()~
-  - ~student.dropClass()~
-  - etc.
-  #+end_quote
+  - What are examples for /attributes/ (= properties) of a ~student~ class?
+    #+begin_quote
+    E.g.
+    - ~student.name~
+    - ~student.level~
+    - ~student.grade~
+    - ~student.gender~
+    - ~student.enrolled~
+    - etc.
+    #+end_quote
 
-- What are examples for /attributes/ (= properties) of a ~student~ class?
-  #+begin_quote
-  E.g.
-  - ~student.name~
-  - ~student.level~
-  - ~student.grade~
-  - ~student.gender~
-  - ~student.enrolled~
-  - etc.
-  #+end_quote
+  - To compute things, e.g. find out if a student is registered this
+    term, I can send a message to an /instance/ of the ~student~ class,
+    e.g. the student ~Frank~, and ask him if he's registered this term:
+    #+begin_example C++
+      Student Frank;   // Frank is a student
+      cout << Frank.enrolled();  // is Frank enrolled?
+    #+end_example
 
-- To compute things, e.g. find out if a student is registered this
-  term, I can send a message to an /instance/ of the ~student~ class,
-  e.g. the student ~Frank~, and ask him if he's registered this term:
-  #+begin_example C++
-    Student Frank;   // Frank is a student
-    cout << Frank.enrolled();  // is Frank enrolled?
-  #+end_example
-
-- This is very different from procedural programming where I would
-  have to pass the student to that function:
-  #+begin_example C
-    int enrolled(student) {...} // function definition
-    int status = enrolled("Frank"); // check Frank's status
-  #+end_example
+  - This is very different from procedural programming where I would
+    have to pass the student to that function:
+    #+begin_example C
+      int enrolled(student) {...} // function definition - returns enrolment status
+      int status = enrolled("Frank"); // check Frank's status
+   #+end_example
 
 - The function depends on the business logic, as does the method of
   the Student class, but it is defined on /one/ place - one change is
@@ -157,7 +150,7 @@
 
 - OOP is used successfully in very large program applications
 
-** OOP concepts (overview)
+* OOP concepts (overview)
 
 - Information-hiding via /encapsulation/ (e.g. ~student.enrolled()~
   hides specific implementation from users)
@@ -169,15 +162,15 @@
   the original class (e.g. for ~IntStudent.applyVisa()~).
 
 Here is an example of how this looks like in UML (a modeling language,
-like BPMN): 
+like BPMN):
 #+attr_html: :width 600px
 #+caption: Class diagram (UML, source: Columbia U).
 [[../img/17_classes.png]]
 
-(Link: 
+(Link:
 [[http://imamp.colum.edu/mediawiki/images/e/eb/ClassDiagramStudentCourses.png]])
 
-** Limitations
+* Limitations
 
 - OO Programming does not make bad code better
 
