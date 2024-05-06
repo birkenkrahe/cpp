@@ -1919,9 +1919,27 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 - After the interactive lecture, we'll tackle the practice file
   [[https://tinyurl.com/cpp-pointers-practice][tinyurl.com/cpp-pointers-practice]]
 
-* Week 16 - From C to C++ - =enum= and =struct=
+* Week 16 - From C to C++ 
 #+attr_html: :width 400px:
 [[../img/week_16.png]]
+
+** Remember the final exam on FRIDAY 10-MAY at 1-3 PM here
+#+attr_html: :width 400px: 
+[[../img/final_exam.png]]
+
+** Contrasting C vs. C++
+#+attr_html: :width 400px:
+[[../img/c_vs_cpp.png]]
+
+- Download the codealong file: [[https://tinyurl.com/17-cpp-codealong][tinyurl.com/17-cpp-codealong]]
+- Save the file as an Org-mode file ~~/cpp.org~
+  
+** A short introduction to Object-Oriented Programming (OOP)
+#+attr_html: :width 400px:
+[[../img/oop_ai.png]]
+
+
+** What's next?
 
 - For the holidays: bonus content weeks 10-15 (since the midterms):
   1) [[https://chat.google.com/room/AAAAIk8SqZE/fp53pnK30xs/fp53pnK30xs?cls=10][Consider dual boot Windows + Linux]]
