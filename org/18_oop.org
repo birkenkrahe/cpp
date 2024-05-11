@@ -84,7 +84,7 @@
   development.
     #+end_quote
 
-  * Object orientation (Software Engineering concept)
+  - Object orientation (Software Engineering concept)
 
   - The greatest conceptual and practical difference between C and
     C++ is the explicit use of /object orientation/ (OO).
@@ -172,11 +172,11 @@ like BPMN):
 
 * Limitations
 
+- Steeper learning curve (especially for C++)
+
 - OO Programming does not make bad code better
 
 - Not everything decomposes into a class
-
-- Steeper learning curve (especially for C++)
 
 - Upfront investment because of design requirements
 

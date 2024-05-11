@@ -1962,12 +1962,15 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
   19) [[https://chat.google.com/room/AAAAIk8SqZE/JbYm-bAkwGk/JbYm-bAkwGk?cls=10][Podcast: careers in computer and data science and AI]]
   20) [[https://chat.google.com/room/AAAAIk8SqZE/_HGQDGN3E5w/_HGQDGN3E5w?cls=10][Learn to think like the computer hates you, because it does.]]
 
+<<<<<<< HEAD
 - Thank you for your active participation!
 - Evaluate the course if you haven't done so yet!
 - My last AI picture: celebrating the last C++ class Leonardo style
 #+attr_html: :width 600px:
 [[../img/final.png]]
 
+=======
+>>>>>>> 1f53164 (Update from dell)
 * Footnotes
 
 [fn:1]An "array" is a C data structure that can hold more than one
