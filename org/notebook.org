@@ -1971,6 +1971,23 @@ awakening than by programming." — [[https://www.jsoftware.com/papers/perlis77.
 
 =======
 >>>>>>> 1f53164 (Update from dell)
+* Post-mortem (May 23)
+
+Thanks everyone (actually, 81% of y'all) for the first rate evaluation
+of this course - well done. I never get to evaluate "the course" as
+such but I enjoyed it very much this time round - except that I could
+probably have done better & perhaps next time I will (I bet that's
+what you're telling yourself, too, and you may still when you're my
+age :-) Enjoy your summer & if you're in need of some coding advice,
+or you want to keep your skills fresh, don't hesitate to reach out:
+I'm currently working through a few books myself - "Learn C the hard
+way", "C++ Crash Course", and "A Tour of C++". Also, I am done with
+generative AI images, I think - 1.5 years of fake art is enough. To
+celebrate the summer, feast your eye on Monet's "The Summer - poppy
+field" (1875). Source: WikiArt.org, public domain.
+#+attr_html: :width 400px:
+[[../img/monet_summer_poppy_field_1875.png]]
+
 * Footnotes
 
 [fn:1]An "array" is a C data structure that can hold more than one
