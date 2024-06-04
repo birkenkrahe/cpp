@@ -1985,7 +1985,7 @@ way", "C++ Crash Course", and "A Tour of C++". Also, I am done with
 generative AI images, I think - 1.5 years of fake art is enough. To
 celebrate the summer, feast your eye on Monet's "The Summer - poppy
 field" (1875). Source: WikiArt.org, public domain.
-#+attr_html: :width 400px:
+#+attr_html: :width 550px:
 [[../img/monet_summer_poppy_field_1875.png]]
 
 * Footnotes
