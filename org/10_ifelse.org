@@ -16,49 +16,6 @@
 
 * Overview and example
 
-- ~If~ statement structure in C is very similar to pseudocode "~If~"
-
-- The code block [[battle1]] is the C version of the pseudocode:
-  #+name: battle1
-  #+begin_example C
-  // checks if health is smaller or equal 100
-  if (health <= 100)  
-    // drink health potion if condition is TRUE
-  else
-    //resume battle if condition is FALSE
-  #+end_example
-
-- Differences: condition needs /parentheses/ ~(...)~; no "~end if~" statement
-
-- The ~health~ check results in a /Boolean/ answer: true (~1~) or false (~0~)
-
-- Unlike other languages, there are no Boolean types =TRUE=, =FALSE=
-
-- To run, the program needs a /declaration/ of the ~health~ variable
-
-- /Multiple statements/ need to be included in braces ~{...}~
-
-- The source code [[battle2]] will run. The variable has been declared
-  and initialized:
-  #+name: battle2
-  #+begin_src C :main yes :includes <stdio.h> :results output
-    int health = 101;
-
-    if (health <= 100) {
-      // drink health potion
-      puts("This is what you do:");
-      printf("Drinking health potion!\n");
-     }
-     else {
-       // resume battle
-       puts("This is what you do:");
-       printf("Resuming battle!\n");
-     }
-  #+end_src
-
-  #+RESULTS: battle2
-  : This is what you do:
-  : Resuming battle!
 
 * Stacked vs. nested IF structures
 
