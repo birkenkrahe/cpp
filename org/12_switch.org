@@ -13,7 +13,7 @@
   chapters 4 and 5 in King (2008)
 
 - Practice workbooks, input files and PDF solution files in GitHub
-  
+
 * Overview
 
 - The ~switch~ statement is fairly complex: it combines conditional
@@ -87,7 +87,7 @@
   grade 5,6. Any other grade value is not allowed. (This happens to be
   the German grade scale, which is A = 1 to D = 4, and F = 5 or 6.)
   #+end_quote
-  
+
 - You can also put several case labels on the same line as shown
   below - the code is otherwise identical to the previous one:
 
@@ -102,10 +102,10 @@
      case 5: case 6:
        printf("Failing");
        break;
-     default: 
-       printf("Illegal grade"); 
-       break; 
-     } 
+     default:
+       printf("Illegal grade");
+       break;
+     }
   #+end_src
 
 - Note: You cannot write a case label for a range of values.
@@ -122,21 +122,21 @@
   statements. What do you think the output will be?
   #+name: switch2
   #+begin_src C :results output :exports both
-      int grade = 5;
+    int grade = 5;
 
-      switch (grade) {
-        // cases 4,3,2,1 all lead to a passing grade
-       case 4:
-       case 3:
-       case 2:
-       case 1:
-         printf("Passing");
-       case 5:
-       case 6:
-         printf("Failing");
-       default:
-         printf("Illegal grade");
-       }
+    switch (grade) {
+      // cases 4,3,2,1 all lead to a passing grade
+     case 4:
+     case 3:
+     case 2:
+     case 1:
+       printf("Passing");
+     case 5:
+     case 6:
+       printf("Failing");
+     default:
+       printf("Illegal grade");
+     }
   #+end_src
 
   #+RESULTS: switch2
@@ -154,24 +154,97 @@
 - Deliberate falling through (omission of ~break~) should be
   indicated with an explicit comment.
 
-* Let's practice!
+* Practice Exercise: "Day of the Week Classifier"
 
-- Open the Emacs browser with ~M-x eww~ on [[http://tinyurl.com/switch-org][tinyurl.com/switch-org]]
-- Write file with ~C-x C-w~ to ~switch.org~
-- Kill buffer with ~C-x k~
-- Re-open file with ~C-x C-f~
-- Complete the ~switch.org~ practice file
-- Upload the completed file as an assignment to Canvas
+** Objective
 
+Write a C program using a ~switch~ statement to classify an integer
+input (1-7) as a specific day of the week and print a corresponding
+message. This reinforces understanding of ~switch~, ~case~, ~break~, and
+~default~.
+
+** Instructions for Students
+
+1. Copy the starter pseudocode below into a ~main~ program in your
+   source code editor.
+
+2. Fill in the missing parts in C:
+   - Declare and initialize the ~day~ variable with a value (e.g., ~int
+     day = 3;~).
+   - Replace each comment with the appropriate ~case~ statement, ~printf~,
+     and ~break~.
+   - Add the ~default~ case.
+
+3. Test your program with at least three values:
+   - One weekday (e.g., 3)
+   - One weekend day (e.g., 6)
+   - One invalid value (e.g., 8)
+
+4. (Bonus) Remove one ~break~ statement, predict the output, and run it
+   to confirm.
+
+** Starter Pseudocode: [[https://onecompiler.com/c/43bxaes2k][onecompiler.com/c/43bxaes2k]]
+
+#+begin_src C :exports code
+  #include <stdio.h>
+
+  int main() {
+    // Declare an integer variable 'day' and set it to a test value (1-7)
+    // e.g., int day = 3;
+
+    // Write a switch statement to evaluate 'day'
+    switch (day) {
+      // Case for day 1: Print "Monday: Start of the workweek!"
+      // Add break statement
+
+      // Case for day 2: Print "Tuesday: Getting into the groove."
+      // Add break statement
+
+      // Case for day 3: Print "Wednesday: Midweek already!"
+      // Add break statement
+
+      // Case for day 4: Print "Thursday: Almost there!"
+      // Add break statement
+
+      // Case for day 5: Print "Friday: Weekend is near!"
+      // Add break statement
+
+      // Case for day 6: Print "Saturday: Time to relax!"
+      // Add break statement
+
+      // Case for day 7: Print "Sunday: Rest and recharge."
+      // Add break statement
+
+      // Default case: Print "Error: Not a valid day!"
+      // Add break statement
+    }
+
+    return 0;
+  }
+#+end_src
+
+** Expected Outputs
+- ~day = 3~: "Wednesday: Midweek already!"
+- ~day = 6~: "Saturday: Time to relax!"
+- ~day = 8~: "Error: Not a valid day!"
+- Bonus (e.g., remove ~break~ after ~case 5~):
+  - If ~day = 5~, output becomes "Friday: Weekend is near!Saturday: Time to relax!" due to fall-through.
+
+** Timing
+
+- *Total*: 15-20 minutes
+  - *3-5 minutes*: Copy and understand the pseudocode.
+  - *5-8 minutes*: Fill in the C code for ~day~ and ~switch~ cases.
+  - *3-5 minutes*: Test with three values.
+  - *2-4 minutes* (optional): Bonus question on fall-through.
+    
 * References
 
 - Davenport/Vine (2015) C Programming for the Absolute Beginner
   (3ed). Cengage Learning.
-- <<logic>> GVSUmath (Aug 10, 2012). Proving Logical Equivalences
-  without Truth Tables [video]. [[https://youtu.be/iPbLzl2kMHA][URL: youtu.be/iPbLzl2kMHA]].
+- Grok 3
 - Kernighan/Ritchie (1978). The C Programming Language
   (1st). Prentice Hall.
 - King (2008). C Programming - A modern approach (2e). W A Norton.
 - Orgmode.org (n.d.). 16 Working with Source Code [website]. [[https://orgmode.org/manual/Working-with-Source-Code.html][URL:
   orgmode.org]]
-
